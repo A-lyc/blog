@@ -1,0 +1,17 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-mongoose",
+      "settings": {
+        "client": "mongo",
+        "host": "120.77.145.108",
+        "port": "27017",
+        "database": "qteam-pro",
+        "username": "jason",
+        "password": "q123456789"
+      },
+      "options": {}
+    }
+  }
+}
