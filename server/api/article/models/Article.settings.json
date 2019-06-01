@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "Article",
+  "collectionName": "article",
   "info": {
     "name": "article",
     "description": "文章"

@@ -1,12 +1,12 @@
 {
   "name": "qteam",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A Strapi application.",
   "main": "./server.js",
   "scripts": {
     "setup": "cd admin && npm run setup",
-    "start": "cross-env NODE_ENV=production pm2 start server.js -n qteam-node",
+    "start": "cross-env NODE_ENV=production pm2 start server.js -n qteam-server",
     "dev": "cross-env NODE_ENV=development strapi start",
     "strapi": "node_modules/strapi/bin/strapi.js",
     "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
@@ -22,8 +22,10 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "lodash": "^4.17.5",
-    "strapi": "3.0.0-alpha.23.1",
-    "strapi-hook-mongoose": "3.0.0-alpha.23.1"
+    "marked": "^0.6.2",
+    "strapi": "3.0.0-alpha.26.2",
+    "strapi-hook-mongoose": "3.0.0-alpha.26.2",
+    "strapi-utils": "3.0.0-alpha.26.2"
   },
   "author": {
     "name": "A Strapi developer",
@@ -39,7 +41,7 @@
   ],
   "strapi": {
     "packageManager": "npm",
-    "uuid": "267533a8-d6ed-4e41-9a03-bcbd828ec4c9"
+    "uuid": "becd6099-6a76-40d0-9393-c4af989ff899"
   },
   "engines": {
     "node": ">= 10.0.0",
