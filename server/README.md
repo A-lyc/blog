@@ -1,3 +1,9 @@
-# server-new
+# bash
 
-A quick description of server-new.
+```bash
+npm run dev
+
+or
+
+npm run start
+```

@@ -91,6 +91,9 @@ module.exports = {
       }
     },
     
+    // css 提取成文件
+    extractCSS: { allChunks: true },
+    
     /*
     ** You can extend webpack config here
     */

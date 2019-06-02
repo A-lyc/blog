@@ -52,7 +52,7 @@
             </nuxt-link>
             <!-- hr -->
             <v-divider/>
-            <!-- 某一分类 -->
+            <!-- 分类列表 -->
             <template v-if="articleCategory" v-for="category in articleCategory">
               <nuxt-link class="index-link-item" :to="`/article/list/${category.id}`">
                 <v-list-tile ripple @click="" tag="section">
