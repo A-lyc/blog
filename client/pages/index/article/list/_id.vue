@@ -1,11 +1,11 @@
 <template>
-  <my-list
-    v-if="articleArr"
+  <my-article-list
+    v-if="articleArr && articleArr.length"
     :data="articleArr"/>
 </template>
 
 <script>
-  import MyList from '../../../../components/list';
+  import { CURRENT_CATEGORY } from '../../../../store/article';
 
   export default {
     validate ({ params }) {
@@ -14,8 +14,8 @@
     async asyncData ({ app, params, error }) {
       try {
         return {
-          category: (await app.$api.getArticleCategoryDetail(params.id)).data,
-          articleArr: (await app.$api.getArticleList({ category: params.id })).data
+          category: (await app.$api.getOneCategory(params.id)).data,
+          articleArr: (await app.$api.getAllArticle({ category: params.id })).data
         };
       }
       catch (err) {
@@ -27,11 +27,12 @@
     },
     data () {
       return {
-        // 分类信息
         category: null,
-        // 分类下的文章
-        articleArr: null
+        articleArr: []
       };
+    },
+    created () {
+      this.$store.commit(`article/${ CURRENT_CATEGORY }`, this.category);
     },
     head () {
       return {
@@ -41,26 +42,10 @@
           { hid: 'description', name: 'description', content: this.category.description }
         ]
       };
-    },
-    components: {
-      MyList
     }
   };
 </script>
 
-<style lang="scss">
-  .alist {
-    &-link {
-      display: block;
-      text-decoration: none;
-      transition: all .3s;
-      &:hover {
-        transform: translate3d(0, -5px, 0);
-        box-shadow: 0 2px 15px rgba(#000, .2);
-      }
-    }
-    &-empty {
-      max-width: 90%;
-    }
-  }
+<style lang="scss" module>
+
 </style>

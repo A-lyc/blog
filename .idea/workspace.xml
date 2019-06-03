@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3959e94-c3e4-4cd5-8981-df01a00d7c09" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/components/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/config/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/empty/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/empty/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/article-list/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/nuxt.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/index/article/detail/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index/article/detail/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/index/article/list/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index/article/list/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/index/article/list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index/article/list/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/plugins/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/plugins/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/server/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/admin/admin/build/config/plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/admin/admin/build/config/plugins.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/admin/admin/src/config/plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/admin/admin/src/config/plugins.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +30,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/pages/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+              <folding>
+                <element signature="n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
+                <element signature="n#v-list#0;n#v-layout#0;n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
+                <element signature="n#div#0;n#v-layout#0;n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
+                <element signature="n#v-toolbar#0;n#v-app#0;n#template#0;n#!!top" />
+                <element signature="n#v-content#0;n#v-app#0;n#template#0;n#!!top" />
+                <element signature="n#v-container#0;n#v-content#0;n#v-app#0;n#template#0;n#!!top" />
+                <element signature="n#v-footer#0;n#v-content#0;n#v-app#0;n#template#0;n#!!top" />
+                <element signature="e#3865#4578#0" />
+                <element signature="e#4626#4632#0" />
+                <element signature="e#4644#4803#0" />
+                <element signature="e#4810#4875#0" />
+                <element signature="e#4890#5035#0" />
+                <element signature="e#5046#5110#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,18 +83,17 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="194" />
-    <option name="y" value="17" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="169" />
+    <option name="y" value="305" />
+    <option name="width" value="1493" />
+    <option name="height" value="937" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -73,10 +106,17 @@
               <item name="qteam" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="qteam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qteam" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -119,16 +159,19 @@
       <workItem from="1559395598123" duration="5346000" />
       <workItem from="1559400984868" duration="533000" />
       <workItem from="1559447555400" duration="1030000" />
+      <workItem from="1559543234931" duration="132000" />
+      <workItem from="1559554014669" duration="34000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7536000" />
+    <option name="totallyTimeSpent" value="7702000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17917548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -140,7 +183,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3932961" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.36830357" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -335,31 +378,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="120" column="17" lean-forward="true" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
+        <state relative-caret-position="127">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding>
             <element signature="n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
-            <element signature="n#v-layout#0;n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
             <element signature="n#v-list#0;n#v-layout#0;n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
-            <element signature="n#v-list#1;n#v-layout#0;n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
-            <element signature="n#nuxt-link#0;n#div#0;n#v-list#1;n#v-layout#0;n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
-            <element signature="n#nuxt-link#0;n#template#0;n#div#0;n#v-list#1;n#v-layout#0;n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
+            <element signature="n#div#0;n#v-layout#0;n#v-navigation-drawer#0;n#v-app#0;n#template#0;n#!!top" />
             <element signature="n#v-toolbar#0;n#v-app#0;n#template#0;n#!!top" />
             <element signature="n#v-content#0;n#v-app#0;n#template#0;n#!!top" />
-            <element signature="e#4223#4326#0" />
-            <element signature="e#4238#4319#0" />
-            <element signature="e#4340#4600#0" />
-            <element signature="e#4616#4935#0" />
-            <element signature="e#4649#4929#0" />
-            <element signature="e#4950#5189#0" />
-            <element signature="e#4976#5183#0" />
-            <element signature="e#5202#5705#0" />
-            <element signature="e#5287#5363#0" />
-            <element signature="e#5428#5699#0" />
-            <element signature="e#5764#5976#0" />
-            <element signature="e#5986#6059#0" />
-            <element signature="e#6077#6236#0" />
-            <element signature="e#6250#6320#0" />
+            <element signature="n#v-container#0;n#v-content#0;n#v-app#0;n#template#0;n#!!top" />
+            <element signature="n#v-footer#0;n#v-content#0;n#v-app#0;n#template#0;n#!!top" />
+            <element signature="e#3865#4578#0" />
+            <element signature="e#4626#4632#0" />
+            <element signature="e#4644#4803#0" />
+            <element signature="e#4810#4875#0" />
+            <element signature="e#4890#5035#0" />
+            <element signature="e#5046#5110#0" />
           </folding>
         </state>
       </provider>

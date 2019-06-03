@@ -1,14 +1,16 @@
 <template>
   <img
-    class="empty"
+    :class="$style.empty"
     src="./images/empty.png">
 </template>
 
 <script>
-  export default {};
+  export default {
+    name: 'my-empty'
+  };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
   .empty {
     display: block;
     margin-left: auto;

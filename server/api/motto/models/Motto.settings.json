@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "motto",
+    "description": "格言"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "text": {
+      "unique": true,
+      "required": true,
+      "type": "string"
+    },
+    "weight": {
+      "type": "integer",
+      "default": "0"
+    }
+  }
+}

@@ -1,13 +1,19 @@
 <template>
   <section v-if="article">
-    <section
+    <article
       class="markdown-body"
+      :class="$style.view"
       v-html="html"/>
   </section>
 </template>
 
 <script>
+  import { CURRENT_CATEGORY } from '../../../../store/article';
+
+  import moment from 'moment';
   import marked from 'marked';
+  import highlight from 'highlight.js';
+  import 'highlight.js/styles/github.css';
   import 'github-markdown-css/github-markdown.css';
 
   export default {
@@ -16,18 +22,12 @@
     },
     async asyncData ({ app, params, error }) {
       try {
-        let article = (await app.$api.getArticleDetail(params.id)).data;
-        // 将 markdown 转为 html 代码片段
-        let html = marked(article.content);
-
         return {
-          article,
-          html
+          article: (await app.$api.getOneArticle(params.id)).data
         };
       }
       catch (err) {
-        console.error(err);
-        error({
+        return error({
           statusCode: 404,
           message: '所访问的文章不存在'
         });
@@ -35,11 +35,21 @@
     },
     data () {
       return {
-        // 文章对象
-        article: null,
-        // 转好好的 html 代码片段
-        html: ''
+        article: null
       };
+    },
+    computed: {
+      html () {
+        let baseMarkdown = `# ${ this.article.title } \n > ${ moment(this.article.updatedAt).format('YYYY-MM-DD HH:mm:ss') } \n`;
+        return marked(baseMarkdown + this.article.content, {
+          highlight (code) {
+            return highlight.highlightAuto(code).value;
+          }
+        });
+      }
+    },
+    created () {
+      this.$store.commit(`article/${ CURRENT_CATEGORY }`, this.article.category);
     },
     head () {
       return {
@@ -53,35 +63,21 @@
   };
 </script>
 
-<style lang="scss">
-  .markdown-body {
-    // light
-    /deep/ pre {
+<style lang="scss" module>
+  .view {
+    pre {
       background-color: #f1f1f1;
     }
-    /deep/ code {
+    code {
       box-shadow: none;
       color: inherit;
       &:before, &:after {
         display: none;
       }
     }
-    /deep/ code,
-    /deep/ kbd {
+    code,
+    kbd {
       font-weight: normal;
-    }
-    .theme--dark & {
-      color: rgba(#fff, .8);
-      /deep/ blockquote {
-        color: rgba(#fff, .5);
-        border-left-color: rgba(#fff, .5);
-      }
-      /deep/ pre {
-        background-color: #494949;
-      }
-      /deep/ tr {
-        background-color: transparent;
-      }
     }
   }
 </style>

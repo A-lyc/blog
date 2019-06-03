@@ -1,16 +1,16 @@
 <template>
-  <my-list
-    v-if="articleArr"
+  <my-article-list
+    v-if="articleArr && articleArr.length"
     :data="articleArr"/>
 </template>
 
 <script>
-  import MyList from '../../../../components/list';
+  import { CURRENT_CATEGORY } from '../../../../store/article';
 
   export default {
     async asyncData ({ app }) {
       return {
-        articleArr: (await app.$api.getArticleList()).data
+        articleArr: (await app.$api.getAllArticle()).data
       };
     },
     data () {
@@ -18,12 +18,12 @@
         articleArr: null
       };
     },
-    components: {
-      MyList
+    created () {
+      this.$store.commit(`article/${ CURRENT_CATEGORY }`, { id: '*' });
     }
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 
 </style>

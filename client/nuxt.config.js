@@ -1,4 +1,5 @@
 const pkg = require('./package');
+const config = require('./config');
 
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 
@@ -16,12 +17,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   
@@ -44,6 +40,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    // 将 components 文件下的组件注册为全局组件
+    '@/components/index',
     '@/plugins/vuetify',
     '@/plugins/api'
   ],
@@ -68,11 +66,11 @@ module.exports = {
   
   proxy: {
     '/api': {
-      target: process.env.NODE_ENV === 'development'
-        // dev
-        ? 'http://127.0.0.1:1337'
+      target: process.env.NODE_ENV === 'production'
         // pro
-        : 'http://www.qteam.site:1337',
+        ? config.proBaseUrl
+        // dev
+        : config.devBaseUrl,
       pathRewrite: {
         '^/api': '/'
       }
