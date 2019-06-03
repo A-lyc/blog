@@ -1,7 +1,5 @@
 <template>
-  <my-article-list
-    v-if="articleArr && articleArr.length"
-    :data="articleArr"/>
+  <my-article-list :data="articleArr"/>
 </template>
 
 <script>

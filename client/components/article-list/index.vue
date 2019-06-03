@@ -1,9 +1,7 @@
 <template>
-  <section
-    :class="$style.root"
-    v-if="data && data.length">
+  <section :class="$style.root">
     <v-timeline
-      v-if="data.length"
+      v-if="data && data.length"
       :dense="$vuetify.breakpoint.name === 'xs'">
       <v-timeline-item
         v-for="article in data"
@@ -30,9 +28,7 @@
       </v-timeline-item>
     </v-timeline>
     <!-- 空 -->
-    <div v-else>
-      <my-empty :class="$style.empty"/>
-    </div>
+    <my-empty v-else :class="$style.empty"/>
   </section>
 </template>
 

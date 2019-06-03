@@ -108,7 +108,7 @@
     <!-- body -->
     <v-content>
       <v-container fluid>
-        <nuxt-child/>
+        <nuxt-child :key="$route.fullPath"/>
         <!-- 间距 -->
         <p class="mt-4"/>
       </v-container>
