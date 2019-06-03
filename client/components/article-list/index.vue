@@ -25,7 +25,7 @@
         </nuxt-link>
         <!-- 圆圈 + 时间 -->
         <span slot="opposite">
-          {{ article.updatedAt }}
+          {{ article.updatedAt | time }}
         </span>
       </v-timeline-item>
     </v-timeline>
@@ -52,8 +52,8 @@
       this.$forceUpdate();
     },
     filters: {
-      time (at) {
-        return moment(at).format('YYYY-MM-DD HH:mm:ss');
+      time (date) {
+        return moment(date).format('YYYY-MM-DD HH:mm:ss');
       }
     }
   };
