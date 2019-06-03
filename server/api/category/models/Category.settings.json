@@ -1,0 +1,39 @@
+{
+  "connection": "default",
+  "collectionName": "category",
+  "info": {
+    "name": "category",
+    "description": "文章分类"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "maxLength": 10,
+      "unique": true,
+      "minLength": 1,
+      "type": "string",
+      "required": true
+    },
+    "keywords": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "articles": {
+      "collection": "article",
+      "via": "category"
+    },
+    "weight": {
+      "default": 0,
+      "type": "integer"
+    }
+  }
+}

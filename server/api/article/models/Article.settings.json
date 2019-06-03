@@ -1,0 +1,43 @@
+{
+  "connection": "default",
+  "collectionName": "article",
+  "info": {
+    "name": "article",
+    "description": "文章"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "default": "",
+      "type": "text"
+    },
+    "keywords": {
+      "default": "",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "category": {
+      "model": "category",
+      "via": "articles"
+    },
+    "weight": {
+      "default": 0,
+      "type": "integer"
+    },
+    "updatedAt": {
+      "default": "",
+      "type": "date"
+    }
+  }
+}
