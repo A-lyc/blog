@@ -73,7 +73,7 @@
         <!-- 格言 -->
         <div :class="$style.motto" v-if="mottoArr && mottoArr.length">
           <span v-for="motto in mottoArr">
-            {{ motto }}
+            {{ motto.text }}
           </span>
         </div>
       </v-layout>
