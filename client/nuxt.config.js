@@ -43,7 +43,11 @@ module.exports = {
     // 将 components 文件下的组件注册为全局组件
     '@/components/index',
     '@/plugins/vuetify',
-    '@/plugins/api'
+    '@/plugins/api',
+    {
+      src: '@/plugins/keymaster',
+      ssr: false
+    }
   ],
   
   /*
@@ -88,9 +92,6 @@ module.exports = {
         import: [ '~assets/style/variables.styl' ]
       }
     },
-    
-    // css 提取成文件
-    extractCSS: { allChunks: true },
     
     /*
     ** You can extend webpack config here

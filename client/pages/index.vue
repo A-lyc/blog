@@ -19,7 +19,9 @@
             <v-list-tile ripple @click="" tag="section">
               <!-- icon -->
               <v-list-tile-action>
-                <v-icon :size="30">fa fa-book</v-icon>
+                <v-avatar :size="30">
+                  <img src="" alt="">
+                </v-avatar>
               </v-list-tile-action>
               <!-- text -->
               <v-list-tile-content>
@@ -47,7 +49,9 @@
               <v-list-tile ripple @click="" tag="section">
                 <!-- icon -->
                 <v-list-tile-action>
-                  <v-icon :size="30">fa fa-book</v-icon>
+                  <v-avatar :size="30">
+                    <img :src="category.icon" alt="">
+                  </v-avatar>
                 </v-list-tile-action>
                 <!-- text -->
                 <v-list-tile-content>
@@ -65,6 +69,49 @@
               <v-divider/>
             </nuxt-link>
           </template>
+        </v-list>
+        <!-- 快捷键 -->
+        <v-list two-line>
+          <!-- title -->
+          <v-subheader>
+            快捷键
+          </v-subheader>
+          <!-- 简历 -->
+          <v-list-tile ripple @click="" tag="section">
+            <!-- icon -->
+            <v-list-tile-action>
+              <v-icon :size="30">fa fa-user-o</v-icon>
+            </v-list-tile-action>
+            <!-- text -->
+            <v-list-tile-content>
+              <v-list-tile-title>
+                jason（简历）
+              </v-list-tile-title>
+              <v-list-tile-sub-title>
+                ctrl + q
+              </v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <!-- hr -->
+          <v-divider/>
+          <!-- 查找文章 -->
+          <v-list-tile ripple @click="" tag="section">
+            <!-- icon -->
+            <v-list-tile-action>
+              <v-icon :size="30">fa fa-search</v-icon>
+            </v-list-tile-action>
+            <!-- text -->
+            <v-list-tile-content>
+              <v-list-tile-title>
+                查找
+              </v-list-tile-title>
+              <v-list-tile-sub-title>
+                ctrl + f
+              </v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <!-- hr -->
+          <v-divider/>
         </v-list>
         <!-- space -->
         <v-spacer/>
@@ -123,8 +170,9 @@
 </template>
 
 <script>
-  import _ from 'lodash';
   import { CURRENT_CATEGORY } from '../store/article';
+
+  import _ from 'lodash';
 
   export default {
     async asyncData ({ app }) {
@@ -137,6 +185,10 @@
       return {
         // 侧边栏显示和隐藏
         showAside: true,
+        // 搜索模态框的显示和隐藏
+        showSearch: false,
+        // 个人简历的显示和隐藏
+        showJason: false,
         // 文章分类
         categoryArr: [],
         // 格言
@@ -160,6 +212,19 @@
         else {
           return '加载中...';
         }
+      }
+    },
+    methods: {},
+    mounted () {
+      this.$key('ctrl+f', () => this.showSearch = true);
+      this.$key('ctrl+q', () => this.showJason = true);
+    },
+    watch: {
+      showSearch (value) {
+        alert('showSearch:' + value);
+      },
+      showJason (value) {
+        alert('showJason:' + value);
       }
     }
   };

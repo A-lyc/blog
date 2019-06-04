@@ -1,0 +1,31 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "experience",
+    "description": "经历"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "company": {
+      "required": true,
+      "type": "string"
+    },
+    "position": {
+      "required": true,
+      "type": "string"
+    },
+    "startTime": {
+      "required": true,
+      "type": "date"
+    },
+    "endTime": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
