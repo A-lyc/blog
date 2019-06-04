@@ -95,7 +95,7 @@
           <!-- hr -->
           <v-divider/>
           <!-- 查找文章 -->
-          <v-list-tile ripple @click="" tag="section">
+          <v-list-tile ripple @click="showSearch = true" tag="section">
             <!-- icon -->
             <v-list-tile-action>
               <v-icon :size="30">fa fa-search</v-icon>
@@ -106,7 +106,7 @@
                 查找
               </v-list-tile-title>
               <v-list-tile-sub-title>
-                ctrl + f
+                ctrl + z
               </v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
@@ -166,6 +166,10 @@
         </v-flex>
       </v-footer>
     </v-content>
+    <!-- 搜索框 -->
+    <my-search v-model="showSearch"/>
+    <!-- 简历 -->
+    <!-- 个人相册 -->
   </v-app>
 </template>
 
@@ -189,6 +193,7 @@
         showSearch: false,
         // 个人简历的显示和隐藏
         showJason: false,
+
         // 文章分类
         categoryArr: [],
         // 格言
@@ -216,16 +221,8 @@
     },
     methods: {},
     mounted () {
-      this.$key('ctrl+f', () => this.showSearch = true);
+      this.$key('ctrl+z', () => this.showSearch = true);
       this.$key('ctrl+q', () => this.showJason = true);
-    },
-    watch: {
-      showSearch (value) {
-        alert('showSearch:' + value);
-      },
-      showJason (value) {
-        alert('showJason:' + value);
-      }
     }
   };
 </script>
