@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/05/2019 10:29:24 AM"
+    "x-generation-date": "06/05/2019 11:44:28 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5697,7 +5697,8 @@
           "category": {
             "required": [
               "id",
-              "name"
+              "name",
+              "cover"
             ],
             "properties": {
               "id": {
@@ -5714,6 +5715,9 @@
               },
               "weight": {
                 "type": "integer"
+              },
+              "cover": {
+                "type": "string"
               }
             }
           },
@@ -5743,7 +5747,8 @@
       "Albumcategory": {
         "required": [
           "id",
-          "name"
+          "name",
+          "cover"
         ],
         "properties": {
           "id": {
@@ -5782,6 +5787,52 @@
           "weight": {
             "type": "integer",
             "default": "0"
+          },
+          "cover": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "public_id": {
+                "type": "string"
+              },
+              "related": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -6159,6 +6210,10 @@
           },
           "isQr": {
             "type": "boolean"
+          },
+          "weight": {
+            "type": "integer",
+            "default": "0"
           }
         }
       },
@@ -6178,6 +6233,10 @@
           },
           "isQr": {
             "type": "boolean"
+          },
+          "weight": {
+            "type": "integer",
+            "default": "0"
           }
         }
       },

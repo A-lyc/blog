@@ -528,6 +528,10 @@
           },
           "isQr": {
             "type": "boolean"
+          },
+          "weight": {
+            "type": "integer",
+            "default": "0"
           }
         }
       },
@@ -547,6 +551,10 @@
           },
           "isQr": {
             "type": "boolean"
+          },
+          "weight": {
+            "type": "integer",
+            "default": "0"
           }
         }
       }

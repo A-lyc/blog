@@ -21,6 +21,12 @@
     "weight": {
       "type": "integer",
       "default": "0"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
     }
   }
 }

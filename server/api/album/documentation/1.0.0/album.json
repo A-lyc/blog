@@ -570,7 +570,8 @@
           "category": {
             "required": [
               "id",
-              "name"
+              "name",
+              "cover"
             ],
             "properties": {
               "id": {
@@ -587,6 +588,9 @@
               },
               "weight": {
                 "type": "integer"
+              },
+              "cover": {
+                "type": "string"
               }
             }
           },
