@@ -76,26 +76,8 @@
           <v-subheader>
             快捷键
           </v-subheader>
-          <!-- 简历 -->
-          <v-list-tile ripple @click="" tag="section">
-            <!-- icon -->
-            <v-list-tile-action>
-              <v-icon :size="30">fa fa-user-o</v-icon>
-            </v-list-tile-action>
-            <!-- text -->
-            <v-list-tile-content>
-              <v-list-tile-title>
-                jason（简历）
-              </v-list-tile-title>
-              <v-list-tile-sub-title>
-                ctrl + q
-              </v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <!-- hr -->
-          <v-divider/>
           <!-- 查找文章 -->
-          <v-list-tile ripple @click="showSearch = true" tag="section">
+          <v-list-tile ripple @click="showSearchFn" tag="section">
             <!-- icon -->
             <v-list-tile-action>
               <v-icon :size="30">fa fa-search</v-icon>
@@ -168,14 +150,15 @@
     </v-content>
     <!-- 搜索框 -->
     <my-search v-model="showSearch"/>
-    <!-- 简历 -->
-    <!-- 个人相册 -->
+    <!-- 登陆 -->
+    <my-login v-model="showLogin"/>
   </v-app>
 </template>
 
 <script>
+  import { mapState } from 'vuex';
   import { CURRENT_CATEGORY } from '../store/article';
-
+  import { JWT, USER } from '../store/user';
   import _ from 'lodash';
 
   export default {
@@ -191,6 +174,10 @@
         showAside: true,
         // 搜索模态框的显示和隐藏
         showSearch: false,
+        // 相册显示和隐藏
+        showAlbum: false,
+        // 登陆的显示和隐藏
+        showLogin: false,
         // 个人简历的显示和隐藏
         showJason: false,
 
@@ -201,11 +188,13 @@
       };
     },
     computed: {
-      // 记载着页面的所属文章分类
-      // 会改变导航激活状态
-      currentCategory () {
-        return this.$store.state.article[ CURRENT_CATEGORY ];
-      },
+      ...mapState('article', {
+        currentCategory: state => state[ CURRENT_CATEGORY ]
+      }),
+      ...mapState('user', {
+        jwt: state => state[ JWT ],
+        user: state => state[ USER ]
+      }),
       // 所有文章总数
       total () {
         let { categoryArr } = this;
@@ -219,10 +208,69 @@
         }
       }
     },
-    methods: {},
+    methods: {
+      showSearchFn () {
+        this.showSearch = true;
+      },
+      hideSearchFn () {
+        this.showSearch = false;
+      },
+      showAlbumFn () {
+        if (this.jwt) {
+          this.showAlbum = true;
+        }
+        else {
+          this.showLogin = true;
+        }
+      },
+      hideAlbumFn () {
+        this.showAlbum = false;
+      },
+      showLoginFn () {
+        this.showLogin = !this.jwt;
+      },
+      hideLoginFn () {
+        this.showLogin = false;
+      }
+    },
+    async created () {
+      if (process.client) {
+        // 检查是否有本地 jwt
+        let jwt = localStorage[ JWT ];
+
+        if (!jwt) return false;
+
+        // 存入 store
+        this.$store.commit(`user/${ JWT }`, jwt);
+        // 检查 jwt 是否有效
+        let { user } = (await this.$api.refreshMe()).data;
+        // set store
+        if (user) {
+          this.$store.commit(`user/${ USER }`, user);
+        }
+      }
+    },
     mounted () {
-      this.$key('ctrl+z', () => this.showSearch = true);
-      this.$key('ctrl+q', () => this.showJason = true);
+      // 搜索快捷键
+      this.$key('ctrl+z', () => {
+        this.showSearchFn();
+      });
+      // 相册快捷键（登陆快捷键）
+      this.$key('ctrl+q', () => {
+        this.showAlbumFn();
+      });
+    },
+    watch: {
+      jwt (newVal, oldVal) {
+        // 登陆成功，关闭登陆模态框
+        if (newVal) {
+          this.hideLoginFn();
+        }
+        // 访问令牌到期，弹出登陆模态框
+        if (oldVal && !newVal) {
+          this.showLoginFn();
+        }
+      }
     }
   };
 </script>

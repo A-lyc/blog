@@ -47,6 +47,10 @@ module.exports = {
     {
       src: '@/plugins/keymaster',
       ssr: false
+    },
+    {
+      src: '@/plugins/debug',
+      ssr: false
     }
   ],
   

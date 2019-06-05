@@ -11,5 +11,15 @@ export const mutations = {
   },
   [ JWT ] (state, jwt) {
     state[ JWT ] = jwt;
+    
+    // 存入 localStorage 中
+    if (process.client) {
+      if (jwt) {
+        window.localStorage[ JWT ] = jwt;
+      }
+      else {
+        delete window.localStorage[ JWT ];
+      }
+    }
   }
 };
