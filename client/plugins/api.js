@@ -4,15 +4,12 @@ import { JWT } from '../store/user';
 export default function ({ app, store }, inject) {
   let { $axios } = app;
   
-  // 若 jwt 失效，则清空 jwt
-  $axios.interceptors.response.use(function (res) {
-    return res;
-  });
-  
   inject('api', {
+    /**
+     *  无需登录状态的
+     **/
     // 获取所有文章分类
     getAllCategory (params) {
-      this.$debug('refreshMe')('检查参数');
       return $axios.get('/articlecategories', {
         params: {
           _sort: 'weight:DESC,updatedAt:DESC',
@@ -50,12 +47,36 @@ export default function ({ app, store }, inject) {
       return $axios.post('/auth/local', params);
     },
     
-    // 更新状态
+    /**
+     *  需要登录状态的
+     **/
+    // 检查 jwt 是否有效，更新用户
     refreshMe () {
-      this.$debug('refreshMe')('检查参数');
       return $axios.get('/users/me', {
         headers: {
           Authorization: `Bearer ${ store.state.user[ JWT ] }`
+        }
+      });
+    },
+    // 获取相册分类列表
+    getAllAlbumCategory (params) {
+      return $axios.get('/albumcategories', {
+        headers: {
+          Authorization: `Bearer ${ store.state.user[ JWT ] }`
+        },
+        params: {
+          _sort: 'weight:DESC,updatedAt:DESC',
+        }
+      });
+    },
+    // 获取相册图片列表
+    getAllAlbum (params) {
+      return $axios.get('/albums', {
+        headers: {
+          Authorization: `Bearer ${ store.state.user[ JWT ] }`
+        },
+        params: {
+          _sort: 'weight:DESC,updatedAt:DESC',
         }
       });
     }

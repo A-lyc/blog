@@ -94,6 +94,24 @@
           </v-list-tile>
           <!-- hr -->
           <v-divider/>
+          <!-- 图集 -->
+          <v-list-tile ripple @click="showAlbumFn" tag="section">
+            <!-- icon -->
+            <v-list-tile-action>
+              <v-icon :size="30">fa fa-image</v-icon>
+            </v-list-tile-action>
+            <!-- text -->
+            <v-list-tile-content>
+              <v-list-tile-title>
+                相册
+              </v-list-tile-title>
+              <v-list-tile-sub-title>
+                ctrl + q
+              </v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <!-- hr -->
+          <v-divider/>
         </v-list>
         <!-- space -->
         <v-spacer/>
@@ -148,10 +166,12 @@
         </v-flex>
       </v-footer>
     </v-content>
-    <!-- 搜索框 -->
+    <!-- 搜索模态框 -->
     <my-search v-model="showSearch"/>
-    <!-- 登陆 -->
+    <!-- 登陆模态框 -->
     <my-login v-model="showLogin"/>
+    <!-- 相册模态框 -->
+    <my-album v-model="showAlbum"/>
   </v-app>
 </template>
 
@@ -235,40 +255,49 @@
     },
     async created () {
       if (process.client) {
-        // 检查是否有本地 jwt
         let jwt = localStorage[ JWT ];
+        console.info(`检测 localStorage 中是否含有 jwt：${ Boolean(jwt) }`);
 
+        // required jwt
         if (!jwt) return false;
 
         // 存入 store
         this.$store.commit(`user/${ JWT }`, jwt);
         // 检查 jwt 是否有效
-        let { user } = (await this.$api.refreshMe()).data;
-        // set store
-        if (user) {
-          this.$store.commit(`user/${ USER }`, user);
-        }
+        await this.$api.refreshMe()
+        // 认证成功，设置 user
+          .then(({ data: user }) => {
+            console.info('jwt 认证成功');
+            this.$store.commit(`user/${ USER }`, user);
+          })
+          // 认证失败，删除 jwt
+          .catch(err => {
+            console.error('jwt 认证失败');
+            this.$store.commit(`user/${ JWT }`, null);
+          });
       }
     },
     mounted () {
       // 搜索快捷键
       this.$key('ctrl+z', () => {
+        console.info('触发了 ctrl + z');
         this.showSearchFn();
       });
       // 相册快捷键（登陆快捷键）
       this.$key('ctrl+q', () => {
+        console.info('触发了 ctrl + q');
         this.showAlbumFn();
       });
     },
     watch: {
       jwt (newVal, oldVal) {
-        // 登陆成功，关闭登陆模态框
         if (newVal) {
           this.hideLoginFn();
+          console.info('登陆成功，关闭登陆模态框');
         }
-        // 访问令牌到期，弹出登陆模态框
         if (oldVal && !newVal) {
           this.showLoginFn();
+          console.error('访问令牌到期，弹出登陆模态框');
         }
       }
     }
