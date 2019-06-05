@@ -59,6 +59,7 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/proxy'
   ],
+  
   /*
   ** Axios module configuration
   */
@@ -92,6 +93,9 @@ module.exports = {
         import: [ '~assets/style/variables.styl' ]
       }
     },
+    
+    // 提取 css 为文件
+    extractCSS: true,
     
     /*
     ** You can extend webpack config here
