@@ -9,6 +9,8 @@ let descHandler = function (markdown) {
     .replace(/<\/?.+?\/?>/g, '')
     // 替换换行符为逗号
     .replace(/(\n)+/g, ',')
+    // 去除开头和结尾的逗号
+    .trim(',')
     // 提取前 100 个字
     .truncate({
       length: 100,
