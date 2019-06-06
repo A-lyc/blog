@@ -25,9 +25,9 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#eac02a',
-    height: '4px'
-  },
+    // color: '#eac02a',
+    // height: '4px'
+},
   
   /*
   ** Global CSS
@@ -46,6 +46,10 @@ module.exports = {
     '@/plugins/api',
     {
       src: '@/plugins/keymaster',
+      ssr: false
+    },
+    {
+      src: '@/plugins/photoswipe',
       ssr: false
     }
   ],

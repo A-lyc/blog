@@ -7,6 +7,9 @@
         <v-card-title class="headline">
           登陆
         </v-card-title>
+        <v-card-text class="body-2">
+          闲杂人等退散
+        </v-card-text>
         <v-card-text>
           <v-text-field
             v-model="username"
@@ -21,7 +24,12 @@
             color="primary"
             :loading="loading"
             @click="submit">
-            GO
+            登陆
+          </v-btn>
+          <v-btn
+            color="primary"
+            @click="innerValue = false">
+            退出
           </v-btn>
         </v-card-text>
       </v-card>

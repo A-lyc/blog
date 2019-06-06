@@ -19,8 +19,9 @@
             <v-list-tile ripple @click="" tag="section">
               <!-- icon -->
               <v-list-tile-action>
-                <v-avatar :size="30">
-                  <img src="" alt="">
+                <v-avatar :size="38" :tile="true">
+
+                  <img src="../assets/images/index-all.png" alt="">
                 </v-avatar>
               </v-list-tile-action>
               <!-- text -->
@@ -49,8 +50,8 @@
               <v-list-tile ripple @click="" tag="section">
                 <!-- icon -->
                 <v-list-tile-action>
-                  <v-avatar :size="30">
-                    <img :src="category.icon" alt="">
+                  <v-avatar :size="38" :tile="true">
+                    <img :src="category.icon.url" alt="">
                   </v-avatar>
                 </v-list-tile-action>
                 <!-- text -->
@@ -80,7 +81,9 @@
           <v-list-tile ripple @click="showSearchFn" tag="section">
             <!-- icon -->
             <v-list-tile-action>
-              <v-icon :size="30">fa fa-search</v-icon>
+              <v-avatar :size="38" :tile="true">
+                <img src="../assets/images/index-search.png" alt="">
+              </v-avatar>
             </v-list-tile-action>
             <!-- text -->
             <v-list-tile-content>
@@ -98,7 +101,9 @@
           <v-list-tile ripple @click="showAlbumFn" tag="section">
             <!-- icon -->
             <v-list-tile-action>
-              <v-icon :size="30">fa fa-image</v-icon>
+              <v-avatar :size="38" :tile="true">
+                <img src="../assets/images/index-album.png" alt="">
+              </v-avatar>
             </v-list-tile-action>
             <!-- text -->
             <v-list-tile-content>

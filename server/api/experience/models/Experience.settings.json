@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "experience",
   "info": {
     "name": "experience",
     "description": "经历"
@@ -26,6 +26,10 @@
     },
     "description": {
       "type": "text"
+    },
+    "weight": {
+      "type": "integer",
+      "default": "0"
     }
   }
 }

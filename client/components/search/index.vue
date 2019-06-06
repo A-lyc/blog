@@ -1,5 +1,8 @@
 <template>
-  <v-dialog v-model="innerValue" max-width="500">
+  <v-dialog
+    v-model="innerValue"
+    :persistent="true"
+    max-width="500">
     <v-card class="pa-3">
       <v-card-title class="headline">
         搜索
@@ -15,6 +18,12 @@
           item-value="id"
           placeholder="请输入关键词："
           no-data-text="没有搜索到文章..."/>
+        <v-btn
+          color="primary"
+          block
+          @click="innerValue = false">
+          关闭
+        </v-btn>
       </v-card-text>
     </v-card>
   </v-dialog>
