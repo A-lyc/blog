@@ -1,6 +1,6 @@
 <template>
   <v-dialog
-    v-model="innerValue"
+    v-model="innerIsShow"
     :persistent="true"
     max-width="500">
     <v-card class="pa-3">
@@ -21,7 +21,7 @@
         <v-btn
           color="primary"
           block
-          @click="innerValue = false">
+          @click="hideSearch">
           关闭
         </v-btn>
       </v-card-text>
@@ -31,12 +31,12 @@
 
 <script>
   import _ from 'lodash';
-
-  import mixinTwoVModel from '../../assets/script/two-v-model';
+  import { SHOW_SEARCH } from '../../store/model';
+  import base from './base';
 
   export default {
     name: 'my-search',
-    mixins: [ mixinTwoVModel ],
+    mixins: [ base(SHOW_SEARCH) ],
     data () {
       return {
         // 搜索关键词
@@ -52,7 +52,6 @@
     methods: {
       search: _.debounce(async function () {
         let { keywords } = this;
-
         this.searching = true;
         this.resultArr = (await this.$api.getAllArticle({
           title_containss: _.trim(this.keywords)
@@ -64,24 +63,14 @@
         this.$router.push({
           path: `/article/detail/${ articleId }`
         });
-        this.innerValue = false;
+        // 清空状态
+        this.hideSearch();
+        this.keywords = '';
+        this.resultArr = [];
+        this.selectedId = null;
       }
     },
     watch: {
-      innerValue (bl) {
-        // 显示时获取焦点
-        if (bl) {
-          setTimeout(() => {
-            this.$refs.autocomplete.$el.querySelector('input').focus();
-          }, 20);
-        }
-        // 关闭时清空状态
-        else {
-          this.selectedId = null;
-          this.keywords = '';
-          this.resultArr = [];
-        }
-      },
       keywords (str) {
         _.trim(str) && this.search();
       },

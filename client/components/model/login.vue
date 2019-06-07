@@ -1,7 +1,10 @@
 <template>
   <div>
     <!-- 模态框表单 -->
-    <v-dialog v-model="innerValue" max-width="500">
+    <v-dialog
+      v-model="innerIsShow"
+      :persistent="true"
+      max-width="500">
       <!-- 表单 -->
       <v-card class="pa-3">
         <v-card-title class="headline">
@@ -28,7 +31,7 @@
           </v-btn>
           <v-btn
             color="primary"
-            @click="innerValue = false">
+            @click="hideLogin">
             退出
           </v-btn>
         </v-card-text>
@@ -52,12 +55,14 @@
 </template>
 
 <script>
-  import { USER, JWT } from '../../store/user';
-  import mixinTwoVModel from '../../assets/script/two-v-model';
+  import { mapState } from 'vuex';
+  import { JWT, USER } from '../../store/user';
+  import { SHOW_LOGIN } from '../../store/model';
+  import base from './base';
 
   export default {
     name: 'my-login',
-    mixins: [ mixinTwoVModel ],
+    mixins: [ base(SHOW_LOGIN) ],
     data () {
       return {
         username: '',
@@ -65,6 +70,11 @@
         loading: false,
         showError: false
       };
+    },
+    computed: {
+      ...mapState('user', {
+        jwt: state => state[ JWT ]
+      })
     },
     methods: {
       async submit () {
@@ -80,9 +90,21 @@
         }
         catch (err) {
           this.showError = true;
-          console.error('登陆失败，用户名或密码错误');
+          console.error('登陆失败，用户名或密码错误', err);
         }
         this.loading = false;
+      }
+    },
+    watch: {
+      // 若已登录则不会显示
+      innerisShow (bl) {
+        if (bl && this.jwt) {
+          this.hideLogin();
+        }
+      },
+      // jwt 赋值时，隐藏登录框
+      jwt (jwt) {
+        jwt && this.hideLogin();
       }
     }
   };

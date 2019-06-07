@@ -1,3 +1,6 @@
+/**
+ *  图片展示
+ **/
 import Vue from 'vue';
 import * as PhotoSwipe from 'photoswipe';
 import * as PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import { CURRENT_CATEGORY } from '../../../../store/article';
+  import { CATEGORY_CURRENT } from '../../../../store/data';
 
   import moment from 'moment';
   import marked from 'marked';
@@ -49,7 +49,7 @@
       }
     },
     created () {
-      this.$store.commit(`article/${ CURRENT_CATEGORY }`, this.article.category);
+      this.$store.commit(`data/${ CATEGORY_CURRENT }`, this.article.category);
     },
     head () {
       return {

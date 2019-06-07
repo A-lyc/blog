@@ -1,10 +1,8 @@
-// 项目中的接口封装
 import { JWT } from '../store/user';
 
 export default function ({ app, store }, inject) {
   let { $axios } = app;
-  
-  inject('api', {
+  let api = {
     /**
      *  无需登录状态的
      **/
@@ -65,7 +63,7 @@ export default function ({ app, store }, inject) {
           Authorization: `Bearer ${ store.state.user[ JWT ] }`
         },
         params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
+          _sort: 'weight:DESC,updatedAt:DESC'
         }
       });
     },
@@ -76,9 +74,11 @@ export default function ({ app, store }, inject) {
           Authorization: `Bearer ${ store.state.user[ JWT ] }`
         },
         params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
+          _sort: 'weight:DESC,updatedAt:DESC'
         }
       });
     }
-  });
+  };
+  
+  inject('api', api);
 }

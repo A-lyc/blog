@@ -2,7 +2,7 @@
   <div>
     <!-- 相册分类 -->
     <v-dialog
-      v-model="innerValue"
+      v-model="innerIsShow"
       :persistent="true"
       max-width="600">
       <v-container :class="$style.container" fluid grid-list-lg>
@@ -39,7 +39,7 @@
         <v-btn
           color="primary"
           block
-          @click="innerValue = false">
+          @click="hideAlbum">
           关闭
         </v-btn>
       </v-container>
@@ -112,17 +112,25 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex';
+  import { JWT } from '../../store/user';
+  import { SHOW_ALBUM } from '../../store/model';
   import _ from 'lodash';
-  import mixinTwoVModel from '../../assets/script/two-v-model';
+  import base from './base';
 
   export default {
     name: 'my-album',
-    mixins: [ mixinTwoVModel ],
+    mixins: [ base(SHOW_ALBUM) ],
     data () {
       return {
         albumCategoryAll: [],
         albumCategoryLoading: false
       };
+    },
+    computed: {
+      ...mapState('user', {
+        jwt: state => state[ JWT ]
+      })
     },
     methods: {
       // 更新相册分类
@@ -160,9 +168,20 @@
       }
     },
     watch: {
-      innerValue (isShow) {
-        isShow && this.updateCategory();
-        console.info('my-album: innerValue watcher：更新了相册分类');
+      innerIsShow (isShow) {
+        // 隐藏不执行任何操作
+        if (!isShow) return false;
+        // 若未登录，则弹出登录框
+        else if (!this.jwt) {
+          this.hideAlbum();
+          this.showLogin();
+          console.info('相册框弹出失败：未登录，已弹出登录框');
+        }
+        // 若已登录，则刷新数据
+        else {
+          isShow && this.updateCategory();
+          console.info('my-album watcher: 更新了相册分类');
+        }
       }
     }
   };

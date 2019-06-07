@@ -27,7 +27,7 @@ module.exports = {
   loading: {
     // color: '#eac02a',
     // height: '4px'
-},
+  },
   
   /*
   ** Global CSS

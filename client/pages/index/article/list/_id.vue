@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import { CURRENT_CATEGORY } from '../../../../store/article';
+  import { CATEGORY_CURRENT } from '../../../../store/data';
 
   export default {
     validate ({ params }) {
@@ -30,7 +30,7 @@
       };
     },
     created () {
-      this.$store.commit(`article/${ CURRENT_CATEGORY }`, this.category);
+      this.$store.commit(`data/${ CATEGORY_CURRENT }`, this.category);
     },
     head () {
       return {
