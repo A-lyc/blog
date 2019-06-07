@@ -1,34 +1,59 @@
 <template>
   <v-dialog
+    :content-class="$style.root"
     v-model="innerIsShow"
     :persistent="true"
-    max-width="600">
-    <v-card>
-      <v-card-title>
-        未完成...
-      </v-card-title>
-      <v-card-text>
-        <v-btn
-          block
-          color="primary"
-          @click="hideJason">
-          关闭
-        </v-btn>
-      </v-card-text>
-    </v-card>
+    max-width="1500">
+    <div :class="$style.wrapper">
+      <div :class="$style.chunk">
+        这里放照片...
+      </div>
+      <div :class="$style.chunk">
+        这里放基础信息 + 技能栈
+      </div>
+      <div :class="$style.chunk">
+        这里放项目经验
+      </div>
+    </div>
+    <v-btn
+      :class="$style.btn"
+      color="primary"
+      large
+      @click="hideJason">
+      关闭
+    </v-btn>
   </v-dialog>
 </template>
 
 <script>
-  import base from './base';
-  import { SHOW_JASON } from '../../store/model';
+  import mixinModel from '../../assets/script/mixin-model';
+  import { SHOW_JASON } from '../../store/show';
 
   export default {
     name: 'my-jason',
-    mixins: [ base(SHOW_JASON) ]
+    mixins: [ mixinModel(SHOW_JASON) ]
   };
 </script>
 
 <style lang="scss" module>
-
+  .root {
+    box-shadow: none !important;
+  }
+  .jason {
+  }
+  .wrapper {
+    display: flex;
+  }
+  .chunk {
+    width: 33.333333%;
+    background-color: #fff;
+    height: 600px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  .btn {
+    display: block;
+    margin: 15px auto 0 auto;
+  }
 </style>

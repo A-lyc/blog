@@ -114,13 +114,13 @@
 <script>
   import { mapState } from 'vuex';
   import { JWT } from '../../store/user';
-  import { SHOW_ALBUM } from '../../store/model';
+  import { SHOW_ALBUM } from '../../store/show';
   import _ from 'lodash';
-  import base from './base';
+  import mixinModel from '../../assets/script/mixin-model';
 
   export default {
     name: 'my-album',
-    mixins: [ base(SHOW_ALBUM) ],
+    mixins: [ mixinModel(SHOW_ALBUM) ],
     data () {
       return {
         albumCategoryAll: [],

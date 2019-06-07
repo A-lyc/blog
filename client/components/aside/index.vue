@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="showAside" app>
+  <v-navigation-drawer v-model="innerIsShow" app>
     <v-layout fill-height column>
       <!-- 分类 -->
       <v-list two-line>
@@ -108,7 +108,27 @@
               相册
             </v-list-tile-title>
             <v-list-tile-sub-title>
-              ctrl + q
+              ctrl + x
+            </v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <!-- hr -->
+        <v-divider/>
+        <!-- 简历 -->
+        <v-list-tile ripple @click="showJason" tag="section">
+          <!-- icon -->
+          <v-list-tile-action>
+            <v-avatar :size="38" :tile="true">
+              <img src="./images/album.png" alt="">
+            </v-avatar>
+          </v-list-tile-action>
+          <!-- text -->
+          <v-list-tile-content>
+            <v-list-tile-title>
+              简历
+            </v-list-tile-title>
+            <v-list-tile-sub-title>
+              ctrl + c
             </v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
@@ -133,16 +153,12 @@
   import _ from 'lodash';
   import { mapState } from 'vuex';
   import { CATEGORY_ARR, CATEGORY_CURRENT, MOTTO_ARR } from '../../store/data';
+  import { SHOW_ASIDE } from '../../store/show';
   import mixinModel from '../../assets/script/mixin-model';
 
   export default {
     name: 'my-aside',
-    mixins: [ mixinModel ],
-    data () {
-      return {
-        showAside: true
-      };
-    },
+    mixins: [ mixinModel(SHOW_ASIDE) ],
     computed: {
       ...mapState('data', {
         categoryArr: state => state[ CATEGORY_ARR ],
@@ -169,9 +185,14 @@
         this.showSearch();
       });
       // 相册快捷键（登陆快捷键）
-      this.$key('ctrl+q', () => {
-        console.info('触发了 ctrl + q');
+      this.$key('ctrl+x', () => {
+        console.info('触发了 ctrl + x');
         this.showAlbum();
+      });
+      // 简历
+      this.$key('ctrl+c', () => {
+        console.info('触发了 ctrl + c');
+        this.showJason();
       });
     }
   };

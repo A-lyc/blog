@@ -16,11 +16,11 @@
         <v-card-text>
           <v-text-field
             v-model="username"
-            label="username"
+            label="用户名："
             @keyup.enter.native="submit"/>
           <v-text-field
             v-model="password"
-            label="password"
+            label="密码："
             type="password"
             @keyup.enter.native="submit"/>
           <v-btn
@@ -57,18 +57,19 @@
 <script>
   import { mapState } from 'vuex';
   import { JWT, USER } from '../../store/user';
-  import { SHOW_LOGIN } from '../../store/model';
-  import base from './base';
+  import { SHOW_LOGIN } from '../../store/show';
+  import mixinModel from '../../assets/script/mixin-model';
 
   export default {
     name: 'my-login',
-    mixins: [ base(SHOW_LOGIN) ],
+    mixins: [ mixinModel(SHOW_LOGIN) ],
     data () {
       return {
         username: '',
         password: '',
         loading: false,
-        showError: false
+        showError: false,
+        showSuccess: false
       };
     },
     computed: {

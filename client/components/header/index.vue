@@ -18,7 +18,7 @@
       <v-btn
         class="hidden-lg-and-up"
         icon
-        @click="showAside = true">
+        @click="showAside">
         <v-icon :size="30">
           fa fa-bars
         </v-icon>
@@ -28,8 +28,11 @@
 </template>
 
 <script>
+  import mixinShow from '../../assets/script/mixin-show';
+
   export default {
-    name: 'my-header'
+    name: 'my-header',
+    mixins: [ mixinShow ]
   };
 </script>
 
