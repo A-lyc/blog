@@ -8,7 +8,7 @@
       <v-container :class="$style.container" fluid grid-list-lg>
         <!-- list -->
         <template v-if="albumCategoryAll && albumCategoryAll.length">
-          <v-layout justify-center>
+          <v-layout wrap>
             <v-flex
               v-for="albumCategory in albumCategoryAll"
               :key="albumCategory.id"
@@ -116,11 +116,11 @@
   import { JWT } from '../../store/user';
   import { SHOW_ALBUM } from '../../store/show';
   import _ from 'lodash';
-  import mixinModel from '../../assets/script/mixin-model';
+  import mixinDialog from '../../assets/script/mixin-dialog';
 
   export default {
     name: 'my-album',
-    mixins: [ mixinModel(SHOW_ALBUM) ],
+    mixins: [ mixinDialog(SHOW_ALBUM) ],
     data () {
       return {
         albumCategoryAll: [],
@@ -149,22 +149,25 @@
         this.albumCategoryLoading = false;
       },
       async openAlbum (albumCategory) {
-        new this.$PhotoSwipe(
-          this.$refs.album,
-          this.$PhotoSwipeUI_Default,
-          _.map(albumCategory.albums, pic => {
-            return {
-              title: pic.description,
-              src: pic.pic.url,
-              w: pic.pic.width,
-              h: pic.pic.height
-            };
-          }),
-          {
-            bgOpacity: 0.75,
-            history: false
-          }
-        ).init();
+        // 若相册中没有照片则不显示
+        if (albumCategory.albums && albumCategory.albums.length) {
+          new this.$PhotoSwipe(
+            this.$refs.album,
+            this.$PhotoSwipeUI_Default,
+            _.map(albumCategory.albums, pic => {
+              return {
+                title: pic.description,
+                src: pic.pic.url,
+                w: pic.pic.width,
+                h: pic.pic.height
+              };
+            }),
+            {
+              bgOpacity: 0.75,
+              history: false
+            }
+          ).init();
+        }
       }
     },
     watch: {

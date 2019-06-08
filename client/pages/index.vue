@@ -18,8 +18,8 @@
         </v-flex>
       </v-footer>
     </v-content>
-    <!-- 各种模态框 -->
-    <my-model/>
+    <!-- 各种对话框 -->
+    <my-dialog/>
   </v-app>
 </template>
 
@@ -27,6 +27,7 @@
   import { mapState } from 'vuex';
   import { CATEGORY_ARR, MOTTO_ARR } from '../store/data';
   import { JWT, USER } from '../store/user';
+  import mixinShow from '../assets/script/mixin-show';
 
   export default {
     /**
@@ -34,6 +35,7 @@
      *  1. 文章分类
      *  2. 格言
      **/
+    mixins: [ mixinShow ],
     async fetch ({ app, store }) {
       store.commit(`data/${ CATEGORY_ARR }`, (await app.$api.getAllCategory()).data);
       store.commit(`data/${ MOTTO_ARR }`, (await app.$api.getAllMotto()).data);
@@ -65,6 +67,8 @@
           .catch(err => {
             console.error('jwt 认证失败');
             this.$store.commit(`user/${ JWT }`, null);
+            this.$alert.show('error', '身份过期，请重新登陆');
+            this.showLogin();
           });
       }
     },

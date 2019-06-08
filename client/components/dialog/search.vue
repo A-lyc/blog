@@ -32,11 +32,11 @@
 <script>
   import _ from 'lodash';
   import { SHOW_SEARCH } from '../../store/show';
-  import mixinModel from '../../assets/script/mixin-model';
+  import mixinDialog from '../../assets/script/mixin-dialog';
 
   export default {
     name: 'my-search',
-    mixins: [ mixinModel(SHOW_SEARCH) ],
+    mixins: [ mixinDialog(SHOW_SEARCH) ],
     data () {
       return {
         // 搜索关键词

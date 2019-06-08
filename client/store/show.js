@@ -3,6 +3,7 @@ export const SHOW_SEARCH = 'showSearch';
 export const SHOW_LOGIN = 'showLogin';
 export const SHOW_ALBUM = 'showAlbum';
 export const SHOW_JASON = 'showJason';
+export const SHOW_ALERT = 'showAlert';
 
 export const state = () => ({
   [ SHOW_ASIDE ]: true,

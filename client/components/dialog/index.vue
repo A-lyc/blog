@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: 'my-model'
+    name: 'my-dialog'
   };
 </script>
 

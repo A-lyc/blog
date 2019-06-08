@@ -51,6 +51,10 @@ module.exports = {
     {
       src: '@/plugins/photoswipe',
       ssr: false
+    },
+    {
+      src: '@/plugins/alert',
+      ssr: false
     }
   ],
   

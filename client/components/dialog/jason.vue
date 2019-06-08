@@ -26,12 +26,12 @@
 </template>
 
 <script>
-  import mixinModel from '../../assets/script/mixin-model';
+  import mixinDialog from '../../assets/script/mixin-dialog';
   import { SHOW_JASON } from '../../store/show';
 
   export default {
     name: 'my-jason',
-    mixins: [ mixinModel(SHOW_JASON) ]
+    mixins: [ mixinDialog(SHOW_JASON) ]
   };
 </script>
 
