@@ -154,11 +154,11 @@
   import { mapState } from 'vuex';
   import { CATEGORY_ARR, CATEGORY_CURRENT, MOTTO_ARR } from '../../store/data';
   import { SHOW_ASIDE } from '../../store/show';
-  import mixinDialog from '../../assets/script/mixin-dialog';
+  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show';
 
   export default {
     name: 'my-aside',
-    mixins: [ mixinDialog(SHOW_ASIDE) ],
+    mixins: [ mixinInnerIsShow(SHOW_ASIDE) ],
     computed: {
       ...mapState('data', {
         categoryArr: state => state[ CATEGORY_ARR ],

@@ -71,17 +71,6 @@
             this.showLogin();
           });
       }
-    },
-    watch: {
-      jwt (newVal, oldVal) {
-        if (newVal) {
-          console.info('登陆成功，关闭登陆模态框');
-        }
-        if (oldVal && !newVal) {
-          // this.showLoginFn();
-          console.error('访问令牌到期，弹出登陆模态框');
-        }
-      }
     }
   };
 </script>

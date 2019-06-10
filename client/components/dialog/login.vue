@@ -42,11 +42,11 @@
   import { mapState } from 'vuex';
   import { JWT, USER } from '../../store/user';
   import { SHOW_LOGIN } from '../../store/show';
-  import mixinDialog from '../../assets/script/mixin-dialog';
+  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show';
 
   export default {
     name: 'my-login',
-    mixins: [ mixinDialog(SHOW_LOGIN) ],
+    mixins: [ mixinInnerIsShow(SHOW_LOGIN) ],
     data () {
       return {
         username: '',

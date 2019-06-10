@@ -116,11 +116,11 @@
   import { JWT } from '../../store/user';
   import { SHOW_ALBUM } from '../../store/show';
   import _ from 'lodash';
-  import mixinDialog from '../../assets/script/mixin-dialog';
+  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show';
 
   export default {
     name: 'my-album',
-    mixins: [ mixinDialog(SHOW_ALBUM) ],
+    mixins: [ mixinInnerIsShow(SHOW_ALBUM) ],
     data () {
       return {
         albumCategoryAll: [],

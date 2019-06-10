@@ -44,6 +44,7 @@ module.exports = {
     '@/components/index',
     '@/plugins/vuetify',
     '@/plugins/api',
+    '@/plugins/vue-typed-js',
     {
       src: '@/plugins/keymaster',
       ssr: false

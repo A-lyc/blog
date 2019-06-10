@@ -40,7 +40,7 @@
     },
     computed: {
       html () {
-        let baseMarkdown = `# ${ this.article.title } \n > ${ moment(this.article.updatedAt).format('YYYY-MM-DD HH:mm:ss') } \n`;
+        let baseMarkdown = `# ${ this.article.title } \n > ${ moment(this.article.updatedAt).format('YYYY-MM-DD HH:mm:ss') } \n\n`;
         return marked(baseMarkdown + this.article.content, {
           highlight (code) {
             return highlight.highlightAuto(code).value;

@@ -20,11 +20,13 @@
     "github-markdown-css": "^3.0.1",
     "highlight.js": "^9.15.8",
     "keymaster": "^1.6.2",
+    "lodash": "^4.17.11",
     "marked": "^0.6.1",
     "moment": "^2.24.0",
     "nuxt": "^2.4.0",
     "photoswipe": "^4.1.3",
     "vue-cookies": "^1.5.12",
+    "vue-typed-js": "^0.1.2",
     "vuetify": "^1.5.0",
     "vuetify-loader": "^1.2.0"
   },
