@@ -36,13 +36,44 @@ export default function ({ app, store }, inject) {
     getAllMotto (params) {
       return $axios.get('/mottos', {
         params: {
-          _sort: 'weight:DESC'
+          _sort: 'weight:DESC,updatedAt:DESC',
+          ...params
         }
       });
     },
     // 登陆
     login (params) {
       return $axios.post('/auth/local', params);
+    },
+    // 获取秦佳信息
+    getJason (params) {
+      return $axios.get('/users', {
+        params: {
+          _sort: 'weight:DESC,updatedAt:DESC',
+          ...params
+        }
+      }).then(res => {
+        res.data = res.data[ 0 ];
+        return res;
+      });
+    },
+    // 获取技能信息
+    getSkills (params) {
+      return $axios.get('/skills', {
+        params: {
+          _sort: 'weight:DESC,updatedAt:DESC',
+          ...params
+        }
+      });
+    },
+    // 获取项目经验
+    getProject (params) {
+      return $axios.get('/projects', {
+        params: {
+          _sort: 'weight:DESC,updatedAt:DESC',
+          ...params
+        }
+      });
     },
     
     /**
@@ -63,7 +94,8 @@ export default function ({ app, store }, inject) {
           Authorization: `Bearer ${ store.state.user[ JWT ] }`
         },
         params: {
-          _sort: 'weight:DESC,updatedAt:DESC'
+          _sort: 'weight:DESC,updatedAt:DESC',
+          ...params
         }
       });
     },
@@ -74,7 +106,8 @@ export default function ({ app, store }, inject) {
           Authorization: `Bearer ${ store.state.user[ JWT ] }`
         },
         params: {
-          _sort: 'weight:DESC,updatedAt:DESC'
+          _sort: 'weight:DESC,updatedAt:DESC',
+          ...params
         }
       });
     }

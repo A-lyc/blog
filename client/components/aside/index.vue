@@ -119,7 +119,7 @@
           <!-- icon -->
           <v-list-tile-action>
             <v-avatar :size="38" :tile="true">
-              <img src="./images/album.png" alt="">
+              <img src="./images/jason.png" alt="">
             </v-avatar>
           </v-list-tile-action>
           <!-- text -->

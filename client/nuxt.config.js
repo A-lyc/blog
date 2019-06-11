@@ -44,7 +44,6 @@ module.exports = {
     '@/components/index',
     '@/plugins/vuetify',
     '@/plugins/api',
-    '@/plugins/vue-typed-js',
     {
       src: '@/plugins/keymaster',
       ssr: false
@@ -55,6 +54,10 @@ module.exports = {
     },
     {
       src: '@/plugins/alert',
+      ssr: false
+    },
+    {
+      src: '@/plugins/vue-qr',
       ssr: false
     }
   ],
