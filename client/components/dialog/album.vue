@@ -156,7 +156,7 @@
             this.$PhotoSwipeUI_Default,
             _.map(albumCategory.albums, pic => {
               return {
-                title: pic.description,
+                title: pic.title,
                 src: pic.pic.url,
                 w: pic.pic.width,
                 h: pic.pic.height

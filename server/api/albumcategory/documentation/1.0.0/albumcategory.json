@@ -526,14 +526,11 @@
             "items": {
               "required": [
                 "id",
-                "description",
-                "pic"
+                "pic",
+                "title"
               ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "description": {
                   "type": "string"
                 },
                 "pic": {
@@ -544,6 +541,9 @@
                 },
                 "weight": {
                   "type": "integer"
+                },
+                "title": {
+                  "type": "string"
                 }
               }
             }

@@ -9,10 +9,6 @@
     "timestamps": true
   },
   "attributes": {
-    "description": {
-      "required": true,
-      "type": "text"
-    },
     "pic": {
       "model": "file",
       "via": "related",
@@ -26,6 +22,10 @@
     "weight": {
       "type": "integer",
       "default": "0"
+    },
+    "title": {
+      "required": true,
+      "type": "string"
     }
   }
 }

@@ -511,14 +511,11 @@
       "Album": {
         "required": [
           "id",
-          "description",
-          "pic"
+          "pic",
+          "title"
         ],
         "properties": {
           "id": {
-            "type": "string"
-          },
-          "description": {
             "type": "string"
           },
           "pic": {
@@ -603,23 +600,26 @@
           "weight": {
             "type": "integer",
             "default": "0"
+          },
+          "title": {
+            "type": "string"
           }
         }
       },
       "NewAlbum": {
         "required": [
-          "description"
+          "title"
         ],
         "properties": {
-          "description": {
-            "type": "string"
-          },
           "category": {
             "type": "string"
           },
           "weight": {
             "type": "integer",
             "default": "0"
+          },
+          "title": {
+            "type": "string"
           }
         }
       }

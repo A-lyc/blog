@@ -11,56 +11,60 @@
         <v-flex :class="$style.col" sm4 xs12>
           <div :class="$style.chunk">
             <div :class="$style.resume" v-if="jason">
-              <div :class="[ $style.group, $style.full ]">
-                <div :class="$style.value">
-                  <v-avatar :size="80">
-                    <img :src="jason.avatar.url" alt="">
-                  </v-avatar>
-                </div>
+              <div :class="[ $style.group ]">
+                <v-avatar :size="60">
+                  <img :src="jason.avatar.url" alt="">
+                </v-avatar>
               </div>
               <div :class="$style.group">
-                <label :class="$style.key">
+                <label :class="$style.subtitle">
+                  <i class="primary" :class="[ $style.icon, $style.float ]"/>
                   姓名：
                 </label>
-                <p :class="$style.value">
+                <p :class="$style.desc">
                   {{ jason.name }}
                 </p>
               </div>
               <div :class="$style.group">
-                <label :class="$style.key">
+                <label :class="$style.subtitle">
+                  <i class="primary" :class="[ $style.icon, $style.float ]"/>
                   性别：
                 </label>
-                <p :class="$style.value">
+                <p :class="$style.desc">
                   {{ jason.gender }}
                 </p>
               </div>
               <div :class="$style.group">
-                <label :class="$style.key">
+                <label :class="$style.subtitle">
+                  <i class="primary" :class="[ $style.icon, $style.float ]"/>
                   年龄：
                 </label>
-                <p :class="$style.value">
+                <p :class="$style.desc">
                   {{ age }}
                 </p>
               </div>
               <div :class="$style.group">
-                <label :class="$style.key">
+                <label :class="$style.subtitle">
+                  <i class="primary" :class="[ $style.icon, $style.float ]"/>
                   学历：
                 </label>
-                <p :class="$style.value">
+                <p :class="$style.desc">
                   {{ jason.xueli }}
                 </p>
               </div>
               <div :class="[ $style.group, $style.full ]">
-                <label :class="$style.key">
+                <label :class="$style.subtitle">
+                  <i class="primary" :class="[ $style.icon ]"/>
                   工作经验：
                 </label>
-                <div :class="[ $style.value, $style.pre ]" v-text="jason.workHistory"/>
+                <div :class="[ $style.desc, $style.pre ]" v-text="jason.workHistory"/>
               </div>
               <div :class="[ $style.group, $style.full ]">
-                <label :class="$style.key">
-                  学习途径:
+                <label :class="$style.subtitle">
+                  <i class="primary" :class="[ $style.icon ]"/>
+                  学习途径：
                 </label>
-                <div :class="[ $style.value, $style.pre ]" v-text="jason.studyWay"/>
+                <div :class="[ $style.desc, $style.pre ]" v-text="jason.studyWay"/>
               </div>
             </div>
           </div>
@@ -69,19 +73,18 @@
         <v-flex :class="$style.col" sm4 xs12>
           <div :class="$style.chunk">
             <div :class="$style.skill" v-if="skillArr && skillArr.length">
-              <div :class="[ $style.group, $style.full ]">
-                <label :class="$style.key">
-                  技术栈：
-                </label>
-              </div>
+              <h4 :class="$style.title">
+                技术栈：
+              </h4>
               <div
                 :class="[ $style.group, $style.full ]"
                 v-for="skill in skillArr"
                 :key="skill.id">
-                <label :class="$style.key">
-                  {{ skill.title }}
+                <label :class="$style.subtitle">
+                  <i class="primary" :class="[ $style.icon ]"/>
+                  {{ skill.title }}：
                 </label>
-                <div :class="$style.value" v-html="skill.content"/>
+                <div :class="$style.desc" v-html="skill.content"/>
               </div>
             </div>
           </div>
@@ -90,14 +93,18 @@
         <v-flex :class="$style.col" sm4 xs12>
           <div :class="$style.chunk">
             <div :class="$style.project" v-if="projectArr && projectArr.length">
+              <h4 :class="$style.title">
+                项目经验：
+              </h4>
               <div
-                :class="$style.item"
+                :class="[$style.group, $style.full]"
                 v-for="project in projectArr"
                 :key="project.id">
                 <!-- 项目名称 -->
-                <h5 :class="$style.name">
+                <label :class="$style.subtitle">
+                  <i class="primary" :class="[ $style.icon ]"/>
                   {{ project.name }}
-                </h5>
+                </label>
                 <!-- 项目简单描述 -->
                 <p :class="$style.desc">
                   {{ project.description }}
@@ -126,7 +133,7 @@
     </v-container>
     <!-- close btn -->
     <v-btn
-      :class="$style.btn"
+      :class="$style.close"
       color="primary"
       large
       @click="hideJason">
@@ -195,55 +202,60 @@
     height: 600px;
     padding: 22px;
     overflow: auto;
-    line-height: 1.7;
   }
-  .btn {
+  .close {
     display: block;
     margin: 15px auto 0 auto;
   }
-  .resume, .skill {
+  // 新增的
+  .resume, .skill, .project {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    p {
-      margin-bottom: 0;
+    /*align-items: center;*/
+  }
+  .group {
+    flex-grow: 1;
+    padding: 12px 0;
+    line-height: 2.0;
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(#000, .1);
     }
-    .group {
-      flex-grow: 1;
-      margin-bottom: 12px;
-    }
-    .group.full {
+    &.full {
       width: 100%;
     }
-    .key {
-      display: block;
-      font-weight: bold;
+  }
+  .title {
+    display: block;
+    font-size: 16px;
+  }
+  .subtitle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    .icon {
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      margin-right: 8px;
+      // 颜色由 primary 指定
     }
-    .value {
-      margin-bottom: 0;
+    .icon.float {
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      transform: translate(-8px, -50%);
+      margin-right: 0;
     }
-    .value.pre {
+  }
+  .desc {
+    margin-bottom: 0;
+    font-size: 14px;
+    &.pre {
       white-space: pre;
     }
   }
-  .resume {
-  }
-  .skill {
-
-  }
-  .project {
-    .item {
-      margin-bottom: 12px;
-    }
-    .name {
-      font-size: inherit;
-    }
-    .desc {
-      margin-bottom: 0;
-      font-size: 80%;
-    }
-    .qr {
-      margin-top: 5px;
-    }
+  .qr {
+    margin-top: 6px;
   }
 </style>
