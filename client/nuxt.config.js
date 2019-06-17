@@ -25,8 +25,8 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#eac02a',
-    height: '4px'
+    color: '#ff5252',
+    height: '3px'
   },
   
   /*
@@ -43,7 +43,23 @@ module.exports = {
     // 将 components 文件下的组件注册为全局组件
     '@/components/index',
     '@/plugins/vuetify',
-    '@/plugins/api'
+    '@/plugins/api',
+    {
+      src: '@/plugins/keymaster',
+      ssr: false
+    },
+    {
+      src: '@/plugins/photoswipe',
+      ssr: false
+    },
+    {
+      src: '@/plugins/alert',
+      ssr: false
+    },
+    {
+      src: '@/plugins/vue-qr',
+      ssr: false
+    }
   ],
   
   /*
@@ -55,6 +71,7 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/proxy'
   ],
+  
   /*
   ** Axios module configuration
   */
@@ -89,8 +106,8 @@ module.exports = {
       }
     },
     
-    // css 提取成文件
-    extractCSS: { allChunks: true },
+    // 提取 css 为文件
+    extractCSS: true,
     
     /*
     ** You can extend webpack config here

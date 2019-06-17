@@ -54,6 +54,12 @@
       "collection": "*",
       "filter": "field",
       "configurable": false
+    },
+    "width": {
+      "type": "float"
+    },
+    "height": {
+      "type": "float"
     }
   }
 }

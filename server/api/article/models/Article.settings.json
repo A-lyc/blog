@@ -28,7 +28,7 @@
       "type": "text"
     },
     "category": {
-      "model": "category",
+      "model": "articlecategory",
       "via": "articles"
     },
     "weight": {

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import { CURRENT_CATEGORY } from '../../../../store/article';
+  import { CATEGORY_CURRENT } from '../../../../store/data';
 
   import moment from 'moment';
   import marked from 'marked';
@@ -40,7 +40,7 @@
     },
     computed: {
       html () {
-        let baseMarkdown = `# ${ this.article.title } \n > ${ moment(this.article.updatedAt).format('YYYY-MM-DD HH:mm:ss') } \n`;
+        let baseMarkdown = `# ${ this.article.title } \n > ${ moment(this.article.updatedAt).format('YYYY-MM-DD HH:mm:ss') } \n\n`;
         return marked(baseMarkdown + this.article.content, {
           highlight (code) {
             return highlight.highlightAuto(code).value;
@@ -49,7 +49,7 @@
       }
     },
     created () {
-      this.$store.commit(`article/${ CURRENT_CATEGORY }`, this.article.category);
+      this.$store.commit(`data/${ CATEGORY_CURRENT }`, this.article.category);
     },
     head () {
       return {

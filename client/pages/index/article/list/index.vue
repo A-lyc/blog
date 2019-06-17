@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import { CURRENT_CATEGORY } from '../../../../store/article';
+  import { CATEGORY_CURRENT } from '../../../../store/data';
 
   export default {
     async asyncData ({ app }) {
@@ -17,7 +17,7 @@
       };
     },
     created () {
-      this.$store.commit(`article/${ CURRENT_CATEGORY }`, { id: '*' });
+      this.$store.commit(`data/${ CATEGORY_CURRENT }`, { id: '*' });
     }
   };
 </script>

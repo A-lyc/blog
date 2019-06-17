@@ -48,6 +48,29 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "name": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "xueli": {
+      "type": "string"
+    },
+    "studyWay": {
+      "type": "text"
+    },
+    "workHistory": {
+      "type": "text"
+    },
+    "gender": {
+      "type": "string"
     }
   },
   "collectionName": "users-permissions_user"
