@@ -6,7 +6,7 @@ export default function (name) {
     mixins: [ mixinShow ],
     data () {
       return {
-        innerIsShow: this.isShow
+        innerIsShow: false
       };
     },
     computed: {
@@ -15,10 +15,13 @@ export default function (name) {
       })
     },
     watch: {
-      isShow (isShow) {
-        // 防止触发两次
-        if (isShow !== this.innerIsShow) {
-          this.innerIsShow = isShow;
+      isShow: {
+        immediate: true,
+        handler (isShow) {
+          // 防止触发两次
+          if (isShow !== this.innerIsShow) {
+            this.innerIsShow = isShow;
+          }
         }
       },
       innerIsShow (innerIsShow) {

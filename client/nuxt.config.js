@@ -1,7 +1,11 @@
 const pkg = require('./package');
 const config = require('./config');
 
+const isPro = process.env.NODE_ENV === 'production';
+const isDev = process.env.NODE_ENV === 'development';
+
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'universal',
@@ -83,7 +87,7 @@ module.exports = {
   
   proxy: {
     '/api': {
-      target: process.env.NODE_ENV === 'production'
+      target: isPro
         // pro
         ? config.proBaseUrl
         // dev
@@ -99,7 +103,17 @@ module.exports = {
   */
   build: {
     transpile: [ 'vuetify/lib' ],
-    plugins: [ new VuetifyLoaderPlugin() ],
+    plugins: [
+      new VuetifyLoaderPlugin(),
+      // 删除 console
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: {
+            drop_console: isPro
+          }
+        }
+      })
+    ],
     loaders: {
       stylus: {
         import: [ '~assets/style/variables.styl' ]
