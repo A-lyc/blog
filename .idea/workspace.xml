@@ -3,23 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a3959e94-c3e4-4cd5-8981-df01a00d7c09" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/style/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/style/global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/components/article-list/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/article-list/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/aside/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/aside/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/dialog/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/dialog/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/default.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index/article/detail/_id.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index/article/list/_id.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index/article/list/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/plugins/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/plugins/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/store/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/store/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,7 +19,72 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/assets/style/global.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/nuxt.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <folding>
+                <element signature="e#764#809#0" />
+                <element signature="e#847#882#0" />
+                <element signature="e#1065#1123#0" />
+                <element signature="e#1129#1188#0" />
+                <element signature="e#1194#1248#0" />
+                <element signature="e#1254#1309#0" />
+                <element signature="e#1315#1373#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/components/article-list/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="e#980#1053#0" />
+                <element signature="e#1096#1130#0" />
+                <element signature="e#1145#1239#0" />
+                <element signature="e#1291#1297#0" />
+                <element signature="e#1306#1490#0" />
+                <element signature="e#1516#1530#0" />
+                <element signature="e#1434#1528#0" />
+                <element signature="e#1500#1525#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -77,8 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/plugins/dialog.js" />
-        <option value="$PROJECT_DIR$/client/components/jason/index.vue" />
         <option value="$PROJECT_DIR$/client/components/search/index.vue" />
         <option value="$PROJECT_DIR$/client/plugins/model.js" />
         <option value="$PROJECT_DIR$/client/components/model/index.vue" />
@@ -97,7 +147,6 @@
         <option value="$PROJECT_DIR$/client/components/alert/index.vue" />
         <option value="$PROJECT_DIR$/client/pages/index/article/detail/_id.vue" />
         <option value="$PROJECT_DIR$/client/assets/script/mixin-dialog.js" />
-        <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/client/plugins/alert.js" />
         <option value="$PROJECT_DIR$/client/plugins/prototype.js" />
         <option value="$PROJECT_DIR$/client/plugins/keymaster.js" />
@@ -118,9 +167,7 @@
         <option value="$PROJECT_DIR$/client/layouts/default.vue" />
         <option value="$PROJECT_DIR$/client/components/footer/index.vue" />
         <option value="$PROJECT_DIR$/client/plugins/vue-cookies.js" />
-        <option value="$PROJECT_DIR$/client/nuxt.config.js" />
         <option value="$PROJECT_DIR$/client/store/data.js" />
-        <option value="$PROJECT_DIR$/client/components/article-list/index.vue" />
         <option value="$PROJECT_DIR$/client/pages/index.vue" />
         <option value="$PROJECT_DIR$/client/store/user.js" />
         <option value="$PROJECT_DIR$/client/store/index.js" />
@@ -128,6 +175,11 @@
         <option value="$PROJECT_DIR$/client/components/aside/index.vue" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/client/plugins/js-cookie.js" />
+        <option value="$PROJECT_DIR$/server/package.json" />
+        <option value="$PROJECT_DIR$/client/package.json" />
+        <option value="$PROJECT_DIR$/client/nuxt.config.js" />
+        <option value="$PROJECT_DIR$/client/assets/style/global.scss" />
+        <option value="$PROJECT_DIR$/client/components/article-list/index.vue" />
       </list>
     </option>
   </component>
@@ -160,6 +212,19 @@
               <item name="qteam" type="b2602c69:ProjectViewProjectNode" />
               <item name="qteam" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qteam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qteam" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qteam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qteam" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -230,15 +295,16 @@
       <workItem from="1559966564337" duration="111000" />
       <workItem from="1559974955377" duration="2546000" />
       <workItem from="1560230371574" duration="6355000" />
-      <workItem from="1562120528227" duration="13424000" />
+      <workItem from="1562120528227" duration="16248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108465000" />
+    <option name="totallyTimeSpent" value="111289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17917548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -263,13 +329,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/components/dialog/alert.vue" />
     <entry file="file://$PROJECT_DIR$/client/store/show.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -513,9 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/assets/style/global.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -578,13 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/article/detail/_id.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1">
@@ -597,20 +646,6 @@
             <element signature="e#880#933#0" />
             <element signature="e#949#1282#0" />
             <element signature="e#1296#1558#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/article-list/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
-          <folding>
-            <element signature="n#section#0;n#template#0;n#!!top" />
-            <element signature="n#v-timeline#0;n#section#0;n#template#0;n#!!top" />
-            <element signature="n#v-timeline-item#0;n#v-timeline#0;n#section#0;n#template#0;n#!!top" />
-            <element signature="e#978#1051#0" />
-            <element signature="e#1094#1128#0" />
           </folding>
         </state>
       </provider>
@@ -821,23 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/nuxt.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="49" column="20" lean-forward="true" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
-          <folding>
-            <element signature="e#391#700#0" />
-            <element signature="e#764#809#0" />
-            <element signature="e#847#882#0" />
-            <element signature="e#1065#1123#0" />
-            <element signature="e#1129#1188#0" />
-            <element signature="e#1194#1248#0" />
-            <element signature="e#1254#1309#0" />
-            <element signature="e#1315#1373#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -855,6 +873,60 @@
             <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/assets/style/global.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/article-list/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#980#1053#0" />
+            <element signature="e#1096#1130#0" />
+            <element signature="e#1145#1239#0" />
+            <element signature="e#1291#1297#0" />
+            <element signature="e#1306#1490#0" />
+            <element signature="e#1516#1530#0" />
+            <element signature="e#1434#1528#0" />
+            <element signature="e#1500#1525#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/nuxt.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="e#764#809#0" />
+            <element signature="e#847#882#0" />
+            <element signature="e#1065#1123#0" />
+            <element signature="e#1129#1188#0" />
+            <element signature="e#1194#1248#0" />
+            <element signature="e#1254#1309#0" />
+            <element signature="e#1315#1373#0" />
+          </folding>
         </state>
       </provider>
     </entry>

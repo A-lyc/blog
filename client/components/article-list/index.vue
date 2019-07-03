@@ -17,7 +17,9 @@
               {{ article.title }}
             </v-card-title>
             <v-card-text>
-              {{ article.description }}
+              <p :class="$style.desc">
+                {{ article.description }}
+              </p>
             </v-card-text>
           </v-card>
         </nuxt-link>
@@ -34,7 +36,7 @@
 
 <script>
   import moment from 'moment';
-  
+
   export default {
     name: 'my-article-list',
     props: {
@@ -63,6 +65,11 @@
     display: block;
     text-decoration: none;
     transition: all .3s;
+    .desc {
+      margin-bottom: 0;
+      overflow: hidden;
+    }
+    // hover
     &:hover {
       transform: translate3d(0, -5px, 0);
       box-shadow: 0 2px 15px rgba(#000, .2);
