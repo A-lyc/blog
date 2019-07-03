@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import { CATEGORY_CURRENT } from '../../../../store/data';
+  import { CATEGORY_CURRENT } from '../../../store/data';
 
   import moment from 'moment';
   import marked from 'marked';
@@ -20,11 +20,11 @@
     validate ({ params }) {
       return params.id;
     },
-    async asyncData ({ app, params, error }) {
+    async asyncData ({ app, params, error, store }) {
       try {
-        return {
-          article: (await app.$api.getOneArticle(params.id)).data
-        };
+        let article = (await app.$api.getOneArticle(params.id)).data;
+        store.commit(`data/${ CATEGORY_CURRENT }`, article.category);
+        return { article };
       }
       catch (err) {
         return error({
@@ -47,9 +47,6 @@
           }
         });
       }
-    },
-    created () {
-      this.$store.commit(`data/${ CATEGORY_CURRENT }`, this.article.category);
     },
     head () {
       return {

@@ -75,18 +75,18 @@ export default function ({ app, store }, inject) {
         }
       });
     },
-    
-    /**
-     *  需要登录状态的
-     **/
-    // 检查 jwt 是否有效，更新用户
-    refreshMe () {
+    // 检查 jwt 是否有效
+    // 获取用户信息
+    getMe (jwt) {
       return $axios.get('/users/me', {
         headers: {
-          Authorization: `Bearer ${ store.state.user[ JWT ] }`
+          Authorization: `Bearer ${ jwt }`
         }
       });
     },
+    /**
+     *  需要登录状态的
+     **/
     // 获取相册分类列表
     getAllAlbumCategory (params) {
       return $axios.get('/albumcategories', {

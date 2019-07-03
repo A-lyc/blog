@@ -135,15 +135,22 @@
         <!-- hr -->
         <v-divider/>
       </v-list>
+      <!-- 退出登陆按钮 -->
+      <v-btn
+        v-if="jwt"
+        color="primary"
+        @click="logout">
+        退出登录
+      </v-btn>
       <!-- space -->
       <v-spacer/>
       <!-- up -->
       <img :class="$style.up" src="./images/up.gif" alt="">
       <!-- 格言 -->
       <div :class="$style.motto" v-if="mottoArr && mottoArr.length">
-          <span v-for="motto in mottoArr">
-            {{ motto.text }}
-          </span>
+        <span v-for="motto in mottoArr">
+          {{ motto.text }}
+        </span>
       </div>
     </v-layout>
   </v-navigation-drawer>
@@ -151,7 +158,8 @@
 
 <script>
   import _ from 'lodash';
-  import { mapState } from 'vuex';
+  import { mapState, mapActions } from 'vuex';
+  import { JWT } from '../../store/user';
   import { CATEGORY_ARR, CATEGORY_CURRENT, MOTTO_ARR } from '../../store/data';
   import { SHOW_ASIDE } from '../../store/show';
   import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show';
@@ -160,6 +168,9 @@
     name: 'my-aside',
     mixins: [ mixinInnerIsShow(SHOW_ASIDE) ],
     computed: {
+      ...mapState('user', {
+        jwt: state => state[ JWT ]
+      }),
       ...mapState('data', {
         categoryArr: state => state[ CATEGORY_ARR ],
         categoryCurrent: state => state[ CATEGORY_CURRENT ],
@@ -177,6 +188,9 @@
           return '加载中...';
         }
       }
+    },
+    methods: {
+      ...mapActions('user', [ 'logout' ])
     },
     mounted () {
       // 搜索快捷键

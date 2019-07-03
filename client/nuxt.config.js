@@ -63,6 +63,10 @@ module.exports = {
     {
       src: '@/plugins/vue-qr',
       ssr: false
+    },
+    {
+      src: '@/plugins/js-cookie',
+      ssr: false
     }
   ],
   

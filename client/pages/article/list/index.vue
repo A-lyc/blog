@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import { CATEGORY_CURRENT } from '../../../../store/data';
+  import { CATEGORY_CURRENT } from '../../../store/data';
 
   export default {
     async fetch ({ app, store, error }) {

@@ -39,8 +39,8 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
-  import { JWT, USER } from '../../store/user';
+  import { mapState, mapActions } from 'vuex';
+  import { JWT } from '../../store/user';
   import { SHOW_LOGIN } from '../../store/show';
   import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show';
 
@@ -60,17 +60,17 @@
       })
     },
     methods: {
+      ...mapActions('user', [
+        'login'
+      ]),
       async submit () {
         this.loading = true;
         try {
-          let { user, jwt } = (await this.$api.login({
+          await this.login({
             identifier: this.username,
             password: this.password
-          })).data;
-          this.$store.commit(`user/${ USER }`, user);
-          this.$store.commit(`user/${ JWT }`, jwt);
+          });
           this.$alert.show('success', '登录成功');
-          console.info('登录成功，设置 jwt 和 user 到 store 中');
         }
         catch (err) {
           this.$alert.show('error', '用户名或密码错误');
