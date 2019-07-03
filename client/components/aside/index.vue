@@ -40,9 +40,9 @@
         <template v-if="categoryArr" v-for="category in categoryArr">
           <nuxt-link
             :class="{
-                [ $style.navLink ]: true,
-                [ $style.active ]: categoryCurrent && categoryCurrent.id === category.id
-              }"
+              [ $style.navLink ]: true,
+              [ $style.active ]: categoryCurrent && categoryCurrent.id === category.id
+            }"
             :to="`/article/list/${category.id}`">
             <v-list-tile ripple @click="" tag="section">
               <!-- icon -->

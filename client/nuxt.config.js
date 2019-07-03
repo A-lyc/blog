@@ -104,15 +104,7 @@ module.exports = {
   build: {
     transpile: [ 'vuetify/lib' ],
     plugins: [
-      new VuetifyLoaderPlugin(),
-      // 删除 console
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          compress: {
-            drop_console: isPro
-          }
-        }
-      })
+      new VuetifyLoaderPlugin()
     ],
     loaders: {
       stylus: {
@@ -127,7 +119,23 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    
+      // 正式环境删除 console
+      if (!ctx.isDev && ctx.isClient) {
+        config.plugins.push(
+          new UglifyJsPlugin({
+            uglifyOptions: {
+              warnings: false,
+              compress: {
+                drop_console: true,
+                drop_debugger: true
+              }
+            },
+            sourceMap: true,
+            cache: true,
+            parallel: true
+          })
+        );
+      }
     }
   },
   

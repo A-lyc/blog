@@ -9,6 +9,20 @@
     validate ({ params }) {
       return params.id;
     },
+    async fetch ({ app, store, params, error }) {
+      try {
+        return store.commit(
+          `data/${ CATEGORY_CURRENT }`,
+          (await app.$api.getOneCategory(params.id)).data
+        );
+      }
+      catch (err) {
+        error({
+          statusCode: 404,
+          message: '所访问的分类不存在'
+        });
+      }
+    },
     async asyncData ({ app, params, error }) {
       try {
         return {
