@@ -2,114 +2,80 @@ import { JWT } from '../store/user';
 
 export default function ({ app, store }, inject) {
   let { $axios } = app;
+  
+  // 设置 jwt 和 _sort
+  $axios.interceptors.request.use(function (config) {
+    let jwt = store.state.user[ JWT ];
+    
+    config.headers = config.headers || {};
+    config.params = config.params || {};
+    
+    if (jwt && !config.headers.Authorization) {
+      config.headers.Authorization = `Bearer ${ jwt }`;
+    }
+    if (config.method === 'get' && !config.params._sort) {
+      config.params._sort = 'weight:DESC,updatedAt:DESC';
+    }
+    
+    return config;
+  });
+  
   let api = {
-    /**
-     *  无需登录状态的
-     **/
     // 获取所有文章分类
-    getAllCategory (params) {
-      return $axios.get('/articlecategories', {
-        params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
-          ...params
-        }
-      });
+    async getAllCategory (params) {
+      return $axios.get('/articlecategories', { params });
     },
     // 获取单个分类
-    getOneCategory (id) {
+    async getOneCategory (id) {
       return $axios.get(`/articlecategories/${ id }`);
     },
     // 获取所有文章
-    getAllArticle (params) {
-      return $axios.get('/articles', {
-        params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
-          ...params
-        }
-      });
+    async getAllArticle (params) {
+      return $axios.get('/articles', { params });
     },
     // 获取单个文章
-    getOneArticle (id) {
+    async getOneArticle (id) {
       return $axios.get('/articles/' + id);
     },
     // 获取格言
-    getAllMotto (params) {
-      return $axios.get('/mottos', {
-        params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
-          ...params
-        }
-      });
+    async getAllMotto (params) {
+      return $axios.get('/mottos', { params });
     },
     // 登陆
-    login (params) {
+    async login (params) {
       return $axios.post('/auth/local', params);
     },
     // 获取秦佳信息
-    getJason (params) {
-      return $axios.get('/users', {
-        params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
-          ...params
-        }
-      }).then(res => {
+    async getJason (params) {
+      return $axios.get('/users', { params }).then(res => {
         res.data = res.data[ 0 ];
         return res;
       });
     },
     // 获取技能信息
-    getSkills (params) {
-      return $axios.get('/skills', {
-        params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
-          ...params
-        }
-      });
+    async getSkills (params) {
+      return $axios.get('/skills', { params });
     },
     // 获取项目经验
-    getProject (params) {
-      return $axios.get('/projects', {
-        params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
-          ...params
-        }
-      });
+    async getProject (params) {
+      return $axios.get('/projects', { params });
     },
-    // 检查 jwt 是否有效
-    // 获取用户信息
-    getMe (jwt) {
+    // 更新用户信息（检验 jwt 是否有效）
+    async refreshMe (jwt) {
+      jwt = jwt || store.state.user[ JWT ];
       return $axios.get('/users/me', {
         headers: {
           Authorization: `Bearer ${ jwt }`
         }
       });
     },
-    /**
-     *  需要登录状态的
-     **/
     // 获取相册分类列表
-    getAllAlbumCategory (params) {
-      return $axios.get('/albumcategories', {
-        headers: {
-          Authorization: `Bearer ${ store.state.user[ JWT ] }`
-        },
-        params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
-          ...params
-        }
-      });
+    async getAllAlbumCategory (params) {
+      return $axios.get('/albumcategories', { params });
     },
     // 获取相册图片列表
-    getAllAlbum (params) {
-      return $axios.get('/albums', {
-        headers: {
-          Authorization: `Bearer ${ store.state.user[ JWT ] }`
-        },
-        params: {
-          _sort: 'weight:DESC,updatedAt:DESC',
-          ...params
-        }
-      });
+    async getAllAlbum (params) {
+      return $axios.get('/albums', { params });
     }
   };
   

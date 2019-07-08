@@ -7,12 +7,15 @@ export const state = () => ({
 });
 export const actions = {
   // 登陆
-  login ({ commit }, payload) {
-    return this.$api.login(payload)
-      .then(({ data }) => {
-        commit(USER, data.user);
-        commit(JWT, data.jwt);
-      });
+  async login ({ commit }, payload) {
+    try {
+      let { user, jwt } = (await this.$api.login(payload)).data;
+      commit(USER, user);
+      commit(JWT, jwt);
+    }
+    catch (err) {
+      return err;
+    }
   },
   // 登出
   logout ({ commit }) {
@@ -20,17 +23,20 @@ export const actions = {
     commit(USER, null);
   },
   // 更新自己的数据
-  refresh ({ state, commit }, jwt) {
+  async refresh ({ state, commit }, jwt) {
     jwt = jwt || state[ JWT ];
     if (jwt) {
-      this.$api.getMe(jwt)
-        .then(({ data: user }) => {
-          commit(USER, user);
-          commit(JWT, jwt);
-        });
+      try {
+        let { user } = (await this.$api.refreshMe(jwt)).data;
+        commit(USER, user);
+        commit(JWT, jwt);
+      }
+      catch (err) {
+        return err;
+      }
     }
     else {
-      console.error('refresh 时，jwt 不存在');
+      console.error('无法更新用户信息，jwt 不存在');
     }
   }
 };

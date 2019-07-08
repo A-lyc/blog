@@ -11,9 +11,10 @@
     },
     async fetch ({ app, store, params, error }) {
       try {
+        let currentCategory = (await app.$api.getOneCategory(params.id)).data;
         return store.commit(
           `data/${ CATEGORY_CURRENT }`,
-          (await app.$api.getOneCategory(params.id)).data
+          currentCategory
         );
       }
       catch (err) {
@@ -25,13 +26,14 @@
     },
     async asyncData ({ app, params, error }) {
       try {
+        let category = (await app.$api.getOneCategory(params.id)).data;
         return {
-          category: (await app.$api.getOneCategory(params.id)).data,
-          articleArr: (await app.$api.getAllArticle({ category: params.id })).data
+          category,
+          articleArr: category.articles
         };
       }
       catch (err) {
-        error({
+        return error({
           statusCode: 404,
           message: '所访问的分类不存在'
         });
