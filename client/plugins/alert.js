@@ -7,7 +7,7 @@ export default ({ app }, inject) => {
   let vm = new Profile();
   
   // 将元素放入 dom
-  document.body.append(divEl);
+  document.body.appendChild(divEl);
   
   // 挂载
   vm.$mount(divEl);

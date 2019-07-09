@@ -126,8 +126,8 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-      // 正式环境删除 console
       if (!ctx.isDev && ctx.isClient) {
+        // 正式环境删除 console
         config.plugins.push(
           new UglifyJsPlugin({
             uglifyOptions: {

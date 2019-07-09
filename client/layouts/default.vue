@@ -19,6 +19,14 @@
   </v-app>
 </template>
 
+<script>
+  export default {
+    mounted () {
+      this.$forceUpdate();
+    }
+  };
+</script>
+
 <style lang="scss" module>
   .root {
 
