@@ -51,6 +51,8 @@ module.exports = {
     '@/components/index',
     '@/plugins/vuetify',
     '@/plugins/api',
+    '@/plugins/moment',
+    '@/plugins/validator',
     {
       src: '@/plugins/keymaster',
       ssr: false

@@ -120,11 +120,15 @@
                 <!-- 项目链接 url 形式-->
                 <a
                   :class="$style.addr"
-                  v-else
+                  v-else-if="$validator.isURL(project.url)"
                   :href="project.url"
                   target="_blank">
-                  http://transtech.websiter.cn/
+                  {{ project.url }}
                 </a>
+                <!-- 项目链接文字形式 -->
+                <div v-else>
+                  {{ project.url }}
+                </div>
               </div>
             </div>
           </div>
@@ -143,7 +147,6 @@
 </template>
 
 <script>
-  import moment from 'moment';
   import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show';
   import { SHOW_JASON } from '../../store/show';
 
@@ -161,7 +164,7 @@
       age () {
         if (!this.jason) return '';
         if (!this.jason.birthday) return '';
-        return moment().diff(moment(this.jason.birthday), 'years');
+        return this.$moment().diff(this.$moment(this.jason.birthday), 'years');
       }
     },
     methods: {
