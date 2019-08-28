@@ -9,3 +9,5 @@ yarn.lock
 .DS_Store
 npm-debug.log
 .idea
+
+package-lock

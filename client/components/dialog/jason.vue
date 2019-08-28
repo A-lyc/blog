@@ -147,8 +147,8 @@
 </template>
 
 <script>
-  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show';
-  import { SHOW_JASON } from '../../store/show';
+  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show'
+  import { SHOW_JASON } from '../../store/show'
 
   export default {
     name: 'my-jason',
@@ -158,39 +158,39 @@
         jason: null,
         skillArr: [],
         projectArr: []
-      };
+      }
     },
     computed: {
       age () {
-        if (!this.jason) return '';
-        if (!this.jason.birthday) return '';
-        return this.$moment().diff(this.$moment(this.jason.birthday), 'years');
+        if (!this.jason) return ''
+        if (!this.jason.birthday) return ''
+        return this.$moment().diff(this.$moment(this.jason.birthday), 'years')
       }
     },
     methods: {
       async getData () {
         try {
           this.$api.getJason().then(({ data }) => {
-            this.jason = data;
-          });
+            this.jason = data
+          })
           this.$api.getSkills().then(({ data }) => {
-            this.skillArr = data;
-          });
+            this.skillArr = data
+          })
           this.$api.getProject().then(({ data }) => {
-            this.projectArr = data;
-          });
+            this.projectArr = data
+          })
         }
         catch (err) {
-          this.$alert.show('error', '获取简历数据时发生错误');
+          this.$alert.show('error', '获取简历数据时发生错误')
         }
       }
     },
     watch: {
       innerIsShow (bl) {
-        bl && this.getData();
+        bl && this.getData()
       }
     }
-  };
+  }
 </script>
 
 <style lang="scss" module>
