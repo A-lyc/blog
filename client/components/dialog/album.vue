@@ -112,11 +112,11 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
-  import { JWT } from '../../store/user';
-  import { SHOW_ALBUM } from '../../store/show';
-  import _ from 'lodash';
-  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show';
+  import { mapState } from 'vuex'
+  import { JWT } from '../../store/user'
+  import { SHOW_ALBUM } from '../../store/show'
+  import _ from 'lodash'
+  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show'
 
   export default {
     name: 'my-album',
@@ -125,7 +125,7 @@
       return {
         albumCategoryAll: [],
         albumCategoryLoading: false
-      };
+      }
     },
     computed: {
       ...mapState('user', {
@@ -135,18 +135,18 @@
     methods: {
       // 更新相册分类
       async updateCategory () {
-        this.albumCategoryAll = [];
-        this.albumCategoryLoading = true;
+        this.albumCategoryAll = []
+        this.albumCategoryLoading = true
         try {
-          let { data } = await this.$api.getAllAlbumCategory();
-          this.albumCategoryAll = data;
-          console.info(`相册分类更新成功：${ data.length }`);
+          let { data } = await this.$api.getAllAlbumCategory()
+          this.albumCategoryAll = data
+          console.info(`相册分类更新成功：${ data.length }`)
         }
         catch (err) {
-          this.innerValue = false;
-          console.error('相册分类更新失败');
+          this.innerValue = false
+          console.error('相册分类更新失败')
         }
-        this.albumCategoryLoading = false;
+        this.albumCategoryLoading = false
       },
       async openAlbum (albumCategory) {
         // 若相册中没有照片则不显示
@@ -160,34 +160,34 @@
                 src: pic.pic.url,
                 w: pic.pic.width,
                 h: pic.pic.height
-              };
+              }
             }),
             {
               bgOpacity: 0.75,
               history: false
             }
-          ).init();
+          ).init()
         }
       }
     },
     watch: {
       innerIsShow (isShow) {
         // 隐藏不执行任何操作
-        if (!isShow) return false;
+        if (!isShow) return false
         // 若未登录，则弹出登录框
         else if (!this.jwt) {
-          this.hideAlbum();
-          this.showLogin();
-          console.info('相册框弹出失败：未登录，已弹出登录框');
+          this.hideAlbum()
+          this.showLogin()
+          console.info('相册框弹出失败：未登录，已弹出登录框')
         }
         // 若已登录，则刷新数据
         else {
-          isShow && this.updateCategory();
-          console.info('my-album watcher: 更新了相册分类');
+          isShow && this.updateCategory()
+          console.info('my-album watcher: 更新了相册分类')
         }
       }
     }
-  };
+  }
 </script>
 
 <style lang="scss" module>

@@ -7,7 +7,8 @@
   "scripts": {
     "setup": "cd admin && npm run setup",
     "start": "cross-env NODE_ENV=production pm2 start server.js -n qteam-server",
-    "dev": "cross-env NODE_ENV=development strapi start",
+    "develop": "strapi start",
+    "dev": "cross-env NODE_ENV=staging nodemon --inspect server.js",
     "strapi": "node_modules/strapi/bin/strapi.js",
     "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
     "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
