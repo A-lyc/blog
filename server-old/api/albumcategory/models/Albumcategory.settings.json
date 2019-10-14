@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "album-category",
+  "info": {
+    "name": "albumcategory",
+    "description": "相册分类"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "unique": true,
+      "required": true,
+      "type": "string"
+    },
+    "albums": {
+      "collection": "album",
+      "via": "category"
+    },
+    "weight": {
+      "type": "integer",
+      "default": "0"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}

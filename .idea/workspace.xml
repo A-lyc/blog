@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3959e94-c3e4-4cd5-8981-df01a00d7c09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="a3959e94-c3e4-4cd5-8981-df01a00d7c09" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,10 +14,18 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/config/environments/production/database.json">
+        <entry file="file://$PROJECT_DIR$/server/api/project/config/routes.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            <state relative-caret-position="264">
+              <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+              <folding>
+                <element signature="e#20#159#0" />
+                <element signature="e#165#311#0" />
+                <element signature="e#317#464#0" />
+                <element signature="e#470#612#0" />
+                <element signature="e#618#764#0" />
+                <element signature="e#770#920#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,32 +156,6 @@
               <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -195,15 +173,15 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Git-store\qteam\client\components\aside" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Github\qteam\client\pages" />
       <recent name="C:\Github\qteam\client\static" />
       <recent name="C:\Github\qteam\client\components\aside\images" />
       <recent name="C:\Github\qteam\client\components\dialog\image" />
       <recent name="F:\Git-store\qteam\client\components\model" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Git-store\qteam\client\components\aside" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -262,11 +240,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128250000" />
+    <option name="totallyTimeSpent" value="128271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16860466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -280,7 +257,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.46651787" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.37611607" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />

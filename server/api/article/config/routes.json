@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/articles/:_id",
-      "handler": "Article.destroy",
+      "handler": "Article.delete",
       "config": {
         "policies": []
       }

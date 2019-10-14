@@ -1,9 +1,3 @@
-# bash
+# Strapi application
 
-```bash
-npm run dev
-
-or
-
-npm run start
-```
+A quick description of your strapi application

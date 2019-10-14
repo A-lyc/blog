@@ -1,0 +1,55 @@
+{
+  "name": "qteam",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A Strapi application.",
+  "main": "./server.js",
+  "scripts": {
+    "develop": "cross-env NODE_ENV=development strapi start",
+    "dev": "cross-env NODE_ENV=development nodemon --inspect server.js",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "setup": "cd admin && npm run setup",
+    "strapi": "node_modules/strapi/bin/strapi.js",
+    "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
+    "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-react": "^7.7.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cross-env": "^5.2.0",
+    "image-size": "^0.7.4",
+    "lodash": "^4.17.5",
+    "marked": "^0.6.2",
+    "strapi": "3.0.0-alpha.26.2",
+    "strapi-hook-mongoose": "3.0.0-alpha.26.2",
+    "strapi-utils": "3.0.0-alpha.26.2",
+    "vue-cookies": "^1.5.13"
+  },
+  "author": {
+    "name": "A Strapi developer",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "strapi": {
+    "packageManager": "npm",
+    "uuid": "becd6099-6a76-40d0-9393-c4af989ff899"
+  },
+  "engines": {
+    "node": ">= 10.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "license": "MIT"
+}

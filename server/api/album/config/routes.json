@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/albums/:_id",
-      "handler": "Album.destroy",
+      "handler": "Album.delete",
       "config": {
         "policies": []
       }
