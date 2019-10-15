@@ -1,0 +1,22 @@
+{
+  "info": {
+    "name": "skill",
+    "description": "user 模型的 “技能组” skills"
+  },
+  "connection": "default",
+  "collectionName": "groups_skills",
+  "attributes": {
+    "category": {
+      "required": true,
+      "unique": true,
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "weight": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/projects": {
+    "/articles": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Project"
+                    "$ref": "#/components/schemas/Article"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Article"
         ],
         "parameters": [
           {
@@ -195,7 +195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Article"
                 }
               }
             }
@@ -233,7 +233,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Article"
         ],
         "requestBody": {
           "description": "",
@@ -241,14 +241,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProject"
+                "$ref": "#/components/schemas/NewArticle"
               }
             }
           }
         }
       }
     },
-    "/projects/count": {
+    "/articles/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -300,12 +300,12 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Article"
         ],
         "parameters": []
       }
     },
-    "/projects/{_id}": {
+    "/articles/{_id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -315,7 +315,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Article"
                 }
               }
             }
@@ -353,7 +353,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Article"
         ],
         "parameters": [
           {
@@ -377,7 +377,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Article"
                 }
               }
             }
@@ -415,7 +415,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Article"
         ],
         "requestBody": {
           "description": "",
@@ -423,7 +423,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProject"
+                "$ref": "#/components/schemas/NewArticle"
               }
             }
           }
@@ -489,7 +489,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Article"
         ],
         "parameters": [
           {
@@ -508,53 +508,89 @@
   },
   "components": {
     "schemas": {
-      "Project": {
+      "Article": {
         "required": [
           "id",
-          "name"
+          "title"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
-            "type": "string"
+          "title": {
+            "type": "string",
+            "default": ""
           },
           "description": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "showQr": {
-            "type": "boolean"
+            "type": "string",
+            "default": ""
           },
           "weight": {
             "type": "integer",
-            "default": "0"
+            "default": 0
+          },
+          "content": {
+            "type": "string"
+          },
+          "category": {
+            "required": [
+              "id",
+              "name",
+              "keywords",
+              "description",
+              "icon"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "keywords": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "weight": {
+                "type": "integer"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "articles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
-      "NewProject": {
+      "NewArticle": {
         "required": [
-          "name"
+          "title"
         ],
         "properties": {
-          "name": {
-            "type": "string"
+          "title": {
+            "type": "string",
+            "default": ""
           },
           "description": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "showQr": {
-            "type": "boolean"
+            "type": "string",
+            "default": ""
           },
           "weight": {
             "type": "integer",
-            "default": "0"
+            "default": 0
+          },
+          "content": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
           }
         }
       }
@@ -562,7 +598,7 @@
   },
   "tags": [
     {
-      "name": "Project"
+      "name": "Article"
     }
   ]
 }

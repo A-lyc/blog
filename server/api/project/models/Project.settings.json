@@ -6,22 +6,24 @@
     "description": "项目经验"
   },
   "options": {
-    "timestamps": true
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
   },
   "attributes": {
     "name": {
-      "unique": true,
       "required": true,
       "type": "string"
+    },
+    "description": {
+      "type": "text"
     },
     "url": {
       "type": "string"
     },
-    "isQr": {
+    "showQr": {
       "type": "boolean"
-    },
-    "description": {
-      "type": "text"
     },
     "weight": {
       "type": "integer",

@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/projects": {
+    "/categories": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Project"
+                    "$ref": "#/components/schemas/Category"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Category"
         ],
         "parameters": [
           {
@@ -195,7 +195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -233,7 +233,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Category"
         ],
         "requestBody": {
           "description": "",
@@ -241,14 +241,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProject"
+                "$ref": "#/components/schemas/NewCategory"
               }
             }
           }
         }
       }
     },
-    "/projects/count": {
+    "/categories/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -300,12 +300,12 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Category"
         ],
         "parameters": []
       }
     },
-    "/projects/{_id}": {
+    "/categories/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -315,7 +315,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -353,11 +353,11 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Category"
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -377,7 +377,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -415,7 +415,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Category"
         ],
         "requestBody": {
           "description": "",
@@ -423,14 +423,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProject"
+                "$ref": "#/components/schemas/NewCategory"
               }
             }
           }
         },
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -489,11 +489,11 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Category"
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -508,53 +508,143 @@
   },
   "components": {
     "schemas": {
-      "Project": {
+      "Category": {
         "required": [
           "id",
-          "name"
+          "name",
+          "keywords",
+          "description",
+          "icon"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "default": "",
+            "maxLength": 10,
+            "minLength": 1
+          },
+          "keywords": {
+            "type": "string",
+            "default": ""
           },
           "description": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "showQr": {
-            "type": "boolean"
+            "type": "string",
+            "default": ""
           },
           "weight": {
             "type": "integer",
-            "default": "0"
+            "default": 0
+          },
+          "icon": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "public_id": {
+                "type": "string"
+              },
+              "related": {
+                "type": "string"
+              }
+            }
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "weight": {
+                  "type": "integer"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
-      "NewProject": {
+      "NewCategory": {
         "required": [
-          "name"
+          "name",
+          "keywords",
+          "description"
         ],
         "properties": {
           "name": {
-            "type": "string"
+            "type": "string",
+            "default": "",
+            "maxLength": 10,
+            "minLength": 1
+          },
+          "keywords": {
+            "type": "string",
+            "default": ""
           },
           "description": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "showQr": {
-            "type": "boolean"
+            "type": "string",
+            "default": ""
           },
           "weight": {
             "type": "integer",
-            "default": "0"
+            "default": 0
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
@@ -562,7 +652,7 @@
   },
   "tags": [
     {
-      "name": "Project"
+      "name": "Category"
     }
   ]
 }

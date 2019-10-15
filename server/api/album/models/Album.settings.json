@@ -6,26 +6,28 @@
     "description": "相册"
   },
   "options": {
-    "timestamps": true
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
   },
   "attributes": {
-    "pic": {
+    "name": {
+      "type": "string"
+    },
+    "cover": {
       "model": "file",
       "via": "related",
-      "plugin": "upload",
-      "required": true
+      "plugin": "upload"
     },
-    "category": {
-      "model": "albumcategory",
-      "via": "albums"
+    "pics": {
+      "group": "pic",
+      "type": "group",
+      "repeatable": true
     },
     "weight": {
       "type": "integer",
       "default": "0"
-    },
-    "title": {
-      "required": true,
-      "type": "string"
     }
   }
 }

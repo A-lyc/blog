@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/projects": {
+    "/albums": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Project"
+                    "$ref": "#/components/schemas/Album"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Album"
         ],
         "parameters": [
           {
@@ -195,7 +195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Album"
                 }
               }
             }
@@ -233,7 +233,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Album"
         ],
         "requestBody": {
           "description": "",
@@ -241,14 +241,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProject"
+                "$ref": "#/components/schemas/NewAlbum"
               }
             }
           }
         }
       }
     },
-    "/projects/count": {
+    "/albums/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -300,12 +300,12 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Album"
         ],
         "parameters": []
       }
     },
-    "/projects/{_id}": {
+    "/albums/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -315,7 +315,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Album"
                 }
               }
             }
@@ -353,11 +353,11 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Album"
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -377,7 +377,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Project"
+                  "$ref": "#/components/schemas/Album"
                 }
               }
             }
@@ -415,7 +415,7 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Album"
         ],
         "requestBody": {
           "description": "",
@@ -423,14 +423,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProject"
+                "$ref": "#/components/schemas/NewAlbum"
               }
             }
           }
         },
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -489,11 +489,11 @@
         },
         "summary": "",
         "tags": [
-          "Project"
+          "Album"
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -508,10 +508,9 @@
   },
   "components": {
     "schemas": {
-      "Project": {
+      "Album": {
         "required": [
-          "id",
-          "name"
+          "id"
         ],
         "properties": {
           "id": {
@@ -520,14 +519,119 @@
           "name": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
+          "cover": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "public_id": {
+                "type": "string"
+              },
+              "related": {
+                "type": "string"
+              }
+            }
           },
-          "url": {
-            "type": "string"
-          },
-          "showQr": {
-            "type": "boolean"
+          "pics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "pic"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "pic": {
+                  "required": [
+                    "id",
+                    "name",
+                    "hash",
+                    "mime",
+                    "size",
+                    "url",
+                    "provider"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "hash": {
+                      "type": "string"
+                    },
+                    "sha256": {
+                      "type": "string"
+                    },
+                    "ext": {
+                      "type": "string"
+                    },
+                    "mime": {
+                      "type": "string"
+                    },
+                    "size": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "public_id": {
+                      "type": "string"
+                    },
+                    "related": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "weight": {
+                  "type": "integer",
+                  "default": 0
+                },
+                "caption": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "weight": {
             "type": "integer",
@@ -535,22 +639,78 @@
           }
         }
       },
-      "NewProject": {
-        "required": [
-          "name"
-        ],
+      "NewAlbum": {
         "properties": {
           "name": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "showQr": {
-            "type": "boolean"
+          "pics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "pic"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "pic": {
+                  "required": [
+                    "id",
+                    "name",
+                    "hash",
+                    "mime",
+                    "size",
+                    "url",
+                    "provider"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "hash": {
+                      "type": "string"
+                    },
+                    "sha256": {
+                      "type": "string"
+                    },
+                    "ext": {
+                      "type": "string"
+                    },
+                    "mime": {
+                      "type": "string"
+                    },
+                    "size": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "public_id": {
+                      "type": "string"
+                    },
+                    "related": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "weight": {
+                  "type": "integer",
+                  "default": 0
+                },
+                "caption": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "weight": {
             "type": "integer",
@@ -562,7 +722,7 @@
   },
   "tags": [
     {
-      "name": "Project"
+      "name": "Album"
     }
   ]
 }

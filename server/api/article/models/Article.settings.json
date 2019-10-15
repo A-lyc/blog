@@ -6,7 +6,10 @@
     "description": "文章"
   },
   "options": {
-    "timestamps": true
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
   },
   "attributes": {
     "title": {
@@ -15,29 +18,20 @@
       "type": "string",
       "required": true
     },
-    "content": {
-      "default": "",
-      "type": "text"
-    },
-    "keywords": {
-      "default": "",
-      "type": "string"
-    },
     "description": {
       "default": "",
       "type": "text"
-    },
-    "category": {
-      "model": "articlecategory",
-      "via": "articles"
     },
     "weight": {
       "default": 0,
       "type": "integer"
     },
-    "updatedAt": {
-      "default": "",
-      "type": "date"
+    "content": {
+      "type": "richtext"
+    },
+    "category": {
+      "model": "category",
+      "via": "articles"
     }
   }
 }
