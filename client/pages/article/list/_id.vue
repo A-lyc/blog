@@ -3,37 +3,37 @@
 </template>
 
 <script>
-  import { CATEGORY_CURRENT } from '../../../store/data';
+  import { CATEGORY_CURRENT } from '../../../store/category'
 
   export default {
     validate ({ params }) {
-      return params.id;
+      return params.id
     },
     async asyncData ({ app, store, params, error }) {
       try {
-        let [ categoryRes, articleArrRes ] = await Promise.all([
+        let [ { data: category }, { data: articleArr } ] = await Promise.all([
           app.$api.getOneCategory(params.id),
           app.$api.getAllArticle({ category: params.id })
-        ]);
+        ])
         // store currentCategory
-        store.commit(`data/${ CATEGORY_CURRENT }`, categoryRes.data);
+        store.commit(`category/${ CATEGORY_CURRENT }`, category)
         return {
-          category: categoryRes.data,
-          articleArr: articleArrRes.data
-        };
+          category,
+          articleArr
+        }
       }
       catch (err) {
         return error({
           statusCode: 404,
           message: '所访问的分类不存在'
-        });
+        })
       }
     },
     data () {
       return {
         category: null,
         articleArr: []
-      };
+      }
     },
     head () {
       return {
@@ -42,9 +42,9 @@
           { hid: 'keywords', name: 'keywords', content: this.category.keywords },
           { hid: 'description', name: 'description', content: this.category.description }
         ]
-      };
+      }
     }
-  };
+  }
 </script>
 
 <style lang="scss" module>

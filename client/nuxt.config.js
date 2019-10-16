@@ -1,11 +1,16 @@
-const pkg = require('./package');
-const config = require('./config');
+const glob = require('glob')
+const path = require('path')
 
-const isPro = process.env.NODE_ENV === 'production';
-const isDev = process.env.NODE_ENV === 'development';
+const _ = require('lodash')
 
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const pkg = require('./package')
+const config = require('./config')
+
+const isPro = process.env.NODE_ENV === 'production'
+const isDev = process.env.NODE_ENV === 'development'
+
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   mode: 'universal',
@@ -46,34 +51,18 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-    // 将 components 文件下的组件注册为全局组件
-    '@/components/index',
-    '@/plugins/vuetify',
-    '@/plugins/api',
-    '@/plugins/moment',
-    '@/plugins/validator',
-    {
-      src: '@/plugins/keymaster',
-      ssr: false
-    },
-    {
-      src: '@/plugins/photoswipe',
-      ssr: false
-    },
-    {
-      src: '@/plugins/alert',
-      ssr: false
-    },
-    {
-      src: '@/plugins/vue-qr',
-      ssr: false
-    },
-    {
-      src: '@/plugins/js-cookie',
-      ssr: false
-    }
-  ],
+  plugins: (function () {
+    let pluginDirPath = path.resolve(__dirname, './plugins')
+    let ssrTruePath = pluginDirPath + '/ssr-true'
+    let ssrFalsePath = pluginDirPath + '/ssr-false'
+    let ssrTruePluginPathArr = glob.sync(ssrTruePath + '/*.js')
+    let ssrFalsePluginPathArr = glob.sync(ssrFalsePath + '/*.js')
+    let dirname = __dirname.replace(/\\/g, '/')
+    return [
+      ..._.map(ssrTruePluginPathArr, path => ({ src: path.replace(dirname, '@'), ssr: true })),
+      ..._.map(ssrFalsePluginPathArr, path => ({ src: path.replace(dirname, '@'), ssr: false }))
+    ]
+  })(),
   
   /*
   ** Nuxt.js modules
@@ -143,7 +132,7 @@ module.exports = {
             cache: true,
             parallel: true
           })
-        );
+        )
       }
     }
   },
@@ -152,4 +141,4 @@ module.exports = {
     linkExactActiveClass: 'active'
   }
   
-};
+}

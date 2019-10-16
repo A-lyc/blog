@@ -25,7 +25,7 @@
         </nuxt-link>
         <!-- 圆圈 + 时间 -->
         <span slot="opposite">
-          {{ article.updatedAt | time }}
+          {{ article.updatedAt | moment('YYYY-MM-DD HH:mm:ss') }}
         </span>
       </v-timeline-item>
     </v-timeline>
@@ -35,8 +35,6 @@
 </template>
 
 <script>
-  import moment from 'moment';
-
   export default {
     name: 'my-article-list',
     props: {
@@ -47,14 +45,9 @@
     },
     // 解决 时间线组件 屏幕断点值初始错误
     mounted () {
-      this.$forceUpdate();
-    },
-    filters: {
-      time (date) {
-        return moment(date).format('YYYY-MM-DD HH:mm:ss');
-      }
+      this.$forceUpdate()
     }
-  };
+  }
 </script>
 
 <style lang="scss" module>

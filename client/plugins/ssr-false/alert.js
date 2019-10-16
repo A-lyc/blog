@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Alert from '../components/alert'
+import Alert from '../../components/alert'
 
 export default ({ app }, inject) => {
   let divEl = document.createElement('div')

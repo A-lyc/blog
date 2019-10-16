@@ -48,7 +48,7 @@
               <!-- icon -->
               <v-list-tile-action>
                 <v-avatar :size="38" :tile="true">
-                  <img :src="category.icon.url" alt="">
+                  <img :src="category.icon ? category.icon.url : ''" alt="">
                 </v-avatar>
               </v-list-tile-action>
               <!-- text -->
@@ -146,23 +146,17 @@
       <v-spacer/>
       <!-- up -->
       <img :class="$style.up" src="./images/up.gif" alt="">
-      <!-- 格言 -->
-      <div :class="$style.motto" v-if="mottoArr && mottoArr.length">
-        <span v-for="motto in mottoArr">
-          {{ motto.text }}
-        </span>
-      </div>
     </v-layout>
   </v-navigation-drawer>
 </template>
 
 <script>
-  import _ from 'lodash';
-  import { mapState, mapActions } from 'vuex';
-  import { JWT } from '../../store/user';
-  import { CATEGORY_ARR, CATEGORY_CURRENT, MOTTO_ARR } from '../../store/data';
-  import { SHOW_ASIDE } from '../../store/show';
-  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show';
+  import _ from 'lodash'
+  import { mapState, mapActions } from 'vuex'
+  import { JWT } from '../../store/user'
+  import { CATEGORY_ARR, CATEGORY_CURRENT } from '../../store/category'
+  import { SHOW_ASIDE } from '../../store/show'
+  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show'
 
   export default {
     name: 'my-aside',
@@ -171,21 +165,20 @@
       ...mapState('user', {
         jwt: state => state[ JWT ]
       }),
-      ...mapState('data', {
+      ...mapState('category', {
         categoryArr: state => state[ CATEGORY_ARR ],
-        categoryCurrent: state => state[ CATEGORY_CURRENT ],
-        mottoArr: state => state[ MOTTO_ARR ]
+        categoryCurrent: state => state[ CATEGORY_CURRENT ]
       }),
       // 统计文章总数
       total () {
-        let { categoryArr } = this;
+        let { categoryArr } = this
         if (categoryArr) {
           return _.reduce(categoryArr, (sum, category) => {
-            return sum + category.articles.length;
-          }, 0);
+            return sum + category.articles.length
+          }, 0)
         }
         else {
-          return '加载中...';
+          return '加载中...'
         }
       }
     },
@@ -195,21 +188,21 @@
     mounted () {
       // 搜索快捷键
       this.$key('ctrl+z', () => {
-        console.info('触发了 ctrl + z');
-        this.showSearch();
-      });
+        console.info('触发了 ctrl + z')
+        this.showSearch()
+      })
       // 相册快捷键（登陆快捷键）
       this.$key('ctrl+x', () => {
-        console.info('触发了 ctrl + x');
-        this.showAlbum();
-      });
+        console.info('触发了 ctrl + x')
+        this.showAlbum()
+      })
       // 简历
       this.$key('ctrl+c', () => {
-        console.info('触发了 ctrl + c');
-        this.showJason();
-      });
+        console.info('触发了 ctrl + c')
+        this.showJason()
+      })
     }
-  };
+  }
 </script>
 
 <style lang="scss" module>

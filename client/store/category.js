@@ -1,11 +1,12 @@
 export const CATEGORY_ARR = 'categoryArr'
 export const CATEGORY_CURRENT = 'categoryCurrent'
+export const CATEGORY_ALL = {
+  id: '*'
+}
 
 export const state = () => ({
   [ CATEGORY_ARR ]: [],
-  [ CATEGORY_CURRENT ]: {
-    id: '*'
-  }
+  [ CATEGORY_CURRENT ]: CATEGORY_ALL
 })
 export const mutations = {
   [ CATEGORY_ARR ] (state, data) {
