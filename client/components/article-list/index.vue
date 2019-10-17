@@ -1,42 +1,28 @@
 <template>
   <section class="root">
-    <v-timeline
-      v-if="data && data.length"
-      :dense="$vuetify.breakpoint.name === 'xs'">
-      <v-timeline-item
-        v-for="article in data"
-        :key="article.id"
-        fill-dot
-        small>
+    <v-timeline v-if="data && data.length" :dense="$vuetify.breakpoint.name === 'xs'">
+      <v-timeline-item v-for="article in data" :key="article.id" fill-dot small>
         <!-- card -->
-        <nuxt-link
-          class="item"
-          :to="`/article/detail/${article.id}`">
+        <nuxt-link class="item" :to="`/article/detail/${article.id}`">
           <v-card>
-            <v-card-title class="headline">
-              {{ article.title }}
-            </v-card-title>
+            <v-card-title class="headline">{{ article.title }}</v-card-title>
             <v-card-text>
-              <p class="desc">
-                {{ article.description }}
-              </p>
+              <p class="desc">{{ article.description }}</p>
             </v-card-text>
           </v-card>
         </nuxt-link>
         <!-- 圆圈 + 时间 -->
-        <span slot="opposite">
-          {{ article.updatedAt | moment('YYYY-MM-DD HH:mm:ss') }}
-        </span>
+        <span slot="opposite">{{ article.updatedAt | moment('YYYY-MM-DD HH:mm:ss') }}</span>
       </v-timeline-item>
     </v-timeline>
     <!-- 空 -->
-    <my-empty v-else class="empty"/>
+    <comp-empty v-else class="empty" />
   </section>
 </template>
 
 <script>
   export default {
-    name: 'my-article-list',
+    name: 'comp-article-list',
     props: {
       data: {
         type: Array,

@@ -1,8 +1,9 @@
 <template>
-  <my-article-list :data="articleArr"/>
+  <comp-article-list :data="articleArr"/>
 </template>
 
 <script>
+  import Search from '../../../components/search'
   import { CATEGORY_CURRENT, CATEGORY_ALL } from '../../../store/category'
 
   export default {
@@ -29,6 +30,9 @@
       return {
         articleArr: null
       }
+    },
+    mounted () {
+      Search.$create().show()
     }
   }
 </script>

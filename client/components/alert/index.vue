@@ -17,16 +17,33 @@
 
 <script>
   export default {
-    name: 'my-alert',
+    name: 'comp-alert',
+    props: {
+      color: {
+        type: String
+      },
+      text: {
+        type: String
+      },
+      timeout: {
+        type: Number,
+        default: 4000
+      }
+    },
     data () {
       return {
-        isShow: false,
-        color: '',
-        text: '',
-        timeout: 4000
-      };
+        isShow: false
+      }
+    },
+    methods: {
+      show () {
+        this.isShow = true
+      },
+      hide () {
+        this.isShow = false
+      }
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

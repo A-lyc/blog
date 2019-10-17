@@ -4,31 +4,26 @@
       <!-- 分类 -->
       <v-list two-line>
         <!-- title -->
-        <v-subheader>
-          文章分类
-        </v-subheader>
+        <v-subheader>文章分类</v-subheader>
         <!-- 全部 -->
         <nuxt-link
           class="nav-link"
           :class="{ active: categoryCurrent && categoryCurrent.id === '*' }"
-          to="/article/list">
-          <v-list-tile ripple @click="" tag="section">
+          to="/article/list"
+        >
+          <v-list-tile ripple @click tag="section">
             <!-- icon -->
             <v-list-tile-action>
               <v-avatar :size="38" :tile="true">
-                <img src="./images/all.png" alt="">
+                <img src="./images/all.png" alt/>
               </v-avatar>
             </v-list-tile-action>
             <!-- text -->
             <v-list-tile-content>
               <!-- 分类名称 -->
-              <v-list-tile-title>
-                全部
-              </v-list-tile-title>
+              <v-list-tile-title>全部</v-list-tile-title>
               <!-- 文章总计 -->
-              <v-list-tile-sub-title>
-                文章数：{{ total }}
-              </v-list-tile-sub-title>
+              <v-list-tile-sub-title>文章数：{{ total }}</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
         </nuxt-link>
@@ -39,24 +34,21 @@
           <nuxt-link
             class="nav-link"
             :class="{ active: categoryCurrent && categoryCurrent.id === category.id }"
-            :to="`/article/list/${category.id}`">
-            <v-list-tile ripple @click="" tag="section">
+            :to="`/article/list/${category.id}`"
+          >
+            <v-list-tile ripple @click tag="section">
               <!-- icon -->
               <v-list-tile-action>
                 <v-avatar :size="38" :tile="true">
-                  <img :src="category.icon ? category.icon.url : ''" alt="">
+                  <img :src="category.icon ? category.icon.url : ''" alt/>
                 </v-avatar>
               </v-list-tile-action>
               <!-- text -->
               <v-list-tile-content>
                 <!-- 分类名称 -->
-                <v-list-tile-title>
-                  {{ category.name }}
-                </v-list-tile-title>
+                <v-list-tile-title>{{ category.name }}</v-list-tile-title>
                 <!-- 文章总计 -->
-                <v-list-tile-sub-title>
-                  文章数：{{ category.articles.length }}
-                </v-list-tile-sub-title>
+                <v-list-tile-sub-title>文章数：{{ category.articles.length }}</v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
             <!-- hr -->
@@ -67,25 +59,19 @@
       <!-- 快捷键 -->
       <v-list two-line>
         <!-- title -->
-        <v-subheader>
-          快捷键
-        </v-subheader>
+        <v-subheader>快捷键</v-subheader>
         <!-- 查找文章 -->
         <v-list-tile ripple @click="showSearch" tag="section">
           <!-- icon -->
           <v-list-tile-action>
             <v-avatar :size="38" :tile="true">
-              <img src="./images/search.png" alt="">
+              <img src="./images/search.png" alt/>
             </v-avatar>
           </v-list-tile-action>
           <!-- text -->
           <v-list-tile-content>
-            <v-list-tile-title>
-              查找
-            </v-list-tile-title>
-            <v-list-tile-sub-title>
-              ctrl + z
-            </v-list-tile-sub-title>
+            <v-list-tile-title>查找</v-list-tile-title>
+            <v-list-tile-sub-title>ctrl + z</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
         <!-- hr -->
@@ -95,17 +81,13 @@
           <!-- icon -->
           <v-list-tile-action>
             <v-avatar :size="38" :tile="true">
-              <img src="./images/album.png" alt="">
+              <img src="./images/album.png" alt/>
             </v-avatar>
           </v-list-tile-action>
           <!-- text -->
           <v-list-tile-content>
-            <v-list-tile-title>
-              相册
-            </v-list-tile-title>
-            <v-list-tile-sub-title>
-              ctrl + x
-            </v-list-tile-sub-title>
+            <v-list-tile-title>相册</v-list-tile-title>
+            <v-list-tile-sub-title>ctrl + x</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
         <!-- hr -->
@@ -115,33 +97,24 @@
           <!-- icon -->
           <v-list-tile-action>
             <v-avatar :size="38" :tile="true">
-              <img src="./images/jason.png" alt="">
+              <img src="./images/jason.png" alt/>
             </v-avatar>
           </v-list-tile-action>
           <!-- text -->
           <v-list-tile-content>
-            <v-list-tile-title>
-              简历
-            </v-list-tile-title>
-            <v-list-tile-sub-title>
-              ctrl + c
-            </v-list-tile-sub-title>
+            <v-list-tile-title>简历</v-list-tile-title>
+            <v-list-tile-sub-title>ctrl + c</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
         <!-- hr -->
         <v-divider/>
       </v-list>
       <!-- 退出登陆按钮 -->
-      <v-btn
-        v-if="jwt"
-        color="primary"
-        @click="logout">
-        退出登录
-      </v-btn>
+      <v-btn v-if="jwt" color="primary" @click="logout">退出登录</v-btn>
       <!-- space -->
       <v-spacer/>
       <!-- up -->
-      <img class="up" src="./images/up.gif" alt="">
+      <img class="up" src="./images/up.gif" alt/>
     </v-layout>
   </v-navigation-drawer>
 </template>
@@ -155,7 +128,7 @@
   import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show'
 
   export default {
-    name: 'my-aside',
+    name: 'comp-aside',
     mixins: [ mixinInnerIsShow(SHOW_ASIDE) ],
     computed: {
       ...mapState('user', {
@@ -180,23 +153,6 @@
     },
     methods: {
       ...mapActions('user', [ 'logout' ])
-    },
-    mounted () {
-      // 搜索快捷键
-      this.$key('ctrl+z', () => {
-        console.info('触发了 ctrl + z')
-        this.showSearch()
-      })
-      // 相册快捷键（登陆快捷键）
-      this.$key('ctrl+x', () => {
-        console.info('触发了 ctrl + x')
-        this.showAlbum()
-      })
-      // 简历
-      this.$key('ctrl+c', () => {
-        console.info('触发了 ctrl + c')
-        this.showJason()
-      })
     }
   }
 </script>

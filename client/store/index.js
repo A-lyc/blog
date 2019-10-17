@@ -8,7 +8,7 @@ export const actions = {
       commit(`category/${ CATEGORY_ARR }`, categoryData)
     }
     catch (err) {
-      error('获取文章分类信息时发生错误')
+      error(`获取文章分类信息时发生错误`)
       console.error(err)
       return err
     }

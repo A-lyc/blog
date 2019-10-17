@@ -1,7 +1,6 @@
 <template>
-  <!-- 模态框表单 -->
   <v-dialog
-    v-model="innerIsShow"
+    v-model="isShow"
     :persistent="true"
     max-width="500">
     <!-- 表单 -->
@@ -30,7 +29,7 @@
         </v-btn>
         <v-btn
           color="primary"
-          @click="hideLogin">
+          @click="hide">
           退出
         </v-btn>
       </v-card-text>
@@ -39,30 +38,34 @@
 </template>
 
 <script>
-  import { mapState, mapActions } from 'vuex'
-  import { JWT } from '../../store/user'
-  import { SHOW_LOGIN } from '../../store/show'
-  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show'
+  import Alert from '../alert'
+  import { mapActions } from 'vuex'
 
   export default {
-    name: 'my-login',
-    mixins: [ mixinInnerIsShow(SHOW_LOGIN) ],
+    name: 'comp-login',
+    props: {
+      cb: Function
+    },
     data () {
       return {
+        isShow: false,
+        loading: false,
         username: '',
-        password: '',
-        loading: false
+        password: ''
       }
     },
     computed: {
-      ...mapState('user', {
-        jwt: state => state[ JWT ]
-      })
-    },
-    methods: {
       ...mapActions('user', [
         'login'
-      ]),
+      ])
+    },
+    methods: {
+      show () {
+        this.isShow = true
+      },
+      hide () {
+        this.isShow = false
+      },
       async submit () {
         this.loading = true
         try {
@@ -70,30 +73,26 @@
             identifier: this.username,
             password: this.password
           })
-          this.$alert.show('success', '登录成功')
+          Alert.$create({
+            $props: {
+              color: 'success',
+              text: '登陆成功'
+            }
+          }).show()
+          this.hide()
+          this.$emit('success')
         }
         catch (err) {
-          this.$alert.show('error', '用户名或密码错误')
-          console.error('登陆失败，用户名或密码错误', err)
+          Alert.$create({
+            $props: {
+              color: 'error',
+              text: '用户名或密码错误，请重新输入'
+            }
+          }).show()
+          this.$emit('error')
         }
         this.loading = false
-      }
-    },
-    watch: {
-      // 若已登录则不会显示
-      innerisShow (bl) {
-        if (bl && this.jwt) {
-          this.hideLogin()
-        }
-      },
-      // jwt 赋值时，隐藏登录框
-      jwt (jwt) {
-        jwt && this.hideLogin()
       }
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

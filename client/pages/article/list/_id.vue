@@ -1,5 +1,5 @@
 <template>
-  <my-article-list :data="articleArr"/>
+  <comp-article-list :data="articleArr" />
 </template>
 
 <script>

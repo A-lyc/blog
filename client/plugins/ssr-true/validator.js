@@ -1,5 +1,5 @@
-import validator from 'validator';
+import validator from 'validator'
 
 export default ((context, inject) => {
-  inject('validator', validator);
-});
+  inject('validator', validator)
+})

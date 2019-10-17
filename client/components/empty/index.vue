@@ -1,12 +1,10 @@
 <template>
-  <img
-    class="empty"
-    src="./images/empty.png">
+  <img class="empty" src="./images/empty.png" />
 </template>
 
 <script>
   export default {
-    name: 'my-empty'
+    name: 'comp-empty'
   };
 </script>
 

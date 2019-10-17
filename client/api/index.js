@@ -1,4 +1,22 @@
-export default function ($axios) {
+import { JWT } from '../store/user'
+
+export default function (context) {
+  let { $axios, store } = context
+  
+  // 拦截设置登陆状态 jwt
+  $axios.interceptors.request.use(function (config) {
+    let jwt = store.state.user[ JWT ]
+    
+    config.headers = config.headers || {}
+    config.params = config.params || {}
+    
+    if (jwt && !config.headers.Authorization) {
+      config.headers.Authorization = `Bearer ${ jwt }`
+    }
+    
+    return config
+  })
+  
   return {
     // 获取所有文章分类
     async getAllCategory (params) {
