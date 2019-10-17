@@ -9,10 +9,8 @@
         </v-subheader>
         <!-- 全部 -->
         <nuxt-link
-          :class="{
-              [ $style.navLink ]: true,
-              [ $style.active ]: categoryCurrent && categoryCurrent.id === '*'
-            }"
+          class="nav-link"
+          :class="{ active: categoryCurrent && categoryCurrent.id === '*' }"
           to="/article/list">
           <v-list-tile ripple @click="" tag="section">
             <!-- icon -->
@@ -39,10 +37,8 @@
         <!-- 分类列表 -->
         <template v-if="categoryArr" v-for="category in categoryArr">
           <nuxt-link
-            :class="{
-              [ $style.navLink ]: true,
-              [ $style.active ]: categoryCurrent && categoryCurrent.id === category.id
-            }"
+            class="nav-link"
+            :class="{ active: categoryCurrent && categoryCurrent.id === category.id }"
             :to="`/article/list/${category.id}`">
             <v-list-tile ripple @click="" tag="section">
               <!-- icon -->
@@ -145,7 +141,7 @@
       <!-- space -->
       <v-spacer/>
       <!-- up -->
-      <img :class="$style.up" src="./images/up.gif" alt="">
+      <img class="up" src="./images/up.gif" alt="">
     </v-layout>
   </v-navigation-drawer>
 </template>
@@ -205,8 +201,8 @@
   }
 </script>
 
-<style lang="scss" module>
-  .navLink {
+<style lang="scss" scoped>
+  .nav-link {
     display: block;
     text-decoration: none;
     color: inherit;

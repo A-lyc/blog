@@ -1,17 +1,18 @@
 <template>
-  <section>
-    <h3 class="display-1">
-      {{ article.title }}
-    </h3>
-    <time class="time">
-      {{ article.updatedAt | moment('YYYY-MM-DD HH:mm:ss') }}
-    </time>
-    <p class="description">
-      {{ article.description }}
-    </p>
+  <section v-if="article">
+    <div class="header">
+      <h3 class="title">
+        {{ article.title }}
+      </h3>
+      <time class="time">
+        {{ article.updatedAt | moment('YYYY-MM-DD HH:mm:ss') }}
+      </time>
+      <p class="description" v-if="article.description">
+        介绍：{{ article.description }}
+      </p>
+    </div>
     <div
-      class="markdown-body"
-      :class="$style.body"
+      class="body markdown-body"
       v-html="html">
     </div>
   </section>
@@ -67,10 +68,24 @@
   }
 </script>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
+  .header {
+    margin-bottom: 30px;
+  }
   .title {
-    font-size: 36px;
-    margin-bottom: 15px;
+    font-size: 24px !important;
+  }
+  .time, .description {
+    color: #8d8d8d;
+  }
+  .time {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  .description {
+    margin-top: 20px;
+    font-size: 14px;
   }
   .body {
     pre {

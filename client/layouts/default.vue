@@ -1,5 +1,5 @@
 <template>
-  <v-app :class="$style.root">
+  <v-app>
     <!-- aside -->
     <my-aside/>
     <!-- header -->
@@ -27,8 +27,6 @@
   };
 </script>
 
-<style lang="scss" module>
-  .root {
+<style lang="scss" scoped>
 
-  }
 </style>

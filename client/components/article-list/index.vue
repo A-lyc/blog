@@ -1,5 +1,5 @@
 <template>
-  <section :class="$style.root">
+  <section class="root">
     <v-timeline
       v-if="data && data.length"
       :dense="$vuetify.breakpoint.name === 'xs'">
@@ -10,14 +10,14 @@
         small>
         <!-- card -->
         <nuxt-link
-          :class="$style.item"
+          class="item"
           :to="`/article/detail/${article.id}`">
           <v-card>
             <v-card-title class="headline">
               {{ article.title }}
             </v-card-title>
             <v-card-text>
-              <p :class="$style.desc">
+              <p class="desc">
                 {{ article.description }}
               </p>
             </v-card-text>
@@ -30,7 +30,7 @@
       </v-timeline-item>
     </v-timeline>
     <!-- 空 -->
-    <my-empty v-else :class="$style.empty"/>
+    <my-empty v-else class="empty"/>
   </section>
 </template>
 
@@ -50,7 +50,7 @@
   }
 </script>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
   .root {
 
   }

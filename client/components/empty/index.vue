@@ -1,6 +1,6 @@
 <template>
   <img
-    :class="$style.empty"
+    class="empty"
     src="./images/empty.png">
 </template>
 
@@ -10,7 +10,7 @@
   };
 </script>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
   .empty {
     display: block;
     margin-left: auto;
