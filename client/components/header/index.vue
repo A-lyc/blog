@@ -19,11 +19,8 @@
 </template>
 
 <script>
-  import mixinShow from '../../assets/script/mixin-show';
-
   export default {
-    name: 'comp-header',
-    mixins: [ mixinShow ]
+    name: 'comp-header'
   };
 </script>
 

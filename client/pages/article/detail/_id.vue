@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import { CATEGORY_CURRENT } from '../../../store/category'
+  import { CATEGORY_CURRENT } from '../../../store'
 
   import marked from 'marked'
   import highlight from 'highlight.js'
@@ -33,7 +33,7 @@
     async asyncData ({ app, params, error, store }) {
       try {
         let article = (await app.$api.getOneArticle(params.id)).data
-        store.commit(`category/${ CATEGORY_CURRENT }`, article.category)
+        store.commit(CATEGORY_CURRENT, article.category)
         return { article }
       }
       catch (err) {

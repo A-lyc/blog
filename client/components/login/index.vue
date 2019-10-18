@@ -1,7 +1,6 @@
 <template>
   <v-dialog
     v-model="isShow"
-    :persistent="true"
     max-width="500">
     <!-- 表单 -->
     <v-card class="pa-3">
@@ -38,14 +37,10 @@
 </template>
 
 <script>
-  import Alert from '../alert'
   import { mapActions } from 'vuex'
 
   export default {
     name: 'comp-login',
-    props: {
-      cb: Function
-    },
     data () {
       return {
         isShow: false,
@@ -54,12 +49,8 @@
         password: ''
       }
     },
-    computed: {
-      ...mapActions('user', [
-        'login'
-      ])
-    },
     methods: {
+      ...mapActions([ 'login' ]),
       show () {
         this.isShow = true
       },
@@ -69,27 +60,32 @@
       async submit () {
         this.loading = true
         try {
+          // 尝试登陆
           await this.login({
             identifier: this.username,
             password: this.password
           })
-          Alert.$create({
+          // 登陆成功提示
+          this.showAlert({
             $props: {
               color: 'success',
               text: '登陆成功'
             }
-          }).show()
+          })
+          // 隐藏登陆框
           this.hide()
+          // 触发事件
           this.$emit('success')
         }
         catch (err) {
-          Alert.$create({
+          this.showAlert({
             $props: {
               color: 'error',
               text: '用户名或密码错误，请重新输入'
             }
-          }).show()
-          this.$emit('error')
+          })
+          this.$emit('fail')
+          console.error(err)
         }
         this.loading = false
       }

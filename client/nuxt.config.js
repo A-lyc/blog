@@ -4,7 +4,6 @@ const path = require('path')
 const _ = require('lodash')
 
 const pkg = require('./package')
-const config = require('./config')
 
 const isPro = process.env.NODE_ENV === 'production'
 const isDev = process.env.NODE_ENV === 'development'
@@ -16,8 +15,8 @@ module.exports = {
   mode: 'universal',
   
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: pkg.name,
     meta: [
@@ -34,23 +33,23 @@ module.exports = {
   },
   
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: {
     color: '#ff5252',
     height: '3px'
   },
   
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: [
     '~/assets/style/app.styl'
   ],
   
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: (function () {
     let pluginDirPath = path.resolve(__dirname, './plugins')
     let ssrTruePath = pluginDirPath + '/ssr-true'
@@ -65,8 +64,8 @@ module.exports = {
   })(),
   
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
@@ -75,8 +74,8 @@ module.exports = {
   ],
   
   /*
-  ** Axios module configuration
-  */
+   ** Axios module configuration
+   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options,
     proxy: true,
@@ -86,10 +85,8 @@ module.exports = {
   proxy: {
     '/api': {
       target: isPro
-        // pro
-        ? config.proBaseUrl
-        // dev
-        : config.devBaseUrl,
+        ? 'http://120.77.145.108:1337'
+        : 'http://127.0.0.1:1337',
       pathRewrite: {
         '^/api': '/'
       }
@@ -97,8 +94,8 @@ module.exports = {
   },
   
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     transpile: [ 'vuetify/lib' ],
     plugins: [
@@ -114,8 +111,8 @@ module.exports = {
     extractCSS: true,
     
     /*
-    ** You can extend webpack config here
-    */
+     ** You can extend webpack config here
+     */
     extend (config, ctx) {
       if (!ctx.isDev && ctx.isClient) {
         // 正式环境删除 console

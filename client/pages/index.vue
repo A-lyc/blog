@@ -5,9 +5,9 @@
 <script>
   export default {
     asyncData ({ redirect }) {
-      redirect('/article/list');
+      redirect('/article/list')
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

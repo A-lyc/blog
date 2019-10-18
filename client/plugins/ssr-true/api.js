@@ -1,5 +1,5 @@
-import api from '../../api'
+import createApi from '../../api'
 
 export default function (context, inject) {
-  inject('api', api(context))
+  inject('api', createApi(context))
 }

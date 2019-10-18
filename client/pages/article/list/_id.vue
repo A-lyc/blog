@@ -1,9 +1,9 @@
 <template>
-  <comp-article-list :data="articleArr" />
+  <comp-article-list :data="articleArr"/>
 </template>
 
 <script>
-  import { CATEGORY_CURRENT } from '../../../store/category'
+  import { CATEGORY_CURRENT } from '../../../store'
 
   export default {
     validate ({ params }) {
@@ -16,7 +16,7 @@
           app.$api.getAllArticle({ category: params.id })
         ])
         // store currentCategory
-        store.commit(`category/${ CATEGORY_CURRENT }`, category)
+        store.commit(CATEGORY_CURRENT, category)
         return {
           category,
           articleArr

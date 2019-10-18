@@ -565,6 +565,10 @@
               }
             }
           },
+          "weight": {
+            "type": "integer",
+            "default": "0"
+          },
           "pics": {
             "type": "array",
             "items": {
@@ -632,10 +636,6 @@
                 }
               }
             }
-          },
-          "weight": {
-            "type": "integer",
-            "default": "0"
           }
         }
       },
@@ -644,6 +644,10 @@
           "name": {
             "type": "string"
           },
+          "weight": {
+            "type": "integer",
+            "default": "0"
+          },
           "pics": {
             "type": "array",
             "items": {
@@ -711,10 +715,6 @@
                 }
               }
             }
-          },
-          "weight": {
-            "type": "integer",
-            "default": "0"
           }
         }
       }

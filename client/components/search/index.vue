@@ -1,7 +1,6 @@
 <template>
   <v-dialog
     v-model="isShow"
-    :persistent="true"
     max-width="500">
     <v-card class="pa-3">
       <v-card-title class="headline">
@@ -62,7 +61,14 @@
         this.$router.push({
           path: `/article/detail/${ articleId }`
         })
-        this.isShow = false
+        this.hide()
+        this.clear()
+      },
+      clear () {
+        this.keywords = null
+        this.selectedId = null
+        this.resultArr = []
+        this.searching = false
       },
       show () {
         this.isShow = true

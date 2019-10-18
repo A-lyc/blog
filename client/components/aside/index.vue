@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="innerIsShow" app>
+  <v-navigation-drawer v-model="isShow" app>
     <v-layout fill-height column>
       <!-- 分类 -->
       <v-list two-line>
@@ -71,12 +71,11 @@
           <!-- text -->
           <v-list-tile-content>
             <v-list-tile-title>查找</v-list-tile-title>
-            <v-list-tile-sub-title>ctrl + z</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
         <!-- hr -->
         <v-divider/>
-        <!-- 图集 -->
+        <!-- 相册 -->
         <v-list-tile ripple @click="showAlbum" tag="section">
           <!-- icon -->
           <v-list-tile-action>
@@ -87,13 +86,12 @@
           <!-- text -->
           <v-list-tile-content>
             <v-list-tile-title>相册</v-list-tile-title>
-            <v-list-tile-sub-title>ctrl + x</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
         <!-- hr -->
         <v-divider/>
         <!-- 简历 -->
-        <v-list-tile ripple @click="showJason" tag="section">
+        <v-list-tile ripple @click="" tag="section">
           <!-- icon -->
           <v-list-tile-action>
             <v-avatar :size="38" :tile="true">
@@ -103,14 +101,33 @@
           <!-- text -->
           <v-list-tile-content>
             <v-list-tile-title>简历</v-list-tile-title>
-            <v-list-tile-sub-title>ctrl + c</v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <!-- hr -->
+        <v-divider/>
+        <!-- 项目 -->
+        <v-list-tile ripple @click="" tag="section">
+          <!-- icon -->
+          <v-list-tile-action>
+            <v-avatar :size="38" :tile="true">
+              <img src="./images/jason.png" alt/>
+            </v-avatar>
+          </v-list-tile-action>
+          <!-- text -->
+          <v-list-tile-content>
+            <v-list-tile-title>项目记录</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <!-- hr -->
         <v-divider/>
       </v-list>
       <!-- 退出登陆按钮 -->
-      <v-btn v-if="jwt" color="primary" @click="logout">退出登录</v-btn>
+      <v-btn
+        v-if="jwt"
+        color="primary"
+        @click="logout">
+        退出登录
+      </v-btn>
       <!-- space -->
       <v-spacer/>
       <!-- up -->
@@ -120,21 +137,21 @@
 </template>
 
 <script>
+  import Vue from 'vue'
   import _ from 'lodash'
   import { mapState, mapActions } from 'vuex'
-  import { JWT } from '../../store/user'
-  import { CATEGORY_ARR, CATEGORY_CURRENT } from '../../store/category'
-  import { SHOW_ASIDE } from '../../store/show'
-  import mixinInnerIsShow from '../../assets/script/mixin-inner-is-show'
+  import { JWT, CATEGORY_ARR, CATEGORY_CURRENT } from '../../store'
 
   export default {
     name: 'comp-aside',
-    mixins: [ mixinInnerIsShow(SHOW_ASIDE) ],
+    data () {
+      return {
+        isShow: true
+      }
+    },
     computed: {
-      ...mapState('user', {
-        jwt: state => state[ JWT ]
-      }),
-      ...mapState('category', {
+      ...mapState({
+        jwt: state => state[ JWT ],
         categoryArr: state => state[ CATEGORY_ARR ],
         categoryCurrent: state => state[ CATEGORY_CURRENT ]
       }),
@@ -152,7 +169,21 @@
       }
     },
     methods: {
-      ...mapActions('user', [ 'logout' ])
+      ...mapActions([ 'logout' ]),
+      show () {
+        this.isShow = true
+      },
+      hide () {
+        this.isShow = false
+      }
+    },
+    mounted () {
+      Vue.prototype.$showAside = () => {
+        this.isShow = true
+      }
+      Vue.prototype.$hideAside = () => {
+        this.isShow = false
+      }
     }
   }
 </script>

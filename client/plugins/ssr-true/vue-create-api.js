@@ -4,10 +4,37 @@ import CreateAPI from 'vue-create-api'
 import Alert from '../../components/alert'
 import Login from '../../components/login'
 import Search from '../../components/search'
+import Album from '../../components/album'
 
 Vue.use(CreateAPI)
 
-// 保证执行顺序
-Vue.createAPI(Alert)
+Vue.createAPI(Alert, true)
 Vue.createAPI(Login, true)
-Vue.createAPI(Search)
+Vue.createAPI(Search, true)
+Vue.createAPI(Album, true)
+
+// 设置全局 mixin
+Vue.mixin({
+  methods: {
+    showAlert (...args) {
+      this.$createCompAlert(...args).show()
+    },
+    showLogin (...args) {
+      this.$createCompLogin(...args).show()
+    },
+    showSearch (...args) {
+      this.$createCompSearch(...args).show()
+    },
+    showAlbum (...args) {
+      this.$createCompAlbum(...args).show()
+    },
+    
+    // 以下 $showAside, $hideAside 是在 aside 组件中定义的
+    showAside (...args) {
+      Vue.prototype.$showAside(...args)
+    },
+    hideAside (...args) {
+      Vue.prototype.$hideAside(...args)
+    }
+  }
+})

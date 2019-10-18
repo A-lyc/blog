@@ -1,7 +1,6 @@
 <template>
   <v-snackbar
     v-model="isShow"
-    absolute
     top
     :color="color"
     :timeout="timeout">

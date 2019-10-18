@@ -20,14 +20,14 @@
       "via": "related",
       "plugin": "upload"
     },
-    "pics": {
-      "group": "pic",
-      "type": "group",
-      "repeatable": true
-    },
     "weight": {
       "type": "integer",
       "default": "0"
+    },
+    "pics": {
+      "group": "pic",
+      "repeatable": true,
+      "type": "group"
     }
   }
 }

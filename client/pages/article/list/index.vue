@@ -3,15 +3,11 @@
 </template>
 
 <script>
-  import Search from '../../../components/search'
-  import { CATEGORY_CURRENT, CATEGORY_ALL } from '../../../store/category'
+  import { CATEGORY_CURRENT, CATEGORY_ALL } from '../../../store'
 
   export default {
     async fetch ({ app, store, error }) {
-      return store.commit(
-        `category/${ CATEGORY_CURRENT }`,
-        CATEGORY_ALL
-      )
+      return store.commit(CATEGORY_CURRENT, CATEGORY_ALL)
     },
     async asyncData ({ app, error }) {
       try {
@@ -30,9 +26,6 @@
       return {
         articleArr: null
       }
-    },
-    mounted () {
-      Search.$create().show()
     }
   }
 </script>

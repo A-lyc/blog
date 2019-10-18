@@ -1,11 +1,11 @@
-import { JWT } from '../store/user'
+import { JWT } from '../store'
 
 export default function (context) {
   let { $axios, store } = context
   
   // 拦截设置登陆状态 jwt
   $axios.interceptors.request.use(function (config) {
-    let jwt = store.state.user[ JWT ]
+    let jwt = store.state[ JWT ]
     
     config.headers = config.headers || {}
     config.params = config.params || {}

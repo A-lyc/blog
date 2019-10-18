@@ -4,7 +4,7 @@
     "description": "相册图片"
   },
   "connection": "default",
-  "collectionName": "groups_pics",
+  "collectionName": "groups_pic",
   "attributes": {
     "pic": {
       "model": "file",
