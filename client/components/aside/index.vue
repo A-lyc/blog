@@ -58,8 +58,6 @@
       </v-list>
       <!-- 快捷键 -->
       <v-list two-line>
-        <!-- title -->
-        <v-subheader>快捷键</v-subheader>
         <!-- 查找文章 -->
         <v-list-tile ripple @click="showSearch" tag="section">
           <!-- icon -->
