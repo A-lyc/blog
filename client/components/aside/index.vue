@@ -56,8 +56,10 @@
           </nuxt-link>
         </template>
       </v-list>
-      <!-- 快捷键 -->
+      <!-- 功能 -->
       <v-list two-line>
+        <!-- title -->
+        <v-subheader>网站功能</v-subheader>
         <!-- 查找文章 -->
         <v-list-tile ripple @click="showSearch" tag="section">
           <!-- icon -->
@@ -88,7 +90,7 @@
         </v-list-tile>
         <!-- hr -->
         <v-divider/>
-        <!-- 简历 -->
+        <!-- jason -->
         <v-list-tile ripple @click="" tag="section">
           <!-- icon -->
           <v-list-tile-action>
@@ -98,12 +100,12 @@
           </v-list-tile-action>
           <!-- text -->
           <v-list-tile-content>
-            <v-list-tile-title>简历</v-list-tile-title>
+            <v-list-tile-title>jason</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <!-- hr -->
         <v-divider/>
-        <!-- 项目 -->
+        <!-- 项目记录 -->
         <v-list-tile ripple @click="" tag="section">
           <!-- icon -->
           <v-list-tile-action>
@@ -113,7 +115,7 @@
           </v-list-tile-action>
           <!-- text -->
           <v-list-tile-content>
-            <v-list-tile-title>项目记录</v-list-tile-title>
+            <v-list-tile-title>项目记载</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <!-- hr -->

@@ -1,4 +1,6 @@
 import { JWT } from '../store'
+import Alert from '../components/alert'
+import Login from '../components/login'
 
 export default function (context) {
   let { $axios, store } = context
@@ -16,6 +18,29 @@ export default function (context) {
     
     return config
   })
+  
+  // 拦截无权限响应
+  $axios.interceptors.response.use(
+    function (res) {
+      return res
+    },
+    function (err) {
+      let { status } = err.response
+      if (status === 401 || status === 403) {
+        Alert.$create({
+          color: 'error',
+          text: status === 401 ?
+            '您的登陆状态已过期' :
+            '您无权查看，请登陆'
+        }).show()
+        Login.$create({
+          $props: { store }
+        }).show()
+        store.commit(JWT, '')
+      }
+      return Promise.reject(err)
+    }
+  )
   
   return {
     // 获取所有文章分类
@@ -54,9 +79,8 @@ export default function (context) {
     async login (params) {
       return $axios.post('/auth/local', params)
     },
-    // 根据 jwt 获取用户信息
+    // 判断当前的 jwt 是否有效
     async refreshMe (jwt) {
-      jwt = jwt || store.state.user[ JWT ]
       return $axios.get('/users/me', {
         headers: {
           Authorization: `Bearer ${ jwt }`

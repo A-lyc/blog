@@ -37,10 +37,9 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
-
   export default {
     name: 'comp-login',
+    props: [ 'store' ],
     data () {
       return {
         isShow: false,
@@ -50,7 +49,6 @@
       }
     },
     methods: {
-      ...mapActions([ 'login' ]),
       show () {
         this.isShow = true
       },
@@ -58,10 +56,11 @@
         this.isShow = false
       },
       async submit () {
+        let store = this.$store || this.store
         this.loading = true
         try {
           // 尝试登陆
-          await this.login({
+          await store.dispatch('login', {
             identifier: this.username,
             password: this.password
           })

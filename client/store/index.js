@@ -3,20 +3,17 @@ export const CATEGORY_CURRENT = 'categoryCurrent'
 export const CATEGORY_ALL = {
   id: '*'
 }
-
-export const USER = 'user'
+export const JASON = 'jason'
 export const JWT = 'jwt'
 
 export const state = function () {
   return {
     [ CATEGORY_ARR ]: [],
     [ CATEGORY_CURRENT ]: CATEGORY_ALL,
-    
-    [ USER ]: null,
+    [ JASON ]: null,
     [ JWT ]: null
   }
 }
-
 export const actions = {
   async nuxtServerInit ({ commit, dispatch }, { app, req, error }) {
     let { $api } = app
@@ -32,23 +29,20 @@ export const actions = {
   },
   // 登陆
   async login ({ commit }, payload) {
-    let { user, jwt } = (await this.$api.login(payload)).data
-    commit(USER, user)
+    let { jwt } = (await this.$api.login(payload)).data
     commit(JWT, jwt)
   },
   // 登出
   logout ({ commit }) {
     commit(JWT, null)
-    commit(USER, null)
   },
   // 更新自己的数据
-  async refresh ({ state, commit }, jwt) {
-    jwt = jwt || state[ JWT ]
+  async refresh ({ state, commit }) {
+    let jwt = state[ JWT ]
     if (jwt) {
       try {
         let { user } = (await this.$api.refreshMe(jwt)).data
-        commit(USER, user)
-        commit(JWT, jwt)
+        return user
       }
       catch (err) {
         return err
@@ -59,7 +53,6 @@ export const actions = {
     }
   }
 }
-
 export const mutations = {
   [ CATEGORY_ARR ] (state, data) {
     state[ CATEGORY_ARR ] = data
@@ -68,8 +61,8 @@ export const mutations = {
     state[ CATEGORY_CURRENT ] = data
   },
   
-  [ USER ] (state, user) {
-    state[ USER ] = user
+  [ JASON ] (state, jason) {
+    state[ JASON ] = jason
   },
   [ JWT ] (state, jwt) {
     state[ JWT ] = jwt
