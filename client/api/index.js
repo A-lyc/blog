@@ -5,25 +5,27 @@ import Login from '../components/login'
 export default function (context) {
   let { $axios, store } = context
   
-  // 拦截设置登陆状态 jwt
-  $axios.interceptors.request.use(function (config) {
-    let jwt = store.state[ JWT ]
-    
-    config.headers = config.headers || {}
-    config.params = config.params || {}
-    
-    if (jwt && !config.headers.Authorization) {
-      config.headers.Authorization = `Bearer ${ jwt }`
+  $axios.interceptors.request.use(
+    // 拦截设置登陆状态 jwt
+    function (config) {
+      let jwt = store.state[ JWT ]
+      
+      config.headers = config.headers || {}
+      config.params = config.params || {}
+      
+      if (jwt && !config.headers.Authorization) {
+        config.headers.Authorization = `Bearer ${ jwt }`
+      }
+      
+      return config
     }
-    
-    return config
-  })
+  )
   
-  // 拦截无权限响应
   $axios.interceptors.response.use(
     function (res) {
       return res
     },
+    // 拦截无权限响应，提示并弹出登陆框
     function (err) {
       let { status } = err.response
       if (status === 401 || status === 403) {

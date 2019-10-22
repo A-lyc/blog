@@ -71,7 +71,6 @@
         this.isShow = true
       },
       hide () {
-        
         if (this.loading) {
           this.showAlert({
             $props: {
