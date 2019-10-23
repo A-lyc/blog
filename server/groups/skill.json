@@ -6,17 +6,17 @@
   "connection": "default",
   "collectionName": "groups_skills",
   "attributes": {
-    "category": {
+    "weight": {
+      "type": "integer",
+      "default": 0
+    },
+    "name": {
       "required": true,
-      "unique": true,
+      "unique": false,
       "type": "string"
     },
     "content": {
       "type": "text"
-    },
-    "weight": {
-      "type": "integer",
-      "default": 0
     }
   }
 }

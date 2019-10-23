@@ -1223,21 +1223,21 @@
               "type": "object",
               "required": [
                 "id",
-                "category"
+                "name"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "category": {
+                "weight": {
+                  "type": "integer",
+                  "default": 0
+                },
+                "name": {
                   "type": "string"
                 },
                 "content": {
                   "type": "string"
-                },
-                "weight": {
-                  "type": "integer",
-                  "default": 0
                 }
               }
             }
@@ -1288,21 +1288,21 @@
               "type": "object",
               "required": [
                 "id",
-                "category"
+                "name"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "category": {
+                "weight": {
+                  "type": "integer",
+                  "default": 0
+                },
+                "name": {
                   "type": "string"
                 },
                 "content": {
                   "type": "string"
-                },
-                "weight": {
-                  "type": "integer",
-                  "default": 0
                 }
               }
             }

@@ -1,6 +1,7 @@
 <template>
   <v-dialog
     v-model="isShow"
+    :persistent="watching"
     max-width="600">
     <!-- body -->
     <div class="body">
@@ -116,13 +117,17 @@
   import { mapState } from 'vuex'
   import { JWT } from '../../store'
 
+  import 'photoswipe/dist/photoswipe.css'
+  import 'photoswipe/dist/default-skin/default-skin.css'
+
   export default {
     name: 'comp-album',
     data () {
       return {
         isShow: false,
         albumArr: [],
-        loading: false
+        loading: false,
+        watching: false
       }
     },
     computed: {
@@ -152,14 +157,26 @@
         let PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default.min')
         let el = this.$refs.photoswipe
         let { pics: picArr } = album
-        let preview = new PhotoSwipe(el, PhotoSwipeUI_Default, _.map(picArr, pic => ({
-          src: pic.url,
-          w: pic.width,
-          h: pic.height,
-          title: pic.caption
-        })))
+        let photoSwipe = new PhotoSwipe(el, PhotoSwipeUI_Default, _.map(picArr, item => {
+          let { caption } = item
+          let { width, height, url } = item.pic
+          return {
+            src: url,
+            w: width,
+            h: height,
+            title: caption
+          }
+        }))
 
-        preview.init()
+        // 观看中(watching)逻辑
+        photoSwipe.listen('initialZoomIn', () => {
+          this.watching = true
+        })
+        photoSwipe.listen('initialZoomOutEnd', () => {
+          this.watching = false
+        })
+
+        photoSwipe.init()
       },
       show () {
         this.isShow = true
@@ -201,8 +218,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "~photoswipe/dist/photoswipe.css";
-
   .body {
     background-color: #fff;
   }
