@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <!-- 相册分类 -->
-    <v-dialog
-      v-model="isShow"
-      :persistent="openLoading"
-      max-width="600">
+  <v-dialog
+    v-model="isShow"
+    max-width="600">
+    <!-- body -->
+    <div class="body">
       <v-container class="container" fluid grid-list-lg>
         <!-- list -->
         <template v-if="albumArr">
@@ -29,11 +28,11 @@
           </v-layout>
         </template>
         <!-- loading -->
-        <v-progress-circular
-          class="loading"
-          v-if="updateLoading"
-          indeterminate
-          color="primary"/>
+        <div class="loading" v-if="loading">
+          <v-progress-circular
+            indeterminate
+            color="primary"/>
+        </div>
         <!-- close btn -->
         <v-btn
           color="primary"
@@ -42,7 +41,7 @@
           关闭
         </v-btn>
       </v-container>
-    </v-dialog>
+    </div>
     <!-- photoswipe -->
     <div ref="photoswipe" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
@@ -109,7 +108,7 @@
       </div>
 
     </div>
-  </div>
+  </v-dialog>
 </template>
 
 <script>
@@ -117,16 +116,13 @@
   import { mapState } from 'vuex'
   import { JWT } from '../../store'
 
-  import 'photoswipe/dist/photoswipe.css'
-
   export default {
     name: 'comp-album',
     data () {
       return {
         isShow: false,
         albumArr: [],
-        updateLoading: false,
-        openLoading: false
+        loading: false
       }
     },
     computed: {
@@ -137,7 +133,7 @@
     methods: {
       async update () {
         this.albumArr = []
-        this.updateLoading = true
+        this.loading = true
         try {
           this.albumArr = (await this.$api.getAllAlbum()).data
         }
@@ -149,14 +145,14 @@
             }
           })
         }
-        this.updateLoading = false
+        this.loading = false
       },
       async openPreview (album) {
         let PhotoSwipe = require('photoswipe/dist/photoswipe.min')
         let PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default.min')
         let el = this.$refs.photoswipe
-        let { pics } = album
-        let preview = new PhotoSwipe(el, PhotoSwipeUI_Default, _.map(pics, pic => ({
+        let { pics: picArr } = album
+        let preview = new PhotoSwipe(el, PhotoSwipeUI_Default, _.map(picArr, pic => ({
           src: pic.url,
           w: pic.width,
           h: pic.height,
@@ -174,9 +170,11 @@
     },
     watch: {
       isShow (isShow) {
+        // 关闭事件
         if (!isShow) {
           return false
         }
+        // 若 jwt 不存在则弹出登陆框
         else if (!this.jwt) {
           this.hide()
           this.showAlert({
@@ -193,6 +191,7 @@
             }
           })
         }
+        // 若 jwt 存在则正常刷新
         else {
           this.update()
         }
@@ -202,11 +201,14 @@
 </script>
 
 <style lang="scss" scoped>
-  .container {
+  @import "~photoswipe/dist/photoswipe.css";
+
+  .body {
     background-color: #fff;
   }
   .loading {
-    display: block;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
   }
 </style>
