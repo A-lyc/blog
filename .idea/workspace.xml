@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3959e94-c3e4-4cd5-8981-df01a00d7c09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,11 +15,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/config/environments/production/database.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            <state relative-caret-position="261">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -73,7 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/components/model/album.vue" />
         <option value="$PROJECT_DIR$/client/components/dialog/alert.vue" />
         <option value="$PROJECT_DIR$/client/components/alert/index.vue" />
         <option value="$PROJECT_DIR$/client/pages/index/article/detail/_id.vue" />
@@ -124,6 +135,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/server/package.json" />
         <option value="$PROJECT_DIR$/client/package.json" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -144,7 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,36 +163,11 @@
               <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qteam-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qteam-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,11 +182,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Github - git store\qteam-blog" />
       <recent name="C:\Github\qteam\client\pages" />
       <recent name="C:\Github\qteam\client\static" />
       <recent name="C:\Github\qteam\client\components\aside\images" />
       <recent name="C:\Github\qteam\client\components\dialog\image" />
-      <recent name="F:\Git-store\qteam\client\components\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Git-store\qteam\client\components\aside" />
@@ -258,11 +244,12 @@
       <workItem from="1568686110580" duration="509000" />
       <workItem from="1568690145956" duration="375000" />
       <workItem from="1568690781569" duration="487000" />
+      <workItem from="1572412530068" duration="955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128250000" />
+    <option name="totallyTimeSpent" value="129226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -280,7 +267,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.46651787" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.37611607" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -291,10 +278,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Work/修改问题的临时目录/head.htm" />
-    <entry file="file://C:/Work/修改问题的临时目录/main.css" />
-    <entry file="file://C:/Work/修改问题的临时目录/index.htm" />
-    <entry file="file://$PROJECT_DIR$/client/plugins/babel-polyfill.js" />
     <entry file="file://C:/Work/修改问题的临时目录/about.htm" />
     <entry file="file://$PROJECT_DIR$/client/components/aside/index.vue">
       <provider selected="true" editor-type-id="text-editor">
@@ -346,51 +329,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/package-lock.json" />
-    <entry file="file://$PROJECT_DIR$/client/plugins/vue-qr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/plugins/vuetify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding>
-            <element signature="e#25#47#0" expanded="true" />
-            <element signature="e#175#343#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/plugins/js-cookie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/plugins/keymaster.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding>
-            <element signature="e#10#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/plugins/photoswipe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/plugins/vue-qr.js" />
+    <entry file="file://$PROJECT_DIR$/client/plugins/vuetify.js" />
+    <entry file="file://$PROJECT_DIR$/client/plugins/js-cookie.js" />
+    <entry file="file://$PROJECT_DIR$/client/plugins/keymaster.js" />
+    <entry file="file://$PROJECT_DIR$/client/plugins/photoswipe.js" />
     <entry file="file://$PROJECT_DIR$/client/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2772" />
@@ -449,27 +392,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/plugins/moment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/store/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-          <folding>
-            <element signature="e#160#250#0" />
-            <element signature="e#210#227#0" />
-            <element signature="e#313#352#0" />
-            <element signature="e#391#434#0" />
-            <element signature="e#466#502#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/plugins/moment.js" />
+    <entry file="file://$PROJECT_DIR$/client/store/data.js" />
     <entry file="file://$PROJECT_DIR$/client/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -499,38 +423,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/store/show.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#452#487#0" />
-            <element signature="e#519#555#0" />
-            <element signature="e#586#621#0" />
-            <element signature="e#652#687#0" />
-            <element signature="e#718#753#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/assets/script/mixin-show.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="e#119#199#0" />
-            <element signature="e#219#300#0" />
-            <element signature="e#320#402#0" />
-            <element signature="e#421#501#0" />
-            <element signature="e#520#601#0" />
-            <element signature="e#620#700#0" />
-            <element signature="e#719#800#0" />
-            <element signature="e#819#899#0" />
-            <element signature="e#918#999#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/store/show.js" />
+    <entry file="file://$PROJECT_DIR$/client/assets/script/mixin-show.js" />
     <entry file="file://$PROJECT_DIR$/client/plugins/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -539,109 +433,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/assets/script/mixin-inner-is-show.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#171#228#0" />
-            <element signature="e#244#327#0" />
-            <element signature="e#340#722#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/dialog/album.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="122" column="45" lean-forward="true" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
-          <folding>
-            <element signature="n#div#0;n#template#0;n#!!top" />
-            <element signature="n#v-dialog#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="e#3633#3665#0" expanded="true" />
-            <element signature="e#3957#4054#0" />
-            <element signature="e#4070#4149#0" />
-            <element signature="e#4164#5234#0" />
-            <element signature="e#5247#5655#0" />
-            <element signature="e#5276#5649#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/dialog/jason.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="147" selection-start-line="147" selection-end-line="147" />
-          <folding>
-            <element signature="n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#div#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#div#5;n#div#0;n#div#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#div#6;n#div#0;n#div#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#v-flex#1;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#v-flex#1;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#label#0;n#div#0;n#div#0;n#div#0;n#v-flex#1;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#v-flex#2;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#h4#0;n#div#0;n#div#0;n#v-flex#2;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#label#0;n#div#0;n#div#0;n#div#0;n#v-flex#2;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#p#0;n#div#0;n#div#0;n#div#0;n#v-flex#2;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#vue-qr#0;n#div#0;n#div#0;n#div#0;n#v-flex#2;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#a#0;n#div#0;n#div#0;n#div#0;n#v-flex#2;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#v-flex#2;n#v-layout#0;n#v-container#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="n#v-btn#0;n#v-dialog#0;n#template#0;n#!!top" />
-            <element signature="e#5075#5146#0" expanded="true" />
-            <element signature="e#5296#5393#0" />
-            <element signature="e#5311#5386#0" />
-            <element signature="e#5409#5600#0" />
-            <element signature="e#5424#5594#0" />
-            <element signature="e#5615#6065#0" />
-            <element signature="e#5640#6059#0" />
-            <element signature="e#5654#5967#0" />
-            <element signature="e#5706#5750#0" />
-            <element signature="e#5804#5851#0" />
-            <element signature="e#5906#5955#0" />
-            <element signature="e#5988#6051#0" />
-            <element signature="e#6078#6148#0" />
-            <element signature="e#6200#6238#0" />
-            <element signature="e#6252#6282#0" />
-            <element signature="e#6292#6383#0" />
-            <element signature="e#6393#6448#0" />
-            <element signature="e#6486#6560#0" />
-            <element signature="e#6570#6752#0" />
-            <element signature="e#6762#6808#0" />
-            <element signature="e#6821#7193#0" />
-            <element signature="e#7202#7292#0" />
-            <element signature="e#7299#7325#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/plugins/alert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <element signature="e#346#541#0" />
-            <element signature="e#387#492#0" />
-            <element signature="e#506#537#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-308">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/assets/script/mixin-inner-is-show.js" />
+    <entry file="file://$PROJECT_DIR$/client/components/dialog/album.vue" />
+    <entry file="file://$PROJECT_DIR$/client/components/dialog/jason.vue" />
+    <entry file="file://$PROJECT_DIR$/client/plugins/alert.js" />
+    <entry file="file://$PROJECT_DIR$/server/server.js" />
     <entry file="file://$PROJECT_DIR$/server/config/environments/production/custom.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -675,49 +471,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/utils/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#145#414#0" />
-            <element signature="e#363#411#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/dialog/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="26" />
-          <folding>
-            <element signature="e#361#375#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/plugins/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding>
-            <element signature="e#369#432#0" />
-            <element signature="e#809#875#0" />
-            <element signature="e#921#983#0" />
-            <element signature="e#1032#1089#0" />
-            <element signature="e#1134#1185#0" />
-            <element signature="e#1230#1285#0" />
-            <element signature="e#1322#1378#0" />
-            <element signature="e#1422#1553#0" />
-            <element signature="e#1598#1653#0" />
-            <element signature="e#1699#1756#0" />
-            <element signature="e#1811#1983#0" />
-            <element signature="e#2040#2104#0" />
-            <element signature="e#2153#2208#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/utils/index.js" />
+    <entry file="file://$PROJECT_DIR$/client/components/dialog/index.vue" />
+    <entry file="file://$PROJECT_DIR$/client/plugins/api.js" />
     <entry file="file://$PROJECT_DIR$/client/nuxt.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2156">
@@ -725,13 +481,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/config/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="2" column="42" lean-forward="true" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/config/index.js" />
     <entry file="file://$PROJECT_DIR$/client/middleware/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -748,13 +498,6 @@
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -800,6 +543,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/project/config/routes.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+          <folding>
+            <element signature="e#20#159#0" />
+            <element signature="e#165#311#0" />
+            <element signature="e#317#464#0" />
+            <element signature="e#470#612#0" />
+            <element signature="e#618#764#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
         </state>
       </provider>
     </entry>
