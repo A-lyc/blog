@@ -29,7 +29,7 @@ Vue.mixin({
       this.$createCompAlbum(...args).show()
     },
     
-    // 以下 $showAside, $hideAside 是在 aside 组件中定义的
+    // $showAside, $hideAside 是在 aside 组件中 mounted 定义的
     showAside (...args) {
       Vue.prototype.$showAside(...args)
     },
