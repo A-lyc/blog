@@ -2,91 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3959e94-c3e4-4cd5-8981-df01a00d7c09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/themes/landscape/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/_config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/de.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/default.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/es.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/fr.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/ja.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/ko.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/nl.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/no.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/pt.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/ru.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/zh-CN.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/languages/zh-TW.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/after-footer.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/archive-post.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/archive.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/article.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/footer.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/gauges-analytics.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/google-analytics.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/head.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/header.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/mobile-nav.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/category.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/date.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/gallery.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/nav.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/tag.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/post/title.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/sidebar.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/archive.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/category.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/recent_posts.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/tag.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/_widget/tagcloud.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/archive.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/category.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/index.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/layout.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/page.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/post.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/layout/tag.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/scripts/fancybox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_extend.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/archive.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/article.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/comment.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/footer.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/header.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/highlight.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/mobile.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/sidebar-aside.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/sidebar-bottom.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_partial/sidebar.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_util/grid.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_util/mixin.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/_variables.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/images/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/css/style.styl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/blank.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_loading@2x.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_overlay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/fancybox_sprite@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/fancybox_buttons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-media.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/jquery.fancybox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/jquery.fancybox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/fancybox/jquery.fancybox.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/landscape/source/js/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -102,8 +20,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="217">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -155,7 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/components/dialog/alert.vue" />
         <option value="$PROJECT_DIR$/client/components/alert/index.vue" />
         <option value="$PROJECT_DIR$/client/pages/index/article/detail/_id.vue" />
         <option value="$PROJECT_DIR$/client/assets/script/mixin-dialog.js" />
@@ -202,10 +128,11 @@
         <option value="$PROJECT_DIR$/server/utils/index.js" />
         <option value="$PROJECT_DIR$/server/api/article/models/Article.js" />
         <option value="$PROJECT_DIR$/client/components/dialog/index.vue" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/server/package.json" />
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/_config.yml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -215,7 +142,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="219" />
     <option name="y" value="44" />
     <option name="width" value="1400" />
@@ -324,13 +251,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129419000" />
+    <option name="totallyTimeSpent" value="129582000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="219" y="44" width="1400" height="1000" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23525074" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16860466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -342,7 +269,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.4011905" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.37611607" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -353,7 +280,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Work/修改问题的临时目录/about.htm" />
     <entry file="file://$PROJECT_DIR$/client/components/aside/index.vue" />
     <entry file="file://$PROJECT_DIR$/client/components/alert/index.vue" />
     <entry file="file://$PROJECT_DIR$/client/package-lock.json" />
@@ -403,13 +329,6 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -417,6 +336,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="16" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
