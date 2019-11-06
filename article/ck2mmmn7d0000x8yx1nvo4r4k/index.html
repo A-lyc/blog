@@ -14,23 +14,25 @@
     
     
     
-    <title>vue-spa-移动端理想的用户体验 | qteam | 博客</title>
+    <title>:hover伪类选择器，移动端的表现 | qteam | 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="vue,spa,用户体验">
-    <meta name="description" content="目前前端的跨端技术层出不穷，开发快，对用户透明。对前端开发者来说掌握的东西要更多了~   本文谈论一些原生移动 app 用户体验  体验分析 每天都会用各种 app，各种操作熟记于心总结出以下网页不容易实现的需求   类似网页的历史记录，前进刷新网页，后退时使用历史缓存 前进或者后退（物理返回键）会有不同的切换效果（滑动切换） 点击物理返回键时若正处于 “模态对话框(dialog, alert)">
-<meta name="keywords" content="vue,spa,用户体验">
+    <meta name="keywords" content="css">
+    <meta name="description" content="这里主要记载一个响应式项目中碰到的下拉菜单的问题   美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…  例子   移动端 safari 的奇怪表现 必须是 a 元素才能触发 :hover 将元素修改成了 a">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-spa-移动端理想的用户体验">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2epg19z00061ns9hu0f2pyv&#x2F;index.html">
+<meta property="og:title" content=":hover伪类选择器，移动端的表现">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2mmmn7d0000x8yx1nvo4r4k&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
-<meta property="og:description" content="目前前端的跨端技术层出不穷，开发快，对用户透明。对前端开发者来说掌握的东西要更多了~   本文谈论一些原生移动 app 用户体验  体验分析 每天都会用各种 app，各种操作熟记于心总结出以下网页不容易实现的需求   类似网页的历史记录，前进刷新网页，后退时使用历史缓存 前进或者后退（物理返回键）会有不同的切换效果（滑动切换） 点击物理返回键时若正处于 “模态对话框(dialog, alert)">
+<meta property="og:description" content="这里主要记载一个响应式项目中碰到的下拉菜单的问题   美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…  例子   移动端 safari 的奇怪表现 必须是 a 元素才能触发 :hover 将元素修改成了 a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-31T12:48:13.315Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2mmmn7d0000x8yx1nvo4r4k&#x2F;example.gif">
+<meta property="og:updated_time" content="2019-11-06T01:51:31.183Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2mmmn7d0000x8yx1nvo4r4k&#x2F;example.gif">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
     
@@ -104,7 +106,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">vue-spa-移动端理想的用户体验</div>
+        <div class="flex-col header-title ellipsis">:hover伪类选择器，移动端的表现</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -126,15 +128,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">vue-spa-移动端理想的用户体验</h1>
+        <h1 class="title">:hover伪类选择器，移动端的表现</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-10-31T12:48:13.315Z" itemprop="datePublished" class="page-time">
-  2019-10-31
+                <time datetime="2019-11-06T01:51:31.183Z" itemprop="datePublished" class="page-time">
+  2019-11-06
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF/">前端</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
 
             
         </h5>
@@ -151,21 +153,21 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#体验分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">体验分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现难点分析以及解决方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现难点分析以及解决方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">3.</span> <span class="post-toc-text">例子</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.</span> <span class="post-toc-text">例子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动端-safari-的奇怪表现"><span class="post-toc-number">2.</span> <span class="post-toc-text">移动端 safari 的奇怪表现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">3.</span> <span class="post-toc-text">解决方案</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-vue-spa-移动端理想的用户体验"
+<article id="post-hover伪类选择器-移动端的表现"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">vue-spa-移动端理想的用户体验</h1>
+        <h1 class="post-card-title">:hover伪类选择器，移动端的表现</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-10-31 12:48:13" datetime="2019-10-31T12:48:13.315Z"  itemprop="datePublished">2019-10-31</time>
+            <time class="post-time" title="2019-11-06 01:51:31" datetime="2019-11-06T01:51:31.183Z"  itemprop="datePublished">2019-11-06</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF/">前端</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
 
 
 
@@ -178,40 +180,21 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>目前前端的跨端技术层出不穷，开发快，对用户透明。<br>对前端开发者来说掌握的东西要更多了~</p>
+<p>这里主要记载一个响应式项目中碰到的下拉菜单的问题</p>
 </blockquote>
 <blockquote>
-<p>本文谈论一些原生移动 app 用户体验</p>
+<p>美化下拉菜单在项目中是常见的需求<br>常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单<br>但是 :hover 在移动端兼容并不友好<br>经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…</p>
 </blockquote>
-<h2 id="体验分析"><a href="#体验分析" class="headerlink" title="体验分析"></a>体验分析</h2><blockquote>
-<p>每天都会用各种 app，各种操作熟记于心<br>总结出以下网页不容易实现的需求</p>
-</blockquote>
-<ol>
-<li>类似网页的历史记录，前进刷新网页，后退时使用历史缓存</li>
-<li>前进或者后退（物理返回键）会有不同的切换效果（滑动切换）</li>
-<li>点击物理返回键时若正处于 “模态对话框(dialog, alert)等”，不会返回页面，会先将对话框关闭</li>
-</ol>
-<h2 id="实现难点分析以及解决方案"><a href="#实现难点分析以及解决方案" class="headerlink" title="实现难点分析以及解决方案"></a>实现难点分析以及解决方案</h2><ol>
-<li>vue keep-alive 无法实现前进刷新，后退使用缓存的 app 缓存逻辑<blockquote>
-<p>这里可以使用 vue-navigation 实现</p>
-</blockquote>
-</li>
-<li>前进和后退实现不同的切换效果<blockquote>
-<p>vue transition 标签配合 vue-navigation 实现</p>
-</blockquote>
-</li>
-<li>模态框逻辑，如何判断当前正在弹框，如何优雅的阻止切换切换并关闭模态框<blockquote>
-<p>推荐 vue-create-api 这个库，本文例子中使用了 element-ui 中的 MessageBox 实现</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><blockquote>
-<p><a href="https://github.com/q-jason/code/tree/master/good-vue-app" target="_blank" rel="noopener">github</a></p>
-</blockquote>
-<iframe src="https://codesandbox.io/embed/github/q-jason/code/tree/master/good-vue-app?fontsize=14" width="100%" height="800" frameborder="0" allowfullscreen></iframe>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><img src="/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/example.gif" class="">
 
-
-
+<hr>
+<h2 id="移动端-safari-的奇怪表现"><a href="#移动端-safari-的奇怪表现" class="headerlink" title="移动端 safari 的奇怪表现"></a>移动端 safari 的奇怪表现</h2><ul>
+<li>必须是 a 元素才能触发 :hover</li>
+<li>将元素修改成了 a 之后，点击页面其他处无法失去 :hover 焦点，除非点击其他 按钮 或 input</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><blockquote>
+<p>使用 js 事件加 class 的方式实现，代替 :hover</p>
+</blockquote>
 
         </div>
 
@@ -220,7 +203,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-10-31T12:48:13.315Z" itemprop="dateUpdated">2019-10-31 12:48:13</time>
+    最后更新时间：<time datetime="2019-11-06T01:51:31.183Z" itemprop="dateUpdated">2019-11-06 01:51:31</time>
 </span><br>
 
 
@@ -240,7 +223,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/spa/" rel="tag">spa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/" rel="tag">用户体验</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li></ul>
 
 
             
@@ -250,7 +233,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/&title=《vue-spa-移动端理想的用户体验》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/&title=《:hover伪类选择器，移动端的表现》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -260,22 +243,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/&title=《vue-spa-移动端理想的用户体验》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/&title=《:hover伪类选择器，移动端的表现》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-spa-移动端理想的用户体验》 — qteam&url=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《:hover伪类选择器，移动端的表现》 — qteam&url=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -298,20 +281,13 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/article/ck2epg19t00021ns94e0u6xp8/" id="post-prev" class="post-nav-link">
+      <a href="/blog/article/ck2mmmn87000jx8yxdqbk3t6t/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">vh单位的可信度</h4>
+        <h4 class="title">移动端文字垂直居中的问题</h4>
       </a>
     </div>
   
 
-  
-    <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck2epg1a200071ns9584c2ltp/" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">window.opener</h4>
-      </a>
-    </div>
   
 </nav>
 
@@ -410,7 +386,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/&title=《vue-spa-移动端理想的用户体验》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/&title=《:hover伪类选择器，移动端的表现》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -420,22 +396,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/&title=《vue-spa-移动端理想的用户体验》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/&title=《:hover伪类选择器，移动端的表现》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-spa-移动端理想的用户体验》 — qteam&url=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《:hover伪类选择器，移动端的表现》 — qteam&url=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2epg19z00061ns9hu0f2pyv/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2mmmn7d0000x8yx1nvo4r4k/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -446,7 +422,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqUlEQVR42u3awY5aMQwFUP7/p+m2VQXcaydTVJ2sEHrk5WSk2OP48YjH86+RPPn7N/nn2XtXAw8PD2+99FdLfP99vrh2nlfb8X7NeHh4eLd5yXT5otsDPaHmgQQPDw/v23gJMnnxqTQdDw8P7//gJUtvQwseHh7et/Hy6doXb9Lx2Ubg4eHh3eblt0jf8/nK/R4eHh7e+lZ9f+Duw0CbcP/xKzw8PLwLvPzAfX8p1ZYb9gGpWCceHh7eUd6wMLq4AJuNYekEDw8P7xrvfcE0ueZv0+I2SOTzFz/Dw8PDW/Bm1FOlhzxxr/8weHh4eNd47VV9m+BuChP5pgyryHh4eHgLXptAb8q7eUtWvukf7vfw8PDwjvLyxDcpK8zS5VlrwofwgIeHh3eBN7u8rw/oUavBqRIzHh4e3j1eMlG7lPbJfP66MQsPDw/vEO8ZjzxIzEq3+fdFUwIeHh7eNd77ifblhvzQb7fsw/N4eHh4F3htgWDTCJUnxPt34eHh4d3mJYGhPdaT0NKGkDxofYiBeHh4eBd4ddq6KEDMlp5vJR4eHt7P8zZp96ZVKw9UUdMVHh4e3lFe2+Q0Cyd5A1YbkIoyLh4eHt6a15Zc27DRJuKP0aj7yPDw8PAWvNlx3xYd2gLHjWCDh4eHd5bXXlm1r5k1EGwu3oa1EDw8PLwFLz+4kyCRh5PneuDh4eH9JC8/uNukub343xQjXhZz8fDw8A7x9sfurD1r01aVJ/F4eHh4N3jt4TtrL5g1CrRp+mMz8PDw8EpeO3WScLc7mq+hDgx4eHh413inLsbOJsrHai14eHh4/5SXP5OnxfkM+Xrw8PDwvoeXlHQT5CZ4FIEEDw8P7xovf0G7KbMrsXyzPhSU8fDw8C7w2n/48wLuLIScvb3Cw8PDO8r7Baic+T7sGkZWAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aQXICMQwEwPz/08kLFmYkm3DoPVEJGPdSZWkl/fzE129wvf5s/jr57OELDw8P7+jWn97ztInX6+d/yVd4c6Px8PDwrvHaA/0J+bSV5PTO10n2jIeHh/c9vH1ynASb2S3Dw8PD+35enuzuE2U8PDy8b+NtlmtDyJfWWvDw8PAmvaqiWPC/r6/09/Dw8PAODQS0Ta82DOTNtnq3eHh4eBd4bYOqTbtnzbC21Pv6G/Hw8PDO8trCaAI4ld/mAwqPQQsPDw/vGi9Pl9vCwWxwajaY9aY+jYeHh3eUt2kybd4T5fvx4MKbZwU8PDy8o7y8iJBsq12zLUkMG2B4eHh4l3n5MZ0Eg81Qwip04eHh4V3mJRtqm/2zIJTciOi/eHh4eBd4+aP+qRS8vQV5iw4PDw/vM7xN237TDDvwmwQ/Dx4eHt49Xt7sz4NHW7ptQ0UxdIWHh4f3EV6Sas/KGXmum4eZekoLDw8Pb8FLHviTo3xf3t0MXUUlCTw8PLyjvATWtvDbFWZjYcXKeHh4eJd5bXl3X85ot14HITw8PLxDvHxEoC3X5ts9NQERjQ7g4eHhrXmrx/vFIZ4PZrUBCQ8PD+82b5863xucascLDsyU4eHh4aUV2nqIan98RyNTQeur2AMeHh7eUV77eJ8EhlMl4M2aeHh4eJ/hJUvsy7X5rVnFOjw8PLzLvLxw0N6avLA7K1IMyxB4eHh4I95veeUH/Y22Wd5OK6rUeHh4eCWvPXDbr5wNCuRjXrPggYeHh7fnbQoQ7TDBfg91YMDDw8O7xtuUZWdF2CRgzAoidX8PDw8P7zJvNiCVvz9PxKO0Hg8PD+8LeHlJNy/15qXhOunHw8PDu8ZrE9+2PZaXM/bFCDw8PLzbvOGsVpAWv/5UG1Su9/fw8PDw3n/LHyksGDwsKJj1AAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
