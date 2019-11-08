@@ -14,25 +14,25 @@
     
     
     
-    <title>:hover伪类选择器，移动端的表现 | qteam | 博客</title>
+    <title>酷库-scrollspy(滚动监听) | qteam | 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="css">
-    <meta name="description" content="这里主要记载一个响应式项目中碰到的下拉菜单的问题   美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…  例子   移动端 safari 的奇怪表现 必须是 a 元素才能触发 :hover 将元素修改成了 a">
-<meta name="keywords" content="css">
+    <meta name="keywords" content="酷库">
+    <meta name="description" content="gumshoe https:&#x2F;&#x2F;github.com&#x2F;cferdinandi&#x2F;gumshoe项目中经常有需求的锚点滚动监听需求我之前尝试过用 ScrollReveal 实现，但是逻辑不太一样">
+<meta name="keywords" content="酷库">
 <meta property="og:type" content="article">
-<meta property="og:title" content=":hover伪类选择器，移动端的表现">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2o14epy00000rsd1gnp8p8n&#x2F;index.html">
+<meta property="og:title" content="酷库-scrollspy(滚动监听)">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2phoiag000qzpum38zzbcgt&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
-<meta property="og:description" content="这里主要记载一个响应式项目中碰到的下拉菜单的问题   美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…  例子   移动端 safari 的奇怪表现 必须是 a 元素才能触发 :hover 将元素修改成了 a">
+<meta property="og:description" content="gumshoe https:&#x2F;&#x2F;github.com&#x2F;cferdinandi&#x2F;gumshoe项目中经常有需求的锚点滚动监听需求我之前尝试过用 ScrollReveal 实现，但是逻辑不太一样">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2o14epy00000rsd1gnp8p8n&#x2F;example.gif">
-<meta property="og:updated_time" content="2019-11-07T01:24:58.892Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2phoiag000qzpum38zzbcgt&#x2F;example.gif">
+<meta property="og:updated_time" content="2019-11-08T01:56:15.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2o14epy00000rsd1gnp8p8n&#x2F;example.gif">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2phoiag000qzpum38zzbcgt&#x2F;example.gif">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
     
@@ -106,7 +106,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">:hover伪类选择器，移动端的表现</div>
+        <div class="flex-col header-title ellipsis">酷库-scrollspy(滚动监听)</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -128,11 +128,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">:hover伪类选择器，移动端的表现</h1>
+        <h1 class="title">酷库-scrollspy(滚动监听)</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-11-07T01:24:58.892Z" itemprop="datePublished" class="page-time">
-  2019-11-07
+                <time datetime="2019-11-08T09:06:15.000Z" itemprop="datePublished" class="page-time">
+  2019-11-08
 </time>
 
 
@@ -153,18 +153,18 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.</span> <span class="post-toc-text">例子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动端-safari-的奇怪表现"><span class="post-toc-number">2.</span> <span class="post-toc-text">移动端 safari 的奇怪表现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">3.</span> <span class="post-toc-text">解决方案</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gumshoe"><span class="post-toc-number">1.</span> <span class="post-toc-text">gumshoe</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-hover伪类选择器-移动端的表现"
+<article id="post-酷库-scrollspy-滚动监听"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">:hover伪类选择器，移动端的表现</h1>
+        <h1 class="post-card-title">酷库-scrollspy(滚动监听)</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.892Z"  itemprop="datePublished">2019-11-07</time>
+            <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T09:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
@@ -179,22 +179,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <blockquote>
-<p>这里主要记载一个响应式项目中碰到的下拉菜单的问题</p>
+            <h2 id="gumshoe"><a href="#gumshoe" class="headerlink" title="gumshoe"></a>gumshoe</h2><blockquote>
+<p><a href="https://github.com/cferdinandi/gumshoe" target="_blank" rel="noopener">https://github.com/cferdinandi/gumshoe</a><br>项目中经常有需求的锚点滚动监听需求<br>我之前尝试过用 ScrollReveal 实现，但是逻辑不太一样</p>
 </blockquote>
-<blockquote>
-<p>美化下拉菜单在项目中是常见的需求<br>常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单<br>但是 :hover 在移动端兼容并不友好<br>经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…</p>
-</blockquote>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><img src="/blog/article/ck2o14epy00000rsd1gnp8p8n/example.gif" class="">
-
-<hr>
-<h2 id="移动端-safari-的奇怪表现"><a href="#移动端-safari-的奇怪表现" class="headerlink" title="移动端 safari 的奇怪表现"></a>移动端 safari 的奇怪表现</h2><ul>
-<li>必须是 a 元素才能触发 :hover</li>
-<li>将元素修改成了 a 之后，点击页面其他处无法失去 :hover 焦点，除非点击其他 按钮 或 input</li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><blockquote>
-<p>使用 js 事件加 class 的方式实现，代替 :hover</p>
-</blockquote>
+<img src="/blog/article/ck2phoiag000qzpum38zzbcgt/example.gif" class="">
 
         </div>
 
@@ -203,7 +191,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-07T01:24:58.892Z" itemprop="dateUpdated">2019-11-07 01:24:58</time>
+    最后更新时间：<time datetime="2019-11-08T01:56:15.840Z" itemprop="dateUpdated">2019-11-08 01:56:15</time>
 </span><br>
 
 
@@ -223,7 +211,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E9%85%B7%E5%BA%93/" rel="tag">酷库</a></li></ul>
 
 
             
@@ -233,7 +221,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/&title=《:hover伪类选择器，移动端的表现》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/&title=《酷库-scrollspy(滚动监听)》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -243,22 +231,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/&title=《:hover伪类选择器，移动端的表现》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/&title=《酷库-scrollspy(滚动监听)》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《:hover伪类选择器，移动端的表现》 — qteam&url=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《酷库-scrollspy(滚动监听)》 — qteam&url=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -281,18 +269,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/article/ck2o14eqw000n0rsd24xv836l/" id="post-prev" class="post-nav-link">
+      <a href="/blog/article/ck2phoiad000nzpume4kf3g20/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">酷库-scrollspy(滚动监听)</h4>
+        <h4 class="title">移动端文字垂直居中的问题</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck2o14eq700020rsd41yce6oy/" id="post-next" class="post-nav-link">
+      <a href="/blog/article/ck2phoiao000yzpumfwouhy2y/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">uni-app-心得</h4>
+        <h4 class="title">低版本 IE 开发辅助库</h4>
       </a>
     </div>
   
@@ -393,7 +381,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/&title=《:hover伪类选择器，移动端的表现》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/&title=《酷库-scrollspy(滚动监听)》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -403,22 +391,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/&title=《:hover伪类选择器，移动端的表现》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/&title=《酷库-scrollspy(滚动监听)》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《:hover伪类选择器，移动端的表现》 — qteam&url=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《酷库-scrollspy(滚动监听)》 — qteam&url=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2o14epy00000rsd1gnp8p8n/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2phoiag000qzpum38zzbcgt/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -429,7 +417,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aQXLjMAwEQP//09kHZCXPEELiVLVOLsVFs3kgEACvV/x8fXvOvp98/r7C1Xcee/Dw8PDGW79a+v59sn7+5mqdfM94eHh427xkufutnG062XoSSC7f4+Hh4X0Ar02Ok6T5LLTg4eHh/RXe19HTbjpJ8fHw8PB+l5cvl5QVztLl9iAerrXg4eHhdbd01EX6nM8r/T08PDy8cVe9vcTzcsO82RbtFg8PD2+Bl1+4Tx1Ee7m36TIeHh7eNi/5Zz4vNOwd0GHpBA8PD2+ZN2/z52nxJEgUIQcPDw9vjZdv8awRNRkmmIQHPDw8vD3epFCbAyaFicOxADw8PLwFXr7p9ofbwmvbGMsTdzw8PLw9Xo7J358dRBuW3hwoHh4e3gIvuazbEHIWMNpm2GHCjYeHhzfm5WXWs+bWU5vOG294eHh4e7xJy+osjW6T8knLDQ8PD2+P1ybTSQBoG2958IiGBvLJCDw8PLySlxcIkvd5gyppgE0OCA8PD2+bdxYkzi70s7ry2d7w8PDwNnj3ZYK2vHtWgMiHFeqjxMPDw1vjJYXatuU/L3A8MHSFh4eHt8ZrF81LDAk7D0j1kAEeHh7eD/LyNDffaFtumPwVDw8Pb4/XXv1nQaK97s9+8XJNPDw8vDXepAE2b+23Zd+8WIyHh4f3M7z84j4r106GEg7HrfDw8PAWePnWJ639dhChHcn6z5p4eHh4j/Lm1+49o91Qe0BvihR4eHh4C7z28s3b/PMVkuQ7aY/h4eHhbfAmSyclhvb4Hg4MeHh4eGu8SeLbvk9S8PyAiloLHh4e3i/x2nZ+G2DasYY37/Hw8PA+gDcpN7QDBG0n6zXp3eHh4eEdDV21V/z9lZ03pfLUvA0heHh4eBu89h/+JAmehJBJ9+qBuS08PDy8u1/5B3fDsYYrDL7JAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQW7CQAwFUO5/abquIOHbHgsWLytU0sm8VBq7th+P+Hq+XK/fXt35+u395/uVHxsXHh4e3njrV9u6324Czn9ytcN8z3h4eHjbvPxQTl5Bsv78ddyvg4eHh/c7vHmoSNL0U0/Bw8PD+wVeNfmuJsrVogYeHh7et3iT8uukyFulLtZa8PDw8GJe3kX6nc8r/T08PDy8cVe9euBW22a9Zltht3h4eHgLvGqD6lTLfx6Q8leMh4eHd5ZXbepXv53nt9Uixb978PDw8NZ484O++vNTQeJDuo+Hh4e3xsupkwGpyTDB1dFfKEPg4eHhHeVtwO43NEnHRw0wPDw8vKO83qK98m4+lDAavcLDw8Nb4E1S3mqJIQ8YV+s0C8p4eHh4R3n5v/r5VqqJde9FJ7vFw8PD2+D1igW9RldyZ280IUrl8fDw8A7xTjWrqgWFhFEdSigPXeHh4eENeKeGnCZJ8OS1foh1eHh4eEd5k/JBr0HVzPfnf0M8PDy8o7xqISA/0PNUuzo3NQ9OeHh4eHNeUg7obag3TNArB+Ph4eF9izdv+efbzUes8tQ8qqzg4eHhDXjVEateOOmVOarrFGoteHh4eC3eHFMt9faGq6qNOjw8PLw9XoI81cI/FcfKxQg8PDy8NV5SRNgbjZq/0KgYgYeHh7fGy8uySTipDmadKlLg4eHhbfOSQzn53TzlTZ5bvcpDA3h4eHhF3rN4zVPnvbGqN2vi4eHhLfCqB+6pF9EbXEg+j+IJHh4eXsxLNnq/XHUEIdlDEjYKo1d4eHh4C7x5/XMjUa4WID7UWvDw8PC+ysvbYPMAM7kTDw8P7xd4+aFfZVebZ1E4wcPDw1vj5Q+YDBP0isV5ULkMDHh4eHhHec1ZrV5pIA4V1fLu6VE0PDw8vLdP+QMo+0EFhGaIhAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

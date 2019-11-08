@@ -143,11 +143,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-移动端文字垂直居中的问题"
+            <article id="post-游览器bfcache机制"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.896Z"  itemprop="datePublished">2019-11-07</time>
+        <time class="post-time" title="2019-11-08 09:36:31" datetime="2019-11-08T09:36:31.000Z"  itemprop="datePublished">2019-11-08</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
@@ -161,7 +161,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14eqr000j0rsd8ifz7b81/">移动端文字垂直居中的问题</a>
+      <a class="post-title-link" href="/blog/article/ck2phoia6000jzpum5cp8e37p/">游览器 bfcache 机制</a>
     </h3>
   
 
@@ -172,19 +172,23 @@
 
     
         
-移动端开发时经常会碰到文字居上的问题经过测试发现，主要是使用了独特的 font-family 引起的
+本文讨论 bfcache 机制带来的一些 bug
 
-移动端最佳 font-family 设置1234567body &#123;  font-family:     -apple-system, BlinkMacSystemFont,    "PingFang SC", "Helvetica Neue",    STHeiti, "Mic...
+bfcache 是啥
+是一个游览器机制比如说从 a 网页去 b 网页，然后再点击 b 网页的回退按钮回到 a 网页页面不会刷新，而是使用缓存，用意是提高用户体验表单提交场景发生的比较多
+
+例子：项目分析
+项目：后端模板 webApp 项目前端：使用了 vue 做部分的效果(日期选择等，现成的组件)，页面上留有额外 input 供后端提取值...
     
 
-        <a href="/blog/article/ck2o14eqr000j0rsd8ifz7b81/" class="post-more waves-effect waves-button">
+        <a href="/blog/article/ck2phoia6000jzpum5cp8e37p/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/html/" rel="tag">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/" rel="tag">js</a></li></ul>
 
     </div>
     
@@ -193,11 +197,11 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-酷库-scrollspy-滚动监听"
+            <article id="post-傻傻分不清的dom元素尺寸属性"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.896Z"  itemprop="datePublished">2019-11-07</time>
+        <time class="post-time" title="2019-11-08 09:14:07" datetime="2019-11-08T09:14:07.000Z"  itemprop="datePublished">2019-11-08</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
@@ -211,58 +215,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14eqw000n0rsd24xv836l/">酷库-scrollspy(滚动监听)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        gumshoe
-https://github.com/cferdinandi/gumshoe项目中经常有需求的锚点滚动监听需求我之前尝试过用 ScrollReveal 实现，但是逻辑不太一样
-
-
-
-    
-
-        <a href="/blog/article/ck2o14eqw000n0rsd24xv836l/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E9%85%B7%E5%BA%93/" rel="tag">酷库</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-hover伪类选择器-移动端的表现"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.892Z"  itemprop="datePublished">2019-11-07</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14epy00000rsd1gnp8p8n/">:hover伪类选择器，移动端的表现</a>
+      <a class="post-title-link" href="/blog/article/ck2phoi9y000dzpum3vb9f0cz/">傻傻分不清的 DOM 元素尺寸属性</a>
     </h3>
   
 
@@ -273,74 +226,36 @@ https://github.com/cferdinandi/gumshoe项目中经常有需求的锚点滚动监
 
     
         
-这里主要记载一个响应式项目中碰到的下拉菜单的问题
+主要讨论以下属性
 
 
-美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…
+clientHeight / clientWidth
+offsetHeight / offsetWidth
+scrollHeight / scrollWidth
 
-例子
+包罗万象
+看懂了就啥都明白了
 
 
-移动端 safari 的奇怪表现
-必须是 a 元素才能触发 :hover
-将元素修改成了...
+
+
+clientHeight / clientWidth
+包含 padding，不包含 border、margin、滚动条尺寸
+
+
+
+
+offsetHeight / off...
     
 
-        <a href="/blog/article/ck2o14epy00000rsd1gnp8p8n/" class="post-more waves-effect waves-button">
+        <a href="/blog/article/ck2phoi9y000dzpum3vb9f0cz/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-uni-app-心得"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.892Z"  itemprop="datePublished">2019-11-07</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14eq700020rsd41yce6oy/">uni-app-心得</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        待
-    
-
-        <a href="/blog/article/ck2o14eq700020rsd41yce6oy/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/" rel="tag">js</a></li></ul>
 
     </div>
     
@@ -353,7 +268,7 @@ https://github.com/cferdinandi/gumshoe项目中经常有需求的锚点滚动监
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.892Z"  itemprop="datePublished">2019-11-07</time>
+        <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T09:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
@@ -367,7 +282,7 @@ https://github.com/cferdinandi/gumshoe项目中经常有需求的锚点滚动监
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14eqd00060rsdeg03eljm/">vh单位的可信度</a>
+      <a class="post-title-link" href="/blog/article/ck2phoi9o0006zpumgrvqai0u/">vh单位的可信度</a>
     </h3>
   
 
@@ -388,7 +303,7 @@ vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现
 1alert('innerHeight: ...
     
 
-        <a href="/blog/article/ck2o14eqd00060rsdeg03eljm/" class="post-more waves-effect waves-button">
+        <a href="/blog/article/ck2phoi9o0006zpumgrvqai0u/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -408,7 +323,7 @@ vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.892Z"  itemprop="datePublished">2019-11-07</time>
+        <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T09:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF/">前端</a></li></ul>
@@ -422,7 +337,7 @@ vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14eqf00070rsdfg5i9mf7/">vue-spa-移动端理想的用户体验</a>
+      <a class="post-title-link" href="/blog/article/ck2phoi9q0007zpum3k0ufqhs/">vue-spa-移动端理想的用户体验</a>
     </h3>
   
 
@@ -447,7 +362,7 @@ vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现
 点击物理返回键时若正处于 “模态对话框(dialog, ale...
     
 
-        <a href="/blog/article/ck2o14eqf00070rsdfg5i9mf7/" class="post-more waves-effect waves-button">
+        <a href="/blog/article/ck2phoi9q0007zpum3k0ufqhs/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -463,65 +378,11 @@ vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-vue-酷库"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.892Z"  itemprop="datePublished">2019-11-07</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14eqh00080rsd38ic5y3n/">vue-酷库</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        UI库element-ui
-https://github.com/ElemeFE/element主要用于 PC 端项目个人认为其中的 messageBox (弹框消息盒子) 组件特别好用移动端改改样式其实也可以正常使用
-
-vant-ui
-https://github.com/youzan/vant主要用于移动端项目拥有大量的实用组件
-
-cube-ui
-https://github.com/d...
-    
-
-        <a href="/blog/article/ck2o14eqh00080rsd38ic5y3n/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E9%85%B7%E5%BA%93/" rel="tag">酷库</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-window.opener"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.892Z"  itemprop="datePublished">2019-11-07</time>
+        <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T09:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
@@ -535,7 +396,7 @@ https://github.com/d...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14eqk000c0rsdcoxs9apl/">window.opener</a>
+      <a class="post-title-link" href="/blog/article/ck2phoi9s0008zpumekb2b34q/">window.opener</a>
     </h3>
   
 
@@ -555,7 +416,7 @@ window.open
 该方法将打开一个新的网页标签注意：若用户未交互，游览器会阻止该方法的执行（游览器会认为不是用...
     
 
-        <a href="/blog/article/ck2o14eqk000c0rsdcoxs9apl/" class="post-more waves-effect waves-button">
+        <a href="/blog/article/ck2phoi9s0008zpumekb2b34q/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -575,7 +436,7 @@ window.open
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.892Z"  itemprop="datePublished">2019-11-07</time>
+        <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T09:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E8%81%8C%E5%9C%BA%E7%BB%8F%E9%AA%8C/">职场经验</a></li></ul>
@@ -589,7 +450,7 @@ window.open
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14eqm000d0rsdg7fm8y76/">五险一金扣除，实发工资算法</a>
+      <a class="post-title-link" href="/blog/article/ck2phoi9w000czpume0rg778z/">五险一金扣除，实发工资算法</a>
     </h3>
   
 
@@ -617,7 +478,7 @@ window.open
 失业 10000 * 0.003 = 3...
     
 
-        <a href="/blog/article/ck2o14eqm000d0rsdg7fm8y76/" class="post-more waves-effect waves-button">
+        <a href="/blog/article/ck2phoi9w000czpume0rg778z/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -633,11 +494,11 @@ window.open
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-到底是谁的滚动条"
+            <article id="post-uni-app-心得"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2019-11-07 01:24:58" datetime="2019-11-07T01:24:58.892Z"  itemprop="datePublished">2019-11-07</time>
+        <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T09:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
         
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
@@ -651,7 +512,54 @@ window.open
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/blog/article/ck2o14eqp000h0rsddpda3bvr/">到底是谁的滚动条？</a>
+      <a class="post-title-link" href="/blog/article/ck2phoi9h0002zpum430m45hm/">uni-app-心得</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        待
+    
+
+        <a href="/blog/article/ck2phoi9h0002zpum430m45hm/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-到底是谁的滚动条"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T09:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/article/ck2phoia3000hzpumfn5hcqqt/">到底是谁的滚动条？</a>
     </h3>
   
 
@@ -685,7 +593,7 @@ safari
 优雅的获...
     
 
-        <a href="/blog/article/ck2o14eqp000h0rsddpda3bvr/" class="post-more waves-effect waves-button">
+        <a href="/blog/article/ck2phoia3000hzpumfn5hcqqt/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -700,9 +608,123 @@ safari
 
         </li>
     
+        <li class="post-list-item fade">
+            <article id="post-hover伪类选择器-移动端的表现"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T09:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/article/ck2phoi980000zpumc7b185uy/">:hover伪类选择器，移动端的表现</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+这里主要记载一个响应式项目中碰到的下拉菜单的问题
+
+
+美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…
+
+例子
+
+
+移动端 safari 的奇怪表现
+必须是 a 元素才能触发 :hover
+将元素修改成了...
+    
+
+        <a href="/blog/article/ck2phoi980000zpumc7b185uy/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-移动端文字垂直居中的问题"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T09:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/article/ck2phoiad000nzpume4kf3g20/">移动端文字垂直居中的问题</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+移动端开发时经常会碰到文字居上的问题经过测试发现，主要是使用了独特的 font-family 引起的
+
+移动端最佳 font-family 设置1234567body &#123;  font-family:     -apple-system, BlinkMacSystemFont,    "PingFang SC", "Helvetica Neue",    STHeiti, "Mic...
+    
+
+        <a href="/blog/article/ck2phoiad000nzpume4kf3g20/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
     </ul>
 
     
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">下一页</a>
+    </div>
+</nav>
+
 
 </div>
 
