@@ -1,0 +1,39 @@
+---
+title: 傻傻分不清的 DOM 元素尺寸属性
+category: web
+date: 2019-11-08 09:14:07
+tags:
+  - js
+---
+
+> 主要讨论以下属性
+- clientHeight / clientWidth
+- offsetHeight / offsetWidth
+- scrollHeight / scrollWidth
+
+## 包罗万象
+> 看懂了就啥都明白了
+
+{% asset_img all.jpg %}
+
+-----------------------------------------------------
+
+## clientHeight / clientWidth
+> 包含 padding，不包含 border、margin、滚动条尺寸
+
+{% asset_img clientHeight-clientWidth.png %}
+
+-----------------------------------------------------
+
+## offsetHeight / offsetWidth
+> 包含 padding、border、滚动条尺寸，不包含 margin
+
+{% asset_img offsetHeight-offsetWidth.png %}
+
+-----------------------------------------------------
+
+## scrollHeight / scrollWidth
+> 此属性一般用于有滚动条的元素
+> 返回滚动内容的总尺寸
+
+{% asset_img scrollHeight-scrollWidth.jpg %}

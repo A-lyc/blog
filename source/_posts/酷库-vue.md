@@ -1,6 +1,7 @@
 ---
-title: vue-酷库
+title: 酷库-vue
 category: web
+date: 2019-11-07 09:06:15
 tags:
   - 酷库
   - vue

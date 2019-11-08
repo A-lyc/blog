@@ -1,6 +1,7 @@
 ---
 title: window.opener
 category: web
+date: 2019-11-08 09:06:15
 tag: js
 ---
 

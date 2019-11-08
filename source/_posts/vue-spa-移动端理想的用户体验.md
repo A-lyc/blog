@@ -1,6 +1,7 @@
 ---
 title: vue-spa-移动端理想的用户体验
 category: 前端
+date: 2019-11-08 09:06:15
 tags:
   - vue
   - spa
