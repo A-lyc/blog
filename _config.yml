@@ -9,7 +9,7 @@ description: 碰到的事情，记下来，才是真的
 keywords: web, web前端, node
 author: jason
 language: zh-CN
-timezone: UTC +8
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
