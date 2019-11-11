@@ -25,14 +25,14 @@
 <meta name="keywords" content="js,html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="游览器 bfcache 机制">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2phoia6000jzpum5cp8e37p&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6e4000jwspx0j8h9vkt&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
 <meta property="og:description" content="本文讨论 bfcache 机制带来的一些 bug  bfcache 是啥 是一个游览器机制比如说从 a 网页去 b 网页，然后再点击 b 网页的回退按钮回到 a 网页页面不会刷新，而是使用缓存，用意是提高用户体验表单提交场景发生的比较多  例子：项目分析 项目：后端模板 webApp 项目前端：使用了 vue 做部分的效果(日期选择等，现成的组件)，页面上留有额外 input 供后端提取值后端：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2phoia6000jzpum5cp8e37p&#x2F;demo.gif">
-<meta property="og:updated_time" content="2019-11-08T01:56:15.840Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6e4000jwspx0j8h9vkt&#x2F;demo.gif">
+<meta property="og:updated_time" content="2019-11-11T01:42:23.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2phoia6000jzpum5cp8e37p&#x2F;demo.gif">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6e4000jwspx0j8h9vkt&#x2F;demo.gif">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
     
@@ -131,7 +131,7 @@
         <h1 class="title">游览器 bfcache 机制</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-11-08T09:36:31.000Z" itemprop="datePublished" class="page-time">
+                <time datetime="2019-11-08T01:36:31.000Z" itemprop="datePublished" class="page-time">
   2019-11-08
 </time>
 
@@ -164,7 +164,7 @@
     <div class="post-card">
         <h1 class="post-card-title">游览器 bfcache 机制</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-11-08 09:36:31" datetime="2019-11-08T09:36:31.000Z"  itemprop="datePublished">2019-11-08</time>
+            <time class="post-time" title="2019-11-08 09:36:31" datetime="2019-11-08T01:36:31.000Z"  itemprop="datePublished">2019-11-08</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
@@ -190,7 +190,7 @@
 </blockquote>
 <h2 id="例子：html结构"><a href="#例子：html结构" class="headerlink" title="例子：html结构"></a>例子：html结构</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- vue 组件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">vue-comp-input</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">vue-comp-input</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">vue-comp-input</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">vue-comp-input</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 供后端提取值的额外 input --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="例子：bug-展示"><a href="#例子：bug-展示" class="headerlink" title="例子：bug 展示"></a>例子：bug 展示</h2><img src="/blog/article/ck2phoia6000jzpum5cp8e37p/demo.gif" class="">
+<h2 id="例子：bug-展示"><a href="#例子：bug-展示" class="headerlink" title="例子：bug 展示"></a>例子：bug 展示</h2><img src="/blog/article/ck2tri6e4000jwspx0j8h9vkt/demo.gif" class="">
 
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
@@ -205,7 +205,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-08T01:56:15.840Z" itemprop="dateUpdated">2019-11-08 01:56:15</time>
+    最后更新时间：<time datetime="2019-11-11T01:42:23.145Z" itemprop="dateUpdated">2019-11-11 09:42:23</time>
 </span><br>
 
 
@@ -235,7 +235,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/&title=《游览器 bfcache 机制》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/&title=《游览器 bfcache 机制》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -245,22 +245,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/&title=《游览器 bfcache 机制》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/&title=《游览器 bfcache 机制》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《游览器 bfcache 机制》 — qteam&url=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《游览器 bfcache 机制》 — qteam&url=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -280,12 +280,19 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/ck2tri6eh0012wspx7ocbcbj1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">酷库-前端图片辅助库</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck2phoi9y000dzpum3vb9f0cz/" id="post-next" class="post-nav-link">
+      <a href="/blog/article/ck2tri6du000dwspx4hpb1mgv/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">傻傻分不清的 DOM 元素尺寸属性</h4>
       </a>
@@ -388,7 +395,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/&title=《游览器 bfcache 机制》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/&title=《游览器 bfcache 机制》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -398,22 +405,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/&title=《游览器 bfcache 机制》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/&title=《游览器 bfcache 机制》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《游览器 bfcache 机制》 — qteam&url=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《游览器 bfcache 机制》 — qteam&url=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2phoia6000jzpum5cp8e37p/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2tri6e4000jwspx0j8h9vkt/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -424,7 +431,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3awW7bMBAEUP//T6fXFq6dmV0ydYGnk6EoFJ8NiKtZPh7x8fV0/H7++cpXZ5LPyf8ePvDw8PDWU3/FeD6f3Pj9aK/OJNT3c8bDw8O7zcsfymfxs6knc8bDw8P7HF5bZLcj5EsLHh4e3v/Ca4vv9+PnSwIeHh7ep/Hy4VpMUnznX9nFrAUPDw8v5uVdpM/5fKW/h4eHh7fuqrfhbB7vzppt9Wzx8PDwLvDaBtWpTQObp3o9Tzw8PLyjvDxmTa5MAtb2sZ5HEn+ZDx4eHt5lXtvI3xTTs3AhGb/Op/Hw8PBGvGSI9w/iTfSQFO7DHwYPDw/vGq990M+WllPBxLABhoeHh3eZl0e3+Tap2aaE1dYrPDw8vAu84sU+jmh/ZhHK54aHh4d3j9eGp7OAddNyy8t6PDw8vHu899FA/qBvwXkkMSvK/3hjwMPDw7vGm8WybY6aF8R5O+3laHh4eHg/yEtuea/xPyu7o3cFPDw8vDVvUzrPGlSzsOPwb4iHh4e35u3bXUnQsGecasXh4eHhbXjJ7duHbxtA5GV93h7Dw8PDu8fbFMftdoHZ5zYKebTrGB4eHl7Ja8viPErIW2ibbQf1pis8PDy8Q7xZDHojls1bcdGVeHh4eBd4bQGdxwSbllW+feFAGIGHh4e35s2G3rf22zCiWNLw8PDwrvGSgWYRRh4QJyFFHZrg4eHhXeMNu2fl7WdhcR5kfBNG4OHh4a15X+XRNr3aCR3eoICHh4d3a+9T8fBtv4h8o0Beah/A4OHh4a157WLQxg2zr69tsxUNMDw8PLxDvLbw3UyrHeFA1oKHh4f3T3mzDVL59XkhHsXQeHh4eB/A28QNyZn8r9HigYeHh3eNl99gX3BvNh+0SwgeHh7eDV77wp8Uwe0SMmuPHe7v4eHh4X1/l1+WhIi9AVriyAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3aQW4jMQwEwPz/0wmwpwUSy01StH2oOQWbyUilg8Rt8esrfr7/Pf///Ptffr9/fvP8hfN3Lj94eHh4rak/evLhz2/emlU+Zzw8PLxtXvUwSN7sTfF82ORzxsPDw/sEXl40nyeXl8u9gwoPDw/vc3j5xp1HD0nQgIeHh/eZvGr5m2/3SZh7/k61cMfDw8Pb5vUuwN778/r9Hh4eHl7rVn0eFiQTqobFhdni4eHhLfDyWCEvaudF861wBA8PD2+Dd976e9Htrfo2wT9ZCDw8PLwFXhLFTgriJAhODonqMYOHh4f3Gl5eLk8aDvJ2q7wd4cmIeHh4eFd5+TadkOYFet50FZX1eHh4eAu8W4FsHvXmyzFpbsDDw8Pb41VL297V/iTIyBe9nFLj4eHhDXh5ITtvApgsUB5t4OHh4e3xzptsNSyovtk7SEatA3h4eHgv4VU/Ot/QLy8rHh4e3lVetWUqX478QitB5s1beHh4eK/h9SKGXnBQDR3yw+OP5cDDw8Nb5pW33UGD1K3WhCdzxsPDw1vj5X/Way/IqZPY9+HBgIeHh3eV14tuE3Bh+x4cG1HBjYeHh3eVl4cR+W+jmOBqC8LDBcLDw8Nb4FU37muDDWCj/gg8PDy8MS+5uOpFAFFMkFf98Xfw8PDwXsPLQ9teudxrIGiSzik1Hh4e3pjXi1zz9qxbSXP+zqzXAA8PD+85L7/EyiPdnJ2P2Iwn8PDw8JZ5yVM9Nqole++4imJcPDw8vEu83iVTtQErPzyqi4WHh4f3Ll71v/rVYZJrtl7sGxXfeHh4eGu8ajSQL8Q89s2Prj9GxMPDw3srrxrR5oxecByV9Xh4eHgfw9vLP/KjJQqI8fDw8NZ4k0uvapHdK6yrVDw8PLw9XnWzTi74q8FutShfvN/Dw8PDO43yA1fCK/CWiOqGAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
