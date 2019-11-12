@@ -14,26 +14,25 @@
     
     
     
-    <title>vh单位的可信度 | qteam | 博客</title>
+    <title>:hover伪类选择器，移动端的表现 | qteam | 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="css">
-    <meta name="description" content="vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！  问题 手机游览器的 100vh 总会高出一截经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。  测试代码1&amp;lt;div id=&quot;test&quot; style=&quot;height: 100vh&quot;&amp;gt;&amp;lt;div&amp;gt;  1alert(&amp;apos;innerHeight: &amp;apos; +">
+    <meta name="description" content="这里主要记载一个响应式项目中碰到的下拉菜单的问题   美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…  例子   移动端 safari 的奇怪表现 必须是 a 元素才能触发 :hover 将元素修改成了 a">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vh单位的可信度">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6dj0006wspxf9reh1ro&#x2F;index.html">
+<meta property="og:title" content=":hover伪类选择器，移动端的表现">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2v7w2wn0000y9ttcyvn4ysf&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
-<meta property="og:description" content="vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！  问题 手机游览器的 100vh 总会高出一截经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。  测试代码1&amp;lt;div id=&quot;test&quot; style=&quot;height: 100vh&quot;&amp;gt;&amp;lt;div&amp;gt;  1alert(&amp;apos;innerHeight: &amp;apos; +">
+<meta property="og:description" content="这里主要记载一个响应式项目中碰到的下拉菜单的问题   美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…  例子   移动端 safari 的奇怪表现 必须是 a 元素才能触发 :hover 将元素修改成了 a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6dj0006wspxf9reh1ro&#x2F;pc.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6dj0006wspxf9reh1ro&#x2F;phone.jpg">
-<meta property="og:updated_time" content="2019-11-11T01:42:23.141Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2v7w2wn0000y9ttcyvn4ysf&#x2F;example.gif">
+<meta property="og:updated_time" content="2019-11-12T02:08:52.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6dj0006wspxf9reh1ro&#x2F;pc.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2v7w2wn0000y9ttcyvn4ysf&#x2F;example.gif">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
     
@@ -107,7 +106,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">vh单位的可信度</div>
+        <div class="flex-col header-title ellipsis">:hover伪类选择器，移动端的表现</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -129,7 +128,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">vh单位的可信度</h1>
+        <h1 class="title">:hover伪类选择器，移动端的表现</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-11-08T01:06:15.000Z" itemprop="datePublished" class="page-time">
@@ -154,16 +153,16 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试代码"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">测试代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PC端测试"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">PC端测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移动端测试"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">移动端测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决思路</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.</span> <span class="post-toc-text">例子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动端-safari-的奇怪表现"><span class="post-toc-number">2.</span> <span class="post-toc-text">移动端 safari 的奇怪表现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">3.</span> <span class="post-toc-text">解决方案</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-vh单位的可信度"
+<article id="post-hover伪类选择器-移动端的表现"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">vh单位的可信度</h1>
+        <h1 class="post-card-title">:hover伪类选择器，移动端的表现</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T01:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
@@ -181,25 +180,21 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>vw, vh 都是自适应页面的利器<br>vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！</p>
+<p>这里主要记载一个响应式项目中碰到的下拉菜单的问题</p>
 </blockquote>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
-<p>手机游览器的 100vh 总会高出一截<br>经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。</p>
+<blockquote>
+<p>美化下拉菜单在项目中是常见的需求<br>常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单<br>但是 :hover 在移动端兼容并不友好<br>经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…</p>
 </blockquote>
-<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">style</span>=<span class="string">"height: 100vh"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">'innerHeight: '</span> + innerHeight + <span class="string">'\n'</span> + <span class="string">'test元素高度: '</span> + $(<span class="string">'#test'</span>).css(<span class="string">'height'</span>));</span><br></pre></td></tr></table></figure>
-
-<h3 id="PC端测试"><a href="#PC端测试" class="headerlink" title="PC端测试"></a>PC端测试</h3><img src="/blog/article/ck2tri6dj0006wspxf9reh1ro/pc.jpg" class="">
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><img src="/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/example.gif" class="">
 
 <hr>
-<h3 id="移动端测试"><a href="#移动端测试" class="headerlink" title="移动端测试"></a>移动端测试</h3><img src="/blog/article/ck2tri6dj0006wspxf9reh1ro/phone.jpg" class="">
-
-<hr>
-<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><blockquote>
-<p>使用 js 赋值 innerHeight</p>
+<h2 id="移动端-safari-的奇怪表现"><a href="#移动端-safari-的奇怪表现" class="headerlink" title="移动端 safari 的奇怪表现"></a>移动端 safari 的奇怪表现</h2><ul>
+<li>必须是 a 元素才能触发 :hover</li>
+<li>将元素修改成了 a 之后，点击页面其他处无法失去 :hover 焦点，除非点击其他 按钮 或 input</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><blockquote>
+<p>使用 js 事件加 class 的方式实现，代替 :hover</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.height-full'</span>).css(<span class="string">'height'</span>, <span class="built_in">window</span>.innerHeight);</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -208,7 +203,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-11T01:42:23.141Z" itemprop="dateUpdated">2019-11-11 09:42:23</time>
+    最后更新时间：<time datetime="2019-11-12T02:08:52.855Z" itemprop="dateUpdated">2019-11-12 10:08:52</time>
 </span><br>
 
 
@@ -238,7 +233,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/&title=《vh单位的可信度》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/&title=《:hover伪类选择器，移动端的表现》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -248,22 +243,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/&title=《vh单位的可信度》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/&title=《:hover伪类选择器，移动端的表现》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vh单位的可信度》 — qteam&url=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《:hover伪类选择器，移动端的表现》 — qteam&url=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -286,18 +281,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/article/ck2tri6dd0002wspxbiff5o51/" id="post-prev" class="post-nav-link">
+      <a href="/blog/article/ck2v7w2y0000wy9ttbbfyetey/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">uni-app-心得</h4>
+        <h4 class="title">低版本 IE 开发辅助库</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck2tri6e8000nwspx5sbp2iu0/" id="post-next" class="post-nav-link">
+      <a href="/blog/article/ck2v7w2xx000uy9tt0mbffxlp/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">移动端文字垂直居中的问题</h4>
+        <h4 class="title">酷库-vue</h4>
       </a>
     </div>
   
@@ -398,7 +393,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/&title=《vh单位的可信度》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/&title=《:hover伪类选择器，移动端的表现》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -408,22 +403,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/&title=《vh单位的可信度》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/&title=《:hover伪类选择器，移动端的表现》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vh单位的可信度》 — qteam&url=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《:hover伪类选择器，移动端的表现》 — qteam&url=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2tri6dj0006wspxf9reh1ro/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2v7w2wn0000y9ttcyvn4ysf/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -434,7 +429,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aQXLjMAwEwPz/094HpGLNgKDXh9bJlTgSWwcCGeLnJ75ev67fP//9/dnn5D7LFx4eHt7x0t8z3mPe3z//SUJ9v2Y8PDy827x8U07w7Ybe4pM14+Hh4X0PL2mykwc/bOhLT8HDw8P7Bt5rdLWt9qzY4OHh4X2Sd3K7PKrI4+BZE4+Hh4f3GV5+ivQ9n6+c7+Hh4eEdn6qfHHrlZSA/bKtXi4eHh3eBt7XQ84OrtiDlYwp4eHh4u7yTxbUF43V8tcdmeHh4ePd47fY9a39PwoW2KR/OHeDh4eHFvGQoajZSUCylbMGTMoaHh4d3j5fA8mW195wVhihQxsPDw/tPvHyIKl9Q3qDnccnD+R4eHh7eEq9dULI1503w1iFZ9Fd4eHh4q7xZ3JAfbrXN8dbT8fDw8G7w8oB1NgqQN8pb5erPGBcPDw/vGq8dbNo90JplsH8+BQ8PD+8aL2+m2+D1pKi0AwoLMQQeHh5e3CHnTW07pJUXj6QYzOIPPDw8vBu8pEjMGG0g2x6bFeEFHh4e3gd5bdPcBhBtRNu+Sjw8PLwbvGTzrd/WUsCxNnSFh4eHt8Rr49QkYjgfwGpHDR6myfDw8PBWeeet8yyWPUlZ2xMuPDw8vM/zkk05wbQFYxaRDKsfHh4e3ojXhghbmK02vRgawMPDw7vAyzfuNuRNvpmMJiyMW+Hh4eEt8ZIi0f7Xn/x263qYicDDw8M75r3KKx+EOhkmyF/Qwz3x8PDwLvDaDXfY1I4GBdo2faGe4OHh4cW8k1ufH/wnMcQs6sXDw8O7zdvKP9sY4jyYeFgnHh4e3tfwkoVuFZi88ODh4eF9Jy8ZnJq9iLa0ROUEDw8P7xqvbXzzl9I2zSeByJ+FAQ8PD2+VVw8znUQDcamYFZWj8z08PDy856f8A20Hac7nU8IWAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACoUlEQVR42u3aUU7DMBAEUO5/aThAIZ3xeqUivXxVoQl+RvIuY399xdf3H1f+bP45efbyhYeHh3dp6K+vfr6fvD+/k1CjScfDw8Nb47UL+utTz/fb4pHceX4PHh4e3ufwJvjngpT0w3h4eHj/kdc238nQk0YZDw8P79N4+etazDzUaCcCDw8Pb5u3sYm1/Xllfw8PDw9vvKueL/dt3DDfbItGi4eHh7fAazeo2rg2DxHagpSPEw8PD+8uLwkdisD0an+bHFB4E53g4eHhLfPaKLZtf+fhQvL+Op/Gw8PDO+IlUULSRm8fJqi/iYeHh7fGSx7Og9p2QG07XjT3eHh4eAu8duMqacqTAbXNen706hcRHh4e3hovx5xFA20RagtAkbjg4eHhjXnz5X7yzTbUyCMMPDw8vA1evumVz1Mb4+bUyxUPDw8Pb8BLWuS2UW4rUn6/OJSAh4eHt8xLDhO0rW3esufFIy8YeHh4eBu8vLFut6PaePfuBOHh4eFt89oiMVnQW8ZkbHh4eHgbvDyQPTuGddaCn0UkRdaCh4eHN+blv6aNJ5LhtiFI8VM8PDy8BV7bIp8NpT2ANSlF0d8QDw8Pb8Brj0OdLfF5LHv2nTfRLR4eHt5V3tlGfrs730Ybk4jksO7h4eHhDXhncep8a39OigoDHh4e3hpvciCgbbLziTtE4uHh4S3zklAg2SSbTNnkijbA8PDw8Aa87/Kat87zElL8A4CHh4e3wGsX3FsTcdYoJ59H9QQPDw8v5rWvzoPXyfTNowo8PDy8bd6k8Z2HwpPa9aZI4OHh4X0AL4lx8+2u55GcHWvAw8PD+zTeJG6YF496uw4PDw9vjdc2vvmS3TbNOTKZXDw8PLwN3uFZraN492yyLh8UwMPDwzvn/QBj2WnOE4FiKwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

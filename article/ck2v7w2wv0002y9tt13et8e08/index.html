@@ -14,25 +14,26 @@
     
     
     
-    <title>酷库-scrollspy(滚动监听) | qteam | 博客</title>
+    <title>vh单位的可信度 | qteam | 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="酷库">
-    <meta name="description" content="gumshoe https:&#x2F;&#x2F;github.com&#x2F;cferdinandi&#x2F;gumshoe项目中经常有需求的锚点滚动监听需求我之前尝试过用 ScrollReveal 实现，但是逻辑不太一样">
-<meta name="keywords" content="酷库">
+    <meta name="keywords" content="css">
+    <meta name="description" content="vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！  问题 手机游览器的 100vh 总会高出一截经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。  测试代码1&amp;lt;div id=&quot;test&quot; style=&quot;height: 100vh&quot;&amp;gt;&amp;lt;div&amp;gt;  1alert(&amp;apos;innerHeight: &amp;apos; +">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="酷库-scrollspy(滚动监听)">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6eb000qwspxf0wq8fwq&#x2F;index.html">
+<meta property="og:title" content="vh单位的可信度">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2v7w2wv0002y9tt13et8e08&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
-<meta property="og:description" content="gumshoe https:&#x2F;&#x2F;github.com&#x2F;cferdinandi&#x2F;gumshoe项目中经常有需求的锚点滚动监听需求我之前尝试过用 ScrollReveal 实现，但是逻辑不太一样">
+<meta property="og:description" content="vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！  问题 手机游览器的 100vh 总会高出一截经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。  测试代码1&amp;lt;div id=&quot;test&quot; style=&quot;height: 100vh&quot;&amp;gt;&amp;lt;div&amp;gt;  1alert(&amp;apos;innerHeight: &amp;apos; +">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6eb000qwspxf0wq8fwq&#x2F;example.gif">
-<meta property="og:updated_time" content="2019-11-11T01:42:23.145Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2v7w2wv0002y9tt13et8e08&#x2F;pc.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2v7w2wv0002y9tt13et8e08&#x2F;phone.jpg">
+<meta property="og:updated_time" content="2019-11-12T02:08:52.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2tri6eb000qwspxf0wq8fwq&#x2F;example.gif">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2v7w2wv0002y9tt13et8e08&#x2F;pc.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
     
@@ -106,7 +107,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">酷库-scrollspy(滚动监听)</div>
+        <div class="flex-col header-title ellipsis">vh单位的可信度</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -128,7 +129,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">酷库-scrollspy(滚动监听)</h1>
+        <h1 class="title">vh单位的可信度</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-11-08T01:06:15.000Z" itemprop="datePublished" class="page-time">
@@ -153,16 +154,16 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gumshoe"><span class="post-toc-number">1.</span> <span class="post-toc-text">gumshoe</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试代码"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">测试代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PC端测试"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">PC端测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移动端测试"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">移动端测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决思路</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-酷库-scrollspy-滚动监听"
+<article id="post-vh单位的可信度"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">酷库-scrollspy(滚动监听)</h1>
+        <h1 class="post-card-title">vh单位的可信度</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T01:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
@@ -179,10 +180,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="gumshoe"><a href="#gumshoe" class="headerlink" title="gumshoe"></a>gumshoe</h2><blockquote>
-<p><a href="https://github.com/cferdinandi/gumshoe" target="_blank" rel="noopener">https://github.com/cferdinandi/gumshoe</a><br>项目中经常有需求的锚点滚动监听需求<br>我之前尝试过用 ScrollReveal 实现，但是逻辑不太一样</p>
+            <blockquote>
+<p>vw, vh 都是自适应页面的利器<br>vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！</p>
 </blockquote>
-<img src="/blog/article/ck2tri6eb000qwspxf0wq8fwq/example.gif" class="">
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p>手机游览器的 100vh 总会高出一截<br>经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。</p>
+</blockquote>
+<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">style</span>=<span class="string">"height: 100vh"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">'innerHeight: '</span> + innerHeight + <span class="string">'\n'</span> + <span class="string">'test元素高度: '</span> + $(<span class="string">'#test'</span>).css(<span class="string">'height'</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="PC端测试"><a href="#PC端测试" class="headerlink" title="PC端测试"></a>PC端测试</h3><img src="/blog/article/ck2v7w2wv0002y9tt13et8e08/pc.jpg" class="">
+
+<hr>
+<h3 id="移动端测试"><a href="#移动端测试" class="headerlink" title="移动端测试"></a>移动端测试</h3><img src="/blog/article/ck2v7w2wv0002y9tt13et8e08/phone.jpg" class="">
+
+<hr>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><blockquote>
+<p>使用 js 赋值 innerHeight</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.height-full'</span>).css(<span class="string">'height'</span>, <span class="built_in">window</span>.innerHeight);</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -191,7 +208,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-11T01:42:23.145Z" itemprop="dateUpdated">2019-11-11 09:42:23</time>
+    最后更新时间：<time datetime="2019-11-12T02:08:52.859Z" itemprop="dateUpdated">2019-11-12 10:08:52</time>
 </span><br>
 
 
@@ -211,7 +228,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E9%85%B7%E5%BA%93/" rel="tag">酷库</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li></ul>
 
 
             
@@ -221,7 +238,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/&title=《酷库-scrollspy(滚动监听)》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/&title=《vh单位的可信度》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -231,22 +248,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/&title=《酷库-scrollspy(滚动监听)》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/&title=《vh单位的可信度》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《酷库-scrollspy(滚动监听)》 — qteam&url=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vh单位的可信度》 — qteam&url=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -269,18 +286,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/article/ck2tri6e8000nwspx5sbp2iu0/" id="post-prev" class="post-nav-link">
+      <a href="/blog/article/ck2v7w2xe000dy9ttd4bve812/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">移动端文字垂直居中的问题</h4>
+        <h4 class="title">到底是谁的滚动条？</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck2tri6ef000ywspxayrjc3pa/" id="post-next" class="post-nav-link">
+      <a href="/blog/article/ck2v7w2x30007y9tt6p9jeg26/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">低版本 IE 开发辅助库</h4>
+        <h4 class="title">window.opener</h4>
       </a>
     </div>
   
@@ -381,7 +398,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/&title=《酷库-scrollspy(滚动监听)》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/&title=《vh单位的可信度》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -391,22 +408,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/&title=《酷库-scrollspy(滚动监听)》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/&title=《vh单位的可信度》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《酷库-scrollspy(滚动监听)》 — qteam&url=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vh单位的可信度》 — qteam&url=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2tri6eb000qwspxf0wq8fwq/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2v7w2wv0002y9tt13et8e08/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -417,7 +434,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpUlEQVR42u3aQW7DMAwEwPz/0+m1QBp5SUqNW4xPgeHKmgQQ1RUfj/h6vrnWT36/k39+HW39zIYLDw8Pb9PUX4deTz0ZP7+Tj3DxpePh4eEd4+WLcvIVJJNevyu5sx4HDw8P7z68HL9+S7JBx8PDw/t/vHyzO98o4+Hh4d2Nlw+XAybb8Q9kLXh4eHgxLz9Fus/nI+d7eHh4eONT9fWCO4kbqkWoOVs8PDy8A7zJ8X/eYjVZ3OdtCnh4eHh7edXlvhf4Tpb1vGz8MB88PDy8Y7xqm1SO7E1uEuMW/gwPDw9vwJtMMQ8XJs0EVTAeHh7eaV5eHqrb5d7U8yjkYhw8PDy8w7yEPYl386C2GkxE53t4eHh4m3hVUr7BnR+h5WUpKjN4eHh4m3jVwjAJcPPN8aRdYFT38PDw8Iq8yfF/Hm1M3pVvyke/Eh4eHl7Am3zee6CV3M9btfDw8PBO86pD9xbxZIpJq1b0Ljw8PLwDvF5AUF2g82g4D3CbR194eHh4m3jVsjFZ0HuNBflhWLlg4OHh4Q14+eJbbT6YNxxU42A8PDy8c7x8QpOAYBIQP+Lr4n8FPDw8vK28CXUSE1RHKM8HDw8P70O8ydJcDR0erevt3+Lh4eEd4OUb32oYUQ1/dxWeKMbFw8PDG/PyrHeyza3iN/xieHh4eL/Iy2PZPORdP5nfwcPDw7snrxcEJPFrtb1gQzCBh4eHt5X3LF45qdpK1fuCLsbEw8PDO8CrLrg9TLVRYNKwNaoneHh4eDGvVwySjfWur68X9eLh4eGd5vXyz960eq0J1Q06Hh4e3t/iVQ/G8qO16pN4eHh4d+DlbQHz5oBJWIyHh4d3mjdZ4vNmgt5M8qLytjDg4eHhbeU1e7V60UBcKqpFZXcrGh4eHt6Pb/kC6szaT8Bg+88AAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3aQY7jMAwEwPn/p2evC8zG6SalQRYon4LAllU6iDTFr6/4+n5x5ff//f/z758jvLrn2IWHh4d3aOo/h05gz+Pn/7waJ58zHh4e3m1eMlwydBtCZlNP5oyHh4f3Obw2OU6S5jxBx8PDw/vfeUny/Tx+G3Lw8PDwPoeXD9cWKZL7n8dpFwIPDw/vNi8vxX7O7yvne3h4eHjrU/Vks27HT9LuU+VjPDw8vBu82UTbZHqzubfP4uHh4d3mJcdaeaHhRn47K0Pg4eHh3eYl6fKp8u7ZIPGmdIuHh4d3jbffgmf3nFru6FsBDw8P7ygveTgPGO3xf5uOF2k9Hh4e3gVem0An4SSZUJ4ot6HrHyI8PDy8a7xk494Uc/cB4/ktUfTDw8PDO8pLDuzbFoE2YLSBIVogPDw8vKO86Bgp3mPbcnC7ZMciHh4eHt4h3qw4mzcQzNLlWQEiarrCw8PDW/DaZHrWFpAvXzL16F14eHh4F3jtwXz7yllQ2S8QHh4e3m1efqh/IM0tGbMAVgQMPDw8vHJuSaNAvu3eKNTOysF4eHh493jt5jtLnTcFjlnbwTC24OHh4QW8TZNTvum3090HpJdNV3h4eHhrXlsSnW39q8apuL3gQMUXDw8Pr+TNPvhzzGwR24awl4EBDw8P7zJv1iiwOdqfFZSjwIOHh4d3jZeEhzzV3oSTTUjAw8PD+03e7IN/c0iWFCDalqw3TQN4eHh4a953ee1LEm2yvmpQwMPDw7vV+1RsvvmR2GyENjUfYvDw8PDWvFkw2LRJJXNoy8dvDsDw8PDwLvA2h1KzonAOO1ZrwcPDw/sAXvLPJtPPSw8vAxIeHh7eB/Dykm7bLjBrZSjiBh4eHt5RXp74nioftBt92/iFh4eHd4/XfvDnifXzU7OgcvF8Dw8PD+/9W/4AtYj5PsEaZO4AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
