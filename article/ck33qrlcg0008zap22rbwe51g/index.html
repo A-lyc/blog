@@ -14,22 +14,22 @@
     
     
     
-    <title>vue-spa-移动端理想的用户体验 | qteam | 博客</title>
+    <title>五险一金扣除，实发工资算法 | qteam | 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="vue,spa,用户体验">
-    <meta name="description" content="目前前端的跨端技术层出不穷，开发快，对用户透明。对前端开发者来说掌握的东西要更多了~   本文谈论一些原生移动 app 用户体验  体验分析 每天都会用各种 app，各种操作熟记于心总结出以下网页不容易实现的需求   类似网页的历史记录，前进刷新网页，后退时使用历史缓存 前进或者后退（物理返回键）会有不同的切换效果（滑动切换） 点击物理返回键时若正处于 “模态对话框(dialog, alert)">
-<meta name="keywords" content="vue,spa,用户体验">
+    <meta name="keywords" content="职场">
+    <meta name="description" content="目前是 2019.10.03，本文记载着我理解的五险一金和税款的算法，具体比例会隔几年一调整，想要精确百度下即可。  个人承担比例 养老 = 8% 医疗 = 2% 失业 = 0.3% 一金 = 12%（该值非规定） 税款 = 0.03%（工资越高税率越高，具体百度吧）  例子 应发工资 10000  五险 养老 10000 * 0.08 = 800 失业 10000 * 0.003 = 30 医">
+<meta name="keywords" content="职场">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-spa-移动端理想的用户体验">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck2v7w2x00006y9tt8u3ienqx&#x2F;index.html">
+<meta property="og:title" content="五险一金扣除，实发工资算法">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck33qrlcg0008zap22rbwe51g&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
-<meta property="og:description" content="目前前端的跨端技术层出不穷，开发快，对用户透明。对前端开发者来说掌握的东西要更多了~   本文谈论一些原生移动 app 用户体验  体验分析 每天都会用各种 app，各种操作熟记于心总结出以下网页不容易实现的需求   类似网页的历史记录，前进刷新网页，后退时使用历史缓存 前进或者后退（物理返回键）会有不同的切换效果（滑动切换） 点击物理返回键时若正处于 “模态对话框(dialog, alert)">
+<meta property="og:description" content="目前是 2019.10.03，本文记载着我理解的五险一金和税款的算法，具体比例会隔几年一调整，想要精确百度下即可。  个人承担比例 养老 = 8% 医疗 = 2% 失业 = 0.3% 一金 = 12%（该值非规定） 税款 = 0.03%（工资越高税率越高，具体百度吧）  例子 应发工资 10000  五险 养老 10000 * 0.08 = 800 失业 10000 * 0.003 = 30 医">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-12T02:08:52.859Z">
+<meta property="og:updated_time" content="2019-11-18T01:19:24.947Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
@@ -104,7 +104,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">vue-spa-移动端理想的用户体验</div>
+        <div class="flex-col header-title ellipsis">五险一金扣除，实发工资算法</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -126,7 +126,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">vue-spa-移动端理想的用户体验</h1>
+        <h1 class="title">五险一金扣除，实发工资算法</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-11-08T01:06:15.000Z" itemprop="datePublished" class="page-time">
@@ -134,7 +134,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF/">前端</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E8%81%8C%E5%9C%BA%E7%BB%8F%E9%AA%8C/">职场经验</a></li></ul>
 
             
         </h5>
@@ -151,21 +151,21 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#体验分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">体验分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现难点分析以及解决方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现难点分析以及解决方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">3.</span> <span class="post-toc-text">例子</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#个人承担比例"><span class="post-toc-number">1.</span> <span class="post-toc-text">个人承担比例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">2.</span> <span class="post-toc-text">例子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五险"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">五险</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#公积金"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">公积金</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#税款"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">税款</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实发工资"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">实发工资</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-vue-spa-移动端理想的用户体验"
+<article id="post-五险一金扣除，实发工资算法"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">vue-spa-移动端理想的用户体验</h1>
+        <h1 class="post-card-title">五险一金扣除，实发工资算法</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T01:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF/">前端</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E8%81%8C%E5%9C%BA%E7%BB%8F%E9%AA%8C/">职场经验</a></li></ul>
 
 
 
@@ -178,40 +178,44 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>目前前端的跨端技术层出不穷，开发快，对用户透明。<br>对前端开发者来说掌握的东西要更多了~</p>
+<p>目前是 2019.10.03，本文记载着我理解的五险一金和税款的算法，具体比例会隔几年一调整，想要精确百度下即可。</p>
 </blockquote>
-<blockquote>
-<p>本文谈论一些原生移动 app 用户体验</p>
-</blockquote>
-<h2 id="体验分析"><a href="#体验分析" class="headerlink" title="体验分析"></a>体验分析</h2><blockquote>
-<p>每天都会用各种 app，各种操作熟记于心<br>总结出以下网页不容易实现的需求</p>
-</blockquote>
-<ol>
-<li>类似网页的历史记录，前进刷新网页，后退时使用历史缓存</li>
-<li>前进或者后退（物理返回键）会有不同的切换效果（滑动切换）</li>
-<li>点击物理返回键时若正处于 “模态对话框(dialog, alert)等”，不会返回页面，会先将对话框关闭</li>
-</ol>
-<h2 id="实现难点分析以及解决方案"><a href="#实现难点分析以及解决方案" class="headerlink" title="实现难点分析以及解决方案"></a>实现难点分析以及解决方案</h2><ol>
-<li>vue keep-alive 无法实现前进刷新，后退使用缓存的 app 缓存逻辑<blockquote>
-<p>这里可以使用 vue-navigation 实现</p>
-</blockquote>
-</li>
-<li>前进和后退实现不同的切换效果<blockquote>
-<p>vue transition 标签配合 vue-navigation 实现</p>
-</blockquote>
-</li>
-<li>模态框逻辑，如何判断当前正在弹框，如何优雅的阻止切换切换并关闭模态框<blockquote>
-<p>推荐 vue-create-api 这个库，本文例子中使用了 element-ui 中的 MessageBox 实现</p>
-</blockquote>
-</li>
-</ol>
+<h2 id="个人承担比例"><a href="#个人承担比例" class="headerlink" title="个人承担比例"></a>个人承担比例</h2><ul>
+<li>养老 = 8%</li>
+<li>医疗 = 2%</li>
+<li>失业 = 0.3%</li>
+<li>一金 = 12%（该值非规定）</li>
+<li>税款 = 0.03%（工资越高税率越高，具体百度吧）</li>
+</ul>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><blockquote>
-<p><a href="https://github.com/q-jason/code/tree/master/good-vue-app" target="_blank" rel="noopener">github</a></p>
+<p>应发工资 10000</p>
 </blockquote>
-<iframe src="https://codesandbox.io/embed/github/q-jason/code/tree/master/good-vue-app?fontsize=14" width="100%" height="800" frameborder="0" allowfullscreen></iframe>
-
-
-
+<h3 id="五险"><a href="#五险" class="headerlink" title="五险"></a>五险</h3><ul>
+<li>养老 10000 * 0.08 = 800</li>
+<li>失业 10000 * 0.003 = 30</li>
+<li>医疗 10000 * 0.02 = 200</li>
+<li>生育和工伤不需要个人承担</li>
+<li>总共 800 + 30 + 200 = 1030</li>
+</ul>
+<h3 id="公积金"><a href="#公积金" class="headerlink" title="公积金"></a>公积金</h3><blockquote>
+<p>一金较为特殊，需要看公司定的缴纳基数（可能会按照比应发工资低的基数缴纳）</p>
+</blockquote>
+<ul>
+<li>一金理想情况       10000 * 0.12</li>
+<li>一金非理想情况   2600 * 0.12（2600是胡乱写的，具体要公司定）</li>
+<li>总共（理想） 10000 * 0.12 = 1200</li>
+</ul>
+<h3 id="税款"><a href="#税款" class="headerlink" title="税款"></a>税款</h3><blockquote>
+<p>这个较为复杂，目前应发工资超过 5000 才交税，税率为 3%<br>工资到达某档位后，税率也会加，10000 是 3%，具体百度吧<br>但是 3% 并不指的是应发工资（10000）的 3%，而是 应发工资 - 底数 - 五险一金扣款后 的剩余部分<br>看公式吧</p>
+</blockquote>
+<ul>
+<li>(10000 - 5000 - 五险一金个人承担部分) * 0.03 = 所需要交纳的税款</li>
+<li>(10000 - 5000 - 1030 - 1200) * 0.03 = 83.1</li>
+</ul>
+<h3 id="实发工资"><a href="#实发工资" class="headerlink" title="实发工资"></a>实发工资</h3><ul>
+<li>应发工资 - 五险 - 公积金 - 税 = 实发工资</li>
+<li>10000 - 1030 - 1200 - 83.1 = 7686.9</li>
+</ul>
 
         </div>
 
@@ -220,7 +224,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-12T02:08:52.859Z" itemprop="dateUpdated">2019-11-12 10:08:52</time>
+    最后更新时间：<time datetime="2019-11-18T01:19:24.947Z" itemprop="dateUpdated">2019-11-18 09:19:24</time>
 </span><br>
 
 
@@ -240,7 +244,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/spa/" rel="tag">spa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/" rel="tag">用户体验</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%81%8C%E5%9C%BA/" rel="tag">职场</a></li></ul>
 
 
             
@@ -250,7 +254,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/&title=《vue-spa-移动端理想的用户体验》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/&title=《五险一金扣除，实发工资算法》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -260,22 +264,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/&title=《vue-spa-移动端理想的用户体验》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/&title=《五险一金扣除，实发工资算法》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-spa-移动端理想的用户体验》 — qteam&url=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《五险一金扣除，实发工资算法》 — qteam&url=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -298,18 +302,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/article/ck2v7w2x60008y9tt87bucf21/" id="post-prev" class="post-nav-link">
+      <a href="/blog/article/ck33qrlcl000czap24v2x1tur/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">五险一金扣除，实发工资算法</h4>
+        <h4 class="title">傻傻分不清的 DOM 元素尺寸属性</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck2v7w2xe000dy9ttd4bve812/" id="post-next" class="post-nav-link">
+      <a href="/blog/article/ck33qrlca0006zap2h1mpdfpc/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">到底是谁的滚动条？</h4>
+        <h4 class="title">vue-spa-移动端理想的用户体验</h4>
       </a>
     </div>
   
@@ -410,7 +414,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/&title=《vue-spa-移动端理想的用户体验》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/&title=《五险一金扣除，实发工资算法》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -420,22 +424,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/&title=《vue-spa-移动端理想的用户体验》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/&title=《五险一金扣除，实发工资算法》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-spa-移动端理想的用户体验》 — qteam&url=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《五险一金扣除，实发工资算法》 — qteam&url=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck2v7w2x00006y9tt8u3ienqx/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck33qrlcg0008zap22rbwe51g/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -446,7 +450,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aSZLjMAwEwP7/pz0PcIy6CiDdPqRODi8SUwcRLuDnJz5eb8f7++/fn71Ornv4wMPDw1sv/ZnRXia5KcmZn9fz3zPg4eHhXeMlp0tO/bxJtEtP1vPLtfDw8PC+gJcU2cmF881mcxU8PDy8b+C9RkdbaiclPh4eHt7f8trTtYw2Ds7Di2NZCx4eHl73lI6i2O95faW/h4eHh7fuqrfhbN42yzehTSmPh4eHd4PXNqhmbarNw739LR4eHt5tXj5ota/ZX4tjGJ3g4eHhfZCXPO7b8ncTLuTFep1P4+Hh4Y14bUHcNsM2wwSz4AMPDw/vNm/443KMYFagt6MJxd3Cw8PDO8rbBLXJmfNiPX/nlzACDw8P7wJvH0k8Y05tQsltKpJjPDw8vJKXRxKzIap2w0hi37pYx8PDw7vGa8vfWcDaRhKzVRWRBB4eHt6o2pw1vTYttPw8dQDxnLXg4eHhHeIlxXQCaDeYPAqpx63a/wp4eHh43bWKR/8zPn+It+209gbh4eHh3ebtw9yizB21uA604vDw8PAO8WaAtoLdD3W1cTAeHh7ePd5sZGo2EDB7vRk7wMPDw/sMLx+cyhtX7U1pi+9froWHh4d3gTcbqEoWsRnnyr9TtMHw8PDwjvJW7aWy5M03jM2neHh4ePd4sxChXcQssMjPVgwN4OHh4R3lJafYx7XtO20DDA8PD+8zvHzpszh1NojQjmRFDTA8PDy8Be9VHkkAkccWmy0kasvh4eHhXeCd6hnNbsRm0SsMHh4e3prXhqT5kMHZbv6wMYaHh4d3jbcpfDcNs308EWUteHh4eH/Ky3tMpzaYzTfx8PDwvoE3CxTaiDb59OJMGR4eHl45ldQ+4p9vyqwltgkj8PDw8G7z2j/8q2igHDi4MiiAh4eHN+f9A0hj2k/gg3f6AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3awY4aMRAEUP7/pzdSTpE2kKpuG1bRmxMCZsZvkOym2o9HfHz9Pv58/eyd78ezqz37zusrP24ceHh4eKOhvx5ccunX57bgZDzRA8XDw8O7xksWg4SaLCHPYK/fT8aAh4eH99N4ryfozeDw8PDw/lde++mmgE4eKx4eHt5nebM//0mwO5vuk28ezlrw8PDwup5U3QD77Ovr/T08PDy8UVd9M+3mV8ivXI8TDw8P7wKvvUEbWLQNs3aDV7Rg4OHh4R3lJSFpu32qjSfysKPdjoCHh4d3m3dqLs0L6H2D7R/LDB4eHt413g3Y7EEki0fxNwAPDw/vLbxNZNCWyPlGhGHJjoeHh3eBl5+w30TVhg55Khv9VHh4eHiXeW3baXjLQ8vMagMWHh4eXsk7tdGq/eYsRM7DXDw8PLx7vFPJ56z4bt/Pz8XDw8O7x0swm80BmybWPhrGw8PDu8dLStVZ/DoLeTeF+1/6e3h4eHhHeXlpO7tNG3bkD6LG4+Hh4R3lzdpdZ//1r8LZ1xsL8PDw8C7w2kHsl5C2dG4Lejw8PLx38k61uzbTdxsED3t9eHh4eCPeLAhoG1ezjQh1UPt9bHh4eHgXePnqsSlw85ZY/kCLxQkPDw/vMu9UAZ0HBO32rHZbAx4eHt4NXstoC/E8etjHu0UKgoeHh7fgJRPuqVZZG3MMfys8PDy8t/Dy27ftqE1s8dgfeHh4eEd5X+XRhgX5kpPfMV888PDw8G7wNotHG0MkS8L+LsfWRjw8PLw458wn3zy2yCf3/C7FuXh4eHjXeHlIMSuO85ijXceiTQN4eHh4H+W1RfOmUJ417fDw8PB+Dq8ttfPmWT7oegx4eHh413j59qlTU3bbHmvLfTw8PLx7vLYBlg9iVl63EUb+6PHw8PDWvF9ULrtg/dUWRQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
