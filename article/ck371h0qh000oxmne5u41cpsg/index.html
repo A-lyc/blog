@@ -14,25 +14,28 @@
     
     
     
-    <title>:hover伪类选择器，移动端的表现 | qteam | 博客</title>
+    <title>移动端文字垂直居中的问题 | qteam | 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="css">
-    <meta name="description" content="这里主要记载一个响应式项目中碰到的下拉菜单的问题   美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…  例子   移动端 safari 的奇怪表现 必须是 a 元素才能触发 :hover 将元素修改成了 a">
+    <meta name="description" content="移动端开发时经常会碰到文字居上的问题经过测试发现，主要是使用了独特的 font-family 引起的  移动端最佳 font-family 设置1234567body &amp;#123;  font-family:     -apple-system, BlinkMacSystemFont,    &quot;PingFang SC&quot;, &quot;Helvetica Neue&quot;,    STHeiti, &quot;Micros">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content=":hover伪类选择器，移动端的表现">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck33qrlbw0000zap21lbv2t21&#x2F;index.html">
+<meta property="og:title" content="移动端文字垂直居中的问题">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
-<meta property="og:description" content="这里主要记载一个响应式项目中碰到的下拉菜单的问题   美化下拉菜单在项目中是常见的需求常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单但是 :hover 在移动端兼容并不友好经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…  例子   移动端 safari 的奇怪表现 必须是 a 元素才能触发 :hover 将元素修改成了 a">
+<meta property="og:description" content="移动端开发时经常会碰到文字居上的问题经过测试发现，主要是使用了独特的 font-family 引起的  移动端最佳 font-family 设置1234567body &amp;#123;  font-family:     -apple-system, BlinkMacSystemFont,    &quot;PingFang SC&quot;, &quot;Helvetica Neue&quot;,    STHeiti, &quot;Micros">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck33qrlbw0000zap21lbv2t21&#x2F;example.gif">
-<meta property="og:updated_time" content="2019-11-18T01:19:24.947Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;android-good.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;android-bad.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;ios-good.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;ios-bad.jpg">
+<meta property="og:updated_time" content="2019-11-20T08:42:27.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck33qrlbw0000zap21lbv2t21&#x2F;example.gif">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;android-good.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
     
@@ -106,7 +109,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">:hover伪类选择器，移动端的表现</div>
+        <div class="flex-col header-title ellipsis">移动端文字垂直居中的问题</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -128,7 +131,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">:hover伪类选择器，移动端的表现</h1>
+        <h1 class="title">移动端文字垂直居中的问题</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-11-08T01:06:15.000Z" itemprop="datePublished" class="page-time">
@@ -153,16 +156,16 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.</span> <span class="post-toc-text">例子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动端-safari-的奇怪表现"><span class="post-toc-number">2.</span> <span class="post-toc-text">移动端 safari 的奇怪表现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">3.</span> <span class="post-toc-text">解决方案</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动端最佳-font-family-设置"><span class="post-toc-number">1.</span> <span class="post-toc-text">移动端最佳 font-family 设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动端-input-placeholder-居上"><span class="post-toc-number">2.</span> <span class="post-toc-text">移动端 input placeholder 居上</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题重现"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题重现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#android-未设置特殊字体"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">android 未设置特殊字体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#android-设置了特殊字体"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">android 设置了特殊字体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ios-未设置特殊字体"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">ios 未设置特殊字体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ios-设置了特殊字体"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">ios 设置了特殊字体</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-hover伪类选择器-移动端的表现"
+<article id="post-移动端文字垂直居中的问题"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">:hover伪类选择器，移动端的表现</h1>
+        <h1 class="post-card-title">移动端文字垂直居中的问题</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T01:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
@@ -180,22 +183,25 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>这里主要记载一个响应式项目中碰到的下拉菜单的问题</p>
+<p>移动端开发时经常会碰到文字居上的问题<br>经过测试发现，主要是使用了独特的 font-family 引起的</p>
 </blockquote>
-<blockquote>
-<p>美化下拉菜单在项目中是常见的需求<br>常用 div 模拟，在 pc 端可以用 :hover 选择器移入时显示子菜单<br>但是 :hover 在移动端兼容并不友好<br>经过测试，在除 safari 的游览器中，兼容还比较好，唯独 safari 出现了问题…</p>
+<h2 id="移动端最佳-font-family-设置"><a href="#移动端最佳-font-family-设置" class="headerlink" title="移动端最佳 font-family 设置"></a>移动端最佳 font-family 设置</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: </span><br><span class="line">    -apple-system, BlinkMacSystemFont,</span><br><span class="line">    <span class="string">"PingFang SC"</span>, <span class="string">"Helvetica Neue"</span>,</span><br><span class="line">    STHeiti, <span class="string">"Microsoft Yahei"</span>,</span><br><span class="line">    Tahoma,Simsun,sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="移动端-input-placeholder-居上"><a href="#移动端-input-placeholder-居上" class="headerlink" title="移动端 input placeholder 居上"></a>移动端 input placeholder 居上</h2><blockquote>
+<p>经过测试是由于 placeholder 默认的 line-height 导致的</p>
 </blockquote>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><img src="/blog/article/ck33qrlbw0000zap21lbv2t21/example.gif" class="">
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* safari placeholder 偏上的问题 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">  <span class="attribute">line-height</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题重现"><a href="#问题重现" class="headerlink" title="问题重现"></a>问题重现</h2><h3 id="android-未设置特殊字体"><a href="#android-未设置特殊字体" class="headerlink" title="android 未设置特殊字体"></a>android 未设置特殊字体</h3><img src="/blog/article/ck371h0qh000oxmne5u41cpsg/android-good.jpg" class="">
 
 <hr>
-<h2 id="移动端-safari-的奇怪表现"><a href="#移动端-safari-的奇怪表现" class="headerlink" title="移动端 safari 的奇怪表现"></a>移动端 safari 的奇怪表现</h2><ul>
-<li>必须是 a 元素才能触发 :hover</li>
-<li>将元素修改成了 a 之后，点击页面其他处无法失去 :hover 焦点，除非点击其他 按钮 或 input</li>
-</ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><blockquote>
-<p>使用 js 事件加 class 的方式实现，代替 :hover</p>
-</blockquote>
+<h3 id="android-设置了特殊字体"><a href="#android-设置了特殊字体" class="headerlink" title="android 设置了特殊字体"></a>android 设置了特殊字体</h3><img src="/blog/article/ck371h0qh000oxmne5u41cpsg/android-bad.jpg" class="">
 
+<hr>
+<h3 id="ios-未设置特殊字体"><a href="#ios-未设置特殊字体" class="headerlink" title="ios 未设置特殊字体"></a>ios 未设置特殊字体</h3><img src="/blog/article/ck371h0qh000oxmne5u41cpsg/ios-good.jpg" class="">
+
+<hr>
+<h3 id="ios-设置了特殊字体"><a href="#ios-设置了特殊字体" class="headerlink" title="ios 设置了特殊字体"></a>ios 设置了特殊字体</h3><img src="/blog/article/ck371h0qh000oxmne5u41cpsg/ios-bad.jpg" class="">
         </div>
 
         <blockquote class="post-copyright">
@@ -203,7 +209,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-18T01:19:24.947Z" itemprop="dateUpdated">2019-11-18 09:19:24</time>
+    最后更新时间：<time datetime="2019-11-20T08:42:27.220Z" itemprop="dateUpdated">2019-11-20 16:42:27</time>
 </span><br>
 
 
@@ -233,7 +239,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/&title=《:hover伪类选择器，移动端的表现》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&title=《移动端文字垂直居中的问题》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -243,22 +249,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/&title=《:hover伪类选择器，移动端的表现》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&title=《移动端文字垂直居中的问题》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《:hover伪类选择器，移动端的表现》 — qteam&url=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端文字垂直居中的问题》 — qteam&url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -281,18 +287,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/article/ck33qrld7000wzap25dtf72lr/" id="post-prev" class="post-nav-link">
+      <a href="/blog/article/ck371h0pu0007xmnebs1m56e2/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">低版本 IE 开发辅助库</h4>
+        <h4 class="title">window.opener</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck33qrld5000uzap2fj95e8sy/" id="post-next" class="post-nav-link">
+      <a href="/blog/article/ck371h0qj000qxmnefizr9jo6/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">酷库-vue</h4>
+        <h4 class="title">酷库-scrollspy(滚动监听)</h4>
       </a>
     </div>
   
@@ -393,7 +399,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/&title=《:hover伪类选择器，移动端的表现》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&title=《移动端文字垂直居中的问题》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -403,22 +409,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/&title=《:hover伪类选择器，移动端的表现》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&title=《移动端文字垂直居中的问题》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《:hover伪类选择器，移动端的表现》 — qteam&url=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端文字垂直居中的问题》 — qteam&url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck33qrlbw0000zap21lbv2t21/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -429,7 +435,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3a0WrrMBAE0P7/T/e+XihxZ3alNpSTp2AcWccFaTvaj4/48/nik9////Xn719HeHXPsQ8eHh7eoal/HfoV7PnK82ivriTU6KXj4eHhXeO9GjSZbr4ZPK/eyfj5nPHw8PDeh5dg8s0j3xLw8PDw/h6vKHNHhTIeHh7eu/E2wyWRbrud5OHFsawFDw8Pr1ulo1Ok9/l+5XwPDw8Pb32qfi9umB221bPFw8PDu8BrD6hOHflv1vb8fjw8PLwbvFONVm1ssYlrkzvx8PDwfoaXHIm1wUE0iUUg8s0IeHh4eNd4szJ6Vna3JfiscQEPDw/vNu/5x23o0I7ZRhLDAzA8PDy8Q7x8od83UbWFct6Y9c2Lw8PDwzvKy4vdFrzZhDbZQr1f4eHh4Y14bVC7KcE3pXn74vDw8PBu82YbQ1teH5h0/MfAw8PD+0ne5sgqiQ82WWseGePh4eHd5rWPnMUZ+avctHNN0ws8PDy89KQ+WmTjkCK5nicGSajxzVPw8PDwLvBeLaxt2Jos6LMmqtnc8PDw8H6LN2ss2DcTzFqyiv8e8PDw8Ea8fELJ0LNGhHzpz59Sv288PDy8Ba99zKx9ahM0JOO83Bjw8PDw1rxN6byKBuLDtjaqGG4PeHh4eCWvWGTjhoA2/G1bE2aHbXh4eHineJtieo/J2xdmDV54eHh493izuHb2fXNl1W6Fh4eHd423CQXykvfsc6OeCDw8PLw177P87EvnfNto05TifA8PDw9vwZst+kUqvGgU2JTsqz0NDw8Pb9E68PyzPKTYlOMHNgY8PDy8a7w2w9gf/z+P07YsRFkLHh4e3q/y2nJ5Vt3PXh8eHh7eu/HytoC2OWDTOhDtG3h4eHhHebN2q9WSHc+nLfHx8PDwbvPaf/ifrydFc/uyDjcK4OHh4c15/wAxPCIWzHo0YgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3ay27jQAwEwPz/T3uBXL1WukmN7UPpFMQPTSnADNPkz098PX6v55+f3/N8Je9MXn31bTdceHh4eKOlXy8u+epHfO3XUHw/Hh4e3jFefhhcs9vHdH08vHpPsmY8PDy8b+C9uk2y6AS5+QY8PDy87+S1r84K6Pyx4uHh4X2W194mKXln231eyt+cteDh4eF1OeqwAfapn9/U38PDw8NbtKzaQDbfuPMNvV4nHh4e3gFee4NNiys5cjble7RcPDw8vDVvv7m3oUMb7F6HuX+A8fDw8I7x2sXlcWry+E4cJz+bZ4+Hh4cX8GYbelvsbiKP9qjAw8PDeyev3Yj3gUJbfBejA3h4eHiHee0iNpFu/v6kHH/5Kh4eHt4x3iauvV5Wu/R8zCs60vDw8PAO8PJ/+DdLv/5UHj0M74uHh4d3gNcuOi987/19/lk8PDy8c7w8ME2WMjtO8odYl/54eHh4h3lJSNqeNnlxnBxF7R8DDw8P7wRvFqfuW/t56NDGHHh4eHjv4bVBQDuAtTmEZh2uPybL8PDw8Na8uxbRRrRtId6OduHh4eG9h5ds90n7vx1T2Hf/bxsjwMPDw7u8b9JGahtUs4B19Xd4dajg4eHhHeBtwtwNcjZKlRTZdTGNh4eHN+IlJXIeBLTs2dDVMKXGw8PDu4mXt+3z37djqe04QlFA4+Hh4R3g5ZFEW9TORhCGWz8eHh7e1/A2IcWsHK/PNDw8PLw38h7llYeqsxI8uWNRvuPh4eEd4LV7bNsSuzf8vZmEh4eHt+C15W++Zc+Cj/1n/9Pfw8PDwzvAS1pis6ZXG3O0J1gxNICHh4f3IV5bNM9aYu0hgYeHh/edvLbUzoOGJPadDYTh4eHhneO1I1az22+GvWYjCHh4eHgnePsG2KY030cYeYiMh4eHt+b9A0O1IhYOt9hyAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

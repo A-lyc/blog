@@ -14,23 +14,26 @@
     
     
     
-    <title>vue-spa-移动端理想的用户体验 | qteam | 博客</title>
+    <title>vh单位的可信度 | qteam | 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="vue,spa,用户体验">
-    <meta name="description" content="目前前端的跨端技术层出不穷，开发快，对用户透明。对前端开发者来说掌握的东西要更多了~   本文谈论一些原生移动 app 用户体验  体验分析 每天都会用各种 app，各种操作熟记于心总结出以下网页不容易实现的需求   类似网页的历史记录，前进刷新网页，后退时使用历史缓存 前进或者后退（物理返回键）会有不同的切换效果（滑动切换） 点击物理返回键时若正处于 “模态对话框(dialog, alert)">
-<meta name="keywords" content="vue,spa,用户体验">
+    <meta name="keywords" content="css">
+    <meta name="description" content="vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！  问题 手机游览器的 100vh 总会高出一截经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。  测试代码1&amp;lt;div id=&quot;test&quot; style=&quot;height: 100vh&quot;&amp;gt;&amp;lt;div&amp;gt;  1alert(&amp;apos;innerHeight: &amp;apos; +">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-spa-移动端理想的用户体验">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck33qrlca0006zap2h1mpdfpc&#x2F;index.html">
+<meta property="og:title" content="vh单位的可信度">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0pk0002xmne1pr21src&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
-<meta property="og:description" content="目前前端的跨端技术层出不穷，开发快，对用户透明。对前端开发者来说掌握的东西要更多了~   本文谈论一些原生移动 app 用户体验  体验分析 每天都会用各种 app，各种操作熟记于心总结出以下网页不容易实现的需求   类似网页的历史记录，前进刷新网页，后退时使用历史缓存 前进或者后退（物理返回键）会有不同的切换效果（滑动切换） 点击物理返回键时若正处于 “模态对话框(dialog, alert)">
+<meta property="og:description" content="vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！  问题 手机游览器的 100vh 总会高出一截经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。  测试代码1&amp;lt;div id=&quot;test&quot; style=&quot;height: 100vh&quot;&amp;gt;&amp;lt;div&amp;gt;  1alert(&amp;apos;innerHeight: &amp;apos; +">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T01:19:24.947Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0pk0002xmne1pr21src&#x2F;pc.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0pk0002xmne1pr21src&#x2F;phone.jpg">
+<meta property="og:updated_time" content="2019-11-20T08:42:27.216Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0pk0002xmne1pr21src&#x2F;pc.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
     
@@ -104,7 +107,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">vue-spa-移动端理想的用户体验</div>
+        <div class="flex-col header-title ellipsis">vh单位的可信度</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -126,7 +129,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">vue-spa-移动端理想的用户体验</h1>
+        <h1 class="title">vh单位的可信度</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-11-08T01:06:15.000Z" itemprop="datePublished" class="page-time">
@@ -134,7 +137,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF/">前端</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
 
             
         </h5>
@@ -151,21 +154,21 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#体验分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">体验分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现难点分析以及解决方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现难点分析以及解决方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">3.</span> <span class="post-toc-text">例子</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试代码"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">测试代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PC端测试"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">PC端测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移动端测试"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">移动端测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决思路</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-vue-spa-移动端理想的用户体验"
+<article id="post-vh单位的可信度"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">vue-spa-移动端理想的用户体验</h1>
+        <h1 class="post-card-title">vh单位的可信度</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T01:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF/">前端</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
 
 
 
@@ -178,40 +181,25 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>目前前端的跨端技术层出不穷，开发快，对用户透明。<br>对前端开发者来说掌握的东西要更多了~</p>
+<p>vw, vh 都是自适应页面的利器<br>vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！</p>
 </blockquote>
-<blockquote>
-<p>本文谈论一些原生移动 app 用户体验</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p>手机游览器的 100vh 总会高出一截<br>经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。</p>
 </blockquote>
-<h2 id="体验分析"><a href="#体验分析" class="headerlink" title="体验分析"></a>体验分析</h2><blockquote>
-<p>每天都会用各种 app，各种操作熟记于心<br>总结出以下网页不容易实现的需求</p>
-</blockquote>
-<ol>
-<li>类似网页的历史记录，前进刷新网页，后退时使用历史缓存</li>
-<li>前进或者后退（物理返回键）会有不同的切换效果（滑动切换）</li>
-<li>点击物理返回键时若正处于 “模态对话框(dialog, alert)等”，不会返回页面，会先将对话框关闭</li>
-</ol>
-<h2 id="实现难点分析以及解决方案"><a href="#实现难点分析以及解决方案" class="headerlink" title="实现难点分析以及解决方案"></a>实现难点分析以及解决方案</h2><ol>
-<li>vue keep-alive 无法实现前进刷新，后退使用缓存的 app 缓存逻辑<blockquote>
-<p>这里可以使用 vue-navigation 实现</p>
-</blockquote>
-</li>
-<li>前进和后退实现不同的切换效果<blockquote>
-<p>vue transition 标签配合 vue-navigation 实现</p>
-</blockquote>
-</li>
-<li>模态框逻辑，如何判断当前正在弹框，如何优雅的阻止切换切换并关闭模态框<blockquote>
-<p>推荐 vue-create-api 这个库，本文例子中使用了 element-ui 中的 MessageBox 实现</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><blockquote>
-<p><a href="https://github.com/q-jason/code/tree/master/good-vue-app" target="_blank" rel="noopener">github</a></p>
-</blockquote>
-<iframe src="https://codesandbox.io/embed/github/q-jason/code/tree/master/good-vue-app?fontsize=14" width="100%" height="800" frameborder="0" allowfullscreen></iframe>
+<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">style</span>=<span class="string">"height: 100vh"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">'innerHeight: '</span> + innerHeight + <span class="string">'\n'</span> + <span class="string">'test元素高度: '</span> + $(<span class="string">'#test'</span>).css(<span class="string">'height'</span>));</span><br></pre></td></tr></table></figure>
 
+<h3 id="PC端测试"><a href="#PC端测试" class="headerlink" title="PC端测试"></a>PC端测试</h3><img src="/blog/article/ck371h0pk0002xmne1pr21src/pc.jpg" class="">
 
+<hr>
+<h3 id="移动端测试"><a href="#移动端测试" class="headerlink" title="移动端测试"></a>移动端测试</h3><img src="/blog/article/ck371h0pk0002xmne1pr21src/phone.jpg" class="">
+
+<hr>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><blockquote>
+<p>使用 js 赋值 innerHeight</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.height-full'</span>).css(<span class="string">'height'</span>, <span class="built_in">window</span>.innerHeight);</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -220,7 +208,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-18T01:19:24.947Z" itemprop="dateUpdated">2019-11-18 09:19:24</time>
+    最后更新时间：<time datetime="2019-11-20T08:42:27.216Z" itemprop="dateUpdated">2019-11-20 16:42:27</time>
 </span><br>
 
 
@@ -240,7 +228,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/spa/" rel="tag">spa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/" rel="tag">用户体验</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/" rel="tag">css</a></li></ul>
 
 
             
@@ -250,7 +238,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/&title=《vue-spa-移动端理想的用户体验》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/&title=《vh单位的可信度》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -260,22 +248,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/&title=《vue-spa-移动端理想的用户体验》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/&title=《vh单位的可信度》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-spa-移动端理想的用户体验》 — qteam&url=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vh单位的可信度》 — qteam&url=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -298,18 +286,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/article/ck33qrlcg0008zap22rbwe51g/" id="post-prev" class="post-nav-link">
+      <a href="/blog/article/ck371h0q5000dxmne6snjbru8/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">五险一金扣除，实发工资算法</h4>
+        <h4 class="title">到底是谁的滚动条？</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck33qrlcn000dzap24faab58d/" id="post-next" class="post-nav-link">
+      <a href="/blog/article/ck371h0pu0007xmnebs1m56e2/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">到底是谁的滚动条？</h4>
+        <h4 class="title">window.opener</h4>
       </a>
     </div>
   
@@ -410,7 +398,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/&title=《vue-spa-移动端理想的用户体验》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/&title=《vh单位的可信度》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -420,22 +408,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/&title=《vue-spa-移动端理想的用户体验》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/&title=《vh单位的可信度》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-spa-移动端理想的用户体验》 — qteam&url=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vh单位的可信度》 — qteam&url=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck33qrlca0006zap2h1mpdfpc/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck371h0pk0002xmne1pr21src/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -446,7 +434,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3aQW7jMBAEQP//0w6Q0y5iebs5pGJgSydDViSWApB0zzwe8fH8PpLPfx7v73Z15do9RwceHh7e0tCvjp+PbO+QDLEdQ3F/PDw8vGO8+WLQfnt1zfsr8zHj4eHhfQLvarjJoBPk5A54eHh4n8l7/+CE3W6I2y0+Hh4e3p28JAhov12b7tci4w1ZCx4eHl6Xo24rgN3z+dfqe3h4eP897zk4JnebxLjFU/Dw8PAO8JLgoI13k4G2ha62qPZI3h8eHh7eEm8++bahQ7uoJP+MyxeEh4eHd4zXDq6NVtcKWm2rwYvzeHh4eMd4eVtVW4LKr8/vUPwMwMPDwzvMywOIfOLe1YiQb6wvFwY8PDy8A7x2EPlAJ9cn2/HL142Hh4d3gLcraGg/71p4Fluv8PDw8I7xksm9bT5o2wLa8BcPDw/vHl6ef87Di7Xz7d/i4eHhnePlk3K+2c3PJ0FtW2z76zweHh7eMd4kTk0weTzRPrfoKcPDw8PbxFvb8k4KXfM4eBGPh4eHt5XXxrKTTXYeMaxls5etV3h4eHibeO2Evlbumm+d11q78PDw8E7wJnHD+8l9rU1hLd6ta314eHh4m3jzsLXdiM8LY3UkgYeHh7eVl5TE/lGqLxeGZMlZ22TX6xIeHh7eEq/9qT+JetvQNm9ajcpgeHh4eJt4kzaCSUyQD2vX4oSHh4c35yXD2rsVzpeKbf8rPDw8vBt5eRNA8mryJtS11is8PDy807xneex9KW0sm7ymF+2qeHh4eFt588UjL5vlm+mcMSLh4eHhDXh3bn/z1oR5WwMeHh7ead4kpJjPw/mrrEtoeHh4eB/D2xVPtOWxerOOh4eH96u8tVaAZDHIr6xbr/Dw8PCO8ZJNcB4EJJi2PLa4BcfDw8M7wGsLYJOJvp3i14IPPDw8vGO8LwROSt9/CeUzAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3aS27kMAwFwL7/pTPbAYJ43qPETg9QXhn9sVRaSDTJ1yu+vn64/v529svv99/Hff7NhQsPDw/v0tSfJ/398+dptZ/8NMN8znh4eHjbvHxT/hpdye7dLsfzc/Dw8PA+h5fjn0fJlwAPDw/vf+e1wfetQBkPDw/v03gbidrkv8nW/6ZcCx4eHt48M/BqD4n336/U9/Dw8PCOq+ptODs7BmbFtmi2eHh4eAu8fMO9Gwq3u/psnnh4eHgbvDZx0DYBbMS3eYIYDw8Pb4/XFv6fh0wOkllyoT5y8PDw8NZ4OXVWiDppJpgtKB4eHt42bwZLwuXz5EI++oUMCh4eHl7AO3nhbxdoVjC70HqFh4eHt8Y7SaEm231+YDyP3qaP8fDw8O7ykiA1T/LOAus8NK+fiYeHh7fGOymD5QuUHz/nQTkeHh7e7/LaQLYu8JfIIqzHw8PDW+O1L/+ztoA8BG/D7qLpCg8PD++YlyNnCYh8urMwOloUPDw8vAVeHhxfCHNLxvnc8PDw8N7DmwW7swTEbOp1+wIeHh7eVV5SAMsbAtrpzhoUioIZHh4e3lVe3iaVB7vtk/MSWlskw8PDw9vg5QfD3aA5X6bzb/Hw8PA2eMOSUsnIn3+SjIjeG/Dw8PCOeSfD3NqH22RH3XSFh4eHt8BLBttoGpiNfqHdCg8PD++Yl2zcs/f9tvBfJxqef4+Hh4d3lfdVXreyoxvZlKK+h4eHh3fAazfcOjccpzzy8D2/x8PDw9vjHSVJR0nedvmODgY8PDy8NV4e+M523fwAmB1a/zgY8PDw8D6Ml5THkmc+B9ztnPHw8PA+h5ccEs+f56HzUdMAHh4e3jKvDXzbFqs8aM5LbtG/8PDw8BZ4dTPTSWogPirykPokkYGHh4dXjvIHruqIvYyFEoEAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
