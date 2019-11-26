@@ -25,15 +25,15 @@
 <meta name="keywords" content="vue,小程序,酷库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qa000ixmne44u72wdy&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck3f7h8s5000nx6tsfsyie466&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
 <meta property="og:description" content="记载着微信小程序的开发心得  框架的选择 若原生撸请忽略，但并不推荐，原生的开发体验较为差劲  wepy https:&#x2F;&#x2F;github.com&#x2F;Tencent&#x2F;wepy不推荐体验：类 vue 开发体验，但是区别还是比较大的，有学习成本问题：使用过一段时间，问题比较多…，放弃使用的原因是 repeat 双层循环，内层循环读取不到数据，并且无解决办法  mpvue https:&#x2F;&#x2F;github.co">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qa000ixmne44u72wdy&#x2F;iconfont.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qa000ixmne44u72wdy&#x2F;map-label-center.jpg">
-<meta property="og:updated_time" content="2019-11-20T08:42:27.220Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck3f7h8s5000nx6tsfsyie466&#x2F;iconfont.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck3f7h8s5000nx6tsfsyie466&#x2F;map-label-center.jpg">
+<meta property="og:updated_time" content="2019-11-26T01:52:43.565Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qa000ixmne44u72wdy&#x2F;iconfont.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck3f7h8s5000nx6tsfsyie466&#x2F;iconfont.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
     
@@ -211,7 +211,7 @@
 <h2 id="iconfont-引入"><a href="#iconfont-引入" class="headerlink" title="iconfont 引入"></a>iconfont 引入</h2><blockquote>
 <p>小程序推荐使用 iconfont 作为部分图片的解决方案<br>因为小程序中的 image 标签，默认宽高不是真实图片大小，需要手动定义<br>替换图片时会造成一些麻烦(比如传的图片大小不一样，导致的显示不全问题)<br>使用 iconfont 即可以解决问题<br>注意：小程序不支持加载本地字体文件！但是可以加载网络字体文件</p>
 </blockquote>
-<img src="/blog/article/ck371h0qa000ixmne44u72wdy/iconfont.jpg" class="">
+<img src="/blog/article/ck3f7h8s5000nx6tsfsyie466/iconfont.jpg" class="">
 
 <hr>
 <h2 id="map-组件"><a href="#map-组件" class="headerlink" title="map 组件"></a>map 组件</h2><h3 id="阻止手势缩放和拖动"><a href="#阻止手势缩放和拖动" class="headerlink" title="阻止手势缩放和拖动"></a>阻止手势缩放和拖动</h3><blockquote>
@@ -220,7 +220,7 @@
 <h3 id="marker-自定义文字的位置"><a href="#marker-自定义文字的位置" class="headerlink" title="marker 自定义文字的位置"></a>marker 自定义文字的位置</h3><blockquote>
 <p>marker callout 只能显示在 marker 的上方，位置不能改变<br>marker label 可以改变相对于 marker 的位置(大约计算)，但是没有 left，center，right 这种属性<br>下面例子使用 label 实现文字垂直居中对其</p>
 </blockquote>
-<img src="/blog/article/ck371h0qa000ixmne44u72wdy/map-label-center.jpg" class="">
+<img src="/blog/article/ck3f7h8s5000nx6tsfsyie466/map-label-center.jpg" class="">
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> markerArr = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// ... marker options ...</span></span><br><span class="line">    label: &#123;</span><br><span class="line">      <span class="comment">// ... label options ...</span></span><br><span class="line">      anchorX: (<span class="string">'自定义文字'</span>.length * <span class="number">4.7</span>) * <span class="number">-1</span>,</span><br><span class="line">      anchorY: <span class="number">-29</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ... other marker</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
@@ -242,7 +242,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-20T08:42:27.220Z" itemprop="dateUpdated">2019-11-20 16:42:27</time>
+    最后更新时间：<time datetime="2019-11-26T01:52:43.565Z" itemprop="dateUpdated">2019-11-26 09:52:43</time>
 </span><br>
 
 
@@ -272,7 +272,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/&title=《微信小程序》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/&title=《微信小程序》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -282,22 +282,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/&title=《微信小程序》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/&title=《微信小程序》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信小程序》 — qteam&url=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信小程序》 — qteam&url=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -317,12 +317,19 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/ck3f7h8rc0002x6tsbiubczf5/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ifream的妙用</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck371h0qo000zxmnebcjpbiy2/" id="post-next" class="post-nav-link">
+      <a href="/blog/article/ck3f7h8sg0015x6tsbbwv8etz/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">酷库-前端图片辅助库</h4>
       </a>
@@ -425,7 +432,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/&title=《微信小程序》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/&title=《微信小程序》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -435,22 +442,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/&title=《微信小程序》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/&title=《微信小程序》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信小程序》 — qteam&url=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信小程序》 — qteam&url=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck371h0qa000ixmne44u72wdy/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck3f7h8s5000nx6tsfsyie466/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -461,7 +468,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpElEQVR42u3aQW7DMAwEwP7/0+21QGFnSYqJC4xPQexYGh0khuTXV3x9X1y/7/598uru/ee/494/c+DCw8PDOzT1q0nfY/LlSN6TPH81Ch4eHt42L9+Uc3y+oedLls8ZDw8P7zm85KhIBn6xoQcHAx4eHt5/5xXC3FagjIeHh/c03uR1CSNPatwv5WKuBQ8PD6+2S0dVpOd8Xqnv4eHh4Y2r6tXkbDVhkTciNGeLh4eHt8CrFqh6S9Db3Hu/xcPDw9vmbUwuT1v0mr0KyVw8PDy8t/DyQn41/J0kF+7Zo9IXHh4eXotXiL6LCYJkc09G7IHx8PDw9nhJMN0Ll/cSE9H+j4eHh/chXn54vNim4wA9f2ehvoeHh4d3iDfB5P/6e4fQyvGAh4eHd4hXTdRW0xPVKR7ohsDDw8N7Cy8vyReK9+Pyfy8ox8PDw9vj5QX+asp1shx5oetFUwIeHh7eGu9qgHlAnCd/e+0FhaYrPDw8vEO85A9/3pCab+L5QdJbIDw8PLxt3jyZWwhzx2H6sTfj4eHhtXi9Tf9UsJuX06rpYDw8PLz386qlr0lQvpgKwcPDw3sLL9nWk7vJcZJ8Xz2QXhwMeHh4eAu8SXriVOPUsbt4eHh4C7wDf/iLk8gPjN7cyoE1Hh4e3oDXS7/mz/RSwPMmLTw8PLw9XnWwyedJIwIeHh7ec3jVRqh5yDtPUkTP4+Hh4R3lfRev3kZfTQeX0w33TVd4eHh4R3nVDbeHqTYKnArf8fDw8PZ41cMgD6xPLd/oYMDDw8Nb4/VasnrTyifdS4hE+Qw8PDy8D/Hug+aEnSeF86IdHh4e3tN4vYRClV1tGih0RuDh4eEd4uWB76n0QTKHXjoYDw8Pb5vX7NWKw+Je8J18P6rp4eHh4XVG+QH2g7tgaxL7CgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3awY7iMBAEUP7/p2euOxqFVHXHu2j1ckKAEj8juU25X6/4+vp1/fn+1fdnr5P7PHzh4eHhrYd+xfj9fjK493e7eiehvh8zHh4e3mleu7jnD0gW9HboyZjx8PDwPoe332Qnxebqm3h4eHj/E6/Y5gaD/rjCgIeHhzcKI5IhttvlHHM8a8HDw8PrVunoFOlzXh8538PDw8Nbn6q34WwbWCRFqI2Pf9wNDw8P7wCvPaBqt9351rwtSHngi4eHh/csLy8AqyB1tKznkcTlGPDw8PAO8zaxbBvXtkViSMXDw8M7xit232VAkEQPm+aqmx8GDw8P7xgvCRFmrVdPBRPJpNS/Dx4eHt4x3qZ45MHr+5IzbL3Cw8PDO8zLD7SSiHYzEbMycJO14OHh4R3gzRbrdoibMKLerOPh4eEd4+VhwWz5bstPuzW/CSPw8PDwDvDatqfNUp5viDdByU0YgYeHh7fmtWWgjRv2K3bCu2m6wsPDw3uIlwz9/aKfPHK2+W7Lw+VT8PDw8A7w2j/5sy14HmTkG+7VnfHw8PDWvLyZqQ1eZ80EmzgYDw8P7xyvjV9nM5eXitl0XH6Kh4eHd4C3ikcXi3hbGNpgt0hc8PDw8B7l5UvwPnR4j2zbDl7DOcDDw8NLeXljU9uANTuyyp8SlRA8PDy8Y7wEk2+7Z61Us7tFhQEPDw/vAG9/u9kmO48e2inGw8PD+zu89g9/WzxmYXEeZEQ9EXh4eHgL3ld55ZHuiWOztmzg4eHhneC1i++zE7Fp53qqqODh4eHNeMlAk5i1bReYjaE+NsPDw8M7xtvEsic2yvkEFVkLHh4e3j/iJUdZ+XFXXjDy+BgPDw/v03hthJpEvcmnw9YrPDw8vGO8fOO7aSaYRRJtoxgeHh7eaV77h38VDZQNB23EvDrfw8PDw7t/yjdRsIi9jce+GQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

@@ -14,28 +14,26 @@
     
     
     
-    <title>移动端文字垂直居中的问题 | qteam | 博客</title>
+    <title>vh单位的可信度 | qteam | 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="css">
-    <meta name="description" content="移动端开发时经常会碰到文字居上的问题经过测试发现，主要是使用了独特的 font-family 引起的  移动端最佳 font-family 设置1234567body &amp;#123;  font-family:     -apple-system, BlinkMacSystemFont,    &quot;PingFang SC&quot;, &quot;Helvetica Neue&quot;,    STHeiti, &quot;Micros">
+    <meta name="description" content="vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！  问题 手机游览器的 100vh 总会高出一截经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。  测试代码1&amp;lt;div id=&quot;test&quot; style=&quot;height: 100vh&quot;&amp;gt;&amp;lt;div&amp;gt;  1alert(&amp;apos;innerHeight: &amp;apos; +">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动端文字垂直居中的问题">
-<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;index.html">
+<meta property="og:title" content="vh单位的可信度">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck3f7h8ri0006x6ts6lrlab94&#x2F;index.html">
 <meta property="og:site_name" content="qteam">
-<meta property="og:description" content="移动端开发时经常会碰到文字居上的问题经过测试发现，主要是使用了独特的 font-family 引起的  移动端最佳 font-family 设置1234567body &amp;#123;  font-family:     -apple-system, BlinkMacSystemFont,    &quot;PingFang SC&quot;, &quot;Helvetica Neue&quot;,    STHeiti, &quot;Micros">
+<meta property="og:description" content="vw, vh 都是自适应页面的利器vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！  问题 手机游览器的 100vh 总会高出一截经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。  测试代码1&amp;lt;div id=&quot;test&quot; style=&quot;height: 100vh&quot;&amp;gt;&amp;lt;div&amp;gt;  1alert(&amp;apos;innerHeight: &amp;apos; +">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;android-good.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;android-bad.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;ios-good.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;ios-bad.jpg">
-<meta property="og:updated_time" content="2019-11-20T08:42:27.220Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck3f7h8ri0006x6ts6lrlab94&#x2F;pc.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck3f7h8ri0006x6ts6lrlab94&#x2F;phone.jpg">
+<meta property="og:updated_time" content="2019-11-26T01:52:43.565Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck371h0qh000oxmne5u41cpsg&#x2F;android-good.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck3f7h8ri0006x6ts6lrlab94&#x2F;pc.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
     
@@ -109,7 +107,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">移动端文字垂直居中的问题</div>
+        <div class="flex-col header-title ellipsis">vh单位的可信度</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -131,7 +129,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">移动端文字垂直居中的问题</h1>
+        <h1 class="title">vh单位的可信度</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-11-08T01:06:15.000Z" itemprop="datePublished" class="page-time">
@@ -156,16 +154,16 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动端最佳-font-family-设置"><span class="post-toc-number">1.</span> <span class="post-toc-text">移动端最佳 font-family 设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动端-input-placeholder-居上"><span class="post-toc-number">2.</span> <span class="post-toc-text">移动端 input placeholder 居上</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题重现"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题重现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#android-未设置特殊字体"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">android 未设置特殊字体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#android-设置了特殊字体"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">android 设置了特殊字体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ios-未设置特殊字体"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">ios 未设置特殊字体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ios-设置了特殊字体"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">ios 设置了特殊字体</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试代码"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">测试代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PC端测试"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">PC端测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移动端测试"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">移动端测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决思路</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-移动端文字垂直居中的问题"
+<article id="post-vh单位的可信度"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">移动端文字垂直居中的问题</h1>
+        <h1 class="post-card-title">vh单位的可信度</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T01:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
 
@@ -183,25 +181,26 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>移动端开发时经常会碰到文字居上的问题<br>经过测试发现，主要是使用了独特的 font-family 引起的</p>
+<p>vw, vh 都是自适应页面的利器<br>vw 表现良好，vh 在 pc 端网页表现良好，但是在手机下 不！可！信！</p>
 </blockquote>
-<h2 id="移动端最佳-font-family-设置"><a href="#移动端最佳-font-family-设置" class="headerlink" title="移动端最佳 font-family 设置"></a>移动端最佳 font-family 设置</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: </span><br><span class="line">    -apple-system, BlinkMacSystemFont,</span><br><span class="line">    <span class="string">"PingFang SC"</span>, <span class="string">"Helvetica Neue"</span>,</span><br><span class="line">    STHeiti, <span class="string">"Microsoft Yahei"</span>,</span><br><span class="line">    Tahoma,Simsun,sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="移动端-input-placeholder-居上"><a href="#移动端-input-placeholder-居上" class="headerlink" title="移动端 input placeholder 居上"></a>移动端 input placeholder 居上</h2><blockquote>
-<p>经过测试是由于 placeholder 默认的 line-height 导致的</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p>手机游览器的 100vh 总会高出一截<br>经过查阅，好像是算上了地址栏的高度，并且不准备修复，被认为是正常的。</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* safari placeholder 偏上的问题 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">  <span class="attribute">line-height</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">style</span>=<span class="string">"height: 100vh"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="问题重现"><a href="#问题重现" class="headerlink" title="问题重现"></a>问题重现</h2><h3 id="android-未设置特殊字体"><a href="#android-未设置特殊字体" class="headerlink" title="android 未设置特殊字体"></a>android 未设置特殊字体</h3><img src="/blog/article/ck371h0qh000oxmne5u41cpsg/android-good.jpg" class="">
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">'innerHeight: '</span> + innerHeight + <span class="string">'\n'</span> + <span class="string">'test元素高度: '</span> + $(<span class="string">'#test'</span>).css(<span class="string">'height'</span>));</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h3 id="android-设置了特殊字体"><a href="#android-设置了特殊字体" class="headerlink" title="android 设置了特殊字体"></a>android 设置了特殊字体</h3><img src="/blog/article/ck371h0qh000oxmne5u41cpsg/android-bad.jpg" class="">
-
-<hr>
-<h3 id="ios-未设置特殊字体"><a href="#ios-未设置特殊字体" class="headerlink" title="ios 未设置特殊字体"></a>ios 未设置特殊字体</h3><img src="/blog/article/ck371h0qh000oxmne5u41cpsg/ios-good.jpg" class="">
+<h3 id="PC端测试"><a href="#PC端测试" class="headerlink" title="PC端测试"></a>PC端测试</h3><img src="/blog/article/ck3f7h8ri0006x6ts6lrlab94/pc.jpg" class="">
 
 <hr>
-<h3 id="ios-设置了特殊字体"><a href="#ios-设置了特殊字体" class="headerlink" title="ios 设置了特殊字体"></a>ios 设置了特殊字体</h3><img src="/blog/article/ck371h0qh000oxmne5u41cpsg/ios-bad.jpg" class="">
+<h3 id="移动端测试"><a href="#移动端测试" class="headerlink" title="移动端测试"></a>移动端测试</h3><img src="/blog/article/ck3f7h8ri0006x6ts6lrlab94/phone.jpg" class="">
+
+<hr>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><blockquote>
+<p>使用 js 赋值 innerHeight</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.height-full'</span>).css(<span class="string">'height'</span>, <span class="built_in">window</span>.innerHeight);</span><br></pre></td></tr></table></figure>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -209,7 +208,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-20T08:42:27.220Z" itemprop="dateUpdated">2019-11-20 16:42:27</time>
+    最后更新时间：<time datetime="2019-11-26T01:52:43.565Z" itemprop="dateUpdated">2019-11-26 09:52:43</time>
 </span><br>
 
 
@@ -239,7 +238,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&title=《移动端文字垂直居中的问题》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/&title=《vh单位的可信度》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -249,22 +248,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&title=《移动端文字垂直居中的问题》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/&title=《vh单位的可信度》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端文字垂直居中的问题》 — qteam&url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vh单位的可信度》 — qteam&url=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -287,18 +286,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/article/ck371h0pu0007xmnebs1m56e2/" id="post-prev" class="post-nav-link">
+      <a href="/blog/article/ck3f7h8rl0007x6tse2xtbaxl/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">window.opener</h4>
+        <h4 class="title">vue-spa-移动端理想的用户体验</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/article/ck371h0qj000qxmnefizr9jo6/" id="post-next" class="post-nav-link">
+      <a href="/blog/article/ck3f7h8rr000cx6tshnuadzm4/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">酷库-scrollspy(滚动监听)</h4>
+        <h4 class="title">五险一金扣除，实发工资算法</h4>
       </a>
     </div>
   
@@ -399,7 +398,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&title=《移动端文字垂直居中的问题》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/&title=《vh单位的可信度》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -409,22 +408,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&title=《移动端文字垂直居中的问题》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/&title=《vh单位的可信度》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端文字垂直居中的问题》 — qteam&url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vh单位的可信度》 — qteam&url=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/&via=https://q-jason.github.io/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck371h0qh000oxmne5u41cpsg/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck3f7h8ri0006x6ts6lrlab94/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -435,7 +434,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3ay27jQAwEwPz/T3uBXL1WukmN7UPpFMQPTSnADNPkz098PX6v55+f3/N8Je9MXn31bTdceHh4eKOlXy8u+epHfO3XUHw/Hh4e3jFefhhcs9vHdH08vHpPsmY8PDy8b+C9uk2y6AS5+QY8PDy87+S1r84K6Pyx4uHh4X2W194mKXln231eyt+cteDh4eF1OeqwAfapn9/U38PDw8NbtKzaQDbfuPMNvV4nHh4e3gFee4NNiys5cjble7RcPDw8vDVvv7m3oUMb7F6HuX+A8fDw8I7x2sXlcWry+E4cJz+bZ4+Hh4cX8GYbelvsbiKP9qjAw8PDeyev3Yj3gUJbfBejA3h4eHiHee0iNpFu/v6kHH/5Kh4eHt4x3iauvV5Wu/R8zCs60vDw8PAO8PJ/+DdLv/5UHj0M74uHh4d3gNcuOi987/19/lk8PDy8c7w8ME2WMjtO8odYl/54eHh4h3lJSNqeNnlxnBxF7R8DDw8P7wRvFqfuW/t56NDGHHh4eHjv4bVBQDuAtTmEZh2uPybL8PDw8Na8uxbRRrRtId6OduHh4eG9h5ds90n7vx1T2Hf/bxsjwMPDw7u8b9JGahtUs4B19Xd4dajg4eHhHeBtwtwNcjZKlRTZdTGNh4eHN+IlJXIeBLTs2dDVMKXGw8PDu4mXt+3z37djqe04QlFA4+Hh4R3g5ZFEW9TORhCGWz8eHh7e1/A2IcWsHK/PNDw8PLw38h7llYeqsxI8uWNRvuPh4eEd4LV7bNsSuzf8vZmEh4eHt+C15W++Zc+Cj/1n/9Pfw8PDwzvAS1pis6ZXG3O0J1gxNICHh4f3IV5bNM9aYu0hgYeHh/edvLbUzoOGJPadDYTh4eHhneO1I1az22+GvWYjCHh4eHgnePsG2KY030cYeYiMh4eHt+b9A0O1IhYOt9hyAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3awY7iMBAEUP7/p1lpTyPNJlS5bWCll9MoA4mfkWKnuh+P+Hj+Pa7OPH8cvz9z/932ao8TBx4eHt7S0K+OHJB892qIz/jI74uHh4d3mne/GLRDTJaW/C5XZ6K74OHh4X2Ul2+18+lot9p4eHh4/y8vYbSP+HzJwcPDw/sGXvLyf/+tdijt1Y5nLXh4eHgxry2AfcPfB+t7eHh4eIOqevtQXrvvZDwvRouHh4d3gJdsWycLRh5SrEUP0TXx8PDwtvImJa52avJ2q3xCX5zBw8PDO8BbK4DdP+6T2HeyNa+XHDw8PLwDvASW8040E7TlLjw8PLxzvLXHdEJtW7jWWhkWfyU8PDy8AW9ty5tPSrt45PFu3gSGh4eHd4KXxwFthNqWshZ/mSRrwcPDwzvAa3ehu+Laebz7Yvrw8PDw3sLLH+iTbq9JEasII/Dw8PC28vImgPsCVd6M1V6z/e8/CmB4eHh4W3nbXvjjzXEb107aF/Dw8PBO8NrYdNsuPg4U2oJcse7h4eHhLfHWLj3ZNLfhRd7+FRXA8PDw8N7Ci1714/OTgHgt2sDDw8M7wZssA21R/8RdoonGw8PD28orXuzjAlW+dW5h+UKFh4eHd4K3NyBIYtaE0X4mGjQeHh7eJl5egmof3PMII38biGJfPDw8vE28vBjfDqgNZycL1eVygoeHh/cWXr6ZbgfaTl++/FzeFw8PD+8Ar93Izgtgk0h3fhc8PDy8Oe9ZHm3xbK2ZYG2K6zcGPDw8vCXeJDxtA9Z2XUoKYHh4eHif4u0t+bczuhY0FOU0PDw8vGO8NkrIWwTmTVqjBQwPDw/vo7y84JSXytYKYMUn8fDw8L6G1264W/w80sXDw8M7zcsBu4LafBLbHBoPDw/vNG9tEG1bwN7mgEUGHh4e3pT3B3YUVLk0l+X4AAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
