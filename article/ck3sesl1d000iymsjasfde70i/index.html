@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>前后端分离的开发方式-前端篇 | qteam | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue,开发经验">
+    <meta name="description" content="做项目时，情况千变万化。本文主要讨论前端与后端的交互接口部分  项目中前端的任务 切好页面骨架、样式 根据后端给的接口文档，访问接口，获取数据，填充页面，提交表单等交互 不断联调，最终完成  后端情况分析 主要分为以下情况   已有成型接口 或 一部分成型接口  ★★★★★   没有成型接口，前后端同时进行，但是已经订好了数据字段  ★★★   没有成型接口，前后端同时进行 或 后端进度比前端慢">
+<meta name="keywords" content="vue,开发经验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前后端分离的开发方式-前端篇">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck3sesl1d000iymsjasfde70i&#x2F;index.html">
+<meta property="og:site_name" content="qteam">
+<meta property="og:description" content="做项目时，情况千变万化。本文主要讨论前端与后端的交互接口部分  项目中前端的任务 切好页面骨架、样式 根据后端给的接口文档，访问接口，获取数据，填充页面，提交表单等交互 不断联调，最终完成  后端情况分析 主要分为以下情况   已有成型接口 或 一部分成型接口  ★★★★★   没有成型接口，前后端同时进行，但是已经订好了数据字段  ★★★   没有成型接口，前后端同时进行 或 后端进度比前端慢">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-05T07:38:29.148Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">jason</h5>
+          <a href="mailto:596908546@qq.com" target="_blank" rel="noopener" title="596908546@qq.com" class="mail">596908546@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">前后端分离的开发方式-前端篇</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">前后端分离的开发方式-前端篇</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-26T01:53:05.000Z" itemprop="datePublished" class="page-time">
+  2019-11-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目中前端的任务"><span class="post-toc-number">1.</span> <span class="post-toc-text">项目中前端的任务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#后端情况分析"><span class="post-toc-number">2.</span> <span class="post-toc-text">后端情况分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分析问题"><span class="post-toc-number">3.</span> <span class="post-toc-text">分析问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">4.</span> <span class="post-toc-text">解决方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案-3-解析"><span class="post-toc-number">5.</span> <span class="post-toc-text">解决方案 3 解析</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-前后端分离的开发方式-前端篇"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">前后端分离的开发方式-前端篇</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-26 09:53:05" datetime="2019-11-26T01:53:05.000Z"  itemprop="datePublished">2019-11-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>做项目时，情况千变万化。<br>本文主要讨论前端与后端的交互接口部分</p>
+</blockquote>
+<h2 id="项目中前端的任务"><a href="#项目中前端的任务" class="headerlink" title="项目中前端的任务"></a>项目中前端的任务</h2><ol>
+<li>切好页面骨架、样式</li>
+<li>根据后端给的接口文档，访问接口，获取数据，填充页面，提交表单等交互</li>
+<li>不断联调，最终完成</li>
+</ol>
+<h2 id="后端情况分析"><a href="#后端情况分析" class="headerlink" title="后端情况分析"></a>后端情况分析</h2><blockquote>
+<p>主要分为以下情况</p>
+</blockquote>
+<ol>
+<li><p>已有成型接口 或 一部分成型接口</p>
+<blockquote>
+<p>★★★★★</p>
+</blockquote>
+</li>
+<li><p>没有成型接口，前后端同时进行，但是已经订好了数据字段</p>
+<blockquote>
+<p>★★★</p>
+</blockquote>
+</li>
+<li><p>没有成型接口，前后端同时进行 或 后端进度比前端慢，没有交流沟通好数据字段</p>
+<blockquote>
+<p>☆☆</p>
+</blockquote>
+</li>
+<li><p>没有成型接口，后端遥遥无期甚至迷茫</p>
+<blockquote>
+<p>☆</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h2><blockquote>
+<p>情况分析中 1 为理想情况，可以直接按照后端接口开发，无须特殊注意<br>主要从 2、3、4 中分析</p>
+</blockquote>
+<ol>
+<li>没有约定字段，导致前端不知道要用什么 key 值，导致后端接口成型后，需要重新大量修改前端</li>
+<li>部分复杂功能需要依赖后端返回值，key值 和 响应返回值不确定造成无法进行</li>
+</ol>
+<blockquote>
+<p>总结：字段 key 值不确定！</p>
+</blockquote>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li><p>切好样式后，卡住不继续进行，等后端接口成型后，根据接口再继续做</p>
+<blockquote>
+<p>★★★<br>分析：劳动力最小的方案，但卡住不进行在现实中不理想，工作量 “头轻脚重”，开发不连贯，造成很多问题</p>
+</blockquote>
+</li>
+<li><p>切好样式后，通过 mock 数据，继续绑定功能，key 值为前端定义，后期和后端商量着改</p>
+<blockquote>
+<p>★★<br>分析：不推荐，会有 “沟通问题” 和 “成型差异”，“改” 可能会 “大改” 甚至 “全改”</p>
+</blockquote>
+</li>
+<li><p>切好样式后，通过 mock 数据，继续绑定功能，定义 “前端 key 值”，不需要与后端相同，额外增加代码 loader 部分，在前端转换 key 值差异</p>
+<blockquote>
+<p>★★★★★<br>分析：开发连贯，loader 的存在避免了因为 key 值的问题而大改代码，维护性较好，可以随时出一份不需要后端即可访问的静态版本</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="解决方案-3-解析"><a href="#解决方案-3-解析" class="headerlink" title="解决方案 3 解析"></a>解决方案 3 解析</h2><blockquote>
+<p>例子使用了 vue + vue-cli<br>开发过程为：</p>
+</blockquote>
+<ol>
+<li>定义 “前端字段”，模拟数据，写好功能</li>
+<li>后端接口完成，正式对接</li>
+<li>对响应数据进行处理，转化为 “前端字段” 数据</li>
+<li>完成提交等，必须有后端才能继续的功能</li>
+<li>需求修改，从 1 重新开始</li>
+</ol>
+<blockquote>
+<p>具体方法</p>
+</blockquote>
+<ol>
+<li><p>定义环境变量 process.env.MOCK，代表进入 mock 环境</p>
+<blockquote>
+<p>可自行查找方法，例：<br>npm run dev        -&gt; 开发模式，正式对接版本<br>npm run build      -&gt; 产品模式，正式对接版本<br>npm run dev:mock   -&gt; 开发模式，mock 版本<br>npm run build:mock -&gt; 产品模式，mock 版本</p>
+</blockquote>
+</li>
+<li><p>分析页面所需要的字段，在 data 中定义前端 key 值，写好模板，并根据环境变量 mock 数据</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"dataArr"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(item, i) in dataArr"</span> <span class="attr">:key</span>=<span class="string">"i"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是否为 mock 环境</span></span><br><span class="line"><span class="keyword">const</span> IS_MOCK = process.env.MOCK;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      bannerI: <span class="number">0</span>,</span><br><span class="line">      title: IS_MOCK ? <span class="string">'标题'</span> : <span class="literal">null</span>,</span><br><span class="line">      dataArr: IS_MOCK ? [</span><br><span class="line">        &#123; <span class="attr">name</span>: <span class="number">1</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">name</span>: <span class="number">2</span> &#125;</span><br><span class="line">      ] : <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="keyword">async</span> init () &#123;</span><br><span class="line">      <span class="comment">// 待后端真实接口</span></span><br><span class="line">      <span class="keyword">if</span> (!IS_MOCK) &#123;</span><br><span class="line">        <span class="comment">// 发送请求获取数据</span></span><br><span class="line">        <span class="keyword">let</span> dataArr = <span class="keyword">await</span> (axios.get(<span class="string">'...'</span>)).data</span><br><span class="line">        <span class="comment">// 转换数据</span></span><br><span class="line">        <span class="keyword">this</span>.dataArr = dataArr.map(<span class="function"><span class="params">()</span> =&gt;</span> &#123;<span class="comment">/****/</span>&#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">    <span class="keyword">this</span>.init();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>需要请求后端获取数据的方法中，判断 MOCK 值，模拟返回值。</p>
+<blockquote>
+<p>关键词搜索等功能</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> IS_MOCK = process.env.MOCK;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    search (keywords) &#123;</span><br><span class="line">      <span class="comment">// mock 定义前端需要的数据格式</span></span><br><span class="line">      <span class="keyword">if</span> (IS_MOCK) &#123;</span><br><span class="line">        <span class="keyword">return</span> [ &#123; <span class="attr">text</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">text</span>: <span class="number">2</span> &#125; ]</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 待后端接口完成</span></span><br><span class="line">      <span class="comment">// 根据上面 mock 的数据结构进行转换</span></span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">        </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表单提交的方法中，判断 MOCK 值，console 出请求参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> IS_MOCK = process.env.MOCK;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      name: IS_MOCK ? <span class="string">'魏大勋'</span> : <span class="literal">null</span>,</span><br><span class="line">      form: &#123;</span><br><span class="line">        age: <span class="literal">null</span>,</span><br><span class="line">        message: <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    submit () &#123;</span><br><span class="line">      <span class="keyword">if</span> (IS_MOCK) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'-----------------------'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'提交表单数据：'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.form);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'-----------------------'</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 待后端接口完成</span></span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">        </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-05T07:38:29.148Z" itemprop="dateUpdated">2019-12-05 15:38:29</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://q-jason.github.io/blog">
+            <img src="/blog/img/avatar.jpg" alt="jason">
+            jason
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C/" rel="tag">开发经验</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/&title=《前后端分离的开发方式-前端篇》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/&title=《前后端分离的开发方式-前端篇》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前后端分离的开发方式-前端篇》 — qteam&url=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/ck3sesl1q000zymsjb4034my1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">酷库-swiper</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/article/ck3sesl1g000kymsjc2mybpua/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">微信小程序</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "7knYztKAhxjRuVyam3S4wQ3j-gzGzoHsz",
+            appKey: "jPxTeLgibWTnOlR3lKcRdtJ8",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>jason &copy;
+                2015 -
+                
+                2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/&title=《前后端分离的开发方式-前端篇》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/&title=《前后端分离的开发方式-前端篇》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前后端分离的开发方式-前端篇》 — qteam&url=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck3sesl1d000iymsjasfde70i/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aQW4jMQwEwPz/09nrArsed1NiYAQ1JyO2NaoJINIkv77i6zu4nj//99+fX/+7wqvPXLvw8PDwrm49326y5vPWnwHP+3m5Ah4eHt4aL1ku2Vx0y+OtJ3vGw8PD+xxei0+S5iQk4OHh4f0OXn7lm/6gwICHh4f3yMuXa2+cFzVuPQg8PDy8bV7eRfqc1yv9PTw8PLxLAwGzQzwPA22zrdgtHh4e3gIvP3DbosCtwan2u3h4eHjbvLZx9VzMnY1hnQSkN6/x8PDw1niz475Nf8+LC8n616IZHh4e3iOvyL7LMYLk3bt3LH4r4OHh4R3w8uS1TZdvFSaGYwF4eHh4C7z82E1S29mGZo2x4icBHh4e3hovP9xno1HnASMfWSjqx3h4eHglL7llfRAfBIy8bBGtiYeHh7fMyxdtyxZJonxShrgQ8fDw8PBGvFnq3Da08oQ4D1ov94+Hh4e3xktgyUE8S4KT4DRL6/Hw8PA2eG27K29ctcGjHVkohhvw8PDwFnjtj/yTA/0khORJf4TEw8PDG/HytDUvp56PArS7enl3PDw8vAVee5tZSTcPFeszZXh4eHjHvPNCQN6galtc7ejAfx4QHh4e3gJvVgA9b//n380Hs96EBzw8PLwFXjsmVeTso4BxuRiBh4eHt8xLDvpbmHbIoC4x4+Hh4f0ILzl883JAW/L4Prjw8PDwfpI37J4FB3fy7q3rTa0FDw8P75g3O3ZnbbPFcsOrNfHw8PAWeO2Be3LcnwwizIa08PDw8PZ4G8GgfaLtfYvAgIeHh7fGa4eZ8pT3pDTcFiBe1lrw8PDwPoDXJtz5I8sT8agMjYeHh/cBvDzVnqXg7TDBm38AHh4e3hqvTXwvHNmjb7V/x8PDw9vgDWe1grQ4b4bNMJf7e3h4eHjv7/IHiHeIvXcyfiIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'qteam';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'qteam';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
