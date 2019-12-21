@@ -1,8 +1,9 @@
 ---
-title: :hover伪类选择器，移动端的表现
-category: web
+title: 心得-hover伪类选择器-移动端的表现
+category: 前端心得
 date: 2019-11-08 09:06:15
-tags: css
+tags: 
+  - 游览器差异
 ---
 
 > 这里主要记载一个响应式项目中碰到的下拉菜单的问题

@@ -1,9 +1,9 @@
 ---
-title: 傻傻分不清的 DOM 元素尺寸属性
-category: web
+title: 心得-傻傻分不清的DOM尺寸属性
+category: 前端心得
 date: 2019-11-08 09:14:07
 tags:
-  - js
+  - 文档
 ---
 
 > 主要讨论以下属性

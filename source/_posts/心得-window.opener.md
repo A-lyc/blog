@@ -1,8 +1,9 @@
 ---
-title: window.opener
-category: web
+title: 心得-window.opener
+category: 前端心得
 date: 2019-11-08 09:06:15
-tag: js
+tag: 
+  - 文档
 ---
 
 > 项目中经常存在着需要跳转网页然后再跳转回来的需求

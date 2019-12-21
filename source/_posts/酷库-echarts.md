@@ -1,9 +1,9 @@
 ---
 title: 酷库-echarts
 date: 2019-12-17 09:12:50
-category: web
+category: 前端心得
 tags:
-  - 酷库
+  - 图表
 ---
 
 > echarts 是非常强大、知名的图表库

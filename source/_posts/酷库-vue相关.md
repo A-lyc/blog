@@ -1,9 +1,8 @@
 ---
-title: 酷库-vue
-category: web
+title: 酷库-vue相关
+category: 前端心得
 date: 2019-11-07 09:06:15
 tags:
-  - 酷库
   - vue
 ---
 

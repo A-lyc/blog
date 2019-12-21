@@ -1,12 +1,9 @@
 ---
-title: strapi
+title: 心得-strapi
 date: 2019-12-19 14:51:16
-category: node
+category: 后端心得
 tags:
-  - cms
-  - node
-  - 酷库
-  - 全栈心得
+  - 经验
 ---
 
 > strapi 是我一直关注的 node cms 框架
@@ -16,12 +13,14 @@ tags:
 > 下面是学习笔记：
 
 ## 相关链接整理
+
 > 官网：https://strapi.io/
 > github: https://github.com/strapi/strapi
 > 功能路线图：https://portal.productboard.com/strapi
 > 插件库：https://strapi.io/marketplace
 
 ## 左边侧边栏字段翻译
+
 > version: strapi@3.0.0-beta.18
 
 > 默认创建好模型后，名字是英文的，只有 Users(用户) 字段是中文
@@ -35,6 +34,7 @@ tags:
 ----- 手动间隙 -----
 
 ### 翻译过程
+
 1. 在项目根目录创建目录 admin/src/translations
 2. 将 strapi-admin/admin/src/translations 中的 en.json(必须有), zh-Hans.json(或其他语言) 复制过来
 3. 将字段显示的!!复数!!名字复制到 en.json 和 zh-Hans.json 中的 key，value 写需要翻译显示的名字
@@ -42,6 +42,7 @@ tags:
 5. npm run build(翻译成功后，打包管理员界面)
 
 en.json
+
 ```json
 {
   "Categories": "Categories",
@@ -50,6 +51,7 @@ en.json
 ```
 
 zh-Hans.json
+
 ```json
 {
   "Categories": "餐厅分类",
@@ -62,6 +64,7 @@ zh-Hans.json
 ----- 手动间隙 -----
 
 ### 备注
+
 > en.json 一定要复制并填值，因为 admin/components/LeftMenuLink/index.js 中
 > 是根据 en.json 进行判断是否有无 key 值，若没有就不走国际化流程了
 
@@ -74,7 +77,7 @@ const content = en[props.label] ? (
     id={props.label}
     defaultMessage="{label}"
     values={{
-      label: `${props.label}`,
+      label: `${props.label}`
     }}
     className="linkLabel"
   />

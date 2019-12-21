@@ -1,9 +1,9 @@
 ---
-title: 酷库-api
+title: 酷库-api相关
 date: 2019-12-20 13:15:50
-category: web
+category: 前端心得
 tags:
-  - 酷库
+  - http
 ---
 
 ## axios

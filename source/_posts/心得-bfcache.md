@@ -1,10 +1,9 @@
 ---
-title: 游览器 bfcache 机制
-category: web
+title: 心得-bfcache
+category: 前端心得
 date: 2019-11-08 09:36:31
 tags:
-  - html
-  - js
+  - 游览器机制
 ---
 
 > 本文讨论 bfcache 机制带来的一些 bug

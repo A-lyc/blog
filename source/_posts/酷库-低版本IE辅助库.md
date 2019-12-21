@@ -1,9 +1,9 @@
 ---
-title: 低版本 IE 开发辅助库
-category: web
+title: 酷库-低版本IE辅助库
+category: 前端心得
 date: 2019-11-08 09:06:15
 tags:
-  - 酷库
+  - IE
 ---
 
 > 万恶的 IE.....
