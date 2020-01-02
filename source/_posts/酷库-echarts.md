@@ -40,3 +40,6 @@ tags:
 
 {% asset_img map-label-center-use-markPoint.jpg %}
 
+### series 散点无效
+> 必须指定 geo，否则无效
+> 暂时不知道 geo 和 series 中 type = map 有什么区别...
