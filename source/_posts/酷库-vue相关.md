@@ -79,7 +79,7 @@ tags:
 
 ## 地图
 
-## vue-baidu-map
+### vue-baidu-map
 > https://github.com/Dafrok/vue-baidu-map
 > 作用：组件化实现百度地图的功能
 > 备注：推荐使用，使用起来非常优雅
@@ -88,10 +88,20 @@ tags:
 
 ## 表单
 
-## vue-echarts
+### vue-echarts
 > https://github.com/ecomfe/vue-echarts
 > 作用：对 echarts 的组件封装
 > 备注：大量数据时，要注意 vue 数据绑定的性能问题
 > 备注：组件提供了 props manual-update 来避免数据绑定
 
 -------------------------------------------------------------
+
+## 国际化
+
+### vue-i18n
+> github: https://github.com/kazupon/vue-i18n
+> 备注：碰到国际化问题无脑用就行了
+
+#### 改变语言
+> 若在组件中用 this.$i18n.locale 改变，则只会改变当前组件
+> 要改变 this.$root.$i18n.locale 或 i18n 实例，才会全局改变
