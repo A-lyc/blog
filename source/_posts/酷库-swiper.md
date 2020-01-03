@@ -1,7 +1,7 @@
 ---
 title: 酷库-swiper
 date: 2019-11-28 16:11:03
-category: 前端心得
+category: 酷库
 tags:
   - 切换
 ---

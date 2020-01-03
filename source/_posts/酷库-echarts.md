@@ -1,7 +1,7 @@
 ---
 title: 酷库-echarts
 date: 2019-12-17 09:12:50
-category: 前端心得
+category: 酷库
 tags:
   - 图表
 ---
