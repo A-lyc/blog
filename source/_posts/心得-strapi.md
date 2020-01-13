@@ -19,6 +19,29 @@ tags:
 > 功能路线图：https://portal.productboard.com/strapi
 > 插件库：https://strapi.io/marketplace
 
+## 启用 --inspect 调试
+> 跟着下面步骤走就可以
+
+1. 项目根目录新建 index.js（代码在下面直接复制即可）
+2. 安装 nodemon (npm i --save-dev nodemon)
+3. 在 package.json scripts 中创建 dev 命令 nodemon --inspect index
+4. 在 cmd 运行 npm run dev 即可
+5. 打开谷歌游览器 node devTools 查看
+
+```javascript
+require('strapi/lib/commands/start')()
+
+/**
+ *  develop 模式启动文件 --inspect 不好使
+ *  build 经过测试应该传入 true
+ *  watchAdmin 经过测试应该传入 undefined
+ **/
+// require('strapi/lib/commands/develop')({
+//   build: true,
+//   watchAdmin: undefined
+// })
+```
+
 ## 左边侧边栏字段翻译
 
 > version: strapi@3.0.0-beta.18
