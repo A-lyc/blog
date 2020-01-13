@@ -20,13 +20,16 @@ tags:
 > 插件库：https://strapi.io/marketplace
 
 ## 启用 --inspect 调试
-> 跟着下面步骤走就可以
 
+### 步骤
 1. 项目根目录新建 index.js（代码在下面直接复制即可）
 2. 安装 nodemon (npm i --save-dev nodemon)
 3. 在 package.json scripts 中创建 dev 命令 nodemon --inspect index
 4. 在 cmd 运行 npm run dev 即可
 5. 打开谷歌游览器 node devTools 查看
+
+### 注意
+1. 使用上述方法，无法在管理界面添加字段，正确姿势是在 develop 命令下创建好后，转到 dev 命令调试
 
 ```javascript
 require('strapi/lib/commands/start')()
