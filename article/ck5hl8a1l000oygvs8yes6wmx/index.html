@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>心得-微信小程序 | qteam | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="经验,酷库">
+    <meta name="description" content="记载着微信小程序的开发心得  框架的选择 若原生撸请忽略，但并不推荐原生的开发体验较为差劲，解决方案少现在是 2020.1.3，个人推荐 uni-app 这个框架真心强大！  uni-app https:&#x2F;&#x2F;github.com&#x2F;dcloudio&#x2F;uni-app非常推荐体验：完全的 vue 开发体验，支持所有 vue 语法，支持跨端，社区完善，并拥有插件平台  碰到的问题…  使用 lodash">
+<meta name="keywords" content="经验,酷库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="心得-微信小程序">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck5hl8a1l000oygvs8yes6wmx&#x2F;index.html">
+<meta property="og:site_name" content="qteam">
+<meta property="og:description" content="记载着微信小程序的开发心得  框架的选择 若原生撸请忽略，但并不推荐原生的开发体验较为差劲，解决方案少现在是 2020.1.3，个人推荐 uni-app 这个框架真心强大！  uni-app https:&#x2F;&#x2F;github.com&#x2F;dcloudio&#x2F;uni-app非常推荐体验：完全的 vue 开发体验，支持所有 vue 语法，支持跨端，社区完善，并拥有插件平台  碰到的问题…  使用 lodash">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck5hl8a1l000oygvs8yes6wmx&#x2F;iconfont.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck5hl8a1l000oygvs8yes6wmx&#x2F;map-label-center-2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck5hl8a1l000oygvs8yes6wmx&#x2F;map-label-center-1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck5hl8a1l000oygvs8yes6wmx&#x2F;getCurrentPages-route-options.jpg">
+<meta property="og:updated_time" content="2020-01-17T03:12:39.641Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck5hl8a1l000oygvs8yes6wmx&#x2F;iconfont.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">jason</h5>
+          <a href="mailto:596908546@qq.com" target="_blank" rel="noopener" title="596908546@qq.com" class="mail">596908546@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">心得-微信小程序</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">心得-微信小程序</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-12T01:23:45.000Z" itemprop="datePublished" class="page-time">
+  2019-11-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%BF%83%E5%BE%97/">前端心得</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#框架的选择"><span class="post-toc-number">1.</span> <span class="post-toc-text">框架的选择</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#uni-app"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">uni-app</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#wepy"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">wepy</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mpvue"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">mpvue</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#酷库-html-渲染方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">酷库 - html 渲染方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#rich-text-组件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">rich-text 组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#wxParse"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">wxParse</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mpvue-wxParse"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">mpvue-wxParse</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#酷库-支持-cookie"><span class="post-toc-number">3.</span> <span class="post-toc-text">酷库 - 支持 cookie</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#酷库-优雅的发送请求"><span class="post-toc-number">4.</span> <span class="post-toc-text">酷库 - 优雅的发送请求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#经验-分包"><span class="post-toc-number">5.</span> <span class="post-toc-text">经验 - 分包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#经验-button-边框"><span class="post-toc-number">6.</span> <span class="post-toc-text">经验 - button 边框</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#经验-iconfont-引入"><span class="post-toc-number">7.</span> <span class="post-toc-text">经验 - iconfont 引入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#经验-map-组件"><span class="post-toc-number">8.</span> <span class="post-toc-text">经验 - map 组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#阻止手势缩放和拖动"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">阻止手势缩放和拖动</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#marker-自定义文字的位置"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">marker 自定义文字的位置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#经验-input-change-事件不触发"><span class="post-toc-number">9.</span> <span class="post-toc-text">经验 - input change 事件不触发</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#填坑-getCurrentPages"><span class="post-toc-number">10.</span> <span class="post-toc-text">填坑 - getCurrentPages</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#uni-app-map-事件-markertap-回调参数各平台不一致"><span class="post-toc-number">11.</span> <span class="post-toc-text">uni-app map 事件 markertap 回调参数各平台不一致</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-心得-微信小程序"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">心得-微信小程序</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-12 09:23:45" datetime="2019-11-12T01:23:45.000Z"  itemprop="datePublished">2019-11-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%BF%83%E5%BE%97/">前端心得</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>记载着微信小程序的开发心得</p>
+</blockquote>
+<h2 id="框架的选择"><a href="#框架的选择" class="headerlink" title="框架的选择"></a>框架的选择</h2><blockquote>
+<p>若原生撸请忽略，但并不推荐<br>原生的开发体验较为差劲，解决方案少<br>现在是 2020.1.3，个人推荐 uni-app 这个框架<br>真心强大！</p>
+</blockquote>
+<h3 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h3><blockquote>
+<p><a href="https://github.com/dcloudio/uni-app" target="_blank" rel="noopener">https://github.com/dcloudio/uni-app</a><br>非常推荐<br>体验：完全的 vue 开发体验，支持所有 vue 语法，支持跨端，社区完善，并拥有插件平台</p>
+</blockquote>
+<p>碰到的问题…</p>
+<ol>
+<li>使用 <a href="mailto:lodash@4.17.15" target="_blank" rel="noopener">lodash@4.17.15</a>，dev 正常，pro 报错，降级到 <a href="mailto:lodash@4.16.0" target="_blank" rel="noopener">lodash@4.16.0</a> 好了</li>
+<li>prop 在 template 中传入时，要用驼峰命名，短横线命名会无效</li>
+</ol>
+<h3 id="wepy"><a href="#wepy" class="headerlink" title="wepy"></a>wepy</h3><blockquote>
+<p><a href="https://github.com/Tencent/wepy" target="_blank" rel="noopener">https://github.com/Tencent/wepy</a><br>不推荐<br>体验：类 vue 开发体验，但是区别还是比较大的，有学习成本<br>问题：使用过一段时间，问题比较多…，放弃使用的原因是 repeat 双层循环，内层循环读取不到数据，并且无解决办法</p>
+</blockquote>
+<h3 id="mpvue"><a href="#mpvue" class="headerlink" title="mpvue"></a>mpvue</h3><blockquote>
+<p><a href="https://github.com/Meituan-Dianping/mpvue" target="_blank" rel="noopener">https://github.com/Meituan-Dianping/mpvue</a><br>推荐<br>体验：不完全的 vue 开发体验，不支持 filter 等，其他基本相同，支持跨端<br>问题：据说停止维护了….</p>
+</blockquote>
+<hr>
+<h2 id="酷库-html-渲染方案"><a href="#酷库-html-渲染方案" class="headerlink" title="酷库 - html 渲染方案"></a>酷库 - html 渲染方案</h2><h3 id="rich-text-组件"><a href="#rich-text-组件" class="headerlink" title="rich-text 组件"></a>rich-text 组件</h3><blockquote>
+<p>无法主动控制样式，只能想办法改变 html 中的 style<br>非常不灵活</p>
+</blockquote>
+<h3 id="wxParse"><a href="#wxParse" class="headerlink" title="wxParse"></a>wxParse</h3><blockquote>
+<p><a href="https://github.com/icindy/wxParse" target="_blank" rel="noopener">https://github.com/icindy/wxParse</a><br>基于原生小程序，若没有使用小程序框架就用它吧</p>
+</blockquote>
+<h3 id="mpvue-wxParse"><a href="#mpvue-wxParse" class="headerlink" title="mpvue-wxParse"></a>mpvue-wxParse</h3><blockquote>
+<p><a href="https://github.com/F-loat/mpvue-wxParse" target="_blank" rel="noopener">https://github.com/F-loat/mpvue-wxParse</a><br>看名字就知道是基于 mpvue 的，uni-app 也可以使</p>
+</blockquote>
+<h2 id="酷库-支持-cookie"><a href="#酷库-支持-cookie" class="headerlink" title="酷库 - 支持 cookie"></a>酷库 - 支持 cookie</h2><blockquote>
+<p>小程序默认不支持 cookie 传输，但后端的逻辑经常会依赖 cookie<br>解决方案：<a href="https://github.com/charleslo1/weapp-cookie" target="_blank" rel="noopener">https://github.com/charleslo1/weapp-cookie</a><br>使用起来非常方便，只需要引入即可</p>
+</blockquote>
+<hr>
+<h2 id="酷库-优雅的发送请求"><a href="#酷库-优雅的发送请求" class="headerlink" title="酷库 - 优雅的发送请求"></a>酷库 - 优雅的发送请求</h2><blockquote>
+<p><a href="https://github.com/SoloJiang/axios" target="_blank" rel="noopener">https://github.com/SoloJiang/axios</a><br>wx-axios 用这个库<br>微信小程序版 axios，作者 fork 原本的 axios 实现</p>
+</blockquote>
+<hr>
+<h2 id="经验-分包"><a href="#经验-分包" class="headerlink" title="经验 - 分包"></a>经验 - 分包</h2><blockquote>
+<p>小程序有代码体积限制（小于 2m）<br>若体积过大就只能用分包的形式</p>
+</blockquote>
+<blockquote>
+<p>uni-app 可以强制开启代码压缩缓解在开发环境下体积过大，无法真机预览的问题</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="comment">// uni-app 强制开启代码压缩</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  configureWebpack (config) &#123;</span><br><span class="line">    <span class="comment">// 防止在开发环境文件过大的情况</span></span><br><span class="line">    config.optimization.minimize = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// uni-app 的分包优化配置</span><br><span class="line">&quot;mp-weixin&quot;: &#123;</span><br><span class="line">  &quot;optimization&quot; : &#123;</span><br><span class="line">    &quot;subPackages&quot; : true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="经验-button-边框"><a href="#经验-button-边框" class="headerlink" title="经验 - button 边框"></a>经验 - button 边框</h2><blockquote>
+<p>button 边框是用 :after 实现的<br>并不是 border 实现</p>
+</blockquote>
+<hr>
+<h2 id="经验-iconfont-引入"><a href="#经验-iconfont-引入" class="headerlink" title="经验 - iconfont 引入"></a>经验 - iconfont 引入</h2><blockquote>
+<p>小程序推荐使用 iconfont 作为部分图片的解决方案<br>因为小程序中的 image 标签，默认宽高不是真实图片大小，需要手动定义<br>替换图片时会造成一些麻烦(比如传的图片大小不一样，导致的显示不全问题)<br>使用 iconfont 即可以解决问题<br>注意：小程序不支持加载本地字体文件！但是可以加载网络字体文件</p>
+</blockquote>
+<img src="/blog/article/ck5hl8a1l000oygvs8yes6wmx/iconfont.jpg" class="">
+
+<hr>
+<h2 id="经验-map-组件"><a href="#经验-map-组件" class="headerlink" title="经验 - map 组件"></a>经验 - map 组件</h2><h3 id="阻止手势缩放和拖动"><a href="#阻止手势缩放和拖动" class="headerlink" title="阻止手势缩放和拖动"></a>阻止手势缩放和拖动</h3><blockquote>
+<p>官方暂不支持，但若无点击需求可以通过一个遮盖层实现</p>
+</blockquote>
+<h3 id="marker-自定义文字的位置"><a href="#marker-自定义文字的位置" class="headerlink" title="marker 自定义文字的位置"></a>marker 自定义文字的位置</h3><blockquote>
+<p>2020.1.2…<br>建议放弃使用下面的想法，还是改用一张图片实现<br>经过测试有些 bug 无法解决</p>
+</blockquote>
+<ol>
+<li>位置太难对准</li>
+<li>ios 设备上有 marker 和 label 的层叠性问题</li>
+</ol>
+<p>ios 效果如下</p>
+<img src="/blog/article/ck5hl8a1l000oygvs8yes6wmx/map-label-center-2.jpg" class="">
+
+<blockquote>
+<p><del>marker callout 只能显示在 marker 的上方，位置不能改变</del><br><del>marker label 可以改变相对于 marker 的位置(大约计算)</del><br><del>但是没有 left，center，right 这种属性</del><br><del>下面例子使用 label 实现文字垂直居中对其</del></p>
+</blockquote>
+<img src="/blog/article/ck5hl8a1l000oygvs8yes6wmx/map-label-center-1.jpg" class="">
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> markerArr = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// ... marker options ...</span></span><br><span class="line">    label: &#123;</span><br><span class="line">      <span class="comment">// ... label options ...</span></span><br><span class="line">      anchorX: (<span class="string">'自定义文字'</span>.length * <span class="number">4.7</span>) * <span class="number">-1</span>,</span><br><span class="line">      anchorY: <span class="number">-29</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ... other marker</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="经验-input-change-事件不触发"><a href="#经验-input-change-事件不触发" class="headerlink" title="经验 - input change 事件不触发"></a>经验 - input change 事件不触发</h2><blockquote>
+<p>已知基础库 2.9.3 有这个 bug<br>若出现，降级或升级试试看</p>
+</blockquote>
+<hr>
+<h2 id="填坑-getCurrentPages"><a href="#填坑-getCurrentPages" class="headerlink" title="填坑 - getCurrentPages"></a>填坑 - getCurrentPages</h2><blockquote>
+<p>getCurrentPages 方法返回的页面数组中 route 属性无查询字符串<br>查询字符串保存在 options 属性中(对象形式)，想要完整的需要自己拼接<br>建议使用 qs 做拼接</p>
+</blockquote>
+<img src="/blog/article/ck5hl8a1l000oygvs8yes6wmx/getCurrentPages-route-options.jpg" class="">
+
+<h2 id="uni-app-map-事件-markertap-回调参数各平台不一致"><a href="#uni-app-map-事件-markertap-回调参数各平台不一致" class="headerlink" title="uni-app map 事件 markertap 回调参数各平台不一致"></a>uni-app map 事件 markertap 回调参数各平台不一致</h2><blockquote>
+<p>markerId 位置不一致</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// e.markerId 是小程序</span></span><br><span class="line"><span class="comment">// e.detail.markerId 是h5</span></span><br><span class="line"><span class="keyword">let</span> id = e.markerId || e.detail.markerId</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-01-17T03:12:39.641Z" itemprop="dateUpdated">2020-01-17 11:12:39</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://q-jason.github.io/blog">
+            <img src="/blog/img/avatar.jpg" alt="jason">
+            jason
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%BB%8F%E9%AA%8C/" rel="tag">经验</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E9%85%B7%E5%BA%93/" rel="tag">酷库</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/&title=《心得-微信小程序》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/&title=《心得-微信小程序》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-微信小程序》 — qteam&url=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/ck5hl8a1i000kygvs79zk7l6z/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">心得-前端对接</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/article/ck5hl8a25001rygvs6tvhech6/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">酷库-图片相关</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "7knYztKAhxjRuVyam3S4wQ3j-gzGzoHsz",
+            appKey: "jPxTeLgibWTnOlR3lKcRdtJ8",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>jason &copy;
+                2015 -
+                
+                2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/&title=《心得-微信小程序》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/&title=《心得-微信小程序》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-微信小程序》 — qteam&url=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck5hl8a1l000oygvs8yes6wmx/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqUlEQVR42u3aQXLDMAgF0N7/0ukBUssfgVwvnleZ1mPpOTOCAD8/8fUJru/79z5/r3h1z9iFh4eHN7r1q3vWS+ZPu/rL1TPzPePh4eGd5iWPS6h7B3oVn+wZDw8P7z28HLle5eZAbwQkPDw8vLfxPlvXeuvVkgceHh7eG3j54/ol3Twd33sReHh4eKd5eRfpPZ+P9Pfw8PDwhgYCOulsHgZyXmG3eHh4eAd41QZVngRPDU7tNdLw8PDwzvGS5ZMCQXXhvSBUDlF4eHh4j/DWyOrnPF3uhKWo9YWHh4c3ykuaVZ1GVGeYIC9zRL8V8PDw8IZ41TS6vEyjMNEaC8DDw8P7J976oUkwqBZq82feJO54eHh4B3jVg7taepgNQsnfL18oHh4e3iiv3/jPA0N/1KAcxvDw8PBGedWWUn5/NVEux7Gkz4WHh4d3jJcXZ/MFNsekiiHn5uXi4eHhHePlBdbNnD0o/u6NF2z+VsDDw8Nr8KpbrxYg8u32ixrRd4iHh4c3xMsLpvmxnpcn8umpaisODw8P70leOW0dapv1y8F4eHh4p3mddldejMhDRfXF3YQxPDw8vGO85KhNMNWy7Gz77XLoCg8PD2+U1xlv6h/leSuuuqvL7xAPDw9viNcpJeSMasAYrrXg4eHhjfKqxYJqurw3QFBtuZWHrvDw8PDavOoRnBQm9saqpoodeHh4eM/wCu2ldsrbKUAUihp4eHh4o7xP8eqUGE5XU/74Lx4eHt4BXvXATTDJi3h+YAsPDw9vllfd9HoTe2+0U/i4WREPDw/vGG9vxOpEkWKgvoKHh4f3Sl6STHcCTD/VxsPDw3sPLx8L6IwL5EMDwyk1Hh4eXszLF5gqH3QaaclLxMPDwzvH6/zgz5PdvBm2F1TmZrXw8PDwFqv8AgxpQQVPLPhZAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'qteam';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'qteam';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
