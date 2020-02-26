@@ -170,3 +170,33 @@ request('/users-permissions/advanced', {
   console.error(err)
 })
 ```
+
+### 自定义插件的小储存库
+> strapi 给插件的配置单独设置了一个地方（数据库中的一个表 core_store）
+> 涉及插件配置的逻辑可以基于这个功能来做
+> 但是这个 api 官方文档中并未标明，不知是啥原因，官方插件中都已用到这个 api
+> 如下
+
+```javascript
+module.exports = async () => {
+  // 插件储存库
+  const pluginStore = strapi.store({
+    environment: '',
+    type: 'plugin',
+    name: 'config'
+  })
+  
+  // 设置储存库中的字段
+  await pluginStore.set({
+    key: 'test',
+    value: [ 1, 2, 3, 4 ]
+  })
+  
+  // 获取储存库中的字段
+  console.log(await pluginStore.get({ key: 'test' }))
+  // => [ 1, 2, 3, 4 ]
+}
+```
+
+### 如何在后台中隐藏模型字段
+> 待...暂未知
