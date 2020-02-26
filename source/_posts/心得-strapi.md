@@ -46,7 +46,6 @@ require('strapi/lib/commands/start')()
 ```
 
 ## 左边侧边栏字段翻译
-
 > version: strapi@3.0.0-beta.18
 
 > 默认创建好模型后，名字是英文的，只有 Users(用户) 字段是中文
@@ -94,7 +93,7 @@ zh-Hans.json
 > en.json 一定要复制并填值，因为 admin/components/LeftMenuLink/index.js 中
 > 是根据 en.json 进行判断是否有无 key 值，若没有就不走国际化流程了
 
-```javascript
+```jsx harmony
 // in node_modules/strapi-admin/admin/components/LeftMenuLink/index.js
 
 // Check if messageId exists in en locale to prevent warning messages
@@ -110,4 +109,64 @@ const content = en[props.label] ? (
 ) : (
   <span className="linkLabel">{props.label}</span>
 );
+```
+
+## 自定义插件
+> version: 3.0.0-beta.18.7
+
+> 这个功能是重头戏哈哈
+> 日后封装常用功能，快速开发全指着自定义插件
+> 研究了半天，有了以下总结
+> 注意：strapi 的管理面板是基于 react 的...需要熟悉
+
+### 如何在本地进行开发插件
+> [官方文档](https://strapi.io/documentation/3.0.0-beta.x/plugin-development/quick-start.html#development-environment-setup)
+> 照着官方文档跑环境就能搭建起来，也比较简单，下面是步骤
+
+> 下面均为在控制台输入
+```bash
+# 首先你要有一个项目...
+npx create-strapi-app my-project
+
+# 进入项目目录
+cd my-project
+
+# 创建一个本地插件
+strapi generate:plugin my-plugin
+
+# 打开开发管理面板环境
+strapi develop --watch-admin
+
+# 然后访问 http://localhost:8000 即可
+# 此时已经搭建好了插件开发环境，接下来接插件逻辑即可
+```
+
+### 自定义插件开发过程
+> 后台管理面板的作用无非就两件事
+> 一. 查看或统计数据（展示数据）
+> 二. 修改数据（表单提交）
+
+- 思考确定插件功能
+- 根据插件功能定义插件数据模型（并非唯一，可多个，在 models 文件夹中）
+- 根据插件功能设计接口并绑定控制器（/config/routes.json 和 controllers 目录）
+- 思考设计并完成后台管理面板
+
+### 后台管理面板如何发送请求
+> strapi 默认有一套权限设置，发送请求会被拦截而获取不到数据（jwt 验证）
+> strapi 提供了 helper（strapi-helper-plugin）
+> 其中 request 模块是用来发请求的
+> 开发者只需要引用，然后使用就可以了
+> 不需要权限逻辑，如下
+
+```javascript
+import { request } from 'strapi-helper-plugin'
+
+// 返回 Promise
+request('/users-permissions/advanced', {
+  method: 'get'
+}).then(res => {
+  console.log(res)
+}).catch(err => {
+  console.error(err)
+})
 ```
