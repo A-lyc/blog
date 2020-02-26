@@ -111,6 +111,43 @@ const content = en[props.label] ? (
 );
 ```
 
+## 如何在后台中隐藏指定模型管理
+> version: 3.0.0-beta.18.7
+
+> ！！！ 目前没有发现从模型配置中隐藏的方法 ！！！
+> 负责可视化管理数据的插件是 strapi-plugin-content-manager 这个包
+> 在其 services/ContentTypes.js 中重写 HIDDEN_CONTENT_TYPES 常量即可实现
+> 步骤如下
+
+- 首先你要有一个项目，并且有自定义的模型字段
+- 在项目根目录 extensions 文件夹中创建 content-manager/services/ContentTypes.js 文件
+- 复制 node_modules/strapi-plugin-content-manager/services/ContentTypes.js 中的代码
+- 黏贴到 extensions/content-manager/services/ContentTypes.js 中
+- 修改 ContentTypes.js 中的依赖包的路径，使其路径正确，下面有例子
+- 找到 HIDDEN_CONTENT_TYPES 常量，新增需要隐藏的模型，下面有例子
+
+```javascript
+/** 修改依赖路径 **/
+const storeUtils = require('strapi-plugin-content-manager/services/utils/store')
+const { pickSchemaFields } = require('strapi-plugin-content-manager/services/utils/schema')
+```
+
+```javascript
+/** 重写需要隐藏的模型 **/
+const HIDDEN_CONTENT_TYPES = [
+  /** 原有的 **/
+  'strapi::admin',
+  'plugins::upload.file',
+  'plugins::users-permissions.permission',
+  'plugins::users-permissions.role',
+  
+  /** 以下是新增的 **/
+  'plugins::config.config',
+  /** application 代表项目中创建的模型 **/
+  'application::house.house'
+]
+```
+
 ## 自定义插件
 > version: 3.0.0-beta.18.7
 
@@ -152,11 +189,12 @@ strapi develop --watch-admin
 - 思考设计并完成后台管理面板
 
 ### 后台管理面板如何发送请求
-> strapi 默认有一套权限设置，发送请求会被拦截而获取不到数据（jwt 验证）
+> strapi 默认有一套权限设置，发送请求会被拦截获取不到数据（jwt 验证）
 > strapi 提供了 helper（strapi-helper-plugin）
 > 其中 request 模块是用来发请求的
 > 开发者只需要引用，然后使用就可以了
-> 不需要权限逻辑，如下
+> 不需要了解权限逻辑，对开发透明
+> 如下：
 
 ```javascript
 import { request } from 'strapi-helper-plugin'
@@ -197,6 +235,3 @@ module.exports = async () => {
   // => [ 1, 2, 3, 4 ]
 }
 ```
-
-### 如何在后台中隐藏模型字段
-> 待...暂未知
