@@ -46,7 +46,6 @@ require('strapi/lib/commands/start')()
 ```
 
 ## 左边侧边栏字段翻译
-
 > version: strapi@3.0.0-beta.18
 
 > 默认创建好模型后，名字是英文的，只有 Users(用户) 字段是中文
@@ -94,7 +93,7 @@ zh-Hans.json
 > en.json 一定要复制并填值，因为 admin/components/LeftMenuLink/index.js 中
 > 是根据 en.json 进行判断是否有无 key 值，若没有就不走国际化流程了
 
-```javascript
+```jsx harmony
 // in node_modules/strapi-admin/admin/components/LeftMenuLink/index.js
 
 // Check if messageId exists in en locale to prevent warning messages
@@ -110,4 +109,129 @@ const content = en[props.label] ? (
 ) : (
   <span className="linkLabel">{props.label}</span>
 );
+```
+
+## 如何在后台中隐藏指定模型管理
+> version: 3.0.0-beta.18.7
+
+> ！！！ 目前没有发现从模型配置中隐藏的方法 ！！！
+> 负责可视化管理数据的插件是 strapi-plugin-content-manager 这个包
+> 在其 services/ContentTypes.js 中重写 HIDDEN_CONTENT_TYPES 常量即可实现
+> 步骤如下
+
+- 首先你要有一个项目，并且有自定义的模型字段
+- 在项目根目录 extensions 文件夹中创建 content-manager/services/ContentTypes.js 文件
+- 复制 node_modules/strapi-plugin-content-manager/services/ContentTypes.js 中的代码
+- 黏贴到 extensions/content-manager/services/ContentTypes.js 中
+- 修改 ContentTypes.js 中的依赖包的路径，使其路径正确，下面有例子
+- 找到 HIDDEN_CONTENT_TYPES 常量，新增需要隐藏的模型，下面有例子
+
+```javascript
+/** 修改依赖路径 **/
+const storeUtils = require('strapi-plugin-content-manager/services/utils/store')
+const { pickSchemaFields } = require('strapi-plugin-content-manager/services/utils/schema')
+```
+
+```javascript
+/** 重写需要隐藏的模型 **/
+const HIDDEN_CONTENT_TYPES = [
+  /** 原有的 **/
+  'strapi::admin',
+  'plugins::upload.file',
+  'plugins::users-permissions.permission',
+  'plugins::users-permissions.role',
+  
+  /** 以下是新增的 **/
+  'plugins::config.config',
+  /** application 代表项目中创建的模型 **/
+  'application::house.house'
+]
+```
+
+## 自定义插件
+> version: 3.0.0-beta.18.7
+
+> 这个功能是重头戏哈哈
+> 日后封装常用功能，快速开发全指着自定义插件
+> 研究了半天，有了以下总结
+> 注意：strapi 的管理面板是基于 react 的...需要熟悉
+
+### 如何在本地进行开发插件
+> [官方文档](https://strapi.io/documentation/3.0.0-beta.x/plugin-development/quick-start.html#development-environment-setup)
+> 照着官方文档跑环境就能搭建起来，也比较简单，下面是步骤
+
+> 下面均为在控制台输入
+```bash
+# 首先你要有一个项目...
+npx create-strapi-app my-project
+
+# 进入项目目录
+cd my-project
+
+# 创建一个本地插件
+strapi generate:plugin my-plugin
+
+# 打开开发管理面板环境
+strapi develop --watch-admin
+
+# 然后访问 http://localhost:8000 即可
+# 此时已经搭建好了插件开发环境，接下来接插件逻辑即可
+```
+
+### 自定义插件开发过程
+> 后台管理面板的作用无非就两件事
+> 一. 查看或统计数据（展示数据）
+> 二. 修改数据（表单提交）
+
+- 思考确定插件功能
+- 根据插件功能定义插件数据模型（并非唯一，可多个，在 models 文件夹中）
+- 根据插件功能设计接口并绑定控制器（/config/routes.json 和 controllers 目录）
+- 思考设计并完成后台管理面板
+
+### 后台管理面板如何发送请求
+> strapi 默认有一套权限设置，发送请求会被拦截获取不到数据（jwt 验证）
+> strapi 提供了 helper（strapi-helper-plugin）
+> 其中 request 模块是用来发请求的
+> 开发者只需要引用，然后使用就可以了
+> 不需要了解权限逻辑，对开发透明
+> 如下：
+
+```javascript
+import { request } from 'strapi-helper-plugin'
+
+// 返回 Promise
+request('/users-permissions/advanced', {
+  method: 'get'
+}).then(res => {
+  console.log(res)
+}).catch(err => {
+  console.error(err)
+})
+```
+
+### 自定义插件的小储存库
+> strapi 给插件的配置单独设置了一个地方（数据库中的一个表 core_store）
+> 涉及插件配置的逻辑可以基于这个功能来做
+> 但是这个 api 官方文档中并未标明，不知是啥原因，官方插件中都已用到这个 api
+> 如下
+
+```javascript
+module.exports = async () => {
+  // 插件储存库
+  const pluginStore = strapi.store({
+    environment: '',
+    type: 'plugin',
+    name: 'config'
+  })
+  
+  // 设置储存库中的字段
+  await pluginStore.set({
+    key: 'test',
+    value: [ 1, 2, 3, 4 ]
+  })
+  
+  // 获取储存库中的字段
+  console.log(await pluginStore.get({ key: 'test' }))
+  // => [ 1, 2, 3, 4 ]
+}
 ```
