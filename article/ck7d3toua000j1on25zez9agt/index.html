@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>心得-前端对接 | qteam | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="经验">
+    <meta name="description" content="本文讨论：需要等待后端接口才能继续开发时该如何优雅的面对   前排提示（不知道该把这段话放哪里…就放这里吧）约定字段这件事通常只是一个规范，一个好的习惯。实际情况前后端可能不会去约定，也无法准确约定，总有纰漏通常情况是 “个做个的”然后数据通过接口返回时才知道字段名好一点的会统一定义些数据模型但是特殊功能，表单提交等，通常也无法保证统一定义所以，“约定字段” 本身不太靠谱我更倾向定义前端字段，然">
+<meta name="keywords" content="经验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="心得-前端对接">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck7d3toua000j1on25zez9agt&#x2F;index.html">
+<meta property="og:site_name" content="qteam">
+<meta property="og:description" content="本文讨论：需要等待后端接口才能继续开发时该如何优雅的面对   前排提示（不知道该把这段话放哪里…就放这里吧）约定字段这件事通常只是一个规范，一个好的习惯。实际情况前后端可能不会去约定，也无法准确约定，总有纰漏通常情况是 “个做个的”然后数据通过接口返回时才知道字段名好一点的会统一定义些数据模型但是特殊功能，表单提交等，通常也无法保证统一定义所以，“约定字段” 本身不太靠谱我更倾向定义前端字段，然">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-04T09:13:45.187Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">jason</h5>
+          <a href="mailto:596908546@qq.com" target="_blank" rel="noopener" title="596908546@qq.com" class="mail">596908546@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">心得-前端对接</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">心得-前端对接</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-26T01:53:05.000Z" itemprop="datePublished" class="page-time">
+  2019-11-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%BF%83%E5%BE%97/">前端心得</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开发时后端各类情况分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">开发时后端各类情况分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#何来-mock"><span class="post-toc-number">3.</span> <span class="post-toc-text">何来 mock</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何优雅的-mock"><span class="post-toc-number">4.</span> <span class="post-toc-text">如何优雅的 mock</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#来个例子"><span class="post-toc-number">5.</span> <span class="post-toc-text">来个例子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#非技术经验"><span class="post-toc-number">6.</span> <span class="post-toc-text">非技术经验</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-心得-前端对接"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">心得-前端对接</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-26 09:53:05" datetime="2019-11-26T01:53:05.000Z"  itemprop="datePublished">2019-11-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%BF%83%E5%BE%97/">前端心得</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>本文讨论：<br>需要等待后端接口才能继续开发时该如何优雅的面对</p>
+</blockquote>
+<blockquote>
+<p>前排提示（不知道该把这段话放哪里…就放这里吧）<br>约定字段这件事通常只是一个规范，一个好的习惯。<br>实际情况前后端可能不会去约定，也无法准确约定，总有纰漏<br>通常情况是 “个做个的”<br>然后数据通过接口返回时才知道字段名<br>好一点的会统一定义些数据模型<br>但是特殊功能，表单提交等，通常也无法保证统一定义<br>所以，“约定字段” 本身不太靠谱<br>我更倾向定义前端字段，然后转化后端字段为前端字段的方式<br>本文也是在讨论 “前段字段”</p>
+</blockquote>
+<h2 id="开发时后端各类情况分析"><a href="#开发时后端各类情况分析" class="headerlink" title="开发时后端各类情况分析"></a>开发时后端各类情况分析</h2><ol>
+<li><p>完美型: 已有成型接口</p>
+<blockquote>
+<p>分析：非常理想的开发体验，通常为重构项目等<br>方案：该情况下可以直接使用已有接口进行前端开发，无需特殊注意<br>星级：★★★★★</p>
+</blockquote>
+</li>
+<li><p>常规型：没有成型接口，前后端同时进行</p>
+<blockquote>
+<p>分析：通常为新项目<br>方案：本文着重探讨的情况，继续往下看吧<br>星级：★★★★</p>
+</blockquote>
+</li>
+<li><p>缺陷型：没有成型接口，后端进度比前端慢，甚至慢很多，需要等待接口</p>
+<blockquote>
+<p>分析：后端项目多，任务重等场景<br>方案：本文着重探讨的情况，继续往下看吧<br>星级：★★</p>
+</blockquote>
+</li>
+<li><p>不知所措型：没有成型接口，后端遥遥无期，甚至迷茫</p>
+<blockquote>
+<p>分析：后端极度不确定<br>方案：本文着重探讨的情况，继续往下看吧<br>星级：★</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li><p>青铜：无接口不进行</p>
+<blockquote>
+<p>解释：完成基础样式后，放任项目不管，等待后端提供接口后，继续进行。<br>分析：非常适合小型无复杂功能类项目。<br>优点：劳动力最小，小项目很实用<br>缺点：中大项目不适用，开发体验不连贯，“头重，尾重，中间轻”，接口对接时需要同时兼顾前端逻辑和后端对接，导致无法专一面对问题。</p>
+</blockquote>
+</li>
+<li><p>王者：mock 数据继续进行</p>
+<blockquote>
+<p>解释：模拟一些数据，继续往下开发，有接口时，将 mock 的数据替换成真实数据<br>分析：mock 数据是 “无后端” 时的唯一办法<br>优点：开发连贯，可以在无后端的情况下，打包一份 mock 版本，保证前端任务完成<br>缺点：根据不同项目需要选择最优的 mock 方式，不健壮的 mock 会带来一定烦恼<br>不健壮的 mock 举例场景如下</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>mock 数据后，无法灵活的切换 mock 环境和 “真实接口” 环境，导致项目频繁报错，查原因很麻烦。</li>
+</ul>
+<h2 id="何来-mock"><a href="#何来-mock" class="headerlink" title="何来 mock"></a>何来 mock</h2><blockquote>
+<p>mock 数据的作用就是在无 “真实数据源” 的时候提供一个 “虚假数据源”<br>不影响正常流程<br>等待有 “真实数据源” 时，再尽量 ！！无缝切换！！</p>
+</blockquote>
+<h2 id="如何优雅的-mock"><a href="#如何优雅的-mock" class="headerlink" title="如何优雅的 mock"></a>如何优雅的 mock</h2><blockquote>
+<p>…待完成</p>
+</blockquote>
+<h2 id="来个例子"><a href="#来个例子" class="headerlink" title="来个例子"></a>来个例子</h2><blockquote>
+<p>例子使用了 vue-cli3<br>开发步骤：</p>
+</blockquote>
+<ol>
+<li><p>定义 mock 环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">新建 .env.mock 文件，文件内容 VUE_APP_MOCK=true</span><br><span class="line">新增 mock 相关启动命令</span><br><span class="line">npm run dev        -&gt; 开发模式，正式对接版本</span><br><span class="line">npm run build      -&gt; 产品模式，正式对接版本</span><br><span class="line">npm run dev:mock   -&gt; 开发模式，mock 版本</span><br><span class="line">npm run build:mock -&gt; 产品模式，mock 版本</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分析并定义页面需要的字段</p>
+</li>
+<li><p>根据环境 mock 数据，完成功能(提交表单等打印出参数，确保正确)</p>
+</li>
+<li><p>后端接口完成，正式对接(此时退出 mock 环境，进入正式对接开发环境)</p>
+</li>
+<li><p>对接口数据进行处理，转换成 “前端字段” 后再进行赋值</p>
+</li>
+<li><p>完成表单提交等，必须有后端才能继续的功能</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"dataArr"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(item, i) in dataArr"</span> <span class="attr">:key</span>=<span class="string">"i"</span>&gt;</span></span><br><span class="line">        &#123;&#123; item.name &#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h3</span>&gt;</span>&#123;&#123; id &#125;&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"form.name"</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是否为 mock 环境</span></span><br><span class="line"><span class="keyword">const</span> IS_MOCK = process.env.VUE_APP_MOCK;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      id: IS_MOCK ? <span class="string">'10086'</span> : <span class="literal">null</span>,</span><br><span class="line">      dataArr: IS_MOCK ? [</span><br><span class="line">        &#123; <span class="attr">name</span>: <span class="number">1</span>, <span class="attr">originData</span>: <span class="literal">null</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">name</span>: <span class="number">2</span>, <span class="attr">originData</span>: <span class="literal">null</span> &#125;</span><br><span class="line">      ] : <span class="literal">null</span>,</span><br><span class="line">      <span class="comment">// 不需要 mock 字段</span></span><br><span class="line">      bannerI: <span class="number">0</span>,</span><br><span class="line">      form: &#123;</span><br><span class="line">        name: <span class="string">''</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// 组件初始化方法</span></span><br><span class="line">    <span class="keyword">async</span> init () &#123;</span><br><span class="line">      <span class="comment">// 正式对接</span></span><br><span class="line">      <span class="keyword">if</span> (!IS_MOCK) &#123;</span><br><span class="line">        <span class="comment">// 发送请求获取数据</span></span><br><span class="line">        <span class="keyword">let</span> dataArr = <span class="keyword">await</span> (axios.get(<span class="string">'...'</span>)).data</span><br><span class="line">        <span class="comment">// 转换数据</span></span><br><span class="line">        <span class="keyword">this</span>.dataArr = dataArr.map(<span class="function"><span class="params">()</span> =&gt;</span> &#123;<span class="comment">/****/</span>&#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 提交表单</span></span><br><span class="line">    submit () &#123;</span><br><span class="line">      <span class="keyword">if</span> (IS_MOCK) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'------------------------------'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'提交表单测试：'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.form);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'------------------------------'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">''</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">/* 正式对接 */</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">    <span class="keyword">this</span>.init();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>项目需求修改，从步骤 1 重新开始，无限循环</p>
+</li>
+</ol>
+<h2 id="非技术经验"><a href="#非技术经验" class="headerlink" title="非技术经验"></a>非技术经验</h2><blockquote>
+<p>用 “王者” 方法还有一个优点是 “自我保护”<br>通常项目卡住时，若前端依赖后端，导致页面显示异常<br>你的团队和领导并不知道项目是卡在谁手中(耳听为虚，眼见为实)<br>客户或领导通常不懂技术<br>但肯定是看前端页面来判断项目是否完成，很显然，此时锅通常/有时就在委屈的前端这里了…<br>通过此方法，可以 mock 出一份静态版本<br>沟通时就可以对着 mock 版说 “前端部分已基本完成，等后端写接口正式对接” (后端的锅)</p>
+</blockquote>
+<blockquote>
+<p>我不认为这是推责任<br>我认为这是将项目推到正确的方向<br>正视关键问题所在，正确引导解决项目问题<br>前端打死也不可能自己变出真实数据接口来呀</p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-03-04T09:13:45.187Z" itemprop="dateUpdated">2020-03-04 17:13:45</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://q-jason.github.io/blog">
+            <img src="/blog/img/avatar.jpg" alt="jason">
+            jason
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%BB%8F%E9%AA%8C/" rel="tag">经验</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/&title=《心得-前端对接》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/&title=《心得-前端对接》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-前端对接》 — qteam&url=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/ck7d3touq001k1on235si0r5u/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">酷库-swiper</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/article/ck7d3toue000p1on27as1ah5w/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">心得-微信小程序</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "7knYztKAhxjRuVyam3S4wQ3j-gzGzoHsz",
+            appKey: "jPxTeLgibWTnOlR3lKcRdtJ8",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>jason &copy;
+                2015 -
+                
+                2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/&title=《心得-前端对接》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/&title=《心得-前端对接》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-前端对接》 — qteam&url=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck7d3toua000j1on25zez9agt/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3aQU7DQAwF0N7/0iCxQkDSb3vcsnhZRVGazBuk2Nh+POLj4+v4fZ5cqZ5/v3J/z7EDDw8Pr7X0q6P66N+/nWzo/Xru78HDw8Pb5iXBoBcSqkusBpsnFjw8PLy38vKkOd+I+0BSDVR4eHh4/42XLKhXkjhVmMDDw8N7JS9Pf5OiQ54uJ8/JtxsPDw/vNbxJA+xd5y/q7+Hh4eEVu+q95tM87b4vZxTei4eHh7fAy4eoJncmy53febmVeHh4eEd59x/uXoF1I79NkH/8Cg8PD2+B10tqe9uRp8uTIPEkpcbDw8Nb4OUf3N5YQD5ulW/Zk0CFh4eHd5Q3HxTIC7iF6kiAbDbA8PDw8Ma83oBU9SNeToIHww2XxVw8PDy8Q7xJYMiDRG9oYLLpB1JqPDw8vIA3GYrKG2P3b0xIhWQdDw8Pb4GXjFX1UttJMMiff79NeHh4eHu8Xom22jablIAnVDw8PLyzvLzckH+O84/7pPQQbQceHh7eGq9XzM0Xsf3eyz8AHh4e3jKvWqitFnDz8BM1t6qjA3h4eHiHePlCqwMBp1LwSVjCw8PD2+b1Oma9gNELG5NRBjw8PLxTvN4r5wvqjR2U14OHh4e3xpt8uM+2xA6PeeHh4eEt86pN/TwAJGEjf3KhvIuHh4f3Jl5edOgVLHpbFr0RDw8Pb4GXB4O88Z+cJ22tyZ2PaqzDw8PDi3lJ6SEpVeTXq4MCvWLEH1VqPDw8vAVer/RQLUlUh7eq6X45mcbDw8Mr8uZNpmqLq1c4rpaG8fDw8LZ5vUdXm1X3JYneRkRDD3h4eHhrvF4xYr7QUzHtyf8NeHh4eG/iVZPmauHgbPjBw8PD+8+8aqOr+omv8g4HBjw8PLwLXnXgKSln5C2xpPra3A48PDy8Bd6kAdYLJ3lRo5qmH+7v4eHh4f08PgF4PJxxQtOC+QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'qteam';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'qteam';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
