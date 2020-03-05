@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>酷库-echarts | qteam | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="图表">
+    <meta name="description" content="echarts 是非常强大、知名的图表库https:&#x2F;&#x2F;www.echartsjs.com&#x2F;zh&#x2F;index.html  官方文档阅读心得 此库文档非常大…一开始阅读总不知道从哪里下手个人总结以下步骤   确定需求，从 官方例子 中，找到类似的作为参考，或直接复制配置套用 首先确认 series 属性，确认图表类型 模拟数据，设置图表类型对应的 data 属性 增加辅助组件(toolbox、ti">
+<meta name="keywords" content="图表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="酷库-echarts">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck7em7isc001izcsn42t19kti&#x2F;index.html">
+<meta property="og:site_name" content="qteam">
+<meta property="og:description" content="echarts 是非常强大、知名的图表库https:&#x2F;&#x2F;www.echartsjs.com&#x2F;zh&#x2F;index.html  官方文档阅读心得 此库文档非常大…一开始阅读总不知道从哪里下手个人总结以下步骤   确定需求，从 官方例子 中，找到类似的作为参考，或直接复制配置套用 首先确认 series 属性，确认图表类型 模拟数据，设置图表类型对应的 data 属性 增加辅助组件(toolbox、ti">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck7em7isc001izcsn42t19kti&#x2F;map-label-center-use-label.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck7em7isc001izcsn42t19kti&#x2F;map-label-center-use-markPoint.jpg">
+<meta property="og:updated_time" content="2020-03-05T10:36:10.118Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck7em7isc001izcsn42t19kti&#x2F;map-label-center-use-label.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">jason</h5>
+          <a href="mailto:596908546@qq.com" target="_blank" rel="noopener" title="596908546@qq.com" class="mail">596908546@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">酷库-echarts</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">酷库-echarts</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-17T01:12:50.000Z" itemprop="datePublished" class="page-time">
+  2019-12-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E9%85%B7%E5%BA%93/">酷库</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#官方文档阅读心得"><span class="post-toc-number">1.</span> <span class="post-toc-text">官方文档阅读心得</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#map-系列"><span class="post-toc-number">2.</span> <span class="post-toc-text">map 系列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#省份地图-label-自定义位置"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">省份地图 label 自定义位置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#series-散点无效"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">series 散点无效</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-酷库-echarts"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">酷库-echarts</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-17 09:12:50" datetime="2019-12-17T01:12:50.000Z"  itemprop="datePublished">2019-12-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E9%85%B7%E5%BA%93/">酷库</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>echarts 是非常强大、知名的图表库<br><a href="https://www.echartsjs.com/zh/index.html" target="_blank" rel="noopener">https://www.echartsjs.com/zh/index.html</a></p>
+</blockquote>
+<h2 id="官方文档阅读心得"><a href="#官方文档阅读心得" class="headerlink" title="官方文档阅读心得"></a>官方文档阅读心得</h2><blockquote>
+<p>此库文档非常大…<br>一开始阅读总不知道从哪里下手<br>个人总结以下步骤</p>
+</blockquote>
+<ol>
+<li>确定需求，从 <a href="https://www.echartsjs.com/examples/zh/index.html" target="_blank" rel="noopener">官方例子</a> 中，找到类似的作为参考，或直接复制配置套用</li>
+<li>首先确认 series 属性，确认图表类型</li>
+<li>模拟数据，设置图表类型对应的 data 属性</li>
+<li>增加辅助组件(toolbox、timeline、title 等)</li>
+<li>设置细节样式</li>
+<li>增加交互逻辑</li>
+</ol>
+<h2 id="map-系列"><a href="#map-系列" class="headerlink" title="map 系列"></a>map 系列</h2><h3 id="省份地图-label-自定义位置"><a href="#省份地图-label-自定义位置" class="headerlink" title="省份地图 label 自定义位置"></a>省份地图 label 自定义位置</h3><blockquote>
+<p>问题描述：<br>经常有需求会要求在省份、城市中心显示 label<br>map 系列中 label 的属性 position 和 offset 经测试偏移无效<br>并且一个个 “看着大概偏移” 改麻烦的很..<br>开启 legend 组件，这俩属性才有效，暂不知道为啥<br>legend 组件会造成区域上有一个点，也不太好去除</p>
+</blockquote>
+<img src="/blog/article/ck7em7isc001izcsn42t19kti/map-label-center-use-label.jpg" class="">
+
+<blockquote>
+<p>解决办法：<br>放弃使用默认 label，使用 markPoint 模拟 label<br>markPoint data 中项的属性 coord 可以自定义 mark 位置(百度坐标拾取器提取经纬度)<br>然后将图标隐藏（sysbom 空图片 或 大小设置为 1都行）</p>
+</blockquote>
+<img src="/blog/article/ck7em7isc001izcsn42t19kti/map-label-center-use-markPoint.jpg" class="">
+
+<h3 id="series-散点无效"><a href="#series-散点无效" class="headerlink" title="series 散点无效"></a>series 散点无效</h3><blockquote>
+<p>必须指定 geo，否则无效<br>暂时不知道 geo 和 series 中 type = map 有什么区别…</p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-03-05T10:36:10.118Z" itemprop="dateUpdated">2020-03-05 18:36:10</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://q-jason.github.io/blog">
+            <img src="/blog/img/avatar.jpg" alt="jason">
+            jason
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%9B%BE%E8%A1%A8/" rel="tag">图表</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/&title=《酷库-echarts》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/&title=《酷库-echarts》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《酷库-echarts》 — qteam&url=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/ck7em7iri0007zcsnh17i4dnc/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">心得-strapi</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/article/ck7em7is40010zcsnd3dm138r/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">心得-移动端适配心得</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "7knYztKAhxjRuVyam3S4wQ3j-gzGzoHsz",
+            appKey: "jPxTeLgibWTnOlR3lKcRdtJ8",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>jason &copy;
+                2015 -
+                
+                2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/&title=《酷库-echarts》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/&title=《酷库-echarts》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《酷库-echarts》 — qteam&url=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck7em7isc001izcsn42t19kti/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aSW4bQRAEQP7/0/LVgM1R1iZQQMxJ4NKcoICuYla/XvH19c/19+O91+frPL9m4cLDw8Mb3/q728p5ybueH3m3Tn7PeHh4eNe8fFP+al3J7l39up/XwcPDw/sc3rw5fi4beWHAw8PD+y28avO91Sjj4eHhfRovXy6JFfJ2OSkSP5S14OHh4fWTgVe1SPz83yfzPTw8PLzxVL0XxfbKwORdb1fDw8PDO+DlG+5zs5sEtdXNvfdePDw8vGteHgEkt37R305KCB4eHt41L7/parw7DxeaXzEeHh7eGS8/FNUbRE0OE/TKDB4eHt41rzqqzz/sLph47dYTPDw8vMGxgF5022vNk9We10wadzw8PLxd3iSGqG7c8yJUbsfx8PDwDnh5DJGXit1bnBxrwMPDw7vmTRZNBl1Rdz+IdN8+goeHh7fKy2PZrTb6ebXq4YZvVsPDw8M75m01yvPBf6/MfBND4OHh4S3xesg8fi1s4q1CcvI/xMPDw4v3z3xH7Z1QmBwsSI4vVFfGw8PD6/HW2tYY2Ysz8jgYDw8P75qXN7K9IVayiedlI2/Ny1kyHh4e3oCXN775s9XbzYtB+dAVHh4e3hKvOsTKB2CTg1Nbz+Lh4eFd8Kohab5l90ZWedxQCCPw8PDwDni746tqENx7zaiZxsPDw1viJR+WH5+qHjtIGGUkHh4e3hkvv/VqMei14L3rP2vi4eHhrfLm2+7keNakhEQRBh4eHt4Br7rhNsf28QoJLy9meHh4eHe8ZHPvBQq9ry8fuUU/DPDw8PDOeJPGtxoKV8dpkwNbeHh4eJ/AmzTcyVeTrxw193h4eHgfwKuOtXpBQ/UwwWHdw8PDwxvknNUmuzoSqwYihcKAh4eHt8pb+MFfbMTzSOIiMsbDw8Mb8P4A8Z7aT8YZK6AAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'qteam';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'qteam';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
