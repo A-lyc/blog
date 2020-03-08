@@ -79,6 +79,18 @@ tags:
 {% asset_img 单页面路由传参-8.jpg %}
 {% asset_img 单页面路由传参-9.jpg %}
 
+## react-router js 跳转
+- 在组件中，使用 withRouter 后会给 props 设置 history 属性
+{% asset_img js跳转-1.jpg %}
+{% asset_img js跳转-2.jpg %}
+{% asset_img js跳转-3.jpg %}
+
+----------------------------------------
+
+- 在其他 js 中，可以使用 history 库来实现（react-router 有依赖不用自己安装）
+{% asset_img js跳转-4.jpg %}
+{% asset_img js跳转-5.jpg %}
+
 ## react-router 路由嵌套
 
 - 主路由
@@ -88,6 +100,76 @@ tags:
 
 - 子路由
 {% asset_img 嵌套路由-2.jpg %}
+
+## react-redux 使用步骤
+1. 引入
+```bash
+npm i --save react-redux
+```
+
+2. 创建 store.js 文件，创建 reducer、mapStateToProps、mapDispatchToProps 方法，store 实例
+```javascript
+let defaultState = { value: 0 }
+let reducer = function (state = defaultState, action) {
+  switch (action.type) {
+    case 'value': {
+      return {...state, value: action.value}
+    }
+    default: {
+      return state;
+    }
+  }
+}
+let mapStateToProps = function (state) {
+  return { ...state }
+}
+let mapDispatchToProps = function(dispatch) {
+  return {
+    setValue (value) {
+      dispatch({ type: 'value', value })
+    }
+  }
+}
+let store = createStore(reducer);
+
+export {
+  store, reducer, mapStateToProps, mapDispatchToProps
+}
+```
+
+3. 将 Provider 组件套在 App 最外侧，同时传入 props store
+```jsx harmony
+import { store } from './store'
+import App from './App'
+
+ReactDOM.render(
+  <Provider store={ store }>
+    <App/>
+  </Provider>,
+  document.getElementById('root')
+)
+````
+
+4. 哪个组件需要 store 只需要使用 connect 方法连接即可（react-redux）
+```javascript
+import { connect } from 'react-redux'
+import { mapStateToProps, mapDispatchToProps } from '../../store'
+
+function Page () {
+  /** .. **/
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Page)
+```
+
+5. 在组件中获取值或者触发 action
+```javascript
+this.props.value
+this.props.setValue(10)
+```
 
 ## 定义环境变量
 - 创建环境变量文件
