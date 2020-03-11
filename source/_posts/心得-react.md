@@ -53,6 +53,11 @@ tags:
 - 如果事件处理函数中需要 this，则需要定义成下面这种形式（public class fields 语法）
 {% asset_img react事件传参-2.jpg %}
 
+## react-router 到底引入哪一个
+> 只引入 react-router-dom 即可
+- react-router（实现路由的核心）
+- react-router-dom（在 react-router 的基础上多了一些组件）
+
 ## react-router 传参
 
 - 显式 - path 传参
@@ -148,7 +153,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
-````
+```
 
 4. 哪个组件需要 store 只需要使用 connect 方法连接即可（react-redux）
 ```javascript
