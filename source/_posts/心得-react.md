@@ -109,6 +109,7 @@ tags:
 ## react-redux 使用步骤
 1. 引入
 ```bash
+npm i --save redux
 npm i --save react-redux
 ```
 
