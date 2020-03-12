@@ -3,6 +3,8 @@ title: 心得-奇怪的 input[type="number"] 元素 min 和 max 属性
 category: 前端心得
 date: 2020-01-19 16:30:32
 tags:
+  - 逻辑优化
+  - 用户体验
 ---
 
 > 本文主要讨论 input[type="number"] 元素的 min 和 max 属性

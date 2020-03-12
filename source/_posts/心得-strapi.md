@@ -3,7 +3,8 @@ title: 心得-strapi
 date: 2019-12-19 14:51:16
 category: 后端心得
 tags:
-  - 经验
+  - cms
+  - strapi
 ---
 
 > strapi 是我一直关注的 node cms 框架

@@ -85,7 +85,7 @@ tags:
 {% asset_img 单页面路由传参-9.jpg %}
 
 ## react-router js 跳转
-- 在组件中，使用 withRouter 后会给 props 设置 history 属性
+- 在非页面级组件中，使用 withRouter 后会给 props 设置 history 属性
 {% asset_img js跳转-1.jpg %}
 {% asset_img js跳转-2.jpg %}
 {% asset_img js跳转-3.jpg %}

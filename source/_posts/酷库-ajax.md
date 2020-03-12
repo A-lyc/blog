@@ -1,9 +1,9 @@
 ---
-title: 酷库-api相关
+title: 酷库-ajax
 date: 2019-12-20 13:15:50
 category: 酷库
 tags:
-  - http
+  - ajax
 ---
 
 ## axios

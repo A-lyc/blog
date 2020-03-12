@@ -3,7 +3,7 @@ title: 心得-赋值inputEl.value
 date: 2020-01-17 10:56:08
 category: 前端心得
 tags:
-  - 经验
+  - 前端心得
 ---
 
 > 手动赋值 input.value 是项目中常见的场景
