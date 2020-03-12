@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>心得-移动端理想的用户体验 | qteam | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="用户体验">
+    <meta name="description" content="目前前端的跨端技术层出不穷，开发快，对用户透明。对前端开发者来说掌握的东西要更多了~   本文谈论一些原生移动 app 用户体验  体验分析 每天都会用各种 app，各种操作熟记于心总结出以下网页不容易实现的需求   类似网页的历史记录，前进刷新网页，后退时使用历史缓存 前进或者后退（物理返回键）会有不同的切换效果（滑动切换） 点击物理返回键时若正处于 “模态对话框(dialog, alert)">
+<meta name="keywords" content="用户体验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="心得-移动端理想的用户体验">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck7on10az000zzinb6bgbgvn1&#x2F;index.html">
+<meta property="og:site_name" content="qteam">
+<meta property="og:description" content="目前前端的跨端技术层出不穷，开发快，对用户透明。对前端开发者来说掌握的东西要更多了~   本文谈论一些原生移动 app 用户体验  体验分析 每天都会用各种 app，各种操作熟记于心总结出以下网页不容易实现的需求   类似网页的历史记录，前进刷新网页，后退时使用历史缓存 前进或者后退（物理返回键）会有不同的切换效果（滑动切换） 点击物理返回键时若正处于 “模态对话框(dialog, alert)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-12T10:56:46.088Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">jason</h5>
+          <a href="mailto:596908546@qq.com" target="_blank" rel="noopener" title="596908546@qq.com" class="mail">596908546@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">心得-移动端理想的用户体验</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">心得-移动端理想的用户体验</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-08T01:06:15.000Z" itemprop="datePublished" class="page-time">
+  2019-11-08
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%BF%83%E5%BE%97/">前端心得</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#体验分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">体验分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现难点分析以及解决方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现难点分析以及解决方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">3.</span> <span class="post-toc-text">例子</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-心得-移动端理想的用户体验"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">心得-移动端理想的用户体验</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-08 09:06:15" datetime="2019-11-08T01:06:15.000Z"  itemprop="datePublished">2019-11-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%BF%83%E5%BE%97/">前端心得</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>目前前端的跨端技术层出不穷，开发快，对用户透明。<br>对前端开发者来说掌握的东西要更多了~</p>
+</blockquote>
+<blockquote>
+<p>本文谈论一些原生移动 app 用户体验</p>
+</blockquote>
+<h2 id="体验分析"><a href="#体验分析" class="headerlink" title="体验分析"></a>体验分析</h2><blockquote>
+<p>每天都会用各种 app，各种操作熟记于心<br>总结出以下网页不容易实现的需求</p>
+</blockquote>
+<ol>
+<li>类似网页的历史记录，前进刷新网页，后退时使用历史缓存</li>
+<li>前进或者后退（物理返回键）会有不同的切换效果（滑动切换）</li>
+<li>点击物理返回键时若正处于 “模态对话框(dialog, alert)等”，不会返回页面，会先将对话框关闭</li>
+</ol>
+<h2 id="实现难点分析以及解决方案"><a href="#实现难点分析以及解决方案" class="headerlink" title="实现难点分析以及解决方案"></a>实现难点分析以及解决方案</h2><ol>
+<li>vue keep-alive 无法实现前进刷新，后退使用缓存的 app 缓存逻辑<blockquote>
+<p>这里可以使用 vue-navigation 实现</p>
+</blockquote>
+</li>
+<li>前进和后退实现不同的切换效果<blockquote>
+<p>vue transition 标签配合 vue-navigation 实现</p>
+</blockquote>
+</li>
+<li>模态框逻辑，如何判断当前正在弹框，如何优雅的阻止切换切换并关闭模态框<blockquote>
+<p>推荐 vue-create-api 这个库，本文例子中使用了 element-ui 中的 MessageBox 实现</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><blockquote>
+<p><a href="https://github.com/q-jason/code/tree/master/good-vue-app" target="_blank" rel="noopener">github</a></p>
+</blockquote>
+<iframe src="https://codesandbox.io/embed/github/q-jason/code/tree/master/good-vue-app?fontsize=14" width="100%" height="800" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-03-12T10:56:46.088Z" itemprop="dateUpdated">2020-03-12 18:56:46</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://q-jason.github.io/blog">
+            <img src="/blog/img/avatar.jpg" alt="jason">
+            jason
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/" rel="tag">用户体验</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/&title=《心得-移动端理想的用户体验》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/&title=《心得-移动端理想的用户体验》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-移动端理想的用户体验》 — qteam&url=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/ck7on10aq000lzinb42zy9185/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">心得-到底是谁的滚动条</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/article/ck7on10ai000czinb6tsg3hzo/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">心得-vh单位的可信度</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "7knYztKAhxjRuVyam3S4wQ3j-gzGzoHsz",
+            appKey: "jPxTeLgibWTnOlR3lKcRdtJ8",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>jason &copy;
+                2015 -
+                
+                2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/&title=《心得-移动端理想的用户体验》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/&title=《心得-移动端理想的用户体验》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-移动端理想的用户体验》 — qteam&url=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck7on10az000zzinb6bgbgvn1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACyUlEQVR42u3aQW7jQAwEwPz/01lgT8lBcjepsXeB8smIY2tKhxmqya+v+PX99/Xz/c+/XP3n1Xfv319d5eqKD7zw8PDwRku/eiU/feIeJ+u5/x88PDy807zZYZBv6PkS2wPmhQUPDw/vo7z7jXtzI5KDBw8PD+9/5OULamOIp4IJPDw8vHfy2of//Bbk35rdlMeyFjw8PLyYN2uAffb98f4eHh4e3qirPjsMkvGCvHBfrRYPDw/vAC9pNbVLaYPd2ThXMdyAh4eH9yhv07BvH/6/F69hcY+Hh4d3gDfbypNFb8rlzWjCZUmNh4eHd4zXLrctfNtxq9nYAR4eHt45Xr5NJ6TZ1t+W49GgVZuC4OHh4Y14bVm8aWjlV5zNCeDh4eGd47XtpSTwzcvlBNwW95fXxcPDwzvAS7ba/RBAUhzvA1w8PDy807xNUBuFAuVhkBw8xbgYHh4e3gHe/nh4dkNvG2Oz8AIPDw9vn21uhgPae7mPHqLwFw8PD+8YbxYxbFpl7UGSjyb8eo+Hh4f3Fl6d9Y4GpPKbksQNLwJcPDw8vEd57deSUYCo2A1CilnsG01G4OHh4S14beQ6e8bPt+822nhxpOHh4eEd4M1K1dmBkbT2n/qdYUmNh4eHF/CKinvUNmtbYk99+uvcw8PDwzvAawvo5NN78LAsbotvPDw8vGO8dk5pEzHs44n8l/Hw8PBO8NoBgtlS8oGqWQgSDQ3g4eHhPcRrN/RN0+t4Dp2HEXh4eHgP8dptN9/i922z5MAYFtN4eHh4kxy1HixoF5ofHm1rbX+E4OHh4c14syZWXi5vQo38YIgiCTw8PLxHee1hkIcLbUgxO9NePDfg4eHhfYjXRrSb4KAdYrj8Ox4eHt4/wzvRvsqL73w0AQ8PD+8cLx+32oQUbSSRhMV4eHh47+e1j/pJg78NdvOi/Hh/Dw8PD+/uKn8Am+ADJ2PJKAcAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'qteam';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'qteam';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
