@@ -3,11 +3,11 @@ title: 心得-strapi
 date: 2019-12-19 14:51:16
 category: 后端心得
 tags:
+  - node
   - cms
-  - strapi
 ---
 
-> strapi 是我一直关注的 node cms 框架
+> strapi 是我一直关注的 node "无头" cms 框架
 > 我认为他将是未来迈向全栈之路的一个非常重要的 node 框架
 > 从 alpha 版本开始一直关注更新
 > 逐渐的推出了很多实用性很高，眼前一亮的特性、功能、插件
