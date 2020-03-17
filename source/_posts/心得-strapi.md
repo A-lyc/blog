@@ -13,14 +13,14 @@ tags:
 > 逐渐的推出了很多实用性很高，眼前一亮的特性、功能、插件
 > 下面是学习笔记：
 
-## 相关链接整理
+## 资料 - 相关链接整理
 
 > 官网：https://strapi.io/
 > github: https://github.com/strapi/strapi
 > 功能路线图：https://portal.productboard.com/strapi
 > 插件库：https://strapi.io/marketplace
 
-## 启用 --inspect 调试
+## 心得 - 启用 --inspect 调试
 
 ### 步骤
 1. 项目根目录新建 index.js（代码在下面直接复制即可）
@@ -46,7 +46,7 @@ require('strapi/lib/commands/start')()
 // })
 ```
 
-## 左边侧边栏字段翻译
+## 心得 - 后台左边侧边栏模型名称翻译
 > version: strapi@3.0.0-beta.18
 
 > 默认创建好模型后，名字是英文的，只有 Users(用户) 字段是中文
@@ -112,7 +112,7 @@ const content = en[props.label] ? (
 );
 ```
 
-## 如何在后台中隐藏指定模型管理
+## 心得 - 后台左侧侧边栏中隐藏指定模型管理
 > version: 3.0.0-beta.18.7
 
 > ！！！ 目前没有发现从模型配置中隐藏的方法 ！！！
@@ -149,7 +149,52 @@ const HIDDEN_CONTENT_TYPES = [
 ]
 ```
 
-## 自定义插件
+## 心得 - 禁止在后台中修改删除模型字段
+> 在模型配置中(xxx.settings.json)
+> 给字段 configurable 属性设置为 false
+
+## 心得 - strapi.store（配置存储库）
+> strapi 提供了这么一个 api 来存储配置信息（存到数据库里的 core_store 表中）
+> 但是官方文档中没有任何描述
+> 我通过查看了官方插件，学习到了这个 api 的使用方法
+> 如下：
+
+```javascript
+module.exports = async () => {
+  /**
+   *  存数据库的命名规则为
+   *  type_[name_]key
+   **/
+  const store = strapi.store({
+    /** 开发环境和线上环境可以分开不同的配置 **/
+    environment: '',
+    
+    /**
+     *  type 一定要填写
+     *  存数据库时会已 type 作为前缀
+     **/
+    type: 'plugin',
+    
+    /**
+     *  name 不需要一定填写
+     *  存数据库时会把 name 作为第二前缀
+     **/
+    name: 'config'
+  })
+  
+  // 设置储存库中的字段
+  await store.set({
+    key: 'test',
+    value: [ 1, 2, 3, 4 ]
+  })
+  
+  // 获取储存库中的字段
+  console.log(await store.get({ key: 'test' }))
+  // => [ 1, 2, 3, 4 ]
+}
+```
+
+## 自定义插件 - 环境搭建
 > version: 3.0.0-beta.18.7
 
 > 这个功能是重头戏哈哈
@@ -157,7 +202,6 @@ const HIDDEN_CONTENT_TYPES = [
 > 研究了半天，有了以下总结
 > 注意：strapi 的管理面板是基于 react 的...需要熟悉
 
-### 如何在本地进行开发插件
 > [官方文档](https://strapi.io/documentation/3.0.0-beta.x/plugin-development/quick-start.html#development-environment-setup)
 > 照着官方文档跑环境就能搭建起来，也比较简单，下面是步骤
 
@@ -175,11 +219,11 @@ strapi generate:plugin my-plugin
 # 打开开发管理面板环境
 strapi develop --watch-admin
 
-# 然后访问 http://localhost:8000 即可
+# 然后访问 http://localhost:8000/admin 即可
 # 此时已经搭建好了插件开发环境，接下来接插件逻辑即可
 ```
 
-### 自定义插件开发过程
+## 自定义插件 - 插件开发思路
 > 后台管理面板的作用无非就两件事
 > 一. 查看或统计数据（展示数据）
 > 二. 修改数据（表单提交）
@@ -189,7 +233,7 @@ strapi develop --watch-admin
 - 根据插件功能设计接口并绑定控制器（/config/routes.json 和 controllers 目录）
 - 思考设计并完成后台管理面板
 
-### 后台管理面板如何发送请求
+## 自定义插件 - 后台管理面板如何发送请求
 > strapi 默认有一套权限设置，发送请求会被拦截获取不到数据（jwt 验证）
 > strapi 提供了 helper（strapi-helper-plugin）
 > 其中 request 模块是用来发请求的
@@ -210,29 +254,18 @@ request('/users-permissions/advanced', {
 })
 ```
 
-### 自定义插件的小储存库
-> strapi 给插件的配置单独设置了一个地方（数据库中的一个表 core_store）
-> 涉及插件配置的逻辑可以基于这个功能来做
-> 但是这个 api 官方文档中并未标明，不知是啥原因，官方插件中都已用到这个 api
-> 如下
+## 自定义插件 - 内部配置（储存库）
+> 可以用 strapi.store 来存储内部配置
+> strapi.store 上面介绍过了
+> 参考了官方插件代码中的使用
+> 需要注意的是：
+> type 都是 plugin
+> name 都是 插件名称
 
 ```javascript
-module.exports = async () => {
-  // 插件储存库
-  const pluginStore = strapi.store({
-    environment: '',
-    type: 'plugin',
-    name: 'config'
-  })
-  
-  // 设置储存库中的字段
-  await pluginStore.set({
-    key: 'test',
-    value: [ 1, 2, 3, 4 ]
-  })
-  
-  // 获取储存库中的字段
-  console.log(await pluginStore.get({ key: 'test' }))
-  // => [ 1, 2, 3, 4 ]
-}
+const pluginStore = strapi.store({
+  environment: '',
+  type: 'plugin',
+  name: 'users-permissions',
+});
 ```
