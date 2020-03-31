@@ -10,9 +10,8 @@ tags:
 
 ### element-ui
 > https://github.com/ElemeFE/element
-> 主要用于 PC 端项目
-> 个人认为其中的 messageBox (弹框消息盒子) 组件特别好用
-> 移动端改改样式其实也可以正常使用
+> 主要用于 PC 端项目（移动端改改样式大部分组件其实也可以正常使用）
+> 其中的 messageBox，loading 组件特别好用
 
 ### vant-ui
 > https://github.com/youzan/vant

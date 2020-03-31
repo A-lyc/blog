@@ -107,45 +107,79 @@ tags:
 {% asset_img 嵌套路由-2.jpg %}
 
 ## react-redux 使用步骤
+> 我个人不太喜欢在用常量表示 type
+> 需要多一层引用...着实麻烦
+> 个人喜欢通过 mapStateToProps 和 mapDispatchToProps 引入全部的 state 和 actions
+> 这样的缺点是会混淆组件内部的状态和方法来源，但是可以通过加前缀的形式区分
+> ex: state: { storeValue }, actions: { setStoreValue }
+
 1. 引入
 ```bash
 npm i --save redux
 npm i --save react-redux
 ```
 
-2. 创建 store.js 文件，创建 reducer、mapStateToProps、mapDispatchToProps 方法，store 实例
+2. 创建 /store/reducer.js 文件
 ```javascript
-let defaultState = { value: 0 }
-let reducer = function (state = defaultState, action) {
+const defaultState = {
+  storeValue: null
+}
+
+export default function (state = defaultState, action) {
   switch (action.type) {
-    case 'value': {
-      return {...state, value: action.value}
+    case 'storeValue': {
+      return { ...state, value: action.value }
     }
     default: {
-      return state;
+      return state
     }
   }
-}
-let mapStateToProps = function (state) {
-  return { ...state }
-}
-let mapDispatchToProps = function(dispatch) {
-  return {
-    setValue (value) {
-      dispatch({ type: 'value', value })
-    }
-  }
-}
-let store = createStore(reducer);
-
-export {
-  store, reducer, mapStateToProps, mapDispatchToProps
 }
 ```
 
-3. 将 Provider 组件套在 App 最外侧，同时传入 props store
+3. 创建 /store/actions.js 文件
+```javascript
+export const setStoreValue = function (value) {
+  return {
+    type: 'storeValue',
+    value
+  }
+}
+```
+
+4. 创建 /store/index.js 文件
 ```jsx harmony
-import { store } from './store'
+import { createStore } from 'redux'
+import reducer from './reducer'
+import * as actions from './actions'
+
+let store = createStore(reducer)
+let mapStateToProps = function (state) {
+  return {
+    ...state
+  }
+}
+let mapDispatchToProps = function (dispatch) {
+  return actions
+}
+
+export default store
+
+export {
+  store,
+  mapStateToProps,
+  mapDispatchToProps
+}
+```
+
+5. 将 Provider 包裹在 App 组件的外侧，同时传入 /store/index.js 暴露的 store 作为 prop
+```jsx harmony
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import { Provider } from 'react-redux'
+import store from './store'
+
 import App from './App'
 
 ReactDOM.render(
@@ -154,10 +188,13 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
+
 ```
 
-4. 哪个组件需要 store 只需要使用 connect 方法连接即可（react-redux）
-```javascript
+6. 在组件中使用 connect 方法连接 redux（通过 props 的方式传入组件）
+> this.props.storeValue
+> this.props.setStoreValue
+```jsx harmony
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from '../../store'
 
@@ -169,12 +206,6 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Page)
-```
-
-5. 在组件中获取值或者触发 action
-```javascript
-this.props.value
-this.props.setValue(10)
 ```
 
 ## 定义环境变量
