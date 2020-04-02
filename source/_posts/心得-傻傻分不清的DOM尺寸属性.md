@@ -38,15 +38,3 @@ tags:
 > 返回滚动内容的总尺寸
 
 {% asset_img scrollHeight-scrollWidth.jpg %}
-
-## getBoundingClientRect
-> 用于获取某个元素相对于视窗的位置集合
-> 返回值对象中有 top, right, bottom, left, width, height 属性。
-> 其中 width, height 有些兼容问题（IE 中没有这俩属性）
-
-```javascript
-let react = domObj.getBoundingClientRect();
-// => { top, right, bottom, left, width, height }
-```
-
-{% asset_img getBoundingClientRect.jpg %}
