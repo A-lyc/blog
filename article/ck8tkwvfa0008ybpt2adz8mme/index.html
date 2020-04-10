@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>心得-strapi | qteam | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="react,node,cms">
+    <meta name="description" content="strapi 是我一直关注的 node “无头” cms 框架我认为他将是未来迈向全栈之路的一个非常重要的 node 框架从 alpha 版本开始一直关注更新逐渐的推出了很多实用性很高，眼前一亮的特性、功能、插件下面是学习笔记：  资料 - 相关链接整理 官网：https:&#x2F;&#x2F;strapi.io&#x2F;github: https:&#x2F;&#x2F;github.com&#x2F;strapi&#x2F;strapi功能路线图：http">
+<meta name="keywords" content="react,node,cms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="心得-strapi">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck8tkwvfa0008ybpt2adz8mme&#x2F;index.html">
+<meta property="og:site_name" content="qteam">
+<meta property="og:description" content="strapi 是我一直关注的 node “无头” cms 框架我认为他将是未来迈向全栈之路的一个非常重要的 node 框架从 alpha 版本开始一直关注更新逐渐的推出了很多实用性很高，眼前一亮的特性、功能、插件下面是学习笔记：  资料 - 相关链接整理 官网：https:&#x2F;&#x2F;strapi.io&#x2F;github: https:&#x2F;&#x2F;github.com&#x2F;strapi&#x2F;strapi功能路线图：http">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck8tkwvfa0008ybpt2adz8mme&#x2F;field-i18n-before.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck8tkwvfa0008ybpt2adz8mme&#x2F;field-i18n-after.jpg">
+<meta property="og:updated_time" content="2020-04-10T02:36:09.793Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck8tkwvfa0008ybpt2adz8mme&#x2F;field-i18n-before.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">jason</h5>
+          <a href="mailto:596908546@qq.com" target="_blank" rel="noopener" title="596908546@qq.com" class="mail">596908546@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">心得-strapi</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">心得-strapi</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-19T06:51:16.000Z" itemprop="datePublished" class="page-time">
+  2019-12-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%90%8E%E7%AB%AF%E5%BF%83%E5%BE%97/">后端心得</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资料-相关链接整理"><span class="post-toc-number">1.</span> <span class="post-toc-text">资料 - 相关链接整理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#心得-启用-–inspect-调试"><span class="post-toc-number">2.</span> <span class="post-toc-text">心得 - 启用 –inspect 调试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">步骤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">注意</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#心得-后台左边侧边栏模型名称翻译"><span class="post-toc-number">3.</span> <span class="post-toc-text">心得 - 后台左边侧边栏模型名称翻译</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#翻译过程"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">翻译过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#备注"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">备注</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#心得-后台左侧侧边栏中隐藏指定模型管理"><span class="post-toc-number">4.</span> <span class="post-toc-text">心得 - 后台左侧侧边栏中隐藏指定模型管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#心得-禁止在后台中修改删除模型字段"><span class="post-toc-number">5.</span> <span class="post-toc-text">心得 - 禁止在后台中修改删除模型字段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#心得-strapi-store（配置存储库）"><span class="post-toc-number">6.</span> <span class="post-toc-text">心得 - strapi.store（配置存储库）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义插件-环境搭建"><span class="post-toc-number">7.</span> <span class="post-toc-text">自定义插件 - 环境搭建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义插件-插件开发思路"><span class="post-toc-number">8.</span> <span class="post-toc-text">自定义插件 - 插件开发思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义插件-后台管理面板如何发送请求"><span class="post-toc-number">9.</span> <span class="post-toc-text">自定义插件 - 后台管理面板如何发送请求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义插件-内部配置（储存库）"><span class="post-toc-number">10.</span> <span class="post-toc-text">自定义插件 - 内部配置（储存库）</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-心得-strapi"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">心得-strapi</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-19 14:51:16" datetime="2019-12-19T06:51:16.000Z"  itemprop="datePublished">2019-12-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%90%8E%E7%AB%AF%E5%BF%83%E5%BE%97/">后端心得</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>strapi 是我一直关注的 node “无头” cms 框架<br>我认为他将是未来迈向全栈之路的一个非常重要的 node 框架<br>从 alpha 版本开始一直关注更新<br>逐渐的推出了很多实用性很高，眼前一亮的特性、功能、插件<br>下面是学习笔记：</p>
+</blockquote>
+<h2 id="资料-相关链接整理"><a href="#资料-相关链接整理" class="headerlink" title="资料 - 相关链接整理"></a>资料 - 相关链接整理</h2><blockquote>
+<p>官网：<a href="https://strapi.io/" target="_blank" rel="noopener">https://strapi.io/</a><br>github: <a href="https://github.com/strapi/strapi" target="_blank" rel="noopener">https://github.com/strapi/strapi</a><br>功能路线图：<a href="https://portal.productboard.com/strapi" target="_blank" rel="noopener">https://portal.productboard.com/strapi</a><br>插件库：<a href="https://strapi.io/marketplace" target="_blank" rel="noopener">https://strapi.io/marketplace</a></p>
+</blockquote>
+<h2 id="心得-启用-–inspect-调试"><a href="#心得-启用-–inspect-调试" class="headerlink" title="心得 - 启用 –inspect 调试"></a>心得 - 启用 –inspect 调试</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>项目根目录新建 index.js（代码在下面直接复制即可）</li>
+<li>安装 nodemon (npm i –save-dev nodemon)</li>
+<li>在 package.json scripts 中创建 dev 命令 nodemon –inspect index</li>
+<li>在 cmd 运行 npm run dev 即可</li>
+<li>打开谷歌游览器 node devTools 查看</li>
+</ol>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>使用上述方法，无法在管理界面添加字段，正确姿势是在 develop 命令下创建好后，转到 dev 命令调试</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'strapi/lib/commands/start'</span>)()</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  develop 模式启动文件 --inspect 不好使</span></span><br><span class="line"><span class="comment"> *  build 经过测试应该传入 true</span></span><br><span class="line"><span class="comment"> *  watchAdmin 经过测试应该传入 undefined</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="comment">// require('strapi/lib/commands/develop')(&#123;</span></span><br><span class="line"><span class="comment">//   build: true,</span></span><br><span class="line"><span class="comment">//   watchAdmin: undefined</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="心得-后台左边侧边栏模型名称翻译"><a href="#心得-后台左边侧边栏模型名称翻译" class="headerlink" title="心得 - 后台左边侧边栏模型名称翻译"></a>心得 - 后台左边侧边栏模型名称翻译</h2><blockquote>
+<p>version: <a href="mailto:strapi@3.0.0-beta.18" target="_blank" rel="noopener">strapi@3.0.0-beta.18</a></p>
+</blockquote>
+<blockquote>
+<p>默认创建好模型后，名字是英文的，只有 Users(用户) 字段是中文<br>改变语言后，字段也不会发生变化，一直是英文<br>当前版本已经可以很方便的自定义 admin 管理界面了<br>只需要在项目目录下，新建 admin 目录，里面放入需要替换的文件<br>strapi 就会用你自定义的文件替换原有的文件进行打包管理界面</p>
+</blockquote>
+<img src="/blog/article/ck8tkwvfa0008ybpt2adz8mme/field-i18n-before.jpg" class="">
+
+<p>—– 手动间隙 —–</p>
+<h3 id="翻译过程"><a href="#翻译过程" class="headerlink" title="翻译过程"></a>翻译过程</h3><ol>
+<li>在项目根目录创建目录 admin/src/translations</li>
+<li>将 strapi-admin/admin/src/translations 中的 en.json(必须有), zh-Hans.json(或其他语言) 复制过来</li>
+<li>将字段显示的!!复数!!名字复制到 en.json 和 zh-Hans.json 中的 key，value 写需要翻译显示的名字</li>
+<li>strapi develop –watch-admin(开发管理界面模式看下结果)</li>
+<li>npm run build(翻译成功后，打包管理员界面)</li>
+</ol>
+<p>en.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"Categories"</span>: <span class="string">"Categories"</span>,</span><br><span class="line">  <span class="attr">"Restaurants"</span>: <span class="string">"Restaurants"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>zh-Hans.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"Categories"</span>: <span class="string">"餐厅分类"</span>,</span><br><span class="line">  <span class="attr">"Restaurants"</span>: <span class="string">"餐厅"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/blog/article/ck8tkwvfa0008ybpt2adz8mme/field-i18n-after.jpg" class="">
+
+<p>—– 手动间隙 —–</p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><blockquote>
+<p>en.json 一定要复制并填值，因为 admin/components/LeftMenuLink/index.js 中<br>是根据 en.json 进行判断是否有无 key 值，若没有就不走国际化流程了</p>
+</blockquote>
+<figure class="highlight jsx"><figcaption><span>harmony</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in node_modules/strapi-admin/admin/components/LeftMenuLink/index.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Check if messageId exists in en locale to prevent warning messages</span></span><br><span class="line"><span class="keyword">const</span> content = en[props.label] ? (</span><br><span class="line">  &lt;FormattedMessage</span><br><span class="line">    id=&#123;props.label&#125;</span><br><span class="line">    defaultMessage=<span class="string">"&#123;label&#125;"</span></span><br><span class="line">    values=&#123;&#123;</span><br><span class="line">      label: <span class="string">`<span class="subst">$&#123;props.label&#125;</span>`</span></span><br><span class="line">    &#125;&#125;</span><br><span class="line">    className=<span class="string">"linkLabel"</span></span><br><span class="line">  /&gt;</span><br><span class="line">) : (</span><br><span class="line">  &lt;span className=<span class="string">"linkLabel"</span>&gt;&#123;props.label&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="心得-后台左侧侧边栏中隐藏指定模型管理"><a href="#心得-后台左侧侧边栏中隐藏指定模型管理" class="headerlink" title="心得 - 后台左侧侧边栏中隐藏指定模型管理"></a>心得 - 后台左侧侧边栏中隐藏指定模型管理</h2><blockquote>
+<p>version: 3.0.0-beta.18.7</p>
+</blockquote>
+<blockquote>
+<p>！！！ 目前没有发现从模型配置中隐藏的方法 ！！！<br>负责可视化管理数据的插件是 strapi-plugin-content-manager 这个包<br>在其 services/ContentTypes.js 中重写 HIDDEN_CONTENT_TYPES 常量即可实现<br>步骤如下</p>
+</blockquote>
+<ul>
+<li>首先你要有一个项目，并且有自定义的模型字段</li>
+<li>在项目根目录 extensions 文件夹中创建 content-manager/services/ContentTypes.js 文件</li>
+<li>复制 node_modules/strapi-plugin-content-manager/services/ContentTypes.js 中的代码</li>
+<li>黏贴到 extensions/content-manager/services/ContentTypes.js 中</li>
+<li>修改 ContentTypes.js 中的依赖包的路径，使其路径正确，下面有例子</li>
+<li>找到 HIDDEN_CONTENT_TYPES 常量，新增需要隐藏的模型，下面有例子</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 修改依赖路径 **/</span></span><br><span class="line"><span class="keyword">const</span> storeUtils = <span class="built_in">require</span>(<span class="string">'strapi-plugin-content-manager/services/utils/store'</span>)</span><br><span class="line"><span class="keyword">const</span> &#123; pickSchemaFields &#125; = <span class="built_in">require</span>(<span class="string">'strapi-plugin-content-manager/services/utils/schema'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 重写需要隐藏的模型 **/</span></span><br><span class="line"><span class="keyword">const</span> HIDDEN_CONTENT_TYPES = [</span><br><span class="line">  <span class="comment">/** 原有的 **/</span></span><br><span class="line">  <span class="string">'strapi::admin'</span>,</span><br><span class="line">  <span class="string">'plugins::upload.file'</span>,</span><br><span class="line">  <span class="string">'plugins::users-permissions.permission'</span>,</span><br><span class="line">  <span class="string">'plugins::users-permissions.role'</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/** 以下是新增的 **/</span></span><br><span class="line">  <span class="string">'plugins::config.config'</span>,</span><br><span class="line">  <span class="comment">/** application 代表项目中创建的模型 **/</span></span><br><span class="line">  <span class="string">'application::house.house'</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="心得-禁止在后台中修改删除模型字段"><a href="#心得-禁止在后台中修改删除模型字段" class="headerlink" title="心得 - 禁止在后台中修改删除模型字段"></a>心得 - 禁止在后台中修改删除模型字段</h2><blockquote>
+<p>在模型配置中(xxx.settings.json)<br>给字段 configurable 属性设置为 false</p>
+</blockquote>
+<h2 id="心得-strapi-store（配置存储库）"><a href="#心得-strapi-store（配置存储库）" class="headerlink" title="心得 - strapi.store（配置存储库）"></a>心得 - strapi.store（配置存储库）</h2><blockquote>
+<p>strapi 提供了这么一个 api 来存储配置信息（存到数据库里的 core_store 表中）<br>但是官方文档中没有任何描述<br>我通过查看了官方插件，学习到了这个 api 的使用方法<br>如下：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  存数据库的命名规则为</span></span><br><span class="line"><span class="comment">   *  type_[name_]key</span></span><br><span class="line"><span class="comment">   **/</span></span><br><span class="line">  <span class="keyword">const</span> store = strapi.store(&#123;</span><br><span class="line">    <span class="comment">/** 开发环境和线上环境可以分开不同的配置 **/</span></span><br><span class="line">    environment: <span class="string">''</span>,</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  type 一定要填写</span></span><br><span class="line"><span class="comment">     *  存数据库时会已 type 作为前缀</span></span><br><span class="line"><span class="comment">     **/</span></span><br><span class="line">    type: <span class="string">'plugin'</span>,</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  name 不需要一定填写</span></span><br><span class="line"><span class="comment">     *  存数据库时会把 name 作为第二前缀</span></span><br><span class="line"><span class="comment">     **/</span></span><br><span class="line">    name: <span class="string">'config'</span></span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 设置储存库中的字段</span></span><br><span class="line">  <span class="keyword">await</span> store.set(&#123;</span><br><span class="line">    key: <span class="string">'test'</span>,</span><br><span class="line">    value: [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ]</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 获取储存库中的字段</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">await</span> store.get(&#123; <span class="attr">key</span>: <span class="string">'test'</span> &#125;))</span><br><span class="line">  <span class="comment">// =&gt; [ 1, 2, 3, 4 ]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义插件-环境搭建"><a href="#自定义插件-环境搭建" class="headerlink" title="自定义插件 - 环境搭建"></a>自定义插件 - 环境搭建</h2><blockquote>
+<p>version: 3.0.0-beta.18.7</p>
+</blockquote>
+<blockquote>
+<p>这个功能是重头戏哈哈<br>日后封装常用功能，快速开发全指着自定义插件<br>研究了半天，有了以下总结<br>注意：strapi 的管理面板是基于 react 的…需要熟悉</p>
+</blockquote>
+<blockquote>
+<p><a href="https://strapi.io/documentation/3.0.0-beta.x/plugin-development/quick-start.html#development-environment-setup" target="_blank" rel="noopener">官方文档</a><br>照着官方文档跑环境就能搭建起来，也比较简单，下面是步骤</p>
+</blockquote>
+<blockquote>
+<p>下面均为在控制台输入</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先你要有一个项目...</span></span><br><span class="line">npx create-strapi-app my-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入项目目录</span></span><br><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个本地插件</span></span><br><span class="line">strapi generate:plugin my-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开开发管理面板环境</span></span><br><span class="line">strapi develop --watch-admin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 然后访问 http://localhost:8000/admin 即可</span></span><br><span class="line"><span class="comment"># 此时已经搭建好了插件开发环境，接下来接插件逻辑即可</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义插件-插件开发思路"><a href="#自定义插件-插件开发思路" class="headerlink" title="自定义插件 - 插件开发思路"></a>自定义插件 - 插件开发思路</h2><blockquote>
+<p>后台管理面板的作用无非就两件事<br>一. 查看或统计数据（展示数据）<br>二. 修改数据（表单提交）</p>
+</blockquote>
+<ul>
+<li>思考确定插件功能</li>
+<li>根据插件功能定义插件数据模型（并非唯一，可多个，在 models 文件夹中）</li>
+<li>根据插件功能设计接口并绑定控制器（/config/routes.json 和 controllers 目录）</li>
+<li>思考设计并完成后台管理面板</li>
+</ul>
+<h2 id="自定义插件-后台管理面板如何发送请求"><a href="#自定义插件-后台管理面板如何发送请求" class="headerlink" title="自定义插件 - 后台管理面板如何发送请求"></a>自定义插件 - 后台管理面板如何发送请求</h2><blockquote>
+<p>strapi 默认有一套权限设置，发送请求会被拦截获取不到数据（jwt 验证）<br>strapi 提供了 helper（strapi-helper-plugin）<br>其中 request 模块是用来发请求的<br>开发者只需要引用，然后使用就可以了<br>不需要了解权限逻辑，对开发透明<br>如下：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; request &#125; <span class="keyword">from</span> <span class="string">'strapi-helper-plugin'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回 Promise</span></span><br><span class="line">request(<span class="string">'/users-permissions/advanced'</span>, &#123;</span><br><span class="line">  method: <span class="string">'get'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.error(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义插件-内部配置（储存库）"><a href="#自定义插件-内部配置（储存库）" class="headerlink" title="自定义插件 - 内部配置（储存库）"></a>自定义插件 - 内部配置（储存库）</h2><blockquote>
+<p>可以用 strapi.store 来存储内部配置<br>strapi.store 上面介绍过了<br>参考了官方插件代码中的使用<br>需要注意的是：<br>type 都是 plugin<br>name 都是 插件名称</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pluginStore = strapi.store(&#123;</span><br><span class="line">  environment: <span class="string">''</span>,</span><br><span class="line">  type: <span class="string">'plugin'</span>,</span><br><span class="line">  name: <span class="string">'users-permissions'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-10T02:36:09.793Z" itemprop="dateUpdated">2020-04-10 10:36:09</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://q-jason.github.io/blog">
+            <img src="/blog/img/avatar.jpg" alt="jason">
+            jason
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/cms/" rel="tag">cms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/node/" rel="tag">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/&title=《心得-strapi》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/&title=《心得-strapi》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-strapi》 — qteam&url=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/ck8tkwvg2001oybpt1kic04lq/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">酷库-ajax</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/article/ck8tkwvg4001sybpt38arhy1y/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">酷库-echarts</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "7knYztKAhxjRuVyam3S4wQ3j-gzGzoHsz",
+            appKey: "jPxTeLgibWTnOlR3lKcRdtJ8",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>jason &copy;
+                2015 -
+                
+                2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/&title=《心得-strapi》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/&title=《心得-strapi》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-strapi》 — qteam&url=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck8tkwvfa0008ybpt2adz8mme/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3aS24CQQwFQO5/6WQbCRiePw0oqlkhQjpTjTR2nvt2i6+fJ1f++b/vX7++X+HZZ9YuPDw8vKVbv1/6+v37Na9vNFknWfPFpuPh4eEd4yXLJaTqTU+243odPDw8vO/hzUvF9QrXXTEeHh7ef+IV2tygACQtPh4eHt5neflyPUZeTqrN+lrWgoeHh1e7h2iK9D2vj8z38PDw8MZT9V7c0CsDk996uhoeHh7eAV7+wK2Gs1sHp6rtMh4eHt5pXjMYbTW+kyLUjE7w8PDwjvHmI6tqXFstEtXYt7ATeHh4eC1etSHOH9bJT3NG+YvBw8PDO8ZLAtlJgzsPJvKjCYUEBQ8PD6/Fy+ODXrybB6+9shRFGHh4eHgHeFXMezaiumVRecDDw8Nb4iWRRPV1r2BUh2FRs46Hh4e3ykuG9L2JUh7jTorNi0YcDw8P7xgvLwx5e12NbnsjscKhKzw8PLxVXvWBu/UoT67enUTxCx4eHl6Ll5SBagHobcruBuHh4eGd5vXC3OoIv8fobfqL7xAPDw/vAK/82M2nbYPDCknbjYeHh/dZ3nULOwk1emVj4UwZHh4e3gHepHnNY9mckRePKIzAw8PDW+Lly50LHfJgYlQS8PDw8FZ5kyY4b3mrBaNaeB6siYeHh/cWXm8ANhntV8HNQ1d4eHh4q7zqqCkfelWPHUxKAh4eHt47eb1QYDLan/zdQpHDw8PDW+U1/72Pi8r8MEF+rOrBOnh4eHgHeNUH7u5GVAtGHig36wkeHh5ezMvjgN50vrd9Scsejd/w8PDwjvF6A7DebVVb8F4ggoeHh/c9vGp5yFvhXvSwXBjw8PDwjvWc0UM5jnrfdHQADw8P78Chq7zxzTclH4n1It21rAUPDw8v5jXPahWPBeTDsN2IGQ8PD2+V9wsaOdpPqZH/xwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'qteam';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'qteam';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
