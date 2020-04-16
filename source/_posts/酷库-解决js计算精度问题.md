@@ -23,7 +23,7 @@ console.log(45685 * 666.7)
 > 文档：https://mathjs.org/docs/datatypes/bignumbers.html
 
 > 例子如下
-> 有两种方式，选其一使用即可
+> 有两种使用方式，选其一使用即可
 
 ```javascript
 import * as math from 'mathjs'
