@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>心得-bfcache | qteam | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="游览器机制">
+    <meta name="description" content="本文讨论 bfcache 机制带来的一些 bug  bfcache 是啥 是一个游览器机制比如说从 a 网页去 b 网页，然后再点击 b 网页的回退按钮回到 a 网页页面不会刷新，而是使用缓存，用意是提高用户体验表单提交场景发生的比较多  例子：项目分析 项目：后端模板 webApp 项目前端：使用了 vue 做部分的效果(日期选择等，现成的组件)，页面上留有额外 input 供后端提取值后端：">
+<meta name="keywords" content="游览器机制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="心得-bfcache">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck98ergep00024wrq0a8a6hzm&#x2F;index.html">
+<meta property="og:site_name" content="qteam">
+<meta property="og:description" content="本文讨论 bfcache 机制带来的一些 bug  bfcache 是啥 是一个游览器机制比如说从 a 网页去 b 网页，然后再点击 b 网页的回退按钮回到 a 网页页面不会刷新，而是使用缓存，用意是提高用户体验表单提交场景发生的比较多  例子：项目分析 项目：后端模板 webApp 项目前端：使用了 vue 做部分的效果(日期选择等，现成的组件)，页面上留有额外 input 供后端提取值后端：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck98ergep00024wrq0a8a6hzm&#x2F;demo.gif">
+<meta property="og:updated_time" content="2020-04-20T11:40:31.499Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;ck98ergep00024wrq0a8a6hzm&#x2F;demo.gif">
+    
+        <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">jason</h5>
+          <a href="mailto:596908546@qq.com" target="_blank" rel="noopener" title="596908546@qq.com" class="mail">596908546@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">心得-bfcache</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">心得-bfcache</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-08T01:36:31.000Z" itemprop="datePublished" class="page-time">
+  2019-11-08
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%BF%83%E5%BE%97/">前端心得</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bfcache-是啥"><span class="post-toc-number">1.</span> <span class="post-toc-text">bfcache 是啥</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子：项目分析"><span class="post-toc-number">2.</span> <span class="post-toc-text">例子：项目分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子：html结构"><span class="post-toc-number">3.</span> <span class="post-toc-text">例子：html结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子：bug-展示"><span class="post-toc-number">4.</span> <span class="post-toc-text">例子：bug 展示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-心得-bfcache"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">心得-bfcache</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-08 09:36:31" datetime="2019-11-08T01:36:31.000Z"  itemprop="datePublished">2019-11-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%BF%83%E5%BE%97/">前端心得</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>本文讨论 bfcache 机制带来的一些 bug</p>
+</blockquote>
+<h2 id="bfcache-是啥"><a href="#bfcache-是啥" class="headerlink" title="bfcache 是啥"></a>bfcache 是啥</h2><blockquote>
+<p>是一个游览器机制<br>比如说从 a 网页去 b 网页，然后再点击 b 网页的回退按钮回到 a 网页<br>页面不会刷新，而是使用缓存，用意是提高用户体验<br>表单提交场景发生的比较多</p>
+</blockquote>
+<h2 id="例子：项目分析"><a href="#例子：项目分析" class="headerlink" title="例子：项目分析"></a>例子：项目分析</h2><blockquote>
+<p>项目：后端模板 webApp 项目<br>前端：使用了 vue 做部分的效果(日期选择等，现成的组件)，页面上留有额外 input 供后端提取值<br>后端：使用了 php 模板渲染页面<br>结论：使用了较为混乱的开发方式，本以为使用额外 input 与后端进行解耦就可以顺利使用 vue 组件</p>
+</blockquote>
+<h2 id="例子：html结构"><a href="#例子：html结构" class="headerlink" title="例子：html结构"></a>例子：html结构</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- vue 组件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">vue-comp-input</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">vue-comp-input</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">vue-comp-input</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">vue-comp-input</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 供后端提取值的额外 input --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="例子：bug-展示"><a href="#例子：bug-展示" class="headerlink" title="例子：bug 展示"></a>例子：bug 展示</h2><img src="/blog/article/ck98ergep00024wrq0a8a6hzm/demo.gif" class="">
+
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>找了半天原因应该是就是因为使用了混乱的开发方式，导致使正常的 bfcache 逻辑出错<br>最终想到放弃使用 bfcache 逻辑，每次都强制刷新页面即可解决这个问题<br>解决方案如下：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将此代码放到 head 标签靠上的位置</span></span><br><span class="line"><span class="comment">// 否则会加载额外的资源</span></span><br><span class="line"><span class="comment">// 此代码相当于使用 bfcache 机制的回调</span></span><br><span class="line"><span class="comment">// 使用 location.reload 重置页面</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'pageshow'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (e.persisted || (<span class="built_in">window</span>.performance &amp;&amp;</span><br><span class="line">    <span class="built_in">window</span>.performance.navigation.type == <span class="number">2</span>)) &#123;</span><br><span class="line">    location.reload();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-20T11:40:31.499Z" itemprop="dateUpdated">2020-04-20 19:40:31</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://q-jason.github.io/blog">
+            <img src="/blog/img/avatar.jpg" alt="jason">
+            jason
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%B8%B8%E8%A7%88%E5%99%A8%E6%9C%BA%E5%88%B6/" rel="tag">游览器机制</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/&title=《心得-bfcache》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/&title=《心得-bfcache》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-bfcache》 — qteam&url=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/ck98erggr002h4wrq5o225mqb/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">酷库-图片相关</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/article/ck98ergfh000j4wrqcrfr4tsn/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">心得-傻傻分不清的 DOM 尺寸属性</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "7knYztKAhxjRuVyam3S4wQ3j-gzGzoHsz",
+            appKey: "jPxTeLgibWTnOlR3lKcRdtJ8",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>jason &copy;
+                2015 -
+                
+                2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/&title=《心得-bfcache》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/&title=《心得-bfcache》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《心得-bfcache》 — qteam&url=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/ck98ergep00024wrq0a8a6hzm/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQW4jMQwEwPz/097rAonjblLyeoGakzGJNaw5iDTFr6/4eny7/r7//T+f3Uk+J889fOHh4eGtQ3/GyB/z7Lv5nXzNF7Hh4eHhXeMly/0eyizozev4fR08PDy8z+ElRXZeaucpAQ8PD+//5T1GVxt0UuLj4eHh/VtevtyMkaeTtnlxrNeCh4eH18UQnSJ9zucr53t4eHh461P1zaHXqTSwKeXx8PDwbvDyDbctu9v2azvslTd88fDw8M7y2hA3xe5jcQ3jwcPDw3sLLzleyhsH+5eyGufCw8PDu8Zrl0g267z1MHvddRsCDw8P7ygvbyIMH7NuTAzHAvDw8PDeyMsXzcek2ro3WfNF4Y6Hh4d3gddu3MVy15JQPriAh4eHd5u3OfRKgp5VuW1Zj4eHh3ebNxtpahuv7ahW27x4GjkeHh7eNV4b0KaMbkPMj9Oe9lrw8PDwrvFmaWDTuk2u/Lt1fwIPDw9vxNucsG8OqJLiO3/RL56Ch4eHd4HXHinNjvBnKeR33mzcAQ8PD2/DawcF2mJ39qZnLZIf7uPh4eFd4M2K42R0IA83bwrP0hgeHh7eWV6+1eYJIE8n+fqzhISHh4f3Hl7eAsibEbNxrllK+OEXAx4eHt5R3uY4P9/o2+2+/Wt9yoeHh4e35uUNgk2Iw7J4PaSFh4eHd5vXlsj7oYHH0QsPDw/vnby8cZA0AnLG1/p6cZCGh4eHd5S333brbbocJkiS0NN18PDw8C7w2s03L4WTFdqBg/YzHh4e3j3ebOmz5XIeQ5IY8PDw8N7Dq3sYo9GrpDV8eOgKDw8P72N4LaxdMynEo5EvPDw8vA/gbdoNObttfBwrqfHw8PBiXlv4tm2LvGjOm8JFYsDDw8M7ymt/8K8mvNaFcpES8PDw8M7z/gBt1NB1J6ET0wAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'qteam';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'qteam';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
