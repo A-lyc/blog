@@ -1,5 +1,5 @@
 ---
-title: 心得-SPA项目-qs和hash的顺序
+title: 心得-url 中 query 和 hash 的顺序（SPA）
 category: 前端心得
 date: 2020-04-20 19:30:49
 tags:
@@ -12,6 +12,7 @@ tags:
 ## 查询字符串在后
 > 若为 SPA 项目，qs 应该在 hash 之后
 > vue-router、react-router 都是按照这个顺序做的 api
+> 但是 location.search 为空
 
 {% asset_img 1.png %}
 
@@ -23,6 +24,7 @@ tags:
 
 ## 查询字符串在前
 > 若为常规项目，则 qs 应该在 hash 之前
+> 但是 vue-router 和 react-router 设计的 api 取不到值
 
 {% asset_img 3.png %}
 

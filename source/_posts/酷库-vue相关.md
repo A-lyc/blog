@@ -106,21 +106,19 @@ tags:
 > 要改变 this.$root.$i18n.locale 或 i18n 实例，才会全局改变
 
 ## 富文本编辑器
-> 下面的这俩都是基于 quill.js
-> 默认的图片是已 base64 的形式上传
-
-### vue-quill-editor
-> 基于 quill.js
-> home: https://github.surmon.me/vue-quill-editor
-> github: https://github.com/surmon-china/vue-quill-editor
-> npm: https://www.npmjs.com/package/vue-quill-editor
+> 下面的这俩都是基于 quill.js（很强大...）
+> quill.js 编辑器中的图片默认是已 base64 的形式上传
 
 ### vue2-editor
-> 基于 quill.js
 > home: https://www.vue2editor.com/
 > github: https://github.com/davidroyer/vue2-editor
 > npm: https://www.npmjs.com/package/vue2-editor
 
 > github 比 vue-quill-editor 星少一半多...
 > 但是个人感觉比 vue-quill-editor 好使多了...
-> 内置了图片添加和删除事件，可轻松实现各种逻辑
+> 组件内置了图片添加和删除事件，可轻松实现各种逻辑
+
+### vue-quill-editor
+> home: https://github.surmon.me/vue-quill-editor
+> github: https://github.com/surmon-china/vue-quill-editor
+> npm: https://www.npmjs.com/package/vue-quill-editor
