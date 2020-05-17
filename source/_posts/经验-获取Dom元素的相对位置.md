@@ -1,11 +1,9 @@
 ---
-title: 心得-获取Dom元素的相对位置
-category: 前端心得
+title: 经验-获取Dom元素的相对位置
+category: 经验
 date: 2020-04-02 11:09:08
 tags:
-  - 文档
-  - DOM
-  - 前端心得
+  - domEl.getBoundingClientRect
 ---
 
 ## 元素相对于视口的距离

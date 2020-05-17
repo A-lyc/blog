@@ -1,7 +1,7 @@
 ---
-title: 心得-strapi
+title: 经验-strapi
 date: 2019-12-19 14:51:16
-category: 后端心得
+category: 经验
 tags:
   - node
   - cms

@@ -1,6 +1,6 @@
 ---
-title: 心得-node-sass安装不上
-cateogry: 前端心得
+title: 经验-node-sass
+category: 经验
 date: 2020-01-30 13:17:52
 tags:
   - npm

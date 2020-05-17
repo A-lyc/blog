@@ -1,6 +1,6 @@
 ---
-title: 心得-bfcache
-category: 前端心得
+title: 经验-游览器bfcache机制
+category: 经验
 date: 2019-11-08 09:36:31
 tags:
   - 游览器机制

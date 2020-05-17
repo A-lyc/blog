@@ -1,10 +1,9 @@
 ---
-title: 运维-docker技术
-category: 运维
+title: 经验-docker
+category: 经验
 date: 2020-03-23 15:53:50
 tags:
   - node
-  - docker
 ---
 
 > 在工作中认识了 docker

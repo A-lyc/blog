@@ -1,6 +1,6 @@
 ---
-title: 心得-url 中 query 和 hash 的顺序（SPA）
-category: 前端心得
+title: 经验-url 中 query 和 hash 的顺序（SPA）
+category: 经验
 date: 2020-04-20 19:30:49
 tags:
   - vue
