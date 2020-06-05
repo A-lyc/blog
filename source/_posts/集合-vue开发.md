@@ -123,3 +123,46 @@ tags:
 > home: https://github.surmon.me/vue-quill-editor
 > github: https://github.com/surmon-china/vue-quill-editor
 > npm: https://www.npmjs.com/package/vue-quill-editor
+
+## vue-cli 相关配置
+> 下面代码都是在 vue.config.js 中的
+
+### 设置反向代理
+```javascript
+module.exports = {
+  devServer: {
+    proxy: {
+      '/dev-api': {
+        target: 'http://47.97.154.202:1091',
+        changeOrigin: true,
+        pathRewrite: { '^/dev-api': '' }
+      }
+    }
+  }
+}
+```
+
+### 使所有字体文件转为 base64
+> 问题由来：
+> element-ui IE11 部分版本图标不显示
+> 但是转为 base64 就好了...
+
+```javascript
+module.exports = {
+  chainWebpack: config => {
+    const fontsRule = config.module.rule('fonts')
+    fontsRule.uses.clear()
+    fontsRule.test(/\.(woff|eot|ttf|otf)(\?.*)?$/i)
+    fontsRule.use('file-loader')
+      .loader('url-loader')
+      .options({
+        fallback: {
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[hash:8].[ext]'
+          }
+        }
+      })
+  }
+}
+```
