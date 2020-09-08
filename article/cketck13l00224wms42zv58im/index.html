@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>酷库-ajax | qteam | 博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ajax">
+    <meta name="description" content="axios github: https:&#x2F;&#x2F;github.com&#x2F;axios&#x2F;axios中文文档: https:&#x2F;&#x2F;www.kancloud.cn&#x2F;yunye&#x2F;axios&#x2F;234845Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。用它就对了  axios-retry（axios 重试方案） github: https:&#x2F;&#x2F;github.com&#x2F;so">
+<meta name="keywords" content="ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="酷库-ajax">
+<meta property="og:url" content="https:&#x2F;&#x2F;q-jason.github.io&#x2F;blog&#x2F;article&#x2F;cketck13l00224wms42zv58im&#x2F;index.html">
+<meta property="og:site_name" content="qteam">
+<meta property="og:description" content="axios github: https:&#x2F;&#x2F;github.com&#x2F;axios&#x2F;axios中文文档: https:&#x2F;&#x2F;www.kancloud.cn&#x2F;yunye&#x2F;axios&#x2F;234845Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。用它就对了  axios-retry（axios 重试方案） github: https:&#x2F;&#x2F;github.com&#x2F;so">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-09-08T02:40:25.465Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="qteam" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="stylesheet" href="/blog/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">jason</h5>
+          <a href="mailto:596908546@qq.com" target="_blank" rel="noopener" title="596908546@qq.com" class="mail">596908546@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">酷库-ajax</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">酷库-ajax</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-20T05:15:50.000Z" itemprop="datePublished" class="page-time">
+  2019-12-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E9%85%B7%E5%BA%93/">酷库</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#axios"><span class="post-toc-number">1.</span> <span class="post-toc-text">axios</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#axios-retry（axios-重试方案）"><span class="post-toc-number">2.</span> <span class="post-toc-text">axios-retry（axios 重试方案）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#promise-poller（重试、轮询）"><span class="post-toc-number">3.</span> <span class="post-toc-text">promise-poller（重试、轮询）</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-酷库-ajax"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">酷库-ajax</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-20 13:15:50" datetime="2019-12-20T05:15:50.000Z"  itemprop="datePublished">2019-12-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/%E9%85%B7%E5%BA%93/">酷库</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><blockquote>
+<p>github: <a href="https://github.com/axios/axios" target="_blank" rel="noopener">https://github.com/axios/axios</a><br>中文文档: <a href="https://www.kancloud.cn/yunye/axios/234845" target="_blank" rel="noopener">https://www.kancloud.cn/yunye/axios/234845</a><br>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。<br>用它就对了</p>
+</blockquote>
+<h2 id="axios-retry（axios-重试方案）"><a href="#axios-retry（axios-重试方案）" class="headerlink" title="axios-retry（axios 重试方案）"></a>axios-retry（axios 重试方案）</h2><blockquote>
+<p>github: <a href="https://github.com/softonic/axios-retry" target="_blank" rel="noopener">https://github.com/softonic/axios-retry</a><br>基于 axios，若 axios 发送的请求失败，可根据配置自动重试</p>
+</blockquote>
+<ul>
+<li>可以全局设置，也可以在请求时单独设置</li>
+<li>shouldResetTimeout 的作用为每次重试重置超时，建议开启，否则控制台会变成 “机关枪”</li>
+<li>默认只有 “5xx错误” 和 “网络错误” 才会重发，可设置 retryCondition 自定义重发逻辑</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="keyword">import</span> axiosRetry <span class="keyword">from</span> <span class="string">'axios-retry'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/** 全局设置 **/</span></span><br><span class="line">axiosRetry(axios, &#123;</span><br><span class="line">  <span class="comment">/** options **/</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">axios.get(<span class="string">'/abc'</span>, &#123;</span><br><span class="line">  <span class="comment">/** 单独设置 **/</span></span><br><span class="line">  <span class="string">'axios-retry'</span>: &#123;</span><br><span class="line">    retries: <span class="number">3</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="promise-poller（重试、轮询）"><a href="#promise-poller（重试、轮询）" class="headerlink" title="promise-poller（重试、轮询）"></a>promise-poller（重试、轮询）</h2><blockquote>
+<p><a href="https://github.com/joeattardi/promise-poller" target="_blank" rel="noopener">https://github.com/joeattardi/promise-poller</a><br>此库主要作用为基于 Promise 的重试解决方案<br>可用于任何 http 库<br>十分优雅的即可实现<br>也可以 “取巧” 用来当做轮询库使用</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// return Promise</span></span><br><span class="line">promisePoller(&#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  返回 Promise 的任务函数</span></span><br><span class="line"><span class="comment">   *  若 reject 则会重试（可以一直 reject 实现无限轮询）</span></span><br><span class="line"><span class="comment">   *  直到 resolve</span></span><br><span class="line"><span class="comment">   **/</span></span><br><span class="line">  taskFn,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/** 重试请求间隔 **/</span></span><br><span class="line">  interval: <span class="number">500</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  失败重试次数</span></span><br><span class="line"><span class="comment">   *  这里设置为 Infinity 则可以实现无限重发（实现无限轮询）</span></span><br><span class="line"><span class="comment">   **/</span></span><br><span class="line">  retries: <span class="number">10</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/** 每次请求的超时 **/</span></span><br><span class="line">  timeout: <span class="number">1000</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/** 整个任务的超时 **/</span></span><br><span class="line">  masterTimeout: <span class="number">5000</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-09-08T02:40:25.465Z" itemprop="dateUpdated">2020-09-08 10:40:25</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://q-jason.github.io/blog">
+            <img src="/blog/img/avatar.jpg" alt="jason">
+            jason
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ajax/" rel="tag">ajax</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/&title=《酷库-ajax》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/&title=《酷库-ajax》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《酷库-ajax》 — qteam&url=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/article/cketck13z002z4wmsbjpl2uto/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">酷库-坐标格式转换</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/article/cketck12e000j4wms42ac3dvy/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">经验-strapi</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "7knYztKAhxjRuVyam3S4wQ3j-gzGzoHsz",
+            appKey: "jPxTeLgibWTnOlR3lKcRdtJ8",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>jason &copy;
+                2015 -
+                
+                2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/&title=《酷库-ajax》 — qteam&pic=https://q-jason.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/&title=《酷库-ajax》 — qteam&source=碰到的事情，记下来，才是真的" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《酷库-ajax》 — qteam&url=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/&via=https://q-jason.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://q-jason.github.io/blog/article/cketck13l00224wms42zv58im/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3aQZIiMQwEQP7/6dnL3naBKskOmIjsEzE0ttMHSyP58Yifn3+eZ++8fj/5/HrMx40HDw8Pb730Z8tKnmRTkr88GydfMx4eHt5tXn4oJwEgGT8PKq8DzJu58PDw8L6ely8o2ZrXgQEPDw/vd/FWUwaL/nBgwMPDwwt4+XB5AaLdmuRXF2steHh4eDEv7yJ9z+cr/T08PDy8dVc9L9Em37bp8qYJ9/dXeHh4eBd4bYMqP6bbIkIbkPJ14uHh4d3g5RO0SfY+v83DRntZAQ8PD+8U73VxNt+hvBzcVhVWRQo8PDy8o7y8lbVvmM1KG/na8PDw8G7zkpJBEgba6TeBofj/AA8PD+8o71TdYnP5adYYSwIVHh4e3g3eLAzst2CTRtff4uHh4R3ltZel8qN8hmkDw5tkHQ8PD+8Crz36ZxPkBd/ZolcwPDw8vDVvczXq1BLbJlyBxMPDwzvK2zTANg2tPB0vSrdt9MDDw8OL39+UFZKEu22w7QsQT1tfeHh4eId4eRhoD+7k8+x6QT0yHh4e3lHehtFi2ssEs3IwHh4e3qd4myZWO+apHl2dTOPh4eGNeLMyRHIoby5gzcoZb4oReHh4eId4yQSz9LctOsxabkVIwMPDwzvE27eg8mnagJEXlKPwgIeHh3eNl5+om/S6zvrb61bJruPh4eEd4rWktrDbbsemaIKHh4f3KV5eYG1b+7MixarLh4eHh7fm/ZRPGzD2V7XyZth/xsHDw8O7wGsP3M1Rvk+U8wBWP3h4eHglrx06T69n21e3uPL7EXh4eHhHeZvy7qxQ24acA5eu8PDw8D7Kmy19E2xmpWc8PDy87+G15YlTwSNP+vHw8PBu8zaN/xstsfz9N7/Cw8PDu8A78A9/kCLnzbBZUDnQ38PDw8N7z/sDF7Ar8MKK9X8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/blog/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/blog/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'qteam';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'qteam';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
