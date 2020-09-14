@@ -195,6 +195,20 @@ module.exports = async () => {
 }
 ```
 
+## 心得 - 富文本 html 编辑器
+> version: 3.1.4
+> 目前自带的富文本编辑器是仅支持 markdown 语法的
+> 但是 html 编辑器在项目中才是最常用的....
+> 官方方案
+> https://strapi.io/blog/how-to-change-the-wysiwyg-in-strapi
+
+### 注意：
+- CKEditor 或 自定义的组件当用户输入时，需要手动调用 props.onChange 方法，参数如下：
+
+```javascript
+onChange({ target: { name: props.name, value: '用户输入的内容' } })
+```
+
 ## 自定义插件 - 环境搭建
 > version: 3.0.0-beta.18.7
 
