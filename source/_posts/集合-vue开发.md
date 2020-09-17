@@ -11,17 +11,30 @@ tags:
 
 ### element-ui
 > https://github.com/ElemeFE/element
-> 主要用于 PC 端项目（移动端改改样式大部分组件其实也可以正常使用）
-> 其中的 messageBox，loading 组件特别好用
+> 主要用于 PC 端项目，常用于后台项目
+> 官方并没有适配移动端，需要自己写媒体查询改样式
+> 其中的 messageBox，loading 等函数式调用组件特别好用
+
+### vuetify
+> https://github.com/vuetifyjs/vuetify
+> 主要用于 PC 端项目，组件效果非常的赞
+> 官方同时加入了响应式配置
+> 缺点是没有函数式调用的组件，需要自己封装
+
+```javascript
+// 经过测试，使用官方方法引入后
+// 库本身会自动按需引入
+// 无需像 element-ui 一样配置 babel
+```
 
 ### vant-ui
 > https://github.com/youzan/vant
-> 主要用于移动端项目
+> 主要用于纯移动端项目
 > 拥有大量的实用组件
 
 ### cube-ui
 > https://github.com/didi/cube-ui
-> 主要用于移动端项目
+> 主要用于纯移动端项目
 > 拥有大量实用组件
 
 -------------------------------------------------------------
